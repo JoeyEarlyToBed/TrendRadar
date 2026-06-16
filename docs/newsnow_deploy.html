@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NewsNow 自部署 - 热榜聚合面板</title>
+<style>
+:root {
+  --kuka-orange: #F15A24;
+  --bg: #0a0a0c;
+  --card: #16161a;
+  --border: #2a2a32;
+  --text: #e8e8ec;
+  --text-dim: #888894;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg); color: var(--text); line-height:1.6;
+}
+.container { max-width:1200px; margin:0 auto; padding:20px; }
+header {
+  text-align:center; padding:40px 0; border-bottom:1px solid var(--border); margin-bottom:30px;
+}
+h1 { font-size:2rem; font-weight:700; color:var(--kuka-orange); margin-bottom:8px; }
+.subtitle { color:var(--text-dim); font-size:14px; }
+.info-box {
+  background:var(--card); border:1px solid var(--border); border-radius:12px;
+  padding:24px; margin:20px 0;
+}
+.info-box h2 { font-size:1.1rem; color:var(--kuka-orange); margin-bottom:12px; }
+.info-box p { color:var(--text-dim); font-size:14px; line-height:1.8; }
+.info-box code {
+  background:rgba(241,90,36,.15); color:var(--kuka-orange); padding:2px 8px;
+  border-radius:4px; font-family:monospace; font-size:13px;
+}
+.steps { list-style:none; }
+.steps li {
+  padding:12px 0; border-bottom:1px solid var(--border); display:flex; gap:12px; align-items:flex-start;
+}
+.steps li:last-child { border-bottom:none; }
+.step-num {
+  width:28px; height:28px; border-radius:50%; background:var(--kuka-orange);
+  display:flex; align-items:center; justify-content:center;
+  font-size:14px; font-weight:700; color:#fff; flex-shrink:0;
+}
+.step-content { flex:1; }
+.step-title { font-weight:600; font-size:15px; margin-bottom:4px; }
+.step-desc { font-size:13px; color:var(--text-dim); line-height:1.6; }
+.footer {
+  text-align:center; padding:40px 0; color:var(--text-dim); font-size:13px;
+  border-top:1px solid var(--border); margin-top:40px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+    <h1>🔥 NewsNow 自部署指南</h1>
+    <p class="subtitle">TrendRadar 自定义数据源部署方案</p>
+</header>
+
+<div class="info-box">
+    <h2>⚠️ 当前状态</h2>
+    <p>
+        NewsNow 官方 API (<code>https://newsnow.busiyi.world/api/s</code>) 已被 Cloudflare 拦截，<br>
+        直接访问返回 403 错误。需要自部署才能使用。
+    </p>
+</div>
+
+<div class="info-box">
+    <h2>🚀 推荐部署方案</h2>
+    <ul class="steps">
+        <li>
+            <span class="step-num">1</span>
+            <div class="step-content">
+                <div class="step-title">Fork NewsNow 仓库</div>
+                <div class="step-desc">
+                    访问 <a href="https://github.com/ourongxing/newsnow" style="color:var(--kuka-orange);">https://github.com/ourongxing/newsnow</a><br>
+                    点击右上角 "Fork" 按钮，等待 Fork 完成
+                </div>
+            </div>
+        </li>
+        <li>
+            <span class="step-num">2</span>
+            <div class="step-content">
+                <div class="step-title">部署到 Cloudflare Pages（推荐）</div>
+                <div class="step-desc">
+                    1. 登录 <a href="https://dash.cloudflare.com" style="color:var(--kuka-orange);">https://dash.cloudflare.com</a>（免费注册）<br>
+                    2. 点击 "Pages" → "Create a project"<br>
+                    3. 选择 "Connect to Git"，授权 GitHub<br>
+                    4. 选择你 Fork 的 newsnow 仓库<br>
+                    5. 构建设置：<br>
+                    &nbsp;&nbsp;&nbsp;- Build command: <code>npm install -g pnpm && pnpm install && pnpm run build</code><br>
+                    &nbsp;&nbsp;&nbsp;- Output directory: <code>dist/output/public</code><br>
+                    6. 点击 "Save and Deploy"，等待 2-3 分钟
+                </div>
+            </div>
+        </li>
+        <li>
+            <span class="step-num">3</span>
+            <div class="step-content">
+                <div class="step-title">配置 TrendRadar</div>
+                <div class="step-desc">
+                    编辑 <code>config/config.yaml</code>：<br>
+                    <code>api_url: "https://你的域名/api/s"</code><br><br>
+                    例如：<code>api_url: "https://newsnow-xxx.pages.dev/api/s"</code>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div class="info-box">
+    <h2>📊 部署后效果</h2>
+    <p>
+        • 可视化热榜页面：<code>https://你的域名/</code><br>
+        • API 端点（TrendRadar 使用）：<code>https://你的域名/api/s</code><br>
+        • 支持 23+ 平台实时热榜<br>
+        • 30 分钟缓存，自动更新
+    </p>
+</div>
+
+<div class="info-box">
+    <h2>🔧 备选方案</h2>
+    <p>
+        <strong>方案 A：Vercel 部署</strong><br>
+        类似 Cloudflare，访问 <a href="https://vercel.com" style="color:var(--kuka-orange);">vercel.com</a>，导入 GitHub 仓库即可<br><br>
+        
+        <strong>方案 B：Docker 本地部署</strong><br>
+        需要 Docker 环境：<br>
+        <code>git clone https://github.com/ourongxing/newsnow.git</code><br>
+        <code>cd newsnow && docker compose up</code><br><br>
+        
+        <strong>方案 C：Node.js 本地部署</strong><br>
+        需要 Node.js + pnpm：<br>
+        <code>pnpm install && pnpm run dev</code>
+    </p>
+</div>
+
+<div class="footer">
+    <p>TrendRadar · NewsNow 自部署指南</p>
+    <p style="margin-top:8px;">🤖 当前使用公共 API（受 Cloudflare 限制，建议自部署）</p>
+</div>
+</div>
+</body>
+</html>
