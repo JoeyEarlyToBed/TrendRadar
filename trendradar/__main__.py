@@ -270,6 +270,70 @@ class NewsAnalyzer:
         """判断是否应该打开浏览器"""
         return not self.is_github_actions and not self.is_docker_container
 
+    def _push_to_github(self, html_file_path: str) -> None:
+        """将 HTML 报告自动推送到 GitHub 仓库（如果已启用）"""
+        try:
+            from trendradar.notification.github_pusher import create_github_pusher_from_config
+            cfg = self.ctx.config
+            github_cfg = cfg.get("GITHUB", {})
+            if not github_cfg.get("ENABLED", False):
+                return
+
+            pusher = create_github_pusher_from_config({"github": {
+                "enabled": True,
+                "repo_path": github_cfg.get("REPO_PATH", ""),
+                "target_dir": github_cfg.get("TARGET_DIR", "docs/reports"),
+                "branch": github_cfg.get("BRANCH", "main"),
+                "commit_message": github_cfg.get("COMMIT_MESSAGE", "auto: update report {timestamp}"),
+                "pat": github_cfg.get("PAT", "") or "",
+            }})
+            if not pusher:
+                return
+
+            # 读取 HTML 内容
+            from pathlib import Path
+            p = Path(html_file_path)
+            if not p.exists():
+                return
+
+            with open(p, 'r', encoding='utf-8') as f:
+                html_content = f.read()
+
+            # 用时间作为文件名（如 22-30.html）
+            filename = p.name
+            result = pusher.push_report(html_content, filename)
+
+            if result.get("success"):
+                print(f"[GitHub 推送] ✓ {result.get('message', '成功')}")
+            else:
+                print(f"[GitHub 推送] ✗ {result.get('message', '失败')}")
+
+            # 同时更新 index.json
+            try:
+                import importlib.util
+                repo_path = github_cfg.get("REPO_PATH", "")
+                if repo_path:
+                    from os.path import expanduser
+                    repo_path = expanduser(repo_path)
+                    index_script = Path(repo_path) / "scripts" / "generate_report_index.py"
+                    if index_script.exists():
+                        spec = importlib.util.spec_from_file_location("index_gen", index_script)
+                        mod = importlib.util.module_from_spec(spec)
+                        spec.loader.exec_module(mod)
+                        target_dir = github_cfg.get("TARGET_DIR", "docs/reports")
+                        reports_dir = str(Path(repo_path) / target_dir)
+                        index_file = str(Path(repo_path) / target_dir / "index.json")
+                        mod.generate_reports_index(reports_dir, index_file)
+                        # 推送索引文件
+                        idx_content = Path(index_file).read_text(encoding='utf-8')
+                        pusher.push_report(idx_content, "index.json")
+                        print("[GitHub 推送] ✓ 索引文件已更新并推送")
+            except Exception as e:
+                print(f"[GitHub 推送] 索引更新失败: {e}")
+
+        except Exception as e:
+            print(f"[GitHub 推送] 异常: {e}")
+
     def _setup_proxy(self) -> None:
         """设置代理配置"""
         if not self.is_github_actions and self.ctx.config["USE_PROXY"]:
@@ -1722,6 +1786,9 @@ class NewsAnalyzer:
         if html_file:
             print(f"HTML报告已生成: {html_file}")
             print(f"最新报告已更新: output/html/latest/{self.report_mode}.html")
+
+            # GitHub 自动推送
+            self._push_to_github(html_file)
 
         # 发送通知
         if mode_strategy["should_send_notification"]:

@@ -404,7 +404,7 @@ notification:
 # ===============================================================
 github:
   enabled: true                     # 是否启用 GitHub 自动推送（true=启用, false=禁用）
-  repo_path: "~/workspace/TrendRadar/TrendRadar-v6.9.1"  # 本地仓库绝对路径（~ 自动展开为 home 目录）
+  repo_path: "~/.qclaw/workspace/TrendRadar/TrendRadar-v6.9.1"  # 本地仓库绝对路径（~ 自动展开为 home 目录）
   target_dir: "docs/reports"        # 报告存放目录（相对于仓库根目录）
   branch: "main"                    # 目标分支
   commit_message: "auto: update report {timestamp}"  # 提交消息模板
