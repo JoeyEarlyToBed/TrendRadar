@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TrendRadar - NewsNow 热榜可视化</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: #0a0a0c; color: #e8e8ec; line-height: 1.6;
+}
+.container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+header {
+    text-align: center; padding: 40px 0; border-bottom: 1px solid #2a2a32; margin-bottom: 30px;
+}
+h1 { font-size: 2.2rem; font-weight: 700; color: #F15A24; margin-bottom: 8px; }
+.subtitle { color: #888; font-size: 15px; }
+
+/* 状态栏 */
+.status-bar {
+    display: flex; justify-content: space-between; align-items: center;
+    background: #16161a; border: 1px solid #2a2a32; border-radius: 12px;
+    padding: 16px 24px; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;
+}
+.status-item { display: flex; align-items: center; gap: 8px; }
+.status-indicator {
+    width: 10px; height: 10px; border-radius: 50%; background: #22c55e;
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+.status-text { font-size: 14px; color: #aaa; }
+.status-value { font-weight: 600; color: #F15A24; }
+
+/* 控制栏 */
+.controls {
+    display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap;
+}
+.btn {
+    padding: 10px 20px; border-radius: 8px; border: 1px solid #2a2a32;
+    background: #16161a; color: #e8e8ec; font-size: 14px; cursor: pointer;
+    transition: all 0.3s;
+}
+.btn:hover { border-color: #F15A24; background: rgba(241, 90, 36, 0.1); }
+.btn.active { background: #F15A24; border-color: #F15A24; color: #fff; }
+.btn-primary {
+    background: #F15A24; border-color: #F15A24; color: #fff;
+}
+.btn-primary:hover { background: #d94d1a; }
+
+/* 平台网格 */
+.platform-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+}
+.platform-card {
+    background: #16161a; border: 1px solid #2a2a32; border-radius: 12px;
+    overflow: hidden; transition: all 0.3s;
+}
+.platform-card:hover { border-color: rgba(241, 90, 36, 0.4); transform: translateY(-2px); }
+.platform-header {
+    background: rgba(241, 90, 36, 0.1); padding: 14px 18px;
+    border-bottom: 1px solid #2a2a32;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.platform-name { font-weight: 600; font-size: 15px; color: #F15A24; }
+.platform-count { font-size: 12px; color: #888; background: #2a2a32; padding: 4px 10px; border-radius: 12px; }
+
+/* 新闻列表 */
+.news-list { list-style: none; padding: 8px 0; max-height: 400px; overflow-y: auto; }
+.news-item {
+    padding: 10px 16px; border-bottom: 1px solid #1a1a1f;
+    display: flex; align-items: flex-start; gap: 10px;
+    cursor: pointer; transition: background 0.2s;
+}
+.news-item:hover { background: rgba(241, 90, 36, 0.05); }
+.news-item:last-child { border-bottom: none; }
+.news-rank {
+    width: 24px; height: 24px; border-radius: 50%; background: #2a2a32;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 600; color: #888; flex-shrink: 0;
+}
+.news-rank.top1 { background: #dc2626; color: #fff; }
+.news-rank.top2 { background: #ea580c; color: #fff; }
+.news-rank.top3 { background: #ca8a04; color: #fff; }
+.news-content { flex: 1; min-width: 0; }
+.news-title {
+    font-size: 13.5px; color: #e8e8ec; line-height: 1.5;
+    overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+}
+.news-meta {
+    font-size: 11px; color: #666; margin-top: 4px;
+    display: flex; gap: 8px; align-items: center;
+}
+.news-tag {
+    background: rgba(241, 90, 36, 0.15); color: #F15A24;
+    padding: 2px 8px; border-radius: 4px; font-size: 11px;
+}
+
+/* 加载状态 */
+.loading {
+    text-align: center; padding: 60px; color: #888;
+}
+.spinner {
+    width: 40px; height: 40px; border: 3px solid #2a2a32;
+    border-top-color: #F15A24; border-radius: 50%;
+    animation: spin 1s linear infinite; margin: 0 auto 16px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* 错误状态 */
+.error-box {
+    background: rgba(220, 38, 38, 0.1); border: 1px solid rgba(220, 38, 38, 0.3);
+    border-radius: 12px; padding: 24px; text-align: center; color: #ef4444;
+}
+
+/* 配置面板 */
+.config-panel {
+    background: #16161a; border: 1px solid #2a2a32; border-radius: 12px;
+    padding: 20px; margin-bottom: 24px; display: none;
+}
+.config-panel.active { display: block; }
+.config-panel h3 { font-size: 16px; color: #F15A24; margin-bottom: 16px; }
+.config-row { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; flex-wrap: wrap; }
+.config-label { font-size: 14px; color: #aaa; min-width: 100px; }
+.config-input {
+    flex: 1; min-width: 200px; padding: 10px 14px; border-radius: 8px;
+    border: 1px solid #2a2a32; background: #0a0a0c; color: #e8e8ec;
+    font-size: 14px;
+}
+.config-input:focus { outline: none; border-color: #F15A24; }
+
+/* 页脚 */
+.footer {
+    text-align: center; padding: 40px 0; color: #666; font-size: 13px;
+    border-top: 1px solid #2a2a32; margin-top: 40px;
+}
+.footer a { color: #F15A24; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+
+/* 滚动条 */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0a0a0c; }
+::-webkit-scrollbar-thumb { background: #2a2a32; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #3a3a42; }
+
+/* 响应式 */
+@media (max-width: 768px) {
+    .platform-grid { grid-template-columns: 1fr; }
+    .status-bar { flex-direction: column; align-items: flex-start; }
+    .controls { justify-content: center; }
+    h1 { font-size: 1.6rem; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>🔥 TrendRadar · NewsNow 热榜</h1>
+        <p class="subtitle">实时聚合 20+ 平台热榜数据 · 可嵌入汇报页面</p>
+    </header>
+
+    <!-- 状态栏 -->
+    <div class="status-bar">
+        <div class="status-item">
+            <div class="status-indicator"></div>
+            <span class="status-text">数据源:</span>
+            <span class="status-value" id="data-source">官方 API</span>
+        </div>
+        <div class="status-item">
+            <span class="status-text">平台数:</span>
+            <span class="status-value" id="platform-count">-</span>
+        </div>
+        <div class="status-item">
+            <span class="status-text">总条数:</span>
+            <span class="status-value" id="total-items">-</span>
+        </div>
+        <div class="status-item">
+            <span class="status-text">更新时间:</span>
+            <span class="status-value" id="update-time">-</span>
+        </div>
+    </div>
+
+    <!-- 控制栏 -->
+    <div class="controls">
+        <button class="btn btn-primary" onclick="refreshData()">🔄 刷新数据</button>
+        <button class="btn" onclick="toggleConfig()">⚙️ 配置</button>
+        <button class="btn" onclick="exportData()">📥 导出 JSON</button>
+        <button class="btn" onclick="window.open('https://github.com/ourongxing/newsnow', '_blank')">📖 NewsNow 文档</button>
+    </div>
+
+    <!-- 配置面板 -->
+    <div class="config-panel" id="config-panel">
+        <h3>API 配置</h3>
+        <div class="config-row">
+            <span class="config-label">API 地址:</span>
+            <input type="text" class="config-input" id="api-url" 
+                   value="https://newsnow.busiyi.world/api/s" 
+                   placeholder="https://your-domain.com/api/s">
+        </div>
+        <div class="config-row">
+            <span class="config-label">代理地址:</span>
+            <input type="text" class="config-input" id="proxy-url" 
+                   value="" 
+                   placeholder="http://127.0.0.1:7897 (可选)">
+        </div>
+        <div class="config-row">
+            <button class="btn btn-primary" onclick="saveConfig()">保存配置</button>
+            <button class="btn" onclick="resetConfig()">重置默认</button>
+        </div>
+        <p style="font-size: 12px; color: #666; margin-top: 12px;">
+            💡 提示: 自部署 NewsNow 后，将 API 地址改为你的部署地址，如 https://your-newsnow.pages.dev/api/s
+        </p>
+    </div>
+
+    <!-- 加载状态 -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <p>正在加载热榜数据...</p>
+    </div>
+
+    <!-- 错误状态 -->
+    <div class="error-box" id="error-box" style="display: none;">
+        <p id="error-message">加载失败</p>
+    </div>
+
+    <!-- 平台网格 -->
+    <div class="platform-grid" id="platform-grid" style="display: none;"></div>
+
+    <div class="footer">
+        <p>
+            🔗 <a href="https://joeyearlytobed.github.io/TrendRadar/" target="_blank">TrendRadar 项目主页</a> · 
+            <a href="https://github.com/JoeyEarlyToBed/TrendRadar" target="_blank">GitHub</a> · 
+            <a href="https://github.com/ourongxing/newsnow" target="_blank">NewsNow 开源</a>
+        </p>
+        <p style="margin-top: 8px;">
+            数据来源于 NewsNow 开源项目 · 本页面可嵌入任何汇报/展示系统
+        </p>
+    </div>
+</div>
+
+<script>
+// 平台名称映射
+const PLATFORM_NAMES = {
+    'toutiao': '今日头条',
+    'baidu': '百度热搜',
+    'weibo': '微博',
+    'zhihu': '知乎',
+    'douyin': '抖音',
+    'bilibili-hot-search': 'B站',
+    'wallstreetcn-hot': '华尔街见闻',
+    'thepaper': '澎湃新闻',
+    'cls-hot': '财联社',
+    'ifeng': '凤凰网',
+    'tieba': '百度贴吧',
+    'xueqiu': '雪球',
+    'gelonghui': '格隆汇',
+    'jin10': '金十数据',
+    'ithome': 'IT之家',
+    'juejin': '掘金',
+    'hackernews': 'Hacker News',
+    'sspai': '少数派',
+    'solidot': 'Solidot',
+    'v2ex': 'V2EX',
+    'hupu': '虎扑',
+    'cankaoxiaoxi': '参考消息',
+    'zaobao': '联合早报'
+};
+
+let currentData = {};
+let apiUrl = localStorage.getItem('newsnow_api_url') || 'https://newsnow.busiyi.world/api/s';
+
+// 初始化
+async function init() {
+    document.getElementById('api-url').value = apiUrl;
+    await loadData();
+}
+
+// 加载数据
+async function loadData() {
+    const loading = document.getElementById('loading');
+    const errorBox = document.getElementById('error-box');
+    const grid = document.getElementById('platform-grid');
+    
+    loading.style.display = 'block';
+    errorBox.style.display = 'none';
+    grid.style.display = 'none';
+    
+    try {
+        // 使用 CORS 代理或直连
+        const response = await fetch(apiUrl, {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+            },
+            // 如果部署在同域或支持 CORS，直接请求
+            // 否则需要通过代理
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        
+        currentData = await response.json();
+        renderData(currentData);
+        
+        loading.style.display = 'none';
+        grid.style.display = 'grid';
+        
+        updateStatus(currentData);
+        
+    } catch (error) {
+        console.error('加载失败:', error);
+        loading.style.display = 'none';
+        errorBox.style.display = 'block';
+        document.getElementById('error-message').textContent = 
+            `加载失败: ${error.message}\n\n可能原因:\n1. 网络连接问题\n2. API 地址错误\n3. CORS 跨域限制\n\n解决方案:\n1. 检查网络连接\n2. 配置正确的 API 地址\n3. 使用自部署的 NewsNow 实例`;
+    }
+}
+
+// 渲染数据
+function renderData(data) {
+    const grid = document.getElementById('platform-grid');
+    grid.innerHTML = '';
+    
+    for (const [platformId, items] of Object.entries(data)) {
+        if (!Array.isArray(items) || items.length === 0) continue;
+        
+        const platformName = PLATFORM_NAMES[platformId] || platformId;
+        const card = createPlatformCard(platformId, platformName, items);
+        grid.appendChild(card);
+    }
+}
+
+// 创建平台卡片
+function createPlatformCard(id, name, items) {
+    const card = document.createElement('div');
+    card.className = 'platform-card';
+    
+    const header = document.createElement('div');
+    header.className = 'platform-header';
+    header.innerHTML = `
+        <span class="platform-name">${name}</span>
+        <span class="platform-count">${items.length} 条</span>
+    `;
+    
+    const list = document.createElement('ul');
+    list.className = 'news-list';
+    
+    items.slice(0, 10).forEach((item, index) => {
+        const li = document.createElement('li');
+        li.className = 'news-item';
+        li.onclick = () => window.open(item.url || '#', '_blank');
+        
+        const rankClass = index < 3 ? `top${index + 1}` : '';
+        const title = item.title || '无标题';
+        const extra = item.extra || '';
+        
+        li.innerHTML = `
+            <span class="news-rank ${rankClass}">${index + 1}</span>
+            <div class="news-content">
+                <div class="news-title">${escapeHtml(title)}</div>
+                <div class="news-meta">
+                    ${extra ? `<span>${escapeHtml(extra)}</span>` : ''}
+                </div>
+            </div>
+        `;
+        
+        list.appendChild(li);
+    });
+    
+    card.appendChild(header);
+    card.appendChild(list);
+    
+    return card;
+}
+
+// 更新状态栏
+function updateStatus(data) {
+    const platformCount = Object.keys(data).length;
+    const totalItems = Object.values(data).reduce((sum, items) => 
+        sum + (Array.isArray(items) ? items.length : 0), 0);
+    
+    document.getElementById('platform-count').textContent = platformCount;
+    document.getElementById('total-items').textContent = totalItems;
+    document.getElementById('update-time').textContent = new Date().toLocaleString('zh-CN');
+    document.getElementById('data-source').textContent = apiUrl.includes('localhost') ? '本地部署' : 
+                                                        apiUrl.includes('pages.dev') ? 'Cloudflare' : '官方 API';
+}
+
+// 刷新数据
+function refreshData() {
+    loadData();
+}
+
+// 切换配置面板
+function toggleConfig() {
+    const panel = document.getElementById('config-panel');
+    panel.classList.toggle('active');
+}
+
+// 保存配置
+function saveConfig() {
+    apiUrl = document.getElementById('api-url').value.trim();
+    localStorage.setItem('newsnow_api_url', apiUrl);
+    alert('配置已保存！');
+    toggleConfig();
+    loadData();
+}
+
+// 重置配置
+function resetConfig() {
+    apiUrl = 'https://newsnow.busiyi.world/api/s';
+    document.getElementById('api-url').value = apiUrl;
+    localStorage.removeItem('newsnow_api_url');
+    alert('已重置为默认配置！');
+}
+
+// 导出数据
+function exportData() {
+    const dataStr = JSON.stringify(currentData, null, 2);
+    const blob = new Blob([dataStr], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `newsnow-data-${new Date().toISOString().slice(0, 10)}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+}
+
+// HTML 转义
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+// 自动刷新（每 5 分钟）
+setInterval(refreshData, 5 * 60 * 1000);
+
+// 启动
+init();
+</script>
+</body>
+</html>
