@@ -65,6 +65,9 @@ platforms:
   enabled: true                         # 是否启用热榜平台抓取（true=启用, false=关闭）
   # 如果你自行部署了 newsnow，填入你的地址，如: https://your-domain.com/api/s
   # 自部署指南: https://joeyearlytobed.github.io/TrendRadar/newsnow_deploy.html
+  # 本地部署: http://localhost:4444/api/s
+  # Cloudflare Pages: https://your-newsnow.pages.dev/api/s
+  # Vercel: https://your-newsnow.vercel.app/api/s
   api_url: ""                            # 热榜数据 API 地址（留空使用默认地址）
   sources:
     - id: "toutiao"
