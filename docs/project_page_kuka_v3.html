@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TrendRadar · AI 舆情监控 · KUKA质量数字化</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --kuka-orange: #F15A24;
+  --kuka-orange-dark: #c6481d;
+  --kuka-orange-glow: rgba(241,90,36,.3);
+  --industrial-bg: #0a0a0c;
+  --surface: #111114;
+  --card: #16161a;
+  --card-hover: #1c1c22;
+  --border: #2a2a32;
+  --text: #e8e8ec;
+  --text-dim: #888894;
+  --text-muted: #5a5a64;
+  --accent-blue: #4a8cf7;
+  --accent-green: #34d399;
+  --accent-amber: #fbbf24;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --font-cn: 'Noto Sans SC', -apple-system, sans-serif;
+  --font-en: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --maxw: 1200px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family: var(--font-cn);
+  background: var(--industrial-bg);
+  color: var(--text);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+#particles {
+  position:fixed; inset:0; z-index:0;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 20%, rgba(241,90,36,.1) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 70%, rgba(241,90,36,.05) 0%, transparent 50%);
+}
+.particle {
+  position:absolute; width:2px; height:2px;
+  background: var(--kuka-orange); border-radius:50%; opacity:0;
+  animation: floatParticle 20s infinite;
+}
+@keyframes floatParticle {
+  0% { opacity:0; transform: translateY(0) scale(0); }
+  10% { opacity:.5; }
+  90% { opacity:.3; }
+  100% { opacity:0; transform: translateY(-100vh) scale(1); }
+}
+#grid-overlay {
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  background-image:
+    linear-gradient(rgba(241,90,36,.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(241,90,36,.015) 1px, transparent 1px);
+  background-size:80px 80px;
+}
+
+.kuka-header {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  background:rgba(10,10,12,.9); backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(241,90,36,.2); padding:12px 0;
+}
+.kuka-header .container {
+  display:flex; align-items:center; justify-content:space-between;
+}
+.kuka-logo {
+  display:flex; align-items:center; gap:12px;
+  font-family:var(--font-en); font-size:18px; font-weight:800;
+  color:var(--kuka-orange); letter-spacing:2px;
+}
+.kuka-logo svg { width:32px; height:32px; }
+.kuka-tagline {
+  font-size:12px; color:var(--text-muted); font-weight:300; letter-spacing:1px;
+}
+
+.hero {
+  min-height:100vh; display:flex; align-items:center; justify-content:center;
+  text-align:center; position:relative; padding:120px 0 80px; overflow:hidden;
+}
+.hero-badge {
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(241,90,36,.15); border:1px solid rgba(241,90,36,.3);
+  border-radius:100px; padding:8px 20px 8px 22px;
+  font-size:13px; color:var(--kuka-orange); letter-spacing:1px; margin-bottom:32px;
+  animation: fadeSlideUp .8s .2s both;
+}
+.hero-badge::before {
+  content:''; display:inline-block; width:8px; height:8px; border-radius:50%;
+  background:var(--kuka-orange); animation: pulseDot 2s ease-in-out infinite;
+}
+@keyframes pulseDot {
+  0%,100% { opacity:1; transform:scale(1); box-shadow:0 0 8px var(--kuka-orange-glow); }
+  50% { opacity:.5; transform:scale(.8); }
+}
+.hero-title {
+  font-size:clamp(2.4rem,6vw,4.4rem); font-weight:900; line-height:1.15;
+  letter-spacing:-.02em; margin-bottom:20px;
+  animation: fadeSlideUp .8s .35s both;
+}
+.hero-title .highlight {
+  background: linear-gradient(135deg, var(--kuka-orange) 0%, var(--accent-amber) 80%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+.hero-sub {
+  font-size:clamp(1rem,2vw,1.2rem); color:var(--text-dim); max-width:680px;
+  margin:0 auto 40px; font-weight:300; animation: fadeSlideUp .8s .5s both;
+}
+.hero-meta {
+  display:flex; flex-wrap:wrap; gap:12px; justify-content:center;
+  animation: fadeSlideUp .8s .65s both;
+}
+.hero-meta span {
+  display:inline-flex; align-items:center; gap:6px;
+  background:var(--card); border:1px solid var(--border);
+  border-radius:var(--radius-sm); padding:8px 16px; font-size:14px; color:var(--text-dim);
+  transition:all .3s;
+}
+.hero-meta span:hover {
+  border-color:var(--kuka-orange); background:rgba(241,90,36,.08);
+}
+
+.section { padding:80px 0; position:relative; }
+.container { position:relative; z-index:1; max-width:var(--maxw); margin:0 auto; padding:0 24px; }
+.section-label {
+  font-family:var(--font-en); font-size:12px; font-weight:600;
+  letter-spacing:3px; text-transform:uppercase; color:var(--kuka-orange); margin-bottom:12px;
+}
+.section-title {
+  font-size:clamp(1.6rem,3vw,2.4rem); font-weight:700; margin-bottom:16px;
+}
+.section-desc {
+  font-size:1rem; color:var(--text-dim); max-width:640px; margin-bottom:48px; font-weight:300;
+}
+
+/* 代码块样式 */
+.code-block {
+  background:var(--card); border:1px solid var(--border); border-radius:var(--radius);
+  overflow:hidden; margin:16px 0;
+}
+.code-header {
+  display:flex; align-items:center; gap:8px; padding:10px 16px;
+  background:rgba(241,90,36,.08); border-bottom:1px solid var(--border);
+  font-size:13px; color:var(--kuka-orange); font-weight:600;
+}
+.code-header .dot { width:10px; height:10px; border-radius:50%; background:var(--kuka-orange); opacity:.5; }
+.code-body {
+  padding:16px 20px; font-family:var(--font-mono); font-size:13px; line-height:1.7;
+  color:var(--text-dim); overflow-x:auto; white-space:pre;
+}
+.code-body .comment { color:var(--text-muted); }
+.code-body .key { color:var(--accent-amber); }
+.code-body .val { color:var(--accent-green); }
+.code-body .tag { color:var(--kuka-orange); }
+.code-body .role { color:var(--accent-blue); font-weight:600; }
+
+/* 指标卡片 */
+.metrics { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:16px; }
+.metric-card {
+  background:var(--card); border:1px solid var(--border); border-radius:var(--radius);
+  padding:32px 24px; text-align:center; position:relative; overflow:hidden; transition:all .3s;
+}
+.metric-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg, transparent, var(--kuka-orange), transparent); opacity:0; transition:opacity .3s;
+}
+.metric-card:hover::before { opacity:1; }
+.metric-card:hover { border-color:rgba(241,90,36,.4); transform:translateY(-4px); box-shadow:0 12px 40px rgba(241,90,36,.1); }
+.mc-value {
+  font-family:var(--font-en); font-size:2.4rem; font-weight:800;
+  background:linear-gradient(135deg,var(--kuka-orange),var(--accent-amber));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+.mc-label { font-size:14px; color:var(--text-dim); margin-top:8px; font-weight:300; }
+
+/* 架构卡片 */
+.arch-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+@media (max-width:768px) { .arch-grid { grid-template-columns:1fr; } }
+.arch-card {
+  background:var(--card); border:1px solid var(--border); border-radius:var(--radius);
+  padding:28px 24px; transition:all .3s ease; position:relative; overflow:hidden;
+}
+.arch-card::after {
+  content:''; position:absolute; bottom:0; left:0; width:100%; height:2px;
+  background:linear-gradient(90deg, var(--kuka-orange), var(--accent-amber));
+  transform:scaleX(0); transform-origin:left; transition:transform .3s;
+}
+.arch-card:hover::after { transform:scaleX(1); }
+.arch-card:hover { background:var(--card-hover); border-color:rgba(241,90,36,.3); transform:translateY(-4px); box-shadow:0 12px 40px rgba(241,90,36,.08); }
+.ac-icon { font-size:28px; margin-bottom:14px; }
+.ac-title { font-size:1rem; font-weight:600; margin-bottom:8px; }
+.ac-items { list-style:none; }
+.ac-items li {
+  font-size:.85rem; color:var(--text-dim); padding:4px 0; font-weight:300;
+  position:relative; padding-left:14px;
+}
+.ac-items li::before {
+  content:''; position:absolute; left:0; top:10px; width:6px; height:6px; border-radius:50%; background:var(--kuka-orange); opacity:.5;
+}
+
+/* 数据流 */
+.dataflow {
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:center;
+  gap:12px; padding:40px 0;
+}
+.df-node {
+  background:var(--card); border:1px solid var(--border); border-radius:var(--radius);
+  padding:16px 24px; text-align:center; min-width:100px; transition:all .3s; position:relative;
+}
+.df-node:hover { border-color:var(--kuka-orange); box-shadow:0 0 30px var(--kuka-orange-glow); }
+.df-node .label { font-size:13px; color:var(--text-dim); font-weight:300; }
+.df-node .name { font-size:15px; font-weight:600; margin-top:4px; }
+.df-arrow { font-size:20px; color:var(--text-muted); }
+
+/* 平台标签 */
+.platform-wrap { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+.platform-tag {
+  display:inline-flex; align-items:center; gap:6px;
+  background:var(--card); border:1px solid var(--border); border-radius:100px;
+  padding:8px 18px; font-size:14px; transition:all .3s;
+}
+.platform-tag:hover { border-color:var(--kuka-orange); background:rgba(241,90,36,.08); transform:scale(1.04); }
+.platform-tag.rss { border-color:rgba(74,140,247,.3); }
+.platform-tag.rss:hover { border-color:var(--accent-blue); background:rgba(74,140,247,.08); }
+
+/* 通知渠道 */
+.channels { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+.chn {
+  background:var(--card); border:1px solid var(--border); border-radius:var(--radius-sm);
+  padding:12px 20px; font-size:14px; transition:all .3s;
+}
+.chn:hover { border-color:var(--kuka-orange); }
+.chn.active { border-color:var(--accent-green); background:rgba(52,211,153,.08); }
+.chn.active::before { content:'✓ '; color:var(--accent-green); }
+
+/* 演示横幅 */
+.demo-banner {
+  background:linear-gradient(135deg, rgba(241,90,36,.12) 0%, rgba(74,140,247,.08) 100%);
+  border:1px solid rgba(241,90,36,.25); border-radius:var(--radius);
+  padding:36px 32px; display:flex; flex-wrap:wrap; gap:32px; align-items:center; justify-content:space-between;
+}
+.demo-banner h3 { font-size:1.1rem; font-weight:600; margin-bottom:6px; }
+.demo-banner p { font-size:.9rem; color:var(--text-dim); font-weight:300; }
+.demo-btn {
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--kuka-orange); color:#fff; border:none; border-radius:var(--radius-sm);
+  padding:12px 28px; font-family:var(--font-cn); font-size:15px; font-weight:600;
+  cursor:pointer; transition:all .3s; text-decoration:none; white-space:nowrap;
+}
+.demo-btn:hover { background:var(--kuka-orange-dark); transform:translateY(-2px); box-shadow:0 8px 24px var(--kuka-orange-glow); }
+
+/* 角色标签 */
+.role-tag {
+  display:inline-flex; align-items:center; gap:4px;
+  font-size:11px; font-weight:600; padding:2px 8px; border-radius:4px;
+  margin-right:4px;
+}
+.role-tag.ceo { background:rgba(241,90,36,.15); color:var(--kuka-orange); }
+.role-tag.cto { background:rgba(74,140,247,.15); color:var(--accent-blue); }
+.role-tag.cdo { background:rgba(251,191,36,.15); color:var(--accent-amber); }
+.role-tag.qm { background:rgba(52,211,153,.15); color:var(--accent-green); }
+
+/* Footer */
+.footer {
+  border-top:1px solid var(--border); padding:40px 0;
+  text-align:center; color:var(--text-muted); font-size:14px; font-weight:300;
+}
+
+@keyframes fadeSlideUp {
+  from { opacity:0; transform:translateY(24px); }
+  to { opacity:1; transform:translateY(0); }
+}
+.reveal { opacity:0; transform:translateY(24px); transition:all .6s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+::-webkit-scrollbar { width:6px; }
+::-webkit-scrollbar-track { background:var(--industrial-bg); }
+::-webkit-scrollbar-thumb { background:var(--border); border-radius:3px; }
+::-webkit-scrollbar-thumb:hover { background:var(--text-muted); }
+</style>
+</head>
+<body>
+
+<div id="particles">
+  <div class="particle" style="left:10%; animation-delay:0s; animation-duration:25s;"></div>
+  <div class="particle" style="left:25%; animation-delay:3s; animation-duration:18s;"></div>
+  <div class="particle" style="left:45%; animation-delay:6s; animation-duration:22s;"></div>
+  <div class="particle" style="left:65%; animation-delay:2s; animation-duration:20s;"></div>
+  <div class="particle" style="left:80%; animation-delay:8s; animation-duration:28s;"></div>
+</div>
+<div id="grid-overlay"></div>
+
+<header class="kuka-header">
+  <div class="container">
+    <div class="kuka-logo">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="20" width="8" height="10" rx="2" fill="#F15A24" opacity="0.9"/>
+        <rect x="12" y="14" width="6" height="16" rx="2" fill="#F15A24" opacity="0.7"/>
+        <rect x="20" y="8" width="5" height="22" rx="2" fill="#F15A24" opacity="0.5"/>
+        <circle cx="26" cy="6" r="3" fill="#F15A24" opacity="0.9"/>
+      </svg>
+      KUKA
+    </div>
+    <div class="kuka-tagline">质量数字化 · AI 舆情监控</div>
+  </div>
+</header>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">🔴 系统运行中 · 7×24 监控</div>
+    <h1 class="hero-title">
+      TrendRadar<br><span class="highlight">AI 舆情情报雷达</span>
+    </h1>
+    <p class="hero-sub">
+      基于 AI 大模型的多源热点聚合与情报分析平台。<br>
+      为 KUKA 质量部门提供 7×24 小时行业情报监控，从信息被动接收到主动预警。
+    </p>
+    <div class="hero-meta">
+      <span>🔧 23 热榜平台</span>
+      <span>📰 9 RSS 订阅源</span>
+      <span>🎯 35 关键词组</span>
+      <span>🤖 DeepSeek AI 分析</span>
+      <span>📲 企业微信推送</span>
+      <span>⏱️ 30 分钟巡检</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 核心指标 ═══════════ -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="section-label" style="text-align:center;">Metrics</div>
+    <h2 class="section-title" style="text-align:center;">运行指标</h2>
+    <div class="metrics reveal" style="margin-top:40px;">
+      <div class="metric-card">
+        <div class="mc-value">23</div>
+        <div class="mc-label">热榜平台覆盖</div>
+      </div>
+      <div class="metric-card">
+        <div class="mc-value">9</div>
+        <div class="mc-label">RSS 订阅源</div>
+      </div>
+      <div class="metric-card">
+        <div class="mc-value">35</div>
+        <div class="mc-label">关键词词组</div>
+      </div>
+      <div class="metric-card">
+        <div class="mc-value">4</div>
+        <div class="mc-label">角色维度</div>
+      </div>
+      <div class="metric-card">
+        <div class="mc-value">30'</div>
+        <div class="mc-label">巡检频次</div>
+      </div>
+      <div class="metric-card">
+        <div class="mc-value">24h</div>
+        <div class="mc-label">全天运行</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 系统配置 ═══════════ -->
+<section class="section" id="config">
+  <div class="container">
+    <div class="section-label">System Config</div>
+    <h2 class="section-title">系统配置</h2>
+    <p class="section-desc">
+      以下为 TrendRadar 实际运行配置，包括数据源、调度策略、推送渠道等核心参数。
+    </p>
+
+    <h3 style="font-size:14px; color:var(--kuka-orange); margin:24px 0 12px; font-weight:600;">📋 config.yaml — 主配置</h3>
+    <div class="code-block reveal">
+      <div class="code-header"><span class="dot"></span>config/config.yaml</div>
+      <div class="code-body"><span class="comment"># 基础设置</span>
+<span class="key">app</span>:
+  <span class="key">timezone</span>: <span class="val">"Asia/Shanghai"</span>
+
+<span class="comment"># 调度系统 — 全天推送 + 晚间汇总</span>
+<span class="key">schedule</span>:
+  <span class="key">enabled</span>: <span class="val">true</span>
+  <span class="key">preset</span>: <span class="val">"morning_evening"</span>
+
+<span class="comment"># 热榜平台 — 23 个数据源</span>
+<span class="key">platforms</span>:
+  <span class="key">enabled</span>: <span class="val">true</span>
+  <span class="key">sources</span>:
+    - <span class="key">id</span>: <span class="val">"toutiao"</span>      <span class="key">name</span>: <span class="val">"今日头条"</span>
+    - <span class="key">id</span>: <span class="val">"baidu"</span>       <span class="key">name</span>: <span class="val">"百度热搜"</span>
+    - <span class="key">id</span>: <span class="val">"weibo"</span>       <span class="key">name</span>: <span class="val">"微博"</span>
+    - <span class="key">id</span>: <span class="val">"zhihu"</span>       <span class="key">name</span>: <span class="val">"知乎"</span>
+    - <span class="key">id</span>: <span class="val">"douyin"</span>      <span class="key">name</span>: <span class="val">"抖音"</span>
+    - <span class="key">id</span>: <span class="val">"bilibili"</span>    <span class="key">name</span>: <span class="val">"B站"</span>
+    - <span class="key">id</span>: <span class="val">"xueqiu"</span>      <span class="key">name</span>: <span class="val">"雪球"</span>
+    - <span class="key">id</span>: <span class="val">"ithome"</span>      <span class="key">name</span>: <span class="val">"IT之家"</span>
+    - <span class="key">id</span>: <span class="val">"hackernews"</span>  <span class="key">name</span>: <span class="val">"Hacker News"</span>
+    - <span class="key">id</span>: <span class="val">"sspai"</span>       <span class="key">name</span>: <span class="val">"少数派"</span>
+    <span class="comment"># ... 共 23 个平台</span>
+
+<span class="comment"># RSS 订阅 — 9 个源</span>
+<span class="key">rss</span>:
+  <span class="key">enabled</span>: <span class="val">true</span>
+  <span class="key">feeds</span>:
+    - <span class="key">id</span>: <span class="val">"36kr"</span>         <span class="key">url</span>: <span class="val">"https://36kr.com/feed"</span>
+    - <span class="key">id</span>: <span class="val">"ithome-rss"</span> <span class="key">url</span>: <span class="val">"https://www.ithome.com/rss/"</span>
+    - <span class="key">id</span>: <span class="val">"sspai-rss"</span>  <span class="key">url</span>: <span class="val">"https://sspai.com/feed"</span>
+    - <span class="key">id</span>: <span class="val">"kuka-news"</span>  <span class="key">url</span>: <span class="val">"Google News RSS (KUKA)"</span>
+    - <span class="key">id</span>: <span class="val">"robot-news"</span> <span class="key">url</span>: <span class="val">"Google News RSS (机器人)"</span>
+
+<span class="comment"># 报告模式 — 增量推送</span>
+<span class="key">report</span>:
+  <span class="key">mode</span>: <span class="val">"incremental"</span>
+  <span class="key">display_mode</span>: <span class="val">"keyword"</span>
+
+<span class="comment"># 推送 — 企业微信</span>
+<span class="key">notification</span>:
+  <span class="key">wecom</span>:
+    <span class="key">enabled</span>: <span class="val">true</span>
+    <span class="key">webhook_url</span>: <span class="val">"https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=***"</span></div>
+    </div>
+
+    <h3 style="font-size:14px; color:var(--kuka-orange); margin:24px 0 12px; font-weight:600;">🎯 frequency_words.txt — 关键词分组</h3>
+    <div class="code-block reveal">
+      <div class="code-header"><span class="dot"></span>config/frequency_words.txt</div>
+      <div class="code-body"><span class="comment"># 全局过滤</span>
+[<span class="tag">GLOBAL_FILTER</span>]
+震惊
+惊爆
+刚发生
+
+<span class="comment"># CEO 层：品牌声誉</span>
+[<span class="role">CEO</span>:品牌声誉_美的集团]
+美的集团
+Midea
+@30
+
+[<span class="role">CEO</span>:品牌声誉_库卡KUKA]
+库卡|KUKA|kuka
+德国技术|德国制造
+@30
+
+[<span class="role">CEO</span>:ESG与合规]
+ESG|碳中和|碳达峰
+GDPR|数据合规
+@20
+
+<span class="comment"># CTO 层：技术路线</span>
+[<span class="role">CTO</span>:技术_协作机器人]
+协作机器人|Cobot
+/柔性制造|人机协作/
+@25
+
+[<span class="role">CTO</span>:技术_具身智能]
+具身智能|Embodied AI
+大模型+机器人|机器人+AI
+/LLM|大语言模型/
+@30
+
+[<span class="role">CTO</span>:技术_人形机器人]
+人形机器人|双足机器人
+/Figure AI|Tesla Bot|Optimus/
+/宇树|智元|众擎/
+@20
+
+[<span class="role">CTO</span>:竞争_国际竞品]
+ABB|发那科|Fanuc
+安川|Yaskawa
+@30
+
+<span class="comment"># CDO 层：数字化</span>
+[<span class="role">CDO</span>:数字化_数字工厂]
+数字工厂|智能工厂
+灯塔工厂|黑灯工厂
+/数字孪生|Digital Twin/
+@25
+
+[<span class="role">CDO</span>:AI_质量检测]
+AI质检|AI质量检测
+缺陷检测|瑕疵检测|AOI
+@20
+
+<span class="comment"># QM 层：质量监控</span>
+[<span class="role">QM</span>:口碑_产品质量]
+质量缺陷|批次不合格
+次品率|不良率
+召回|质量事故
+@30
+
+[<span class="role">QM</span>:供应链_核心零件]
+RV减速器|谐波减速器
+伺服电机|驱动
+控制器芯片|FPGA
+@25
+
+[<span class="role">QM</span>:供应链_断供风险]
+供应链中断|供应风险
+断供|缺料|短缺
+@20
+
+<span class="comment"># 通用层</span>
+[<span class="tag">通用</span>:人形机器人]
+人形机器人|具身智能|机械臂
+工业机器人|协作机器人
+@30
+
+[<span class="tag">通用</span>:美的]
+美的
+@20
+
+[<span class="tag">通用</span>:库卡]
+库卡
+@20</div>
+    </div>
+
+    <h3 style="font-size:14px; color:var(--kuka-orange); margin:24px 0 12px; font-weight:600;">🧠 AI 分析兴趣配置</h3>
+    <div class="code-block reveal">
+      <div class="code-header"><span class="dot"></span>config/ai_interests.txt</div>
+      <div class="code-body"><span class="comment"># AI 分析关注的 10 个方向</span>
+
+1. 库卡与美的集团：战略调整、产品发布、订单动态、收购整合
+2. 数字化质量管理：QMS 趋势、SPC/FMEA 在线化、AI 质检落地
+3. 工业机器人与协作机器人：新品发布、精度提升、安全协作
+4. 人形机器人与具身智能：量产进展、技术突破、工业场景落地
+5. AI 在制造业：工业视觉质检、预测性维护、大模型在质量文档中应用
+6. 智能工厂：数字孪生、MES/MOM 升级、灯塔工厂案例
+7. 供应链安全：减速器/伺服电机国产替代、原材料价格波动
+8. 质量体系：ISO 9001、IATF 16949、CE/UL 认证更新
+9. 工业 4.0 政策：智能制造政策、工业互联网标准
+10. 竞争情报：发那科/ABB/安川/埃斯顿/汇川动态</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 架构 ═══════════ -->
+<section class="section" id="architecture">
+  <div class="container">
+    <div class="section-label">Architecture</div>
+    <h2 class="section-title">技术架构</h2>
+    <p class="section-desc">
+      TrendRadar 基于 Python 构建，从多层数据源采集 → 关键词引擎过滤 → AI 深度分析 → 多渠道推送，形成完整的情报处理流水线。
+    </p>
+    <div class="arch-grid">
+      <div class="arch-card reveal">
+        <div class="ac-icon">📡</div>
+        <div class="ac-title">数据采集层</div>
+        <ul class="ac-items">
+          <li>NewsNow API — 23 个热榜平台</li>
+          <li>RSS 2.0 / Atom — 9 个订阅源</li>
+          <li>自动重试 + 请求间隔控制</li>
+          <li>域名安全校验</li>
+        </ul>
+      </div>
+      <div class="arch-card reveal">
+        <div class="ac-icon">🎯</div>
+        <div class="ac-title">匹配过滤层</div>
+        <ul class="ac-items">
+          <li>全局过滤器排除标题党</li>
+          <li>正则 / +必须词 / !排除词</li>
+          <li>词组别名 & 条数限制</li>
+          <li>增量模式过滤已读</li>
+        </ul>
+      </div>
+      <div class="arch-card reveal">
+        <div class="ac-icon">🧠</div>
+        <div class="ac-title">AI 分析层</div>
+        <ul class="ac-items">
+          <li>DeepSeek / OpenAI 兼容 API</li>
+          <li>4 角色维度结构化分析</li>
+          <li>跨平台关联分析</li>
+          <li>弱信号 & 轨迹突变捕捉</li>
+        </ul>
+      </div>
+      <div class="arch-card reveal">
+        <div class="ac-icon">📊</div>
+        <div class="ac-title">报告生成层</div>
+        <ul class="ac-items">
+          <li>HTML 可视化报告</li>
+          <li>SQLite 持久化存储</li>
+          <li>每日汇总 / 增量报告</li>
+          <li>角色化仪表盘</li>
+        </ul>
+      </div>
+      <div class="arch-card reveal">
+        <div class="ac-icon">📲</div>
+        <div class="ac-title">通知推送层</div>
+        <ul class="ac-items">
+          <li>企业微信（当前启用）</li>
+          <li>飞书 / 钉钉 / Telegram</li>
+          <li>邮件 / Slack / ntfy</li>
+          <li>通用 Webhook 集成</li>
+        </ul>
+      </div>
+      <div class="arch-card reveal">
+        <div class="ac-icon">🔌</div>
+        <div class="ac-title">集成扩展层</div>
+        <ul class="ac-items">
+          <li>MCP Server (FastAPI)</li>
+          <li>Docker Compose 部署</li>
+          <li>launchd / cron 定时调度</li>
+          <li>Timeline 多时段策略</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 数据流 ═══════════ -->
+<section class="section" id="dataflow">
+  <div class="container">
+    <div class="section-label">Data Flow</div>
+    <h2 class="section-title">全链路数据流</h2>
+    <p class="section-desc">
+      从原始数据爬取到 AI 情报推送，一条完整的端到端处理流水线。
+    </p>
+    <div class="dataflow reveal">
+      <div class="df-node"><div class="label">Source</div><div class="name">23 热榜平台</div></div>
+      <span class="df-arrow">→</span>
+      <div class="df-node"><div class="label">Source</div><div class="name">9 RSS 源</div></div>
+      <span class="df-arrow">↓</span>
+      <div class="df-node"><div class="label">Store</div><div class="name">SQLite</div></div>
+      <span class="df-arrow">→</span>
+      <div class="df-node"><div class="label">Filter</div><div class="name">35 关键词组</div></div>
+      <span class="df-arrow">→</span>
+      <div class="df-node" style="border-color:rgba(241,90,36,.5);"><div class="label">AI</div><div class="name" style="color:var(--kuka-orange);">DeepSeek 分析</div></div>
+      <span class="df-arrow">→</span>
+      <div class="df-node"><div class="label">Output</div><div class="name">HTML 报告</div></div>
+      <span class="df-arrow">→</span>
+      <div class="df-node"><div class="label">Push</div><div class="name">企业微信</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 平台覆盖 ═══════════ -->
+<section class="section" id="coverage">
+  <div class="container">
+    <div class="section-label">Coverage</div>
+    <h2 class="section-title">数据源覆盖</h2>
+    <p class="section-desc">
+      横跨大众舆论场与垂直深度内容，确保情报采集无死角。
+    </p>
+    <div style="margin-bottom:32px;">
+      <h3 style="font-size:14px; font-weight:600; color:var(--kuka-orange); margin-bottom:12px;">🔥 热榜平台（23 个）</h3>
+      <div class="platform-wrap">
+        <span class="platform-tag">📱 今日头条</span>
+        <span class="platform-tag">🔍 百度热搜</span>
+        <span class="platform-tag">📈 华尔街见闻</span>
+        <span class="platform-tag">📰 澎湃新闻</span>
+        <span class="platform-tag">🎬 B站</span>
+        <span class="platform-tag">💹 财联社</span>
+        <span class="platform-tag">🌐 凤凰网</span>
+        <span class="platform-tag">💬 百度贴吧</span>
+        <span class="platform-tag">🐦 微博</span>
+        <span class="platform-tag">🎵 抖音</span>
+        <span class="platform-tag">❓ 知乎</span>
+        <span class="platform-tag">📊 雪球</span>
+        <span class="platform-tag">💰 格隆汇</span>
+        <span class="platform-tag">📉 金十数据</span>
+        <span class="platform-tag">💻 IT之家</span>
+        <span class="platform-tag">📚 掘金</span>
+        <span class="platform-tag">🌐 Hacker News</span>
+        <span class="platform-tag">📝 少数派</span>
+        <span class="platform-tag">🔬 Solidot</span>
+        <span class="platform-tag">💬 V2EX</span>
+        <span class="platform-tag">🏀 虎扑</span>
+        <span class="platform-tag">📰 参考消息</span>
+        <span class="platform-tag">🌏 联合早报</span>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-size:14px; font-weight:600; color:var(--accent-blue); margin-bottom:12px;">📰 RSS 订阅源（9 个）</h3>
+      <div class="platform-wrap">
+        <span class="platform-tag rss">36氪</span>
+        <span class="platform-tag rss">IT之家</span>
+        <span class="platform-tag rss">少数派</span>
+        <span class="platform-tag rss">Hacker News</span>
+        <span class="platform-tag rss">阮一峰周刊</span>
+        <span class="platform-tag rss">KUKA Google News</span>
+        <span class="platform-tag rss">机器人行业 Google News</span>
+        <span class="platform-tag rss">质量&认证新闻</span>
+        <span class="platform-tag rss">雅虎财经</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 关键词体系 ═══════════ -->
+<section class="section" id="keywords">
+  <div class="container">
+    <div class="section-label">Keywords</div>
+    <h2 class="section-title">角色化关键词体系</h2>
+    <p class="section-desc">
+      针对 KUKA 质量部门业务场景，按 CEO/CTO/CDO/QM 四个角色维度设计的多层次监控关键词。
+    </p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px;">
+      <div class="arch-card reveal" style="border-color:rgba(241,90,36,.25);">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+          <span class="role-tag ceo">CEO</span>
+          <span style="font-size:13px; color:var(--kuka-orange); font-weight:600;">战略决策层</span>
+        </div>
+        <ul class="ac-items">
+          <li>品牌声誉（美的/库卡）</li>
+          <li>ESG 与合规</li>
+          <li>地缘政治</li>
+          <li>资本市场动态</li>
+        </ul>
+      </div>
+      <div class="arch-card reveal" style="border-color:rgba(74,140,247,.25);">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+          <span class="role-tag cto">CTO</span>
+          <span style="font-size:13px; color:var(--accent-blue); font-weight:600;">技术前沿层</span>
+        </div>
+        <ul class="ac-items">
+          <li>协作机器人 / Cobot</li>
+          <li>具身智能 / Embodied AI</li>
+          <li>人形机器人</li>
+          <li>国际/国内竞品动态</li>
+        </ul>
+      </div>
+      <div class="arch-card reveal" style="border-color:rgba(251,191,36,.25);">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+          <span class="role-tag cdo">CDO</span>
+          <span style="font-size:13px; color:var(--accent-amber); font-weight:600;">数字化转型层</span>
+        </div>
+        <ul class="ac-items">
+          <li>数字工厂 / 智能工厂</li>
+          <li>AI 质量检测</li>
+          <li>工业 AI 应用</li>
+          <li>数据合规</li>
+        </ul>
+      </div>
+      <div class="arch-card reveal" style="border-color:rgba(52,211,153,.25);">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+          <span class="role-tag qm">QM</span>
+          <span style="font-size:13px; color:var(--accent-green); font-weight:600;">质量监控层</span>
+        </div>
+        <ul class="ac-items">
+          <li>产品质量 / 缺陷 / 召回</li>
+          <li>客户反馈 / 满意度</li>
+          <li>供应链核心零件</li>
+          <li>断供风险 / 标准认证</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ AI 分析 ═══════════ -->
+<section class="section" id="ai">
+  <div class="container">
+    <div class="section-label">AI Analysis</div>
+    <h2 class="section-title">AI 情报分析引擎</h2>
+    <p class="section-desc">
+      不是简单的关键词筛选，而是将碎片化信息升维为结构化决策情报。按 CEO/CTO/CDO/QM 四个角色维度分别生成分析结论。
+    </p>
+    <div class="arch-grid">
+      <div class="arch-card reveal">
+        <div class="ac-icon">📊</div>
+        <div class="ac-title">核心热点态势</div>
+        <div style="font-size:14px; color:var(--text-dim); font-weight:300; line-height:1.7; margin-top:8px;">
+          识别全网霸屏 / 破圈扩散 / 圈层自嗨，挖掘不同热点背后的底层叙事逻辑
+        </div>
+      </div>
+      <div class="arch-card reveal">
+        <div class="ac-icon">🌡️</div>
+        <div class="ac-title">舆论风向争议</div>
+        <div style="font-size:14px; color:var(--text-dim); font-weight:300; line-height:1.7; margin-top:8px;">
+          识别舆论断层与核心矛盾，区分利益之争 vs 认知之争
+        </div>
+      </div>
+      <div class="arch-card reveal">
+        <div class="ac-icon">📡</div>
+        <div class="ac-title">异动与弱信号</div>
+        <div style="font-size:14px; color:var(--text-dim); font-weight:300; line-height:1.7; margin-top:8px;">
+          跨平台共振 / 轨迹突变 / 平台温差 — 捕捉被大众忽略的前沿信号
+        </div>
+      </div>
+      <div class="arch-card reveal">
+        <div class="ac-icon">🔬</div>
+        <div class="ac-title">RSS 深度洞察</div>
+        <div style="font-size:14px; color:var(--text-dim); font-weight:300; line-height:1.7; margin-top:8px;">
+          专业视角纠偏大众认知盲区，提取热榜未覆盖的技术参数与行业深度
+        </div>
+      </div>
+      <div class="arch-card reveal" style="grid-column:span 1;">
+        <div class="ac-icon">🎯</div>
+        <div class="ac-title">角色化研判建议</div>
+        <div style="font-size:14px; color:var(--text-dim); font-weight:300; line-height:1.7; margin-top:8px;">
+          按 CEO/CTO/CDO/QM 四个角色分别给出行动建议，拒绝「持续关注」式废话
+        </div>
+      </div>
+    </div>
+
+    <!-- 实时报告入口 -->
+    <div class="demo-banner reveal" style="margin-top:48px;">
+      <div>
+        <h3>📊 实时舆情报告</h3>
+        <p>查看 TrendRadar 最新生成的 HTML 舆情分析报告，包含热榜匹配、RSS 分析、AI 深度洞察</p>
+      </div>
+      <a href="output/html/latest/daily.html" class="demo-btn" target="_blank">
+        ▶ 打开最新报告
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 通知渠道 ═══════════ -->
+<section class="section" id="notifications">
+  <div class="container">
+    <div class="section-label">Notifications</div>
+    <h2 class="section-title">推送渠道</h2>
+    <p class="section-desc">
+      支持 8+ 推送渠道，当前已启用企业微信，AI 分析报告直达手机。
+    </p>
+    <div class="channels">
+      <span class="chn active">企业微信</span>
+      <span class="chn">飞书</span>
+      <span class="chn">钉钉</span>
+      <span class="chn">Telegram</span>
+      <span class="chn">邮件</span>
+      <span class="chn">Slack</span>
+      <span class="chn">ntfy</span>
+      <span class="chn">Bark (iOS)</span>
+      <span class="chn">通用 Webhook</span>
+    </div>
+    <div style="margin-top:32px; display:flex; gap:16px; flex-wrap:wrap; justify-content:center;">
+      <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:16px 24px; text-align:center;">
+        <div style="font-size:13px; color:var(--text-muted); margin-bottom:4px;">推送模式</div>
+        <div style="font-size:15px; font-weight:600; color:var(--accent-green);">增量推送 (incremental)</div>
+      </div>
+      <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:16px 24px; text-align:center;">
+        <div style="font-size:13px; color:var(--text-muted); margin-bottom:4px;">调度策略</div>
+        <div style="font-size:15px; font-weight:600; color:var(--kuka-orange);">全天推送 + 晚间汇总</div>
+      </div>
+      <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:16px 24px; text-align:center;">
+        <div style="font-size:13px; color:var(--text-muted); margin-bottom:4px;">运行状态</div>
+        <div style="font-size:15px; font-weight:600; color:var(--accent-green);">● 运行中</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 部署信息 ═══════════ -->
+<section class="section" id="deploy">
+  <div class="container">
+    <div class="section-label">Deployment</div>
+    <h2 class="section-title">部署方式</h2>
+    <p class="section-desc">
+      支持多种部署方式，当前采用 macOS launchd 方案实现 7×24 小时定时巡检。
+    </p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px;">
+      <div class="arch-card reveal" style="border-color:var(--accent-green);">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+          <span style="font-size:12px; background:var(--accent-green); color:#000; border-radius:4px; padding:2px 8px; font-weight:600;">当前使用</span>
+        </div>
+        <div style="font-size:15px; font-weight:600; margin-bottom:6px;">🍎 macOS launchd</div>
+        <div style="font-size:13px; color:var(--text-dim); font-weight:300; line-height:1.7;">
+          每 30 分钟自动执行，07:00-22:00 运行，通过 launchd plist 管理进程
+        </div>
+      </div>
+      <div class="arch-card reveal">
+        <div style="font-size:15px; font-weight:600; margin-bottom:6px;">🐳 Docker Compose</div>
+        <div style="font-size:13px; color:var(--text-dim); font-weight:300; line-height:1.7;">
+          支持容器化部署，含自动构建脚本，适合服务器环境
+        </div>
+      </div>
+      <div class="arch-card reveal">
+        <div style="font-size:15px; font-weight:600; margin-bottom:6px;">⏰ Linux cron</div>
+        <div style="font-size:13px; color:var(--text-dim); font-weight:300; line-height:1.7;">
+          传统定时任务方案，适合 Linux 服务器环境
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ Footer ═══════════ -->
+<footer class="footer">
+  <div class="container">
+    <p>TrendRadar · KUKA China 质量数字化 · AI 舆情监控</p>
+    <p style="margin-top:8px; font-size:12px;">🤖 Powered by DeepSeek · 从信息被动接收到主动预警</p>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: .1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+console.log('TrendRadar KUKA 展示页面已加载 · v3.0');
+</script>
+</body>
+</html>
