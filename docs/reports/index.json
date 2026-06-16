@@ -1,7 +1,42 @@
 {
-  "generated_at": "2026-06-16T22:31:27.614563",
-  "total": 8,
+  "generated_at": "2026-06-16T22:34:31.663821",
+  "total": 10,
   "reports": [
+    {
+      "id": "2026-06-16-22-09",
+      "filename": "22-09.html",
+      "date": "2026-06-16",
+      "time": "22:09",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "小米版Claude Code正式发布，这次开源给到夯。",
+        "开源模型能否战胜 OpenAI？",
+        "[分享] Kiwi v1.0.0 发布：基于 Operaton 的开源 BPMN 工作流平台（ Java 25 + Angular 21）"
+      ],
+      "size": 128282,
+      "modified": "2026-06-16T22:34:31.627344",
+      "isNewest": true
+    },
+    {
+      "id": "2026-06-16-21-35",
+      "filename": "21-35.html",
+      "date": "2026-06-16",
+      "time": "21:35",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "小米版Claude Code正式发布，这次开源给到夯。",
+        "开源模型能否战胜 OpenAI？",
+        "[分享] Kiwi v1.0.0 发布：基于 Operaton 的开源 BPMN 工作流平台（ Java 25 + Angular 21）"
+      ],
+      "size": 143071,
+      "modified": "2026-06-16T22:34:31.624981"
+    },
     {
       "id": "2026-06-16-21-03",
       "filename": "21-03.html",
@@ -17,8 +52,7 @@
         "[分享] Kiwi v1.0.0 发布：基于 Operaton 的开源 BPMN 工作流平台（ Java 25 + Angular 21）"
       ],
       "size": 141249,
-      "modified": "2026-06-16T21:10:56.554194",
-      "isNewest": true
+      "modified": "2026-06-16T21:10:56.554194"
     },
     {
       "id": "2026-06-16-20-38",
