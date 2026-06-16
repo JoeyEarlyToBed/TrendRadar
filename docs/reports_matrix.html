@@ -9,13 +9,15 @@
 :root{--bg:#0a0e1a;--card:#111827;--border:#1e293b;--accent:#6366f1;--accent2:#818cf8;--text:#e2e8f0;--dim:#64748b;--new:#ef4444;--glass:rgba(17,24,39,.7)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.6}}
+@keyframes slideIn{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:translateX(0)}}
+@keyframes glow{0%,100%{box-shadow:0 0 20px rgba(99,102,241,.2)}50%{box-shadow:0 0 40px rgba(99,102,241,.4)}}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
 
 /* ── header ── */
 .header{position:sticky;top:0;z-index:100;background:var(--glass);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:16px 24px}
 .header-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
 .logo{display:flex;align-items:center;gap:10px}
-.logo-icon{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#a855f7);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700}
+.logo-icon{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#a855f7);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;animation:glow 3s ease infinite}
 .logo-text{font-size:20px;font-weight:700;letter-spacing:-.5px}
 .logo-sub{font-size:12px;color:var(--dim);margin-left:4px}
 
@@ -36,83 +38,107 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 /* ── stats bar ── */
 .stats-bar{display:flex;gap:16px;margin-bottom:24px;flex-wrap:wrap}
-.stat-card{flex:1;min-width:140px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 20px}
+.stat-card{flex:1;min-width:140px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 20px;transition:all .3s}
+.stat-card:hover{border-color:var(--accent);transform:translateY(-2px)}
 .stat-num{font-size:28px;font-weight:700;background:linear-gradient(135deg,var(--accent),#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .stat-label{font-size:12px;color:var(--dim);margin-top:2px}
 
 /* ── matrix view ── */
-.matrix-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.matrix-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
 .report-card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;cursor:pointer;transition:all .3s;animation:fadeUp .5s ease both}
-.report-card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 12px 40px rgba(99,102,241,.15)}
-.card-head{padding:16px 20px 12px;display:flex;justify-content:space-between;align-items:flex-start}
-.card-date{font-size:15px;font-weight:600}
-.card-time{font-size:13px;color:var(--dim);margin-top:2px}
+.report-card:hover{transform:translateY(-6px) scale(1.02);border-color:var(--accent);box-shadow:0 20px 60px rgba(99,102,241,.2)}
+.card-head{padding:20px 20px 12px;display:flex;justify-content:space-between;align-items:flex-start}
+.card-date{font-size:18px;font-weight:700;background:linear-gradient(135deg,var(--accent),#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.card-time{font-size:13px;color:var(--dim);margin-top:4px}
 .card-badge{padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;animation:pulse 2s infinite}
 .badge-new{background:rgba(239,68,68,.15);color:var(--new);border:1px solid rgba(239,68,68,.3)}
 .badge-date{background:rgba(99,102,241,.1);color:var(--accent2);border:1px solid rgba(99,102,241,.2)}
 .card-body{padding:0 20px 16px}
 .card-preview{list-style:none}
-.card-preview li{font-size:13px;color:var(--dim);padding:4px 0;border-bottom:1px solid var(--border);display:flex;gap:6px;align-items:flex-start}
+.card-preview li{font-size:13px;color:var(--dim);padding:6px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:flex-start;transition:all .2s}
+.card-preview li:hover{color:var(--text)}
 .card-preview li:last-child{border:none}
 .card-preview .rank{color:var(--accent);font-weight:600;font-size:11px;min-width:18px}
 .card-foot{padding:12px 20px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
 .card-tags{display:flex;gap:6px;flex-wrap:wrap}
-.tag{padding:2px 8px;border-radius:4px;font-size:11px;background:rgba(99,102,241,.1);color:var(--accent2)}
-.card-action{font-size:12px;color:var(--accent);font-weight:500}
+.tag{padding:3px 10px;border-radius:20px;font-size:11px;background:rgba(99,102,241,.1);color:var(--accent2);border:1px solid rgba(99,102,241,.2)}
+.card-action{font-size:12px;color:var(--accent);font-weight:500;transition:all .2s}
+.report-card:hover .card-action{transform:translateX(4px)}
 
 /* ── carousel view ── */
-.carousel-wrap{position:relative;margin:0 auto;max-width:1000px}
-.carousel-container{overflow:hidden;border-radius:20px;border:1px solid var(--border)}
-.carousel-track{display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1)}
-.carousel-slide{min-width:100%;display:none}
-.carousel-slide.active{display:block}
-.slide-content{background:var(--card);min-height:500px}
-.slide-header{padding:24px 32px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border)}
-.slide-date{font-size:24px;font-weight:700}
+.carousel-wrap{position:relative;margin:0 auto;max-width:1200px}
+.carousel-container{overflow:hidden;border-radius:20px;border:1px solid var(--border);background:var(--card)}
+.carousel-track{display:flex;transition:transform .6s cubic-bezier(.4,0,.2,1)}
+.carousel-slide{min-width:100%;opacity:0;transition:opacity .4s ease;position:absolute;left:0;top:0}
+.carousel-slide.active{opacity:1;position:relative}
+.slide-content{background:var(--card);min-height:600px;display:flex;flex-direction:column}
+.slide-header{padding:24px 32px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);background:linear-gradient(135deg,rgba(99,102,241,.1),rgba(168,85,247,.1))}
+.slide-date{font-size:28px;font-weight:700;background:linear-gradient(135deg,var(--accent),#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .slide-time{font-size:16px;color:var(--dim)}
-.slide-body{padding:24px 32px}
-.slide-body iframe{width:100%;height:460px;border:none;border-radius:12px;background:#fff}
-.carousel-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:20px}
-.carousel-btn{width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .2s}
-.carousel-btn:hover{border-color:var(--accent);color:var(--accent)}
-.carousel-dots{display:flex;gap:8px}
-.carousel-dot{width:8px;height:8px;border-radius:50%;background:var(--dim);cursor:pointer;transition:all .2s}
-.carousel-dot.active{background:var(--accent);width:24px;border-radius:4px}
+.slide-newest{color:var(--new);font-size:14px;font-weight:600;margin-left:8px}
+.slide-body{flex:1;padding:0;overflow:hidden}
+.slide-body iframe{width:100%;height:520px;border:none;background:#fff}
+.carousel-nav{display:flex;align-items:center;justify-content:center;gap:20px;margin-top:24px}
+.carousel-btn{width:48px;height:48px;border-radius:50%;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .3s}
+.carousel-btn:hover{border-color:var(--accent);color:var(--accent);transform:scale(1.1);box-shadow:0 4px 20px rgba(99,102,241,.3)}
+.carousel-dots{display:flex;gap:10px;align-items:center}
+.carousel-dot{width:10px;height:10px;border-radius:50%;background:var(--dim);cursor:pointer;transition:all .3s}
+.carousel-dot.active{background:var(--accent);width:32px;border-radius:5px}
+.carousel-dot:hover:not(.active){background:var(--accent2)}
+.carousel-counter{font-size:14px;color:var(--dim);font-weight:500}
 
 /* ── timeline view ── */
-.timeline{position:relative;padding-left:40px}
-.timeline::before{content:'';position:absolute;left:15px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent),var(--border))}
-.timeline-group{margin-bottom:32px;position:relative}
-.timeline-group::before{content:'';position:absolute;left:-33px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);z-index:1}
-.timeline-date-label{font-size:16px;font-weight:600;margin-bottom:12px;color:var(--accent2)}
-.timeline-cards{display:flex;gap:12px;overflow-x:auto;padding-bottom:8px}
-.timeline-card{min-width:260px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;cursor:pointer;transition:all .2s}
-.timeline-card:hover{border-color:var(--accent);transform:translateX(4px)}
-.timeline-card .t-time{font-size:13px;color:var(--accent2);font-weight:600;margin-bottom:8px}
-.timeline-card .t-preview{font-size:12px;color:var(--dim);line-height:1.6}
+.timeline{position:relative;padding-left:50px}
+.timeline::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent),var(--border))}
+.timeline-group{margin-bottom:40px;position:relative;animation:fadeUp .5s ease both}
+.timeline-group::before{content:'';position:absolute;left:-38px;top:8px;width:16px;height:16px;border-radius:50%;background:var(--accent);border:4px solid var(--bg);z-index:1;box-shadow:0 0 0 4px rgba(99,102,241,.2)}
+.timeline-group:hover::before{transform:scale(1.2);box-shadow:0 0 0 8px rgba(99,102,241,.3)}
+.timeline-date-label{font-size:18px;font-weight:700;margin-bottom:16px;color:var(--accent2);display:flex;align-items:center;gap:8px}
+.timeline-date-label::after{content:'';flex:1;height:1px;background:linear-gradient(to right,var(--border),transparent)}
+.timeline-cards{display:flex;gap:16px;overflow-x:auto;padding-bottom:12px;scroll-snap-type:x mandatory}
+.timeline-card{min-width:300px;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;cursor:pointer;transition:all .3s;scroll-snap-align:start}
+.timeline-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 12px 40px rgba(99,102,241,.15)}
+.timeline-card .t-time{font-size:14px;color:var(--accent2);font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.timeline-card .t-preview{font-size:13px;color:var(--dim);line-height:1.7}
+.timeline-card .t-preview-item{padding:4px 0;border-bottom:1px solid var(--border)}
+.timeline-card .t-preview-item:last-child{border:none}
 
 /* ── empty state ── */
-.empty{text-align:center;padding:80px 20px;color:var(--dim)}
-.empty-icon{font-size:48px;margin-bottom:16px}
+.empty{text-align:center;padding:100px 20px;color:var(--dim)}
+.empty-icon{font-size:64px;margin-bottom:20px;animation:pulse 3s ease infinite}
+.empty-title{font-size:20px;font-weight:600;margin-bottom:8px;color:var(--text)}
+.empty-desc{font-size:14px}
 
 /* ── modal ── */
-.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;display:none;align-items:center;justify-content:center;backdrop-filter:blur(4px)}
-.modal-overlay.show{display:flex}
-.modal{width:90%;max-width:1100px;height:85vh;background:var(--card);border-radius:20px;overflow:hidden;border:1px solid var(--border);display:flex;flex-direction:column}
-.modal-head{padding:16px 24px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border)}
-.modal-title{font-size:16px;font-weight:600}
-.modal-close{width:32px;height:32px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--dim);cursor:pointer;font-size:16px}
-.modal-close:hover{color:var(--text);border-color:var(--dim)}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:200;display:none;align-items:center;justify-content:center;backdrop-filter:blur(8px);opacity:0;transition:opacity .3s ease}
+.modal-overlay.show{display:flex;opacity:1}
+.modal{width:92%;max-width:1200px;height:90vh;background:var(--card);border-radius:24px;overflow:hidden;border:1px solid var(--border);display:flex;flex-direction:column;transform:scale(.9);transition:transform .3s ease}
+.modal-overlay.show .modal{transform:scale(1)}
+.modal-head{padding:20px 28px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);background:linear-gradient(135deg,rgba(99,102,241,.05),rgba(168,85,247,.05))}
+.modal-title{font-size:18px;font-weight:600;display:flex;align-items:center;gap:10px}
+.modal-title::before{content:'📊';font-size:20px}
+.modal-close{width:36px;height:36px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--dim);cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.modal-close:hover{color:var(--text);border-color:var(--dim);background:rgba(255,255,255,.05)}
 .modal-body{flex:1;overflow:hidden}
 .modal-body iframe{width:100%;height:100%;border:none;background:#fff}
+
+/* ── loading ── */
+.loading{display:flex;align-items:center;justify-content:center;padding:80px 20px;gap:12px;color:var(--dim)}
+.loading-spinner{width:24px;height:24px;border:2px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
 
 /* ── responsive ── */
 @media(max-width:768px){
   .header-inner{flex-direction:column;align-items:flex-start}
   .matrix-grid{grid-template-columns:1fr}
   .stats-bar{flex-direction:column}
-  .carousel-btn{width:36px;height:36px;font-size:14px}
-  .slide-body iframe{height:320px}
+  .carousel-btn{width:40px;height:40px;font-size:14px}
+  .slide-body iframe{height:400px}
+  .slide-date{font-size:20px}
+  .timeline{padding-left:30px}
+  .timeline::before{left:10px}
+  .timeline-group::before{left:-28px;width:12px;height:12px}
+  .timeline-card{min-width:260px}
 }
 </style>
 </head>
@@ -137,7 +163,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 <div class="main">
   <div class="stats-bar" id="statsBar"></div>
-  <div id="viewContainer"></div>
+  <div id="viewContainer">
+    <div class="loading">
+      <div class="loading-spinner"></div>
+      <span>加载报告中...</span>
+    </div>
+  </div>
 </div>
 
 <div class="modal-overlay" id="modal">
@@ -156,6 +187,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 const REPORTS_BASE = 'reports/';
 let allReports = [];
 let currentIndex = 0;
+let autoPlayInterval = null;
 
 async function loadReports() {
   try {
@@ -163,7 +195,7 @@ async function loadReports() {
     const data = await res.json();
     allReports = data.reports || [];
   } catch(e) {
-    // fallback: scan from known files
+    console.warn('无法加载 index.json，使用备用数据');
     allReports = [
       {id:'2026-06-16-22-09',filename:'22-09.html',date:'2026-06-16',time:'22:09',title:'22:09 趋势报告',keywords:['热点','趋势'],preview:[],isNewest:true},
       {id:'2026-06-16-21-35',filename:'21-35.html',date:'2026-06-16',time:'21:35',title:'21:35 趋势报告',keywords:['热点','趋势'],preview:[]},
@@ -232,7 +264,12 @@ function renderView(dateFilter) {
   const reports = getFilteredReports(dateFilter);
   const container = document.getElementById('viewContainer');
   if (!reports.length) {
-    container.innerHTML = '<div class="empty"><div class="empty-icon">📭</div><div>暂无报告数据</div></div>';
+    container.innerHTML = `
+      <div class="empty">
+        <div class="empty-icon">📭</div>
+        <div class="empty-title">暂无报告数据</div>
+        <div class="empty-desc">该日期范围内没有生成报告</div>
+      </div>`;
     return;
   }
   if (currentView === 'matrix') renderMatrix(container, reports);
@@ -245,8 +282,11 @@ function renderMatrix(container, reports) {
   container.innerHTML = '<div class="matrix-grid">' + reports.map((r, i) => `
     <div class="report-card" style="animation-delay:${i * 0.06}s" onclick="openReport('${r.filename}','${r.date} ${r.time}')">
       <div class="card-head">
-        <div><div class="card-date">${r.date.slice(5)}</div><div class="card-time">⏰ ${r.time}</div></div>
-        ${r.isNewest ? '<span class="card-badge badge-new">● 最新</span>' : `<span class="card-badge badge-date">${r.date}</span>`}
+        <div>
+          <div class="card-date">📅 ${r.date}</div>
+          <div class="card-time">⏰ ${r.time}</div>
+        </div>
+        ${r.isNewest ? '<span class="card-badge badge-new">● 最新</span>' : `<span class="card-badge badge-date">${r.date.slice(5)}</span>`}
       </div>
       <div class="card-body">
         <ul class="card-preview">
@@ -264,6 +304,7 @@ function renderMatrix(container, reports) {
 /* ── carousel ── */
 function renderCarousel(container, reports) {
   currentIndex = 0;
+  stopAutoPlay();
   container.innerHTML = `
     <div class="carousel-wrap">
       <div class="carousel-container">
@@ -272,6 +313,7 @@ function renderCarousel(container, reports) {
       <div class="carousel-nav">
         <button class="carousel-btn" onclick="carouselPrev()">◀</button>
         <div class="carousel-dots" id="carouselDots"></div>
+        <div class="carousel-counter" id="carouselCounter">1 / ${reports.length}</div>
         <button class="carousel-btn" onclick="carouselNext()">▶</button>
       </div>
     </div>
@@ -281,30 +323,63 @@ function renderCarousel(container, reports) {
     <div class="carousel-slide ${i === 0 ? 'active' : ''}" data-index="${i}">
       <div class="slide-content">
         <div class="slide-header">
-          <div><div class="slide-date">${r.date}</div><div class="slide-time">${r.time} ${r.isNewest ? '● 最新' : ''}</div></div>
+          <div>
+            <div class="slide-date">📊 ${r.date}</div>
+            <div class="slide-time">${r.time} ${r.isNewest ? '<span class="slide-newest">● 最新</span>' : ''}</div>
+          </div>
         </div>
         <div class="slide-body">
-          <iframe src="${REPORTS_BASE}${r.filename}" loading="lazy"></iframe>
+          <iframe src="${REPORTS_BASE}${r.filename}" loading="lazy" sandbox="allow-same-origin allow-scripts"></iframe>
         </div>
       </div>
     </div>
   `).join('');
   const dots = document.getElementById('carouselDots');
   dots.innerHTML = reports.map((_, i) => `<div class="carousel-dot ${i === 0 ? 'active' : ''}" onclick="carouselGoTo(${i})"></div>`).join('');
+  updateCounter();
+  startAutoPlay();
 }
 
 function carouselGoTo(idx) {
   const slides = document.querySelectorAll('.carousel-slide');
   const dots = document.querySelectorAll('.carousel-dot');
-  if (idx < 0 || idx >= slides.length) return;
+  if (idx < 0) idx = slides.length - 1;
+  if (idx >= slides.length) idx = 0;
   currentIndex = idx;
-  slides.forEach(s => s.classList.remove('active'));
-  dots.forEach(d => d.classList.remove('active'));
-  slides[idx].classList.add('active');
-  dots[idx].classList.add('active');
+  slides.forEach((s, i) => {
+    s.classList.toggle('active', i === idx);
+  });
+  dots.forEach((d, i) => {
+    d.classList.toggle('active', i === idx);
+  });
+  updateCounter();
+  resetAutoPlay();
 }
+
+function updateCounter() {
+  const counter = document.getElementById('carouselCounter');
+  if (counter) {
+    counter.textContent = `${currentIndex + 1} / ${document.querySelectorAll('.carousel-slide').length}`;
+  }
+}
+
 function carouselPrev() { carouselGoTo(currentIndex - 1); }
 function carouselNext() { carouselGoTo(currentIndex + 1); }
+
+function startAutoPlay() {
+  stopAutoPlay();
+  autoPlayInterval = setInterval(() => carouselNext(), 8000);
+}
+function stopAutoPlay() {
+  if (autoPlayInterval) {
+    clearInterval(autoPlayInterval);
+    autoPlayInterval = null;
+  }
+}
+function resetAutoPlay() {
+  stopAutoPlay();
+  startAutoPlay();
+}
 
 /* ── timeline ── */
 function renderTimeline(container, reports) {
@@ -312,12 +387,14 @@ function renderTimeline(container, reports) {
   reports.forEach(r => { (grouped[r.date] = grouped[r.date] || []).push(r); });
   container.innerHTML = '<div class="timeline">' + Object.entries(grouped).map(([date, items]) => `
     <div class="timeline-group">
-      <div class="timeline-date-label">${date}</div>
+      <div class="timeline-date-label">📅 ${date}</div>
       <div class="timeline-cards">
         ${items.map(r => `
           <div class="timeline-card" onclick="openReport('${r.filename}','${r.date} ${r.time}')">
-            <div class="t-time">${r.time} ${r.isNewest ? '● 最新' : ''}</div>
-            <div class="t-preview">${(r.preview||[]).slice(0,3).join('<br>') || '点击查看完整报告'}</div>
+            <div class="t-time">⏰ ${r.time} ${r.isNewest ? '● 最新' : ''}</div>
+            <div class="t-preview">
+              ${(r.preview||[]).slice(0,3).map(p => `<div class="t-preview-item">${p}</div>`).join('') || '<div class="t-preview-item">点击查看完整报告</div>'}
+            </div>
           </div>
         `).join('')}
       </div>
@@ -330,13 +407,22 @@ function openReport(filename, title) {
   document.getElementById('modalTitle').textContent = title || '报告详情';
   document.getElementById('modalIframe').src = REPORTS_BASE + filename;
   document.getElementById('modal').classList.add('show');
+  document.body.style.overflow = 'hidden';
 }
 function closeModal() {
   document.getElementById('modal').classList.remove('show');
   document.getElementById('modalIframe').src = '';
+  document.body.style.overflow = '';
 }
 document.getElementById('modal').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+/* ── keyboard nav for carousel ── */
+document.addEventListener('keydown', e => {
+  if (currentView !== 'carousel') return;
+  if (e.key === 'ArrowLeft') carouselPrev();
+  if (e.key === 'ArrowRight') carouselNext();
+});
 
 loadReports();
 </script>
