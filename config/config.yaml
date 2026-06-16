@@ -397,6 +397,24 @@ notification:
 
 
 # ===============================================================
+# 6.5 GitHub 推送配置
+# ===============================================================
+# 每次生成报告后自动推送到 GitHub 仓库，用于 GitHub Pages 展示历史报告
+# 需要本地克隆仓库并配置路径
+# ===============================================================
+github:
+  enabled: true                     # 是否启用 GitHub 自动推送（true=启用, false=禁用）
+  repo_path: "~/workspace/TrendRadar/TrendRadar-v6.9.1"  # 本地仓库绝对路径（~ 自动展开为 home 目录）
+  target_dir: "docs/reports"        # 报告存放目录（相对于仓库根目录）
+  branch: "main"                    # 目标分支
+  commit_message: "auto: update report {timestamp}"  # 提交消息模板
+  # GitHub Personal Access Token（可选，用于 HTTPS 推送）
+  # 建议通过环境变量 GITHUB_PAT 设置，避免明文存储
+  # 获取方式: https://github.com/settings/tokens
+  pat: ""                           # 留空则使用系统 git credential 或 SSH key
+
+
+# ===============================================================
 # 7. 存储配置
 # ===============================================================
 storage:

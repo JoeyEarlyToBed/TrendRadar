@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TrendRadar - 报告矩阵</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: #0a0a0c; color: #e8e8ec; line-height: 1.6;
+    min-height: 100vh;
+}
+.container { max-width: 1600px; margin: 0 auto; padding: 20px; }
+
+/* 头部 */
+header {
+    text-align: center; padding: 40px 0 30px; border-bottom: 1px solid #2a2a32; margin-bottom: 30px;
+}
+h1 { font-size: 2.5rem; font-weight: 700; color: #F15A24; margin-bottom: 10px; }
+.subtitle { color: #888; font-size: 16px; }
+
+/* 控制栏 */
+.controls {
+    display: flex; justify-content: center; gap: 16px; margin-bottom: 30px; flex-wrap: wrap;
+}
+.view-btn {
+    padding: 10px 24px; border-radius: 8px; border: 1px solid #2a2a32;
+    background: #16161a; color: #e8e8ec; font-size: 14px; cursor: pointer;
+    transition: all 0.3s; display: flex; align-items: center; gap: 8px;
+}
+.view-btn:hover { border-color: #F15A24; }
+.view-btn.active { background: #F15A24; border-color: #F15A24; color: #fff; }
+
+/* 日期筛选 */
+.date-filter {
+    display: flex; justify-content: center; gap: 12px; margin-bottom: 30px; flex-wrap: wrap;
+}
+.date-chip {
+    padding: 8px 16px; border-radius: 20px; border: 1px solid #2a2a32;
+    background: #16161a; color: #aaa; font-size: 13px; cursor: pointer;
+    transition: all 0.3s;
+}
+.date-chip:hover { border-color: #F15A24; color: #e8e8ec; }
+.date-chip.active { background: #F15A24; border-color: #F15A24; color: #fff; }
+
+/* 矩阵视图 */
+.matrix-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* 卡片 */
+.report-card {
+    background: #16161a; border: 1px solid #2a2a32; border-radius: 16px;
+    overflow: hidden; transition: all 0.3s; cursor: pointer;
+    position: relative;
+}
+.report-card:hover {
+    border-color: rgba(241, 90, 36, 0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(241, 90, 36, 0.15);
+}
+.report-card.newest {
+    border-color: #F15A24;
+    box-shadow: 0 0 20px rgba(241, 90, 36, 0.2);
+}
+.report-card.newest::before {
+    content: "最新"; position: absolute; top: 12px; right: 12px;
+    background: #F15A24; color: #fff; padding: 4px 12px;
+    border-radius: 12px; font-size: 12px; font-weight: 600; z-index: 10;
+}
+
+/* 卡片头部 */
+.card-header {
+    background: rgba(241, 90, 36, 0.08); padding: 20px;
+    border-bottom: 1px solid #2a2a32;
+}
+.card-date {
+    font-size: 24px; font-weight: 700; color: #F15A24; margin-bottom: 4px;
+}
+.card-time {
+    font-size: 14px; color: #888;
+}
+.card-meta {
+    display: flex; gap: 12px; margin-top: 12px; flex-wrap: wrap;
+}
+.meta-tag {
+    background: rgba(241, 90, 36, 0.15); color: #F15A24;
+    padding: 4px 10px; border-radius: 6px; font-size: 12px;
+}
+
+/* 卡片预览 */
+.card-preview {
+    padding: 20px; min-height: 120px;
+}
+.preview-item {
+    display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px;
+    font-size: 13px; color: #aaa;
+}
+.preview-rank {
+    width: 20px; height: 20px; border-radius: 50%; background: #2a2a32;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 600; color: #888; flex-shrink: 0;
+}
+.preview-title {
+    overflow: hidden; text-overflow: ellipsis; display: -webkit-box;
+    -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+}
+
+/* 卡片底部 */
+.card-footer {
+    padding: 16px 20px; border-top: 1px solid #2a2a32;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.card-link {
+    color: #F15A24; text-decoration: none; font-size: 14px;
+    display: flex; align-items: center; gap: 6px;
+}
+.card-link:hover { text-decoration: underline; }
+
+/* 轮播视图 */
+.carousel-view {
+    display: none;
+    position: relative;
+    overflow: hidden;
+}
+.carousel-view.active {
+    display: block;
+}
+.carousel-container {
+    display: flex; transition: transform 0.5s ease;
+    gap: 20px;
+}
+.carousel-slide {
+    min-width: calc(33.333% - 14px);
+    flex-shrink: 0;
+}
+@media (max-width: 1200px) {
+    .carousel-slide { min-width: calc(50% - 10px); }
+}
+@media (max-width: 768px) {
+    .carousel-slide { min-width: 100%; }
+}
+
+/* 轮播控制 */
+.carousel-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 48px; height: 48px; border-radius: 50%;
+    background: rgba(241, 90, 36, 0.9); border: none;
+    color: #fff; font-size: 20px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 100; transition: all 0.3s;
+}
+.carousel-btn:hover { background: #F15A24; transform: translateY(-50%) scale(1.1); }
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
+.carousel-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+/* 轮播指示器 */
+.carousel-dots {
+    display: flex; justify-content: center; gap: 8px; margin-top: 24px;
+}
+.dot {
+    width: 10px; height: 10px; border-radius: 50%; background: #2a2a32;
+    cursor: pointer; transition: all 0.3s;
+}
+.dot.active { background: #F15A24; transform: scale(1.2); }
+
+/* 时间线视图 */
+.timeline-view {
+    display: none; position: relative;
+}
+.timeline-view.active {
+    display: block;
+}
+.timeline-line {
+    position: absolute; left: 50%; top: 0; bottom: 0;
+    width: 2px; background: #2a2a32; transform: translateX(-50%);
+}
+.timeline-item {
+    display: flex; margin-bottom: 30px; position: relative;
+}
+.timeline-item:nth-child(odd) { flex-direction: row-reverse; }
+.timeline-item:nth-child(odd) .timeline-content { text-align: right; }
+.timeline-item:nth-child(odd) .timeline-content .preview-item { flex-direction: row-reverse; }
+.timeline-dot {
+    position: absolute; left: 50%; transform: translateX(-50%);
+    width: 16px; height: 16px; border-radius: 50%;
+    background: #F15A24; border: 3px solid #0a0a0c;
+    z-index: 10;
+}
+.timeline-content {
+    width: calc(50% - 30px); padding: 20px;
+    background: #16161a; border: 1px solid #2a2a32;
+    border-radius: 12px;
+}
+.timeline-item:nth-child(odd) .timeline-content { margin-right: auto; }
+.timeline-item:nth-child(even) .timeline-content { margin-left: auto; }
+
+/* 加载状态 */
+.loading {
+    text-align: center; padding: 80px; color: #888;
+}
+.spinner {
+    width: 50px; height: 50px; border: 3px solid #2a2a32;
+    border-top-color: #F15A24; border-radius: 50%;
+    animation: spin 1s linear infinite; margin: 0 auto 20px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* 空状态 */
+.empty-state {
+    text-align: center; padding: 80px; color: #666;
+}
+.empty-icon { font-size: 48px; margin-bottom: 16px; }
+
+/* 页脚 */
+.footer {
+    text-align: center; padding: 40px 0; color: #666; font-size: 13px;
+    border-top: 1px solid #2a2a32; margin-top: 40px;
+}
+.footer a { color: #F15A24; text-decoration: none; }
+
+/* 响应式 */
+@media (max-width: 768px) {
+    .timeline-line { left: 20px; }
+    .timeline-item { flex-direction: row !important; }
+    .timeline-item .timeline-content { 
+        width: calc(100% - 50px); margin-left: 40px !important; 
+        text-align: left !important;
+    }
+    .timeline-item .timeline-content .preview-item { flex-direction: row !important; }
+    .timeline-dot { left: 20px; }
+    h1 { font-size: 1.8rem; }
+    .carousel-slide { min-width: 100%; }
+}
+
+/* 滚动条 */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #0a0a0c; }
+::-webkit-scrollbar-thumb { background: #2a2a32; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #3a3a42; }
+</style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>📊 TrendRadar 报告矩阵</h1>
+        <p class="subtitle">历史报告浏览 · 支持矩阵/轮播/时间线三种视图</p>
+    </header>
+
+    <!-- 视图切换 -->
+    <div class="controls">
+        <button class="view-btn active" data-view="matrix" onclick="switchView('matrix')">
+            ⊞ 矩阵视图
+        </button>
+        <button class="view-btn" data-view="carousel" onclick="switchView('carousel')">
+            ⇄ 轮播视图
+        </button>
+        <button class="view-btn" data-view="timeline" onclick="switchView('timeline')">
+            ◉ 时间线视图
+        </button>
+    </div>
+
+    <!-- 日期筛选 -->
+    <div class="date-filter" id="date-filter">
+        <div class="date-chip active" data-date="all">全部</div>
+    </div>
+
+    <!-- 加载状态 -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <p>正在加载报告列表...</p>
+    </div>
+
+    <!-- 矩阵视图 -->
+    <div class="matrix-view active" id="matrix-view"></div>
+
+    <!-- 轮播视图 -->
+    <div class="carousel-view" id="carousel-view">
+        <button class="carousel-btn prev" onclick="carouselPrev()">‹</button>
+        <div class="carousel-container" id="carousel-container"></div>
+        <button class="carousel-btn next" onclick="carouselNext()">›</button>
+        <div class="carousel-dots" id="carousel-dots"></div>
+    </div>
+
+    <!-- 时间线视图 -->
+    <div class="timeline-view" id="timeline-view">
+        <div class="timeline-line"></div>
+        <div id="timeline-container"></div>
+    </div>
+
+    <!-- 空状态 -->
+    <div class="empty-state" id="empty-state" style="display: none;">
+        <div class="empty-icon">📭</div>
+        <p>暂无报告数据</p>
+    </div>
+
+    <div class="footer">
+        <p>
+            🔗 <a href="https://joeyearlytobed.github.io/TrendRadar/" target="_blank">TrendRadar 项目主页</a> · 
+            <a href="https://github.com/JoeyEarlyToBed/TrendRadar" target="_blank">GitHub</a>
+        </p>
+    </div>
+</div>
+
+<script>
+// 全局状态
+let allReports = [];
+let currentView = 'matrix';
+let currentDateFilter = 'all';
+let carouselIndex = 0;
+
+// 初始化
+async function init() {
+    await loadReports();
+}
+
+// 加载报告列表
+async function loadReports() {
+    const loading = document.getElementById('loading');
+    const emptyState = document.getElementById('empty-state');
+    
+    try {
+        // 从 reports 目录获取报告列表
+        // 实际使用时可以通过 API 或扫描目录获取
+        // 这里使用预定义的报告列表（实际部署时可通过后端 API 动态获取）
+        const response = await fetch('./reports/index.json');
+        if (response.ok) {
+            allReports = await response.json();
+        } else {
+            // 如果 index.json 不存在，使用默认示例数据
+            allReports = generateDemoReports();
+        }
+        
+        loading.style.display = 'none';
+        
+        if (allReports.length === 0) {
+            emptyState.style.display = 'block';
+            return;
+        }
+        
+        // 按日期分组
+        updateDateFilter();
+        
+        // 渲染视图
+        renderAllViews();
+        
+    } catch (error) {
+        console.error('加载失败:', error);
+        loading.style.display = 'none';
+        allReports = generateDemoReports();
+        updateDateFilter();
+        renderAllViews();
+    }
+}
+
+// 生成示例报告数据（实际使用时替换为真实数据）
+function generateDemoReports() {
+    const dates = ['2025-06-15', '2025-06-16'];
+    const times = ['09:00', '12:00', '15:00', '18:00', '21:00'];
+    const reports = [];
+    
+    dates.forEach(date => {
+        times.forEach((time, idx) => {
+            reports.push({
+                id: `${date}-${time.replace(':', '-')}`,
+                filename: `${date.replace(/-/g, '')}-${time.replace(':', '')}.html`,
+                date: date,
+                time: time,
+                title: `${date} ${time} 热点报告`,
+                keywords: ['机器人', 'AI', '制造业', '美的', '库卡'],
+                preview: [
+                    '机器人伴侣开售，售价9.9万元起',
+                    '美的集团发布新一代智能工厂方案',
+                    '库卡机器人海外订单增长30%',
+                    'AI质检系统在制造业的应用突破',
+                    '工业机器人市场趋势分析'
+                ],
+                isNewest: date === dates[dates.length-1] && idx === times.length-1
+            });
+        });
+    });
+    
+    return reports.reverse(); // 最新的在前
+}
+
+// 更新日期筛选器
+function updateDateFilter() {
+    const filter = document.getElementById('date-filter');
+    const dates = [...new Set(allReports.map(r => r.date))].sort().reverse();
+    
+    let html = '<div class="date-chip active" data-date="all" onclick="filterByDate(\'all\')">全部</div>';
+    dates.forEach(date => {
+        const count = allReports.filter(r => r.date === date).length;
+        html += `<div class="date-chip" data-date="${date}" onclick="filterByDate('${date}')">${date} (${count})</div>`;
+    });
+    
+    filter.innerHTML = html;
+}
+
+// 按日期筛选
+function filterByDate(date) {
+    currentDateFilter = date;
+    
+    // 更新按钮状态
+    document.querySelectorAll('.date-chip').forEach(chip => {
+        chip.classList.toggle('active', chip.dataset.date === date);
+    });
+    
+    // 重新渲染
+    renderAllViews();
+    
+    // 重置轮播位置
+    carouselIndex = 0;
+    updateCarousel();
+}
+
+// 获取筛选后的报告
+function getFilteredReports() {
+    if (currentDateFilter === 'all') {
+        return allReports;
+    }
+    return allReports.filter(r => r.date === currentDateFilter);
+}
+
+// 渲染所有视图
+function renderAllViews() {
+    const reports = getFilteredReports();
+    
+    renderMatrix(reports);
+    renderCarousel(reports);
+    renderTimeline(reports);
+}
+
+// 渲染矩阵视图
+function renderMatrix(reports) {
+    const container = document.getElementById('matrix-view');
+    
+    if (reports.length === 0) {
+        container.innerHTML = '';
+        return;
+    }
+    
+    container.innerHTML = reports.map((report, idx) => createCardHTML(report, idx === 0)).join('');
+}
+
+// 渲染轮播视图
+function renderCarousel(reports) {
+    const container = document.getElementById('carousel-container');
+    const dots = document.getElementById('carousel-dots');
+    
+    if (reports.length === 0) {
+        container.innerHTML = '';
+        dots.innerHTML = '';
+        return;
+    }
+    
+    container.innerHTML = reports.map((report, idx) => 
+        `<div class="carousel-slide">${createCardHTML(report, idx === 0)}</div>`
+    ).join('');
+    
+    // 计算页数
+    const slidesPerPage = window.innerWidth > 1200 ? 3 : window.innerWidth > 768 ? 2 : 1;
+    const totalPages = Math.ceil(reports.length / slidesPerPage);
+    
+    dots.innerHTML = Array.from({length: totalPages}, (_, i) => 
+        `<div class="dot ${i === 0 ? 'active' : ''}" onclick="goToSlide(${i})"></div>`
+    ).join('');
+    
+    updateCarousel();
+}
+
+// 渲染时间线视图
+function renderTimeline(reports) {
+    const container = document.getElementById('timeline-container');
+    
+    if (reports.length === 0) {
+        container.innerHTML = '';
+        return;
+    }
+    
+    // 按日期分组
+    const grouped = {};
+    reports.forEach(r => {
+        if (!grouped[r.date]) grouped[r.date] = [];
+        grouped[r.date].push(r);
+    });
+    
+    let html = '';
+    Object.entries(grouped).forEach(([date, items]) => {
+        items.forEach((report, idx) => {
+            html += `
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="card-date">${report.date}</div>
+                        <div class="card-time">${report.time}</div>
+                        <div class="card-meta">
+                            ${report.keywords.map(k => `<span class="meta-tag">${k}</span>`).join('')}
+                        </div>
+                        <div class="card-preview" style="margin-top: 12px;">
+                            ${report.preview.slice(0, 3).map((p, i) => `
+                                <div class="preview-item">
+                                    <span class="preview-rank">${i+1}</span>
+                                    <span class="preview-title">${p}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                        <div class="card-footer" style="margin-top: 12px; padding: 12px 0 0; border-top: 1px solid #2a2a32;">
+                            <a href="./reports/${report.filename}" class="card-link" target="_blank">查看完整报告 →</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+    });
+    
+    container.innerHTML = html;
+}
+
+// 创建卡片 HTML
+function createCardHTML(report, isNewest) {
+    return `
+        <div class="report-card ${isNewest ? 'newest' : ''}" onclick="window.open('./reports/${report.filename}', '_blank')">
+            <div class="card-header">
+                <div class="card-date">${report.date}</div>
+                <div class="card-time">⏰ ${report.time}</div>
+                <div class="card-meta">
+                    ${report.keywords.slice(0, 3).map(k => `<span class="meta-tag">${k}</span>`).join('')}
+                </div>
+            </div>
+            <div class="card-preview">
+                ${report.preview.slice(0, 5).map((p, i) => `
+                    <div class="preview-item">
+                        <span class="preview-rank ${i < 3 ? ['top1', 'top2', 'top3'][i] : ''}">${i+1}</span>
+                        <span class="preview-title">${p}</span>
+                    </div>
+                `).join('')}
+            </div>
+            <div class="card-footer">
+                <span style="color: #666; font-size: 12px;">${report.preview.length} 条热点</span>
+                <a href="./reports/${report.filename}" class="card-link" target="_blank">查看报告 →</a>
+            </div>
+        </div>
+    `;
+}
+
+// 切换视图
+function switchView(view) {
+    currentView = view;
+    
+    // 更新按钮状态
+    document.querySelectorAll('.view-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.view === view);
+    });
+    
+    // 显示对应视图
+    document.getElementById('matrix-view').classList.toggle('active', view === 'matrix');
+    document.getElementById('carousel-view').classList.toggle('active', view === 'carousel');
+    document.getElementById('timeline-view').classList.toggle('active', view === 'timeline');
+    
+    // 如果切换到轮播，重置位置
+    if (view === 'carousel') {
+        carouselIndex = 0;
+        updateCarousel();
+    }
+}
+
+// 轮播控制
+function carouselPrev() {
+    if (carouselIndex > 0) {
+        carouselIndex--;
+        updateCarousel();
+    }
+}
+
+function carouselNext() {
+    const reports = getFilteredReports();
+    const slidesPerPage = window.innerWidth > 1200 ? 3 : window.innerWidth > 768 ? 2 : 1;
+    const maxIndex = Math.ceil(reports.length / slidesPerPage) - 1;
+    
+    if (carouselIndex < maxIndex) {
+        carouselIndex++;
+        updateCarousel();
+    }
+}
+
+function goToSlide(index) {
+    carouselIndex = index;
+    updateCarousel();
+}
+
+function updateCarousel() {
+    const container = document.getElementById('carousel-container');
+    const slidesPerPage = window.innerWidth > 1200 ? 3 : window.innerWidth > 768 ? 2 : 1;
+    const slideWidth = 100 / slidesPerPage;
+    
+    container.style.transform = `translateX(-${carouselIndex * 100}%)`;
+    
+    // 更新 dots
+    document.querySelectorAll('.dot').forEach((dot, i) => {
+        dot.classList.toggle('active', i === carouselIndex);
+    });
+    
+    // 更新按钮状态
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    const reports = getFilteredReports();
+    const maxIndex = Math.ceil(reports.length / slidesPerPage) - 1;
+    
+    prevBtn.disabled = carouselIndex === 0;
+    nextBtn.disabled = carouselIndex >= maxIndex;
+}
+
+// 窗口大小变化时重新计算轮播
+window.addEventListener('resize', () => {
+    if (currentView === 'carousel') {
+        carouselIndex = 0;
+        renderCarousel(getFilteredReports());
+    }
+});
+
+// 启动
+init();
+</script>
+</body>
+</html>
