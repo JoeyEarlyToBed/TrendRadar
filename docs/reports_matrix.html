@@ -219,6 +219,16 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Micr
 .extension-card-title{font-size:14px;font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:6px}
 .extension-card-desc{font-size:12px;color:var(--dim);line-height:1.6}
 
+/* ── 扩展能力展示 ── */
+.extension-showcase{background:linear-gradient(135deg,rgba(99,102,241,.08),rgba(168,85,247,.08));border:1px solid rgba(99,102,241,.2);border-radius:16px;padding:24px;margin-bottom:24px}
+.extension-showcase h3{font-size:16px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.extension-showcase h3::before{content:'🔧';font-size:20px}
+.extension-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.extension-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;transition:all .3s}
+.extension-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.extension-card-title{font-size:14px;font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.extension-card-desc{font-size:12px;color:var(--dim);line-height:1.6}
+
 /* ── modal ── */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:200;display:none;align-items:center;justify-content:center;backdrop-filter:blur(8px);opacity:0;transition:opacity .3s ease}
 .modal-overlay.show{display:flex;opacity:1}
@@ -413,43 +423,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Micr
     </div>
   </div>
 
-  <!-- ── 扩展能力 ── -->
-  <div class="extension-showcase">
-    <h3>项目扩展能力 · 开源二次开发</h3>
-    <div class="extension-grid">
-      <div class="extension-card">
-        <div class="extension-card-title">🐳 Docker 容器化</div>
-        <div class="extension-card-desc">支持 Docker 一键部署，Docker Compose 多服务编排，符合 DevOps 规范，易于集成到企业 CI/CD 流水线</div>
-      </div>
-      <div class="extension-card">
-        <div class="extension-card-title">☸️ Kubernetes 编排</div>
-        <div class="extension-card-desc">提供 Helm Chart 部署模板，支持 HPA 自动扩缩容、滚动更新、灰度发布，适配企业级 K8s 集群</div>
-      </div>
-      <div class="extension-card">
-        <div class="extension-card-title">📡 多渠道推送</div>
-        <div class="extension-card-desc">已预留美信、企业邮箱、钉钉、飞书接口，通过 Webhook 机制快速接入企业现有通知体系</div>
-      </div>
-      <div class="extension-card">
-        <div class="extension-card-title">🔌 插件化架构</div>
-        <div class="extension-card-desc">新平台接入仅需配置，新推送渠道只需实现标准接口，支持二次开发和定制化扩展</div>
-      </div>
-      <div class="extension-card">
-        <div class="extension-card-title">🏢 632 系统对接</div>
-        <div class="extension-card-desc">预留美的 632 平台 API 接口，支持用户认证、权限管理、数据同步，融入现有数字化基础设施</div>
-      </div>
-      <div class="extension-card">
-        <div class="extension-card-title">📊 监控告警</div>
-        <div class="extension-card-desc">对接 Prometheus + Grafana，实现服务健康监控、告警通知、日志聚合，符合运维管理规范</div>
-      </div>
-    </div>
-  </div>
-
   <!-- ── 报告视图 ── -->
   <div class="view-section">
     <div class="view-header">
       <div>
         <div class="view-title">📋 历史报告库</div>
-        <div class="view-subtitle">矩阵 / 轮播 / 时间线 多维度浏览</div>
+        <div class="view-subtitle">矩阵 / 轮播 / 时间线 多维度浏览 · 共 <span id="reportCount">0</span> 份报告</div>
       </div>
       <div class="view-tabs">
         <button class="view-tab active" onclick="switchView('matrix')">⊞ 矩阵</button>
@@ -534,6 +513,7 @@ async function loadReports() {
 // ── 更新统计 ──
 function updateStats() {
   document.getElementById('totalReports').textContent = reports.length;
+  document.getElementById('reportCount').textContent = reports.length;
   
   // 计算热点总数（从预览中估算）
   let totalHotspots = 0;
