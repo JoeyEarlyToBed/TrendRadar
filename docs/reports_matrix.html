@@ -750,29 +750,37 @@ function renderMatrix() {
     return;
   }
   
-  grid.innerHTML = reports.map((r, i) => `
-    <div class="report-card" onclick="openReport('${r.filename}', '${r.date} ${r.time}')">
+  grid.innerHTML = reports.map((r, i) => {
+    // 过滤掉请求失败的提示，保留实际的洞察内容
+    const filteredPreview = (r.preview || []).filter(p => 
+      p && 
+      p.length > 10 && 
+      !p.includes('请求失败') && 
+      !p.includes('⚠️') &&
+      !p.includes('热点新闻分析')
+    );
+    
+    return `
+    <div class="report-card" onclick="openReport('reports/${r.filename}', '${r.date} ${r.time}')">
       <div class="card-head">
         <div class="card-date-info">
           <div class="card-date">${r.date}</div>
-          <div class="card-time">${r.time} · ${r.preview ? r.preview.length : 0} 条热点</div>
+          <div class="card-time">${r.time} · ${filteredPreview.length} 条洞察</div>
         </div>
         <div class="card-badges">
           ${i === 0 ? '<span class="badge badge-new">最新</span>' : ''}
-          <span class="badge badge-count">${r.preview ? r.preview.length : 0} 条</span>
+          <span class="badge badge-count">${filteredPreview.length} 条</span>
         </div>
       </div>
       <div class="card-body">
-        <div class="card-chart">
-          <span>📊 趋势图表占位</span>
-        </div>
         <ul class="card-preview">
-          ${(r.preview || []).slice(0, 4).map((p, idx) => `
+          ${filteredPreview.slice(0, 4).map((p, idx) => `
             <li>
               <span class="rank-num">${idx + 1}</span>
-              <span>${p.substring(0, 50)}${p.length > 50 ? '...' : ''}</span>
+              <span>${p.substring(0, 55)}${p.length > 55 ? '...' : ''}</span>
             </li>
           `).join('')}
+          ${filteredPreview.length === 0 ? '<li style="color:var(--muted)">暂无重点洞察</li>' : ''}
         </ul>
       </div>
       <div class="card-foot">
@@ -783,7 +791,7 @@ function renderMatrix() {
         <div class="card-action">查看详情 →</div>
       </div>
     </div>
-  `).join('');
+  `}).join('');
 }
 
 // ── 渲染轮播 ──
@@ -806,7 +814,7 @@ function renderCarousel() {
           </div>
         </div>
         <div class="slide-body">
-          <iframe src="${r.filename}"></iframe>
+          <iframe src="reports/${r.filename}"></iframe>
         </div>
       </div>
     </div>
@@ -835,16 +843,27 @@ function renderTimelineView() {
     <div class="timeline-group">
       <div class="timeline-date-label">${date}</div>
       <div class="timeline-cards">
-        ${reps.map(r => `
-          <div class="timeline-card" onclick="openReport('${r.filename}', '${r.date} ${r.time}')">
+        ${reps.map(r => {
+          // 过滤掉请求失败的提示，保留实际的洞察内容
+          const filteredPreview = (r.preview || []).filter(p => 
+            p && 
+            p.length > 10 && 
+            !p.includes('请求失败') && 
+            !p.includes('⚠️') &&
+            !p.includes('热点新闻分析')
+          );
+          
+          return `
+          <div class="timeline-card" onclick="openReport('reports/${r.filename}', '${r.date} ${r.time}')">
             <div class="t-time">${r.time} ${r.isNewest ? '🔥 最新' : ''}</div>
             <div class="t-preview">
-              ${(r.preview || []).slice(0, 3).map(p => `
-                <div class="t-preview-item">${p.substring(0, 40)}${p.length > 40 ? '...' : ''}</div>
+              ${filteredPreview.slice(0, 3).map(p => `
+                <div class="t-preview-item">${p.substring(0, 45)}${p.length > 45 ? '...' : ''}</div>
               `).join('')}
+              ${filteredPreview.length === 0 ? '<div class="t-preview-item" style="color:var(--muted)">暂无重点洞察</div>' : ''}
             </div>
           </div>
-        `).join('')}
+        `}).join('')}
       </div>
     </div>
   `).join('');
