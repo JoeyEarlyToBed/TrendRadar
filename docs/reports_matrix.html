@@ -492,7 +492,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ── 加载报告数据 ──
 async function loadReports() {
   try {
-    const response = await fetch('index.json?t=' + Date.now());
+    const response = await fetch('reports/index.json?t=' + Date.now());
     if (!response.ok) throw new Error('加载失败');
     const data = await response.json();
     reports = data.reports || [];
