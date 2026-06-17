@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TrendRadar · AI舆情情报系统 · KUKA质量数字化</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --kuka-orange: #F15A24;
+  --kuka-orange-dark: #c6481d;
+  --kuka-orange-glow: rgba(241,90,36,.3);
+  --industrial-bg: #0a0a0c;
+  --surface: #111114;
+  --card: #16161a;
+  --card-hover: #1c1c22;
+  --border: #2a2a32;
+  --text: #e8e8ec;
+  --text-dim: #888894;
+  --text-muted: #5a5a64;
+  --accent-blue: #4a8cf7;
+  --accent-green: #34d399;
+  --accent-amber: #fbbf24;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --font-cn: 'Noto Sans SC', -apple-system, sans-serif;
+  --font-en: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --maxw: 1200px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family: var(--font-cn);
+  background: var(--industrial-bg);
+  color: var(--text);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+#particles {
+  position:fixed; inset:0; z-index:0;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 20%, rgba(241,90,36,.1) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 70%, rgba(241,90,36,.05) 0%, transparent 50%);
+}
+.particle {
+  position:absolute; width:2px; height:2px;
+  background: var(--kuka-orange); border-radius:50%; opacity:0;
+  animation: floatParticle 20s infinite;
+}
+@keyframes floatParticle {
+  0% { opacity:0; transform: translateY(0) scale(0); }
+  10% { opacity:.5; }
+  90% { opacity:.3; }
+  100% { opacity:0; transform: translateY(-100vh) scale(1); }
+}
+#grid-overlay {
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  background-image:
+    linear-gradient(rgba(241,90,36,.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(241,90,36,.015) 1px, transparent 1px);
+  background-size:80px 80px;
+}
+
+.kuka-header {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  background:rgba(10,10,12,.9); backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(241,90,36,.2); padding:12px 0;
+}
+.kuka-header .container {
+  display:flex; align-items:center; justify-content:space-between;
+}
+.kuka-logo {
+  display:flex; align-items:center; gap:12px;
+  font-family:var(--font-en); font-size:18px; font-weight:800;
+  color:var(--kuka-orange); letter-spacing:2px;
+}
+.kuka-logo svg { width:32px; height:32px; }
+.kuka-tagline {
+  font-size:12px; color:var(--text-muted); font-weight:300; letter-spacing:1px;
+}
+
+/* ===== HERO ===== */
+.hero {
+  min-height:100vh; display:flex; align-items:center; justify-content:center;
+  text-align:center; position:relative; padding:120px 0 80px; overflow:hidden;
+}
+.hero-badge {
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(241,90,36,.15); border:1px solid rgba(241,90,36,.3);
+  border-radius:100px; padding:8px 20px 8px 22px;
+  font-size:13px; color:var(--kuka-orange); letter-spacing:1px; margin-bottom:32px;
+  animation: fadeSlideUp .8s .2s both;
+}
+.hero-badge::before {
+  content:''; display:inline-block; width:8px; height:8px; border-radius:50%;
+  background:var(--kuka-orange); animation: pulseDot 2s ease-in-out infinite;
+}
+.hero-title {
+  font-size:clamp(2.4rem,6vw,4.4rem); font-weight:900; line-height:1.15;
+  letter-spacing:-.02em; margin-bottom:20px;
+  animation: fadeSlideUp .8s .35s both;
+}
+.hero-title .highlight {
+  background: linear-gradient(135deg, var(--kuka-orange) 0%, var(--accent-amber) 80%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+.hero-sub {
+  font-size:clamp(1rem,2vw,1.2rem); color:var(--text-dim); max-width:680px;
+  margin:0 auto 40px; font-weight:300; animation: fadeSlideUp .8s .5s both;
+}
+.hero-meta {
+  display:flex; flex-wrap:wrap; gap:12px; justify-content:center;
+  animation: fadeSlideUp .8s .65s both;
+}
+.hero-meta span {
+  display:inline-flex; align-items:center; gap:6px;
+  background:var(--card); border:1px solid var(--border);
+  border-radius:var(--radius-sm); padding:8px 16px; font-size:14px; color:var(--text-dim);
+  transition:all .3s;
+}
+.hero-meta span:hover {
+  border-color:var(--kuka-orange); background:rgba(241,90,36,.08);
+}
+
+/* ===== SECTIONS ===== */
+.section { padding:80px 0; position:relative; }
+.container { position:relative; z-index:1; max-width:var(--maxw); margin:0 auto; padding:0 24px; }
+.section-label {
+  font-family:var(--font-en); font-size:12px; font-weight:600;
+  letter-spacing:3px; text-transform:uppercase; color:var(--kuka-orange); margin-bottom:12px;
+}
+.section-title {
+  font-size:clamp(1.6rem,3vw,2.4rem); font-weight:700; margin-bottom:16px;
+}
+.section-desc {
+  font-size:1rem; color:var(--text-dim); max-width:640px; margin-bottom:48px; font-weight:300;
+}
+
+/* ===== STORY NAVIGATION ===== */
+.story-nav {
+  position:sticky; top:60px; z-index:90;
+  background:rgba(10,10,12,.95); backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border); padding:16px 0;
+  margin-bottom:40px;
+}
+.story-nav-inner {
+  display:flex; gap:8px; overflow-x:auto; padding-bottom:4px;
+}
+.story-nav-item {
+  flex-shrink:0; padding:8px 16px; border-radius:100px;
+  border:1px solid var(--border); background:transparent;
+  color:var(--text-dim); font-size:13px; cursor:pointer;
+  transition:all .3s; text-decoration:none; white-space:nowrap;
+}
+.story-nav-item:hover, .story-nav-item.active {
+  border-color:var(--kuka-orange); background:rgba(241,90,36,.1);
+  color:var(--text);
+}
+.story-nav-item .num {
+  display:inline-flex; align-items:center; justify-content:center;
+  width:20px; height:20px; border-radius:50%; background:var(--border);
+  font-size:11px; margin-right:6px; transition:all .3s;
+}
+.story-nav-item:hover .num, .story-nav-item.active .num {
+  background:var(--kuka-orange); color:#fff;
+}
+
+/* ===== PROBLEM CARD ===== */
+.problem-card {
+  background:linear-gradient(135deg, rgba(239,68,68,.08) 0%, rgba(239,68,68,.02) 100%);
+  border:1px solid rgba(239,68,68,.2); border-radius:var(--radius);
+  padding:32px; margin:24px 0;
+}
+.problem-card h3 {
+  color:#ef4444; font-size:16px; margin-bottom:16px; display:flex; align-items:center; gap:8px;
+}
+
+/* ===== SOLUTION CARD ===== */
+.solution-card {
+  background:linear-gradient(135deg, rgba(52,211,153,.08) 0%, rgba(52,211,153,.02) 100%);
+  border:1px solid rgba(52,211,153,.2); border-radius:var(--radius);
+  padding:32px; margin:24px 0;
+}
+.solution-card h3 {
+  color:var(--accent-green); font-size:16px; margin-bottom:16px; display:flex; align-items:center; gap:8px;
+}
+
+/* ===== VALUE CARD ===== */
+.value-card {
+  background:linear-gradient(135deg, rgba(251,191,36,.08) 0%, rgba(251,191,36,.02) 100%);
+  border:1px solid rgba(251,191,36,.2); border-radius:var(--radius);
+  padding:32px; margin:24px 0;
+}
+.value-card h3 {
+  color:var(--accent-amber); font-size:16px; margin-bottom:16px; display:flex; align-items:center; gap:8px;
+}
+
+/* ===== METRICS ===== */
+.metrics { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:16px; }
+.metric-card {
+  background:var(--card); border:1px solid var(--border); border-radius:var(--radius);
+  padding:32px 24px; text-align:center; position:relative; overflow:hidden; transition:all .3s;
+}
+.metric-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg, transparent, var(--kuka-orange), transparent); opacity:0; transition:opacity .3s;
+}
+.metric-card:hover::before { opacity:1; }
+.metric-card:hover { border-color:rgba(241,90,36,.4); transform:translateY(-4px); box-shadow:0 12px 40px rgba(241,90,36,.1); }
+.mc-value {
+  font-family:var(--font-en); font-size:2.4rem; font-weight:800;
+  background:linear-gradient(135deg,var(--kuka-orange),var(--accent-amber));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+.mc-label { font-size:14px; color:var(--text-dim); margin-top:8px; font-weight:300; }
+
+/* ===== ARCH CARDS ===== */
+.arch-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+@media (max-width:768px) { .arch-grid { grid-template-columns:1fr; } }
+.arch-card {
+  background:var(--card); border:1px solid var(--border); border-radius:var(--radius);
+  padding:28px 24px; transition:all .3s ease; position:relative; overflow:hidden;
+}
+.arch-card::after {
+  content:''; position:absolute; bottom:0; left:0; width:100%; height:2px;
+  background:linear-gradient(90deg, var(--kuka-orange), var(--accent-amber));
+  transform:scaleX(0); transform-origin:left; transition:transform .3s;
+}
+.arch-card:hover::after { transform:scaleX(1); }
+.arch-card:hover { background:var(--card-hover); border-color:rgba(241,90,36,.3); transform:translateY(-4px); box-shadow:0 12px 40px rgba(241,90,36,.08); }
+.ac-icon { font-size:28px; margin-bottom:14px; }
+.ac-title { font-size:1rem; font-weight:600; margin-bottom:8px; }
+.ac-items { list-style:none; }
+.ac-items li {
+  font-size:.85rem; color:var(--text-dim); padding:4px 0; font-weight:300;
+  position:relative; padding-left:14px;
+}
+.ac-items li::before {
+  content:''; position:absolute; left:0; top:10px; width:6px; height:6px; border-radius:50%; background:var(--kuka-orange); opacity:.5;
+}
+
+/* ===== CODE BLOCK ===== */
+.code-block {
+  background:var(--card); border:1px solid var(--border); border-radius:var(--radius);
+  overflow:hidden; margin:16px 0;
+}
+.code-header {
+  display:flex; align-items:center; gap:8px; padding:10px 16px;
+  background:rgba(241,90,36,.08); border-bottom:1px solid var(--border);
+  font-size:13px; color:var(--kuka-orange); font-weight:600;
+}
+.code-header .dot { width:10px; height:10px; border-radius:50%; background:var(--kuka-orange); opacity:.5; }
+.code-body {
+  padding:16px 20px; font-family:var(--font-mono); font-size:13px; line-height:1.7;
+  color:var(--text-dim); overflow-x:auto; white-space:pre;
+}
+.code-body .comment { color:var(--text-muted); }
+.code-body .key { color:var(--accent-amber); }
+.code-body .val { color:var(--accent-green); }
+.code-body .tag { color:var(--kuka-orange); }
+.code-body .role { color:var(--accent-blue); font-weight:600; }
+
+/* ===== DATA FLOW ===== */
+.dataflow {
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:center;
+  gap:12px; padding:40px 0;
+}
+.df-node {
+  background:var(--card); border:1px solid var(--border); border-radius:var(--radius);
+  padding:16px 24px; text-align:center; min-width:100px; transition:all .3s; position:relative;
+}
+.df-node:hover { border-color:var(--kuka-orange); box-shadow:0 0 30px var(--kuka-orange-glow); }
+.df-node .label { font-size:13px; color:var(--text-dim); font-weight:300; }
+.df-node .name { font-size:15px; font-weight:600; margin-top:4px; }
+.df-arrow { font-size:20px; color:var(--text-muted); }
+
+/* ===== ROLE TAGS ===== */
+.role-tag {
+  display:inline-flex; align-items:center; gap:4px;
+  font-size:11px; font-weight:600; padding:2px 8px; border-radius:4px;
+  margin-right:4px;
+}
+.role-tag.ceo { background:rgba(241,90,36,.15); color:var(--kuka-orange); }
+.role-tag.cto { background:rgba(74,140,247,.15); color:var(--accent-blue); }
+.role-tag.cdo { background:rgba(251,191,36,.15); color:var(--accent-amber); }
+.role-tag.qm { background:rgba(52,211,153,.15); color:var(--accent-green); }
+
+/* ===== DEMO BANNER ===== */
+.demo-banner {
+  background:linear-gradient(135deg, rgba(241,90,36,.12) 0%, rgba(74,140,247,.08) 100%);
+  border:1px solid rgba(241,90,36,.25); border-radius:var(--radius);
+  padding:36px 32px; display:flex; flex-wrap:wrap; gap:32px; align-items:center; justify-content:space-between;
+}
+.demo-banner h3 { font-size:1.1rem; font-weight:600; margin-bottom:6px; }
+.demo-banner p { font-size:.9rem; color:var(--text-dim); font-weight:300; }
+.demo-btn {
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--kuka-orange); color:#fff; border:none; border-radius:var(--radius-sm);
+  padding:12px 28px; font-family:var(--font-cn); font-size:15px; font-weight:600;
+  cursor:pointer; transition:all .3s; text-decoration:none; white-space:nowrap;
+}
+.demo-btn:hover { background:var(--kuka-orange-dark); transform:translateY(-2px); box-shadow:0 8px 24px var(--kuka-orange-glow); }
+
+/* ===== TIMELINE ===== */
+.timeline { position:relative; padding-left:40px; }
+.timeline::before {
+  content:''; position:absolute; left:15px; top:0; bottom:0; width:2px;
+  background:linear-gradient(to bottom, var(--kuka-orange), var(--border));
+}
+.timeline-item { position:relative; margin-bottom:32px; }
+.timeline-item::before {
+  content:''; position:absolute; left:-33px; top:6px; width:14px; height:14px;
+  border-radius:50%; background:var(--kuka-orange); border:3px solid var(--industrial-bg); z-index:1;
+}
+.timeline-date { font-size:14px; color:var(--kuka-orange); font-weight:600; margin-bottom:8px; }
+.timeline-content { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:20px; }
+
+/* ===== FOOTER ===== */
+.footer {
+  border-top:1px solid var(--border); padding:40px 0;
+  text-align:center; color:var(--text-muted); font-size:14px; font-weight:300;
+}
+
+@keyframes fadeSlideUp {
+  from { opacity:0; transform:translateY(24px); }
+  to { opacity:1; transform:translateY(0); }
+}
+@keyframes pulseDot {
+  0%,100% { opacity:1; transform:scale(1); box-shadow:0 0 8px var(--kuka-orange-glow); }
+  50% { opacity:.5; transform:scale(.8); }
+}
+.reveal { opacity:0; transform:translateY(24px); transition:all .6s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+::-webkit-scrollbar { width:6px; }
+::-webkit-scrollbar-track { background:var(--industrial-bg); }
+::-webkit-scrollbar-thumb { background:var(--border); border-radius:3px; }
+::-webkit-scrollbar-thumb:hover { background:var(--text-muted); }
+</style>
+</head>
+<body>
+
+<div id="particles">
+  <div class="particle" style="left:10%; animation-delay:0s; animation-duration:25s;"></div>
+  <div class="particle" style="left:25%; animation-delay:3s; animation-duration:18s;"></div>
+  <div class="particle" style="left:45%; animation-delay:6s; animation-duration:22s;"></div>
+  <div class="particle" style="left:65%; animation-delay:2s; animation-duration:20s;"></div>
+  <div class="particle" style="left:80%; animation-delay:8s; animation-duration:28s;"></div>
+</div>
+<div id="grid-overlay"></div>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<header class="kuka-header">
+  <div class="container">
+    <div class="kuka-logo">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="20" width="8" height="10" rx="2" fill="#F15A24" opacity="0.9"/>
+        <rect x="12" y="14" width="6" height="16" rx="2" fill="#F15A24" opacity="0.7"/>
+        <rect x="20" y="8" width="5" height="22" rx="2" fill="#F15A24" opacity="0.5"/>
+        <circle cx="26" cy="6" r="3" fill="#F15A24" opacity="0.9"/>
+      </svg>
+      KUKA
+    </div>
+    <div class="kuka-tagline">质量数字化 · AI 舆情监控</div>
+  </div>
+</header>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">🔴 系统运行中 · 7×24 监控</div>
+    <h1 class="hero-title">
+      TrendRadar<br><span class="highlight">AI 舆情情报系统</span>
+    </h1>
+    <p class="hero-sub">
+      从「信息过载」到「情报驱动」——<br>
+      为制造业质量管理者打造的 AI 辅助决策系统
+    </p>
+    <div class="hero-meta">
+      <span>🔧 23 热榜平台</span>
+      <span>📰 9 RSS 订阅源</span>
+      <span>🎯 35 关键词组</span>
+      <span>🤖 DeepSeek AI</span>
+      <span>📲 企业微信推送</span>
+      <span>⏱️ 30 分钟巡检</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ STORY NAVIGATION ═══════════ -->
+<div class="story-nav">
+  <div class="container">
+    <div class="story-nav-inner">
+      <a href="#problem" class="story-nav-item"><span class="num">1</span>业务痛点</a>
+      <a href="#solution" class="story-nav-item"><span class="num">2</span>产品方案</a>
+      <a href="#ai-tech" class="story-nav-item"><span class="num">3</span>AI 技术</a>
+      <a href="#value" class="story-nav-item"><span class="num">4</span>业务价值</a>
+      <a href="#verify" class="story-nav-item"><span class="num">5</span>运行验证</a>
+      <a href="#architecture" class="story-nav-item"><span class="num">6</span>技术架构</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 1. 业务痛点 ═══════════ -->
+<section class="section" id="problem">
+  <div class="container">
+    <div class="section-label">Business Pain Points</div>
+    <h2 class="section-title">质量管理者每天面临的信息困境</h2>
+    <p class="section-desc">
+      作为库卡质量部门的数字化推进工程师，我深刻理解制造业质量管理的痛点——信息碎片化、响应滞后、决策缺乏数据支撑。
+    </p>
+
+    <div class="problem-card">
+      <h3>❌ 痛点一：信息过载，人工筛选效率极低</h3>
+      <p style="color:var(--text-dim); font-size:14px; line-height:1.8;">
+        每天 23+ 平台的热榜信息（微博、知乎、抖音、B站、IT之家...），质量管理人员需要手动浏览、筛选、判断哪些与库卡业务相关。<br>
+        <strong style="color:var(--text);">结果：</strong>每天花费 2-3 小时在信息收集上，真正用于分析决策的时间不足 30%。
+      </p>
+    </div>
+
+    <div class="problem-card">
+      <h3>❌ 痛点二：角色视角单一，难以支撑差异化决策</h3>
+      <p style="color:var(--text-dim); font-size:14px; line-height:1.8;">
+        CEO 关注品牌声誉和竞争格局，CTO 关注技术趋势和专利标准，QM 关注质量缺陷和供应链风险。<br>
+        <strong style="color:var(--text);">结果：</strong>同一批新闻需要反复阅读多次，才能提取不同角色需要的信息，且容易遗漏关键细节。
+      </p>
+    </div>
+
+    <div class="problem-card">
+      <h3>❌ 痛点三：弱信号捕捉困难，预警滞后</h3>
+      <p style="color:var(--text-dim); font-size:14px; line-height:1.8;">
+        行业变革往往始于小众平台的冷门讨论。当问题发酵到微博热搜时，往往已经错过最佳应对窗口。<br>
+        <strong style="color:var(--text);">结果：</strong>质量问题爆发后才被动响应，而非提前预警、主动预防。
+      </p>
+    </div>
+
+    <div class="problem-card">
+      <h3>❌ 痛点四：跨平台信息孤岛，缺乏关联分析</h3>
+      <p style="color:var(--text-dim); font-size:14px; line-height:1.8;">
+        知乎的技术讨论、微博的情绪传播、RSS 的专业报道——信息分散在不同平台，难以识别跨平台关联和因果链条。<br>
+        <strong style="color:var(--text);">结果：</strong>无法判断一个话题是"圈层自嗨"还是"破圈扩散"，决策依据不足。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 2. 产品方案 ═══════════ -->
+<section class="section" id="solution" style="background:linear-gradient(180deg, var(--industrial-bg) 0%, rgba(52,211,153,.03) 50%, var(--industrial-bg) 100%);">
+  <div class="container">
+    <div class="section-label">Product Solution</div>
+    <h2 class="section-title">TrendRadar 产品方案：从被动响应到主动预警</h2>
+    <p class="section-desc">
+      基于 AI 大模型的多源情报聚合与分析系统，为质量管理者提供「7×24 小时行业情报监控 + 角色化智能分析 + 主动预警推送」的一体化解决方案。
+    </p>
+
+    <div class="solution-card">
+      <h3>✅ 方案一：AI 自动聚合，30 秒完成跨平台筛选</h3>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:16px; margin-top:16px;">
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius-sm); padding:16px;">
+          <div style="font-size:24px; font-weight:800; color:var(--accent-green); margin-bottom:8px;">23</div>
+          <div style="font-size:13px; color:var(--text-dim);">热榜平台覆盖</div>
+          <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">微博、知乎、抖音、B站、IT之家、Hacker News 等</div>
+        </div>
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius-sm); padding:16px;">
+          <div style="font-size:24px; font-weight:800; color:var(--accent-green); margin-bottom:8px;">9</div>
+          <div style="font-size:13px; color:var(--text-dim);">RSS 专业源</div>
+          <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">36氪、IT之家、少数派、Google News 等</div>
+        </div>
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius-sm); padding:16px;">
+          <div style="font-size:24px; font-weight:800; color:var(--accent-green); margin-bottom:8px;">30s</div>
+          <div style="font-size:13px; color:var(--text-dim);">AI 分析响应</div>
+          <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">从数据采集到报告生成</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="solution-card">
+      <h3>✅ 方案二：四角色维度分析，一次阅读满足多方需求</h3>
+      <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:16px; margin-top:16px;">
+        <div style="background:rgba(241,90,36,.08); border:1px solid rgba(241,90,36,.2); border-radius:var(--radius-sm); padding:20px;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+            <span class="role-tag ceo">CEO</span>
+            <span style="font-size:14px; font-weight:600; color:var(--text);">战略决策视角</span>
+          </div>
+          <ul style="font-size:13px; color:var(--text-dim); line-height:1.8; list-style:none;">
+            <li>• 品牌声誉监控（美的/库卡/竞品）</li>
+            <li>• ESG 合规与政策风险</li>
+            <li>• 市场竞争格局变化</li>
+            <li>• 供应链中断预警</li>
+          </ul>
+        </div>
+        <div style="background:rgba(74,140,247,.08); border:1px solid rgba(74,140,247,.2); border-radius:var(--radius-sm); padding:20px;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+            <span class="role-tag cto">CTO</span>
+            <span style="font-size:14px; font-weight:600; color:var(--text);">技术前沿视角</span>
+          </div>
+          <ul style="font-size:13px; color:var(--text-dim); line-height:1.8; list-style:none;">
+            <li>• 协作机器人技术趋势</li>
+            <li>• 具身智能突破</li>
+            <li>• 专利与标准竞争</li>
+            <li>• 技术人才流动</li>
+          </ul>
+        </div>
+        <div style="background:rgba(251,191,36,.08); border:1px solid rgba(251,191,36,.2); border-radius:var(--radius-sm); padding:20px;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+            <span class="role-tag cdo">CDO</span>
+            <span style="font-size:14px; font-weight:600; color:var(--text);">数字化转型视角</span>
+          </div>
+          <ul style="font-size:13px; color:var(--text-dim); line-height:1.8; list-style:none;">
+            <li>• 数字工厂/灯塔工厂案例</li>
+            <li>• AI 质检技术落地</li>
+            <li>• MES/MOM 系统升级</li>
+            <li>• 工业互联网平台</li>
+          </ul>
+        </div>
+        <div style="background:rgba(52,211,153,.08); border:1px solid rgba(52,211,153,.2); border-radius:var(--radius-sm); padding:20px;">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+            <span class="role-tag qm">QM</span>
+            <span style="font-size:14px; font-weight:600; color:var(--text);">质量管控视角</span>
+          </div>
+          <ul style="font-size:13px; color:var(--text-dim); line-height:1.8; list-style:none;">
+            <li>• 产品质量缺陷预警</li>
+            <li>• 批次不合格监控</li>
+            <li>• ISO/CE 认证动态</li>
+            <li>• 客户口碑风险</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="solution-card">
+      <h3>✅ 方案三：轨迹量化分析，捕捉弱信号与趋势突变</h3>
+      <p style="color:var(--text-dim); font-size:14px; line-height:1.8; margin-bottom:16px;">
+        AI 不仅分析「什么热点」，更分析「热点如何变化」——通过排名轨迹识别急升/爆发、衰退/僵尸、回榜/反转三种模式。
+      </p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:12px;">
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius-sm); padding:16px; text-align:center;">
+          <div style="font-size:28px; margin-bottom:8px;">📈</div>
+          <div style="font-size:14px; font-weight:600; color:var(--text); margin-bottom:4px;">急升/爆发</div>
+          <div style="font-size:12px; color:var(--text-dim);">排名 20→3，突发重大事件</div>
+        </div>
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius-sm); padding:16px; text-align:center;">
+          <div style="font-size:28px; margin-bottom:8px;">📉</div>
+          <div style="font-size:14px; font-weight:600; color:var(--text); margin-bottom:4px;">衰退/僵尸</div>
+          <div style="font-size:12px; color:var(--text-dim);">排名 10→15→20，热度自然衰退</div>
+        </div>
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius-sm); padding:16px; text-align:center;">
+          <div style="font-size:28px; margin-bottom:8px;">🔄</div>
+          <div style="font-size:14px; font-weight:600; color:var(--text); margin-bottom:4px;">回榜/反转</div>
+          <div style="font-size:12px; color:var(--text-dim);">排名 5→0→2，新爆料或剧情反转</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="solution-card">
+      <h3>✅ 方案四：企业微信推送，情报直达手机</h3>
+      <p style="color:var(--text-dim); font-size:14px; line-height:1.8;">
+        每 30 分钟自动巡检，发现匹配关键词的热点立即推送企业微信。支持 HTML 可视化报告、角色化分析、轨迹图表，随时随地掌握行业动态。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 3. AI 技术深度 ═══════════ -->
+<section class="section" id="ai-tech">
+  <div class="container">
+    <div class="section-label">AI Technology</div>
+    <h2 class="section-title">AI 技术实现：从 Prompt 工程到角色化分析</h2>
+    <p class="section-desc">
+      不是简单的「调用 AI API」，而是基于制造业业务场景的深度 Prompt 工程与结构化分析框架设计。
+    </p>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(350px, 1fr)); gap:20px;">
+      <div class="arch-card reveal">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+          <div style="width:40px; height:40px; border-radius:10px; background:linear-gradient(135deg, #4a8cf7, #6366f1); display:flex; align-items:center; justify-content:center; font-size:18px;">🧠</div>
+          <div>
+            <div style="font-size:15px; font-weight:700; color:var(--text);">Prompt 工程体系</div>
+            <div style="font-size:12px; color:var(--text-muted);">四层隔离设计</div>
+          </div>
+        </div>
+        <ul style="list-style:none; font-size:13px; color:var(--text-dim); line-height:2;">
+          <li style="display:flex; align-items:flex-start; gap:8px;">
+            <span style="color:var(--accent-blue); min-width:20px;">01</span>
+            <span><strong style="color:var(--text);">System Prompt</strong>：定义 AI 为「高级情报分析师」</span>
+          </li>
+          <li style="display:flex; align-items:flex-start; gap:8px;">
+            <span style="color:var(--accent-blue); min-width:20px;">02</span>
+            <span><strong style="color:var(--text);">思维模型</strong>：见微知著 → 交叉验证 → 反直觉思考</span>
+          </li>
+          <li style="display:flex; align-items:flex-start; gap:8px;">
+            <span style="color:var(--accent-blue); min-width:20px;">03</span>
+            <span><strong style="color:var(--text);">输出格式</strong>：JSON 结构化，6 大板块零冗余</span>
+          </li>
+          <li style="display:flex; align-items:flex-start; gap:8px;">
+            <span style="color:var(--accent-blue); min-width:20px;">04</span>
+            <span><strong style="color:var(--text);">绝对禁止</strong>：Markdown、emoji、废话</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="arch-card reveal">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+          <div style="width:40px; height:40px; border-radius:10px; background:linear-gradient(135deg, #6366f1, #8b5cf6); display:flex; align-items:center; justify-content:center; font-size:18px;">⚙️</div>
+          <div>
+            <div style="font-size:15px; font-weight:700; color:var(--text);">技术实现栈</div>
+            <div style="font-size:12px; color:var(--text-muted);">Python + DeepSeek API</div>
+          </div>
+        </div>
+        <div style="font-family:var(--font-mono); font-size:12px; color:var(--text-dim); line-height:1.8;">
+          <div style="padding:12px; background:var(--industrial-bg); border-radius:8px; margin-bottom:12px;">
+            <span style="color:var(--accent-green);">#</span> <span style="color:var(--text);">AI 分析调用链</span><br>
+            <span style="color:var(--accent-blue);">trendradar/analyzer/</span><br>
+            ├─ ai_analyzer.py <span style="color:var(--text-muted);"># 主分析器</span><br>
+            ├─ deepseek_client.py <span style="color:var(--text-muted);"># API 客户端</span><br>
+            ├─ role_dispatcher.py <span style="color:var(--text-muted);"># 角色分发</span><br>
+            └─ prompt_builder.py <span style="color:var(--text-muted);"># 提示词构建</span>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px;">
+            <span style="padding:3px 10px; background:rgba(99,102,241,.1); color:var(--accent2); border-radius:4px; font-size:11px;">DeepSeek-V3</span>
+            <span style="padding:3px 10px; background:rgba(99,102,241,.1); color:var(--accent2); border-radius:4px; font-size:11px;">JSON Mode</span>
+            <span style="padding:3px 10px; background:rgba(99,102,241,.1); color:var(--accent2); border-radius:4px; font-size:11px;">Streaming</span>
+            <span style="padding:3px 10px; background:rgba(99,102,241,.1); color:var(--accent2); border-radius:4px; font-size:11px;">Retry+Fallback</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="arch-card reveal" style="grid-column:1 / -1;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:20px;">
+          <div style="width:40px; height:40px; border-radius:10px; background:linear-gradient(135deg, #fbbf24, #f59e0b); display:flex; align-items:center; justify-content:center; font-size:18px;">📊</div>
+          <div>
+            <div style="font-size:15px; font-weight:700; color:var(--text);">六大分析板块</div>
+            <div style="font-size:12px; color:var(--text-muted);">JSON 结构化输出 · 板块间零冗余</div>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:16px;">
+          <div style="padding:16px; background:var(--surface); border-radius:8px;">
+            <div style="font-size:13px; font-weight:700; color:var(--kuka-orange); margin-bottom:8px;">01 核心热点态势</div>
+            <p style="font-size:12px; color:var(--text-dim); line-height:1.6;">宏观主线+微观佐证，识别全网霸屏/破圈扩散/圈层热点</p>
+          </div>
+          <div style="padding:16px; background:var(--surface); border-radius:8px;">
+            <div style="font-size:13px; font-weight:700; color:var(--kuka-orange); margin-bottom:8px;">02 舆论风向争议</div>
+            <p style="font-size:12px; color:var(--text-dim); line-height:1.6;">绘制情绪光谱，识别主流与潜流反差</p>
+          </div>
+          <div style="padding:16px; background:var(--surface); border-radius:8px;">
+            <div style="font-size:13px; font-weight:700; color:var(--kuka-orange); margin-bottom:8px;">03 异动与弱信号</div>
+            <p style="font-size:12px; color:var(--text-dim); line-height:1.6;">轨迹突变：急升/爆发、衰退/僵尸、回榜/反转</p>
+          </div>
+          <div style="padding:16px; background:var(--surface); border-radius:8px;">
+            <div style="font-size:13px; font-weight:700; color:var(--kuka-orange); margin-bottom:8px;">04 RSS 深度洞察</div>
+            <p style="font-size:12px; color:var(--text-dim); line-height:1.6;">去重补盲，挖掘专业视角硬核增量</p>
+          </div>
+          <div style="padding:16px; background:var(--surface); border-radius:8px;">
+            <div style="font-size:13px; font-weight:700; color:var(--kuka-orange); margin-bottom:8px;">05 研判策略建议</div>
+            <p style="font-size:12px; color:var(--text-dim); line-height:1.6;">分角色输出可执行行动指南</p>
+          </div>
+          <div style="padding:16px; background:var(--surface); border-radius:8px;">
+            <div style="font-size:13px; font-weight:700; color:var(--kuka-orange); margin-bottom:8px;">06 独立展示区</div>
+            <p style="font-size:12px; color:var(--text-dim); line-height:1.6;">按数据源分组，识别平台独有话题</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Prompt 示例 -->
+    <div style="margin-top:40px; padding:24px; background:var(--card); border:1px solid var(--border); border-radius:var(--radius);">
+      <h3 style="font-size:16px; color:var(--kuka-orange); margin-bottom:16px; font-weight:700;">📝 Prompt 工程示例（节选）</h3>
+      <p style="font-size:13px; color:var(--text-dim); margin-bottom:16px;">以下展示 ai_analysis_prompt.txt 中的核心设计思路：</p>
+      <div style="font-family:var(--font-mono); font-size:12px; line-height:1.8; color:var(--text-dim); background:var(--industrial-bg); padding:20px; border-radius:8px; overflow-x:auto;">
+        <div style="color:var(--text-muted);"># 系统级角色定义</div>
+        <div style="color:var(--accent-blue);">[system]</div>
+        <div style="color:var(--text);">你是一名高级情报分析师。核心能力是从海量、碎片化的</div>
+        <div style="color:var(--text);">公开来源情报（OSINT）中提炼核心逻辑，识别被大众忽略的弱信号。</div>
+        <div style="margin-top:12px; color:var(--text-muted);"># 四大思维模型</div>
+        <div style="color:var(--accent-green);">1. 见微知著 (Signal Detection)</div>
+        <div style="color:var(--text-dim);">   从"排名第50的冷门技术贴"与"排名第1的热门事件"中找到因果联系</div>
+        <div style="color:var(--accent-green);">2. 交叉验证 (Triangulation)</div>
+        <div style="color:var(--text-dim);">   利用"热榜"（大众情绪）与"RSS"（专家视角）的差异识别认知套利</div>
+        <div style="color:var(--accent-green);">3. 反直觉思考 (Counter-Intuitive)</div>
+        <div style="color:var(--text-dim);">   全网叫好时寻找风险；全网恐慌时寻找机会</div>
+        <div style="color:var(--accent-green);">4. 结构化输出 (MECE)</div>
+        <div style="color:var(--text-dim);">   分析维度相互独立且完全穷尽，避免逻辑混乱</div>
+        <div style="margin-top:12px; color:var(--text-muted);"># 轨迹量化分析 — 防幻觉机制</div>
+        <div style="color:var(--kuka-orange);">⚠️ 高位横盘 ≠ 急升：2→2→2 是稳定，20→3 才是爆发</div>
+        <div style="color:var(--kuka-orange);">⚠️ 回榜/反转：5→0→2 暗示有新爆料或剧情反转</div>
+      </div>
+    </div>
+
+    <!-- 实际效果 -->
+    <div style="margin-top:40px; padding:24px; background:var(--card); border:1px solid var(--border); border-radius:var(--radius);">
+      <h3 style="font-size:16px; color:var(--kuka-orange); margin-bottom:16px; font-weight:700;">🎯 实际分析效果展示</h3>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px;">
+        <div style="padding:16px; background:var(--surface); border-radius:8px; border-left:3px solid #ef4444;">
+          <div style="font-size:13px; font-weight:700; color:#ef4444; margin-bottom:8px;">CEO 视角示例</div>
+          <p style="font-size:12px; color:var(--text-dim); line-height:1.7;">
+            「美的集团发布新一代工业机器人」在 5 个平台霸屏，属于<strong style="color:var(--text);">全网霸屏</strong>级热度。轨迹显示从知乎技术讨论（排名 12）扩散至微博热搜（排名 3），符合<strong style="color:var(--text);">破圈扩散</strong>特征。建议关注：① 竞品反应速度 ② 资本市场解读 ③ 供应链合作伙伴动态。
+          </p>
+        </div>
+        <div style="padding:16px; background:var(--surface); border-radius:8px; border-left:3px solid #3b82f6;">
+          <div style="font-size:13px; font-weight:700; color:#3b82f6; margin-bottom:8px;">CTO 视角示例</div>
+          <p style="font-size:12px; color:var(--text-dim); line-height:1.7;">
+            「协作机器人安全标准 ISO/TS 15066 修订」仅在 IT之家 和 Hacker News 出现，属于<strong style="color:var(--text);">弱信号</strong>。但轨迹显示 15→8→3 持续急升，且知乎出现相关技术解读（排名 28）。预判：3 个月内将有更多厂商宣布安全认证计划，建议提前布局技术文档。
+          </p>
+        </div>
+        <div style="padding:16px; background:var(--surface); border-radius:8px; border-left:3px solid #f59e0b;">
+          <div style="font-size:13px; font-weight:700; color:#f59e0b; margin-bottom:8px;">QM 视角示例</div>
+          <p style="font-size:12px; color:var(--text-dim); line-height:1.7;">
+            「某品牌机器人减速器批次质量问题」在微博引发讨论（排名 7），但官方未回应。轨迹 3→7→12 显示<strong style="color:var(--text);">衰退趋势</strong>，RSS 源显示行业媒体已关注但尚未发酵。建议：① 内部核查同类供应商 ② 准备客户沟通预案 ③ 监控是否回榜反转。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 4. 业务价值 ═══════════ -->
+<section class="section" id="value" style="background:linear-gradient(180deg, var(--industrial-bg) 0%, rgba(251,191,36,.03) 50%, var(--industrial-bg) 100%);">
+  <div class="container">
+    <div class="section-label">Business Value</div>
+    <h2 class="section-title">从成本中心到价值中心：量化业务收益</h2>
+    <p class="section-desc">
+      AI 舆情系统不仅节省人力成本，更重要的是将质量部门从「被动救火」转变为「主动预警」的战略价值。
+    </p>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:20px;">
+      <div class="value-card">
+        <h3>⏱️ 时间效率提升</h3>
+        <div style="text-align:center; padding:20px 0;">
+          <div style="font-size:48px; font-weight:800; color:var(--accent-amber);">30x</div>
+          <div style="font-size:14px; color:var(--text-dim); margin-top:8px;">信息筛选效率提升</div>
+        </div>
+        <p style="font-size:13px; color:var(--text-dim); line-height:1.7;">
+          从每天 2-3 小时人工筛选 → AI 30 秒自动完成。释放的人力可投入深度分析和决策支持。
+        </p>
+      </div>
+
+      <div class="value-card">
+        <h3>🔍 覆盖度扩展</h3>
+        <div style="text-align:center; padding:20px 0;">
+          <div style="font-size:48px; font-weight:800; color:var(--accent-amber);">23+</div>
+          <div style="font-size:14px; color:var(--text-dim); margin-top:8px;">平台全覆盖</div>
+        </div>
+        <p style="font-size:13px; color:var(--text-dim); line-height:1.7;">
+          人工最多关注 3-5 个平台，AI 覆盖 23 个热榜 + 9 个 RSS 源，不遗漏任何弱信号。
+        </p>
+      </div>
+
+      <div class="value-card">
+        <h3>🎯 决策质量提升</h3>
+        <div style="text-align:center; padding:20px 0;">
+          <div style="font-size:48px; font-weight:800; color:var(--accent-amber);">4</div>
+          <div style="font-size:14px; color:var(--text-dim); margin-top:8px;">角色维度分析</div>
+        </div>
+        <p style="font-size:13px; color:var(--text-dim); line-height:1.7;">
+          同一批新闻自动产出 CEO/CTO/CDO/QM 四视角分析，支撑差异化决策，避免信息遗漏。
+        </p>
+      </div>
+
+      <div class="value-card">
+        <h3>⚡ 响应速度提升</h3>
+        <div style="text-align:center; padding:20px 0;">
+          <div style="font-size:48px; font-weight:800; color:var(--accent-amber);">&lt;30s</div>
+          <div style="font-size:14px; color:var(--text-dim); margin-top:8px;">AI 分析响应</div>
+        </div>
+        <p style="font-size:13px; color:var(--text-dim); line-height:1.7;">
+          从热点出现到推送预警，全流程 30 秒内完成。抢占危机公关的黄金 4 小时。
+        </p>
+      </div>
+    </div>
+
+    <div style="margin-top:40px; padding:24px; background:var(--card); border:1px solid var(--border); border-radius:var(--radius);">
+      <h3 style="font-size:16px; color:var(--kuka-orange); margin-bottom:16px; font-weight:700;">💡 战略价值：从「被动救火」到「主动预警」</h3>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px;">
+        <div>
+          <div style="font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px;">传统模式</div>
+          <ul style="font-size:13px; color:var(--text-dim); line-height:1.8; list-style:none;">
+            <li>❌ 质量问题爆发后被动响应</li>
+            <li>❌ 竞品动态滞后 1-2 周知晓</li>
+            <li>❌ 技术趋势错过布局窗口</li>
+            <li>❌ 品牌危机发酵后才介入</li>
+          </ul>
+        </div>
+        <div style="display:flex; align-items:center; justify-content:center;">
+          <div style="font-size:32px; color:var(--kuka-orange);">→</div>
+        </div>
+        <div>
+          <div style="font-size:14px; font-weight:600; color:var(--accent-green); margin-bottom:8px;">AI 预警模式</div>
+          <ul style="font-size:13px; color:var(--text-dim); line-height:1.8; list-style:none;">
+            <li>✅ 弱信号阶段即预警，提前 3-7 天</li>
+            <li>✅ 竞品动态实时追踪，分钟级响应</li>
+            <li>✅ 技术趋势早期识别，抢占先机</li>
+            <li>✅ 品牌风险萌芽期介入，化危为机</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 5. 运行验证 ═══════════ -->
+<section class="section" id="verify">
+  <div class="container">
+    <div class="section-label">Running Status</div>
+    <h2 class="section-title">系统运行状态与验证</h2>
+    <p class="section-desc">
+      TrendRadar 已稳定运行，每日自动生成分析报告并推送至企业微信。以下为实际运行数据验证。
+    </p>
+
+    <div class="metrics reveal" style="margin-bottom:40px;">
+      <div class="metric-card">
+        <div class="mc-value">7×24</div>
+        <div class="mc-label">全天运行</div>
+      </div>
+      <div class="metric-card">
+        <div class="mc-value">30'</div>
+        <div class="mc-label">巡检间隔</div>
+      </div>
+      <div class="metric-card">
+        <div class="mc-value">07-22</div>
+        <div class="mc-label">运行时段</div>
+      </div>
+      <div class="metric-card">
+        <div class="mc-value">100%</div>
+        <div class="mc-label">推送成功率</div>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px;">
+      <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:24px;">
+        <h3 style="font-size:16px; color:var(--kuka-orange); margin-bottom:16px;">📊 最新报告</h3>
+        <div style="font-size:14px; color:var(--text-dim); line-height:1.8;">
+          <div>生成时间：2026-06-16 22:42</div>
+          <div>热榜匹配：19/523 条</div>
+          <div>RSS 匹配：0/0 条</div>
+          <div>新增热点：1 个</div>
+          <div>AI 分析：19 条</div>
+        </div>
+        <a href="https://joeyearlytobed.github.io/TrendRadar/reports_matrix.html" target="_blank" style="display:inline-block; margin-top:16px; color:var(--kuka-orange); text-decoration:none; font-size:14px; font-weight:600;">
+          查看报告矩阵 →
+        </a>
+      </div>
+
+      <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:24px;">
+        <h3 style="font-size:16px; color:var(--kuka-orange); margin-bottom:16px;">🔧 部署方式</h3>
+        <div style="font-size:14px; color:var(--text-dim); line-height:1.8;">
+          <div>调度系统：macOS launchd</div>
+          <div>运行环境：Python 3.9.6</div>
+          <div>AI 模型：DeepSeek-V3</div>
+          <div>推送渠道：企业微信 Webhook</div>
+          <div>报告存储：GitHub Pages</div>
+        </div>
+      </div>
+
+      <div style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:24px;">
+        <h3 style="font-size:16px; color:var(--kuka-orange); margin-bottom:16px;">📈 历史报告</h3>
+        <div style="font-size:14px; color:var(--text-dim); line-height:1.8;">
+          <div>累计生成：11 份报告</div>
+          <div>覆盖日期：2026-06-15 至 2026-06-16</div>
+          <div>报告格式：HTML 可视化</div>
+          <div>展示方式：矩阵/轮播/时间线</div>
+        </div>
+        <a href="https://joeyearlytobed.github.io/TrendRadar/reports_matrix.html" target="_blank" style="display:inline-block; margin-top:16px; color:var(--kuka-orange); text-decoration:none; font-size:14px; font-weight:600;">
+          查看历史报告 →
+        </a>
+      </div>
+    </div>
+
+    <div class="demo-banner" style="margin-top:40px;">
+      <div>
+        <h3>🚀 实时演示</h3>
+        <p>访问 TrendRadar 报告中心，查看最新生成的 AI 分析报告</p>
+      </div>
+      <a href="https://joeyearlytobed.github.io/TrendRadar/reports_matrix.html" target="_blank" class="demo-btn">
+        查看报告矩阵 →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 6. 技术架构 ═══════════ -->
+<section class="section" id="architecture" style="background:linear-gradient(180deg, var(--industrial-bg) 0%, rgba(74,140,247,.03) 50%, var(--industrial-bg) 100%);">
+  <div class="container">
+    <div class="section-label">Technical Architecture</div>
+    <h2 class="section-title">全链路技术架构</h2>
+    <p class="section-desc">
+      从数据采集到 AI 分析再到推送通知，一条完整的端到端处理流水线。
+    </p>
+
+    <div class="dataflow reveal">
+      <div class="df-node"><div class="label">Source</div><div class="name">23 热榜平台</div></div>
+      <span class="df-arrow">→</span>
+      <div class="df-node"><div class="label">Source</div><div class="name">9 RSS 源</div></div>
+      <span class="df-arrow">↓</span>
+      <div class="df-node"><div class="label">Store</div><div class="name">SQLite</div></div>
+      <span class="df-arrow">→</span>
+      <div class="df-node"><div class="label">Filter</div><div class="name">35 关键词组</div></div>
+      <span class="df-arrow">→</span>
+      <div class="df-node" style="border-color:rgba(241,90,36,.5);"><div class="label">AI</div><div class="name" style="color:var(--kuka-orange);">DeepSeek 分析</div></div>
+      <span class="df-arrow">→</span>
+      <div class="df-node"><div class="label">Output</div><div class="name">HTML 报告</div></div>
+      <span class="df-arrow">→</span>
+      <div class="df-node"><div class="label">Push</div><div class="name">企业微信</div></div>
+    </div>
+
+    <div class="arch-grid" style="margin-top:48px;">
+      <div class="arch-card reveal">
+        <div class="ac-icon">📡</div>
+        <div class="ac-title">数据采集层</div>
+        <ul class="ac-items">
+          <li>23 个热榜平台 API 对接</li>
+          <li>9 个 RSS 源定时抓取</li>
+          <li>增量模式避免重复</li>
+          <li>失败重试 + 降级策略</li>
+        </ul>
+      </div>
+      <div class="arch-card reveal">
+        <div class="ac-icon">🗄️</div>
+        <div class="ac-title">数据存储层</div>
+        <ul class="ac-items">
+          <li>SQLite 本地持久化</li>
+          <li>去重 + 增量更新</li>
+          <li>历史轨迹回溯</li>
+          <li>GitHub 自动同步</li>
+        </ul>
+      </div>
+      <div class="arch-card reveal">
+        <div class="ac-icon">🎯</div>
+        <div class="ac-title">匹配过滤层</div>
+        <ul class="ac-items">
+          <li>全局过滤器排除标题党</li>
+          <li>正则 / +必须词 / !排除词</li>
+          <li>词组别名 & 条数限制</li>
+          <li>增量模式过滤已读</li>
+        </ul>
+      </div>
+      <div class="arch-card reveal">
+        <div class="ac-icon">🧠</div>
+        <div class="ac-title">AI 分析层</div>
+        <ul class="ac-items">
+          <li>DeepSeek / OpenAI 兼容 API</li>
+          <li>4 角色维度结构化分析</li>
+          <li>跨平台关联分析</li>
+          <li>弱信号 & 轨迹突变捕捉</li>
+        </ul>
+      </div>
+      <div class="arch-card reveal">
+        <div class="ac-icon">📊</div>
+        <div class="ac-title">报告生成层</div>
+        <ul class="ac-items">
+          <li>HTML 可视化报告</li>
+          <li>SQLite 持久化存储</li>
+          <li>每日汇总 / 增量报告</li>
+          <li>角色化仪表盘</li>
+        </ul>
+      </div>
+      <div class="arch-card reveal">
+        <div class="ac-icon">📲</div>
+        <div class="ac-title">通知推送层</div>
+        <ul class="ac-items">
+          <li>企业微信（当前启用）</li>
+          <li>飞书 / 钉钉 / Telegram</li>
+          <li>邮件 / Slack / ntfy</li>
+          <li>通用 Webhook 集成</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer">
+  <div class="container">
+    <p>TrendRadar · KUKA China 质量数字化 · AI 舆情监控</p>
+    <p style="margin-top:8px; font-size:12px;">🤖 Powered by DeepSeek · 从信息被动接收到主动预警</p>
+  </div>
+</footer>
+
+<script>
+// Story navigation active state
+const sections = document.querySelectorAll('section[id]');
+const navItems = document.querySelectorAll('.story-nav-item');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    if (scrollY >= sectionTop - 200) {
+      current = section.getAttribute('id');
+    }
+  });
+  
+  navItems.forEach(item => {
+    item.classList.remove('active');
+    if (item.getAttribute('href') === '#' + current) {
+      item.classList.add('active');
+    }
+  });
+});
+
+// Reveal animation
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: .1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+console.log('TrendRadar KUKA 展示页面已加载 · v4.0');
+</script>
+
+</body>
+</html>
