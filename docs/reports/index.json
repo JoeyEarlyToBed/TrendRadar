@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-06-17T10:10:45.624801",
-  "total": 24,
+  "generated_at": "2026-06-17T10:45:10.420617",
+  "total": 25,
   "reports": [
+    {
+      "id": "2026-06-17-10-45",
+      "filename": "10-45.html",
+      "date": "2026-06-17",
+      "time": "10:45",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "小米版Claude Code正式发布，这次开源给到夯。",
+        "开源模型能否战胜 OpenAI？",
+        "[发码] Orange-Cloud 上架了，一款开源的 OAuth 登录的 Cloudflare iOS 客户端"
+      ],
+      "size": 130656,
+      "modified": "2026-06-17T10:45:08.073268",
+      "isNewest": true
+    },
     {
       "id": "2026-06-17-10-09",
       "filename": "10-09.html",
@@ -17,8 +35,7 @@
         "[发码] Orange-Cloud 上架了，一款开源的 OAuth 登录的 Cloudflare iOS 客户端"
       ],
       "size": 126571,
-      "modified": "2026-06-17T10:09:30.427413",
-      "isNewest": true
+      "modified": "2026-06-17T10:09:30.427413"
     },
     {
       "id": "2026-06-17-09-30",
