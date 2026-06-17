@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-06-17T11:50:31.036078",
-  "total": 27,
+  "generated_at": "2026-06-17T12:04:29.848738",
+  "total": 28,
   "reports": [
+    {
+      "id": "2026-06-17-12-04",
+      "filename": "12-04.html",
+      "date": "2026-06-17",
+      "time": "12:04",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "大晓机器人开源 ACE-Ego 具身操作 VLA 模型，能稳定完成塑料袋打包、鞋子装入鞋盒等操作",
+        "微软考虑使用 DeepSeek 的开源模型降低成本",
+        "开源模型能否战胜 OpenAI？"
+      ],
+      "size": 124802,
+      "modified": "2026-06-17T12:04:05.112664",
+      "isNewest": true
+    },
     {
       "id": "2026-06-17-11-50",
       "filename": "11-50.html",
@@ -17,8 +35,7 @@
         "10Gb/s Ethernet: switching to a Broadcom SFP+ module"
       ],
       "size": 126238,
-      "modified": "2026-06-17T11:50:28.704051",
-      "isNewest": true
+      "modified": "2026-06-17T11:50:28.704051"
     },
     {
       "id": "2026-06-17-11-17",
