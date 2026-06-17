@@ -108,11 +108,12 @@ def generate_reports_index(reports_dir: str, output_file: str) -> bool:
             date_str = f"{year}-{match2.group(1)}-{match2.group(2)}"
             time_str = f"{match2.group(3)}:{match2.group(4)}"
         
-        # 格式3: HH-MM.html (如 15-30.html，当天)
+        # 格式3: HH-MM.html (如 15-30.html，使用文件修改时间获取日期)
         match3 = re.match(r'(\d{2})-(\d{2})\.html$', filename)
         if match3:
-            today = datetime.now().strftime("%Y-%m-%d")
-            date_str = today
+            mtime = datetime.fromtimestamp(html_file.stat().st_mtime)
+            date_str = mtime.strftime("%Y-%m-%d")
+            # 使用文件修改时间作为日期，而不是当前时间
             time_str = f"{match3.group(1)}:{match3.group(2)}"
         
         if not date_str:
