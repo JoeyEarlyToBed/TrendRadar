@@ -614,6 +614,723 @@ RV减速器|谐波减速器
   </div>
 </section>
 
+<!-- ═══════════ AI 分析技术深度展示 ═══════════ -->
+<section class="section" id="ai-tech" style="background:linear-gradient(180deg, var(--industrial-bg) 0%, rgba(241,90,36,.03) 50%, var(--industrial-bg) 100%);">
+  <div class="container">
+    <div class="section-label">AI Technology</div>
+    <h2 class="section-title">AI 分析引擎技术架构</h2>
+    <p class="section-desc">
+      基于 DeepSeek 大模型的多维度情报分析系统，结合制造业业务场景定制的 Prompt 工程与角色化分析框架。
+    </p>
+
+    <!-- 核心设计思路 -->
+    <div style="margin:40px 0; padding:28px; background:var(--card); border:1px solid var(--border); border-radius:var(--radius); border-left:4px solid var(--kuka-orange);">
+      <h3 style="font-size:16px; color:var(--kuka-orange); margin-bottom:16px; font-weight:700;">💡 业务思考：为什么制造业需要 AI 舆情分析？</h3>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px;">
+        <div>
+          <div style="font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px;">信息过载困境</div>
+          <p style="font-size:13px; color:var(--text-dim); line-height:1.7;">
+            质量管理人员每天面对 23+ 平台的热榜信息，人工筛选效率极低。AI 可以在 30 秒内完成跨平台信息聚合与相关性判断。
+          </p>
+        </div>
+        <div>
+          <div style="font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px;">角色差异化需求</div>
+          <p style="font-size:13px; color:var(--text-dim); line-height:1.7;">
+            CEO 关注战略竞争，CTO 关注技术趋势，QM 关注质量风险。同一批新闻需要根据不同角色视角产出差异化分析。
+          </p>
+        </div>
+        <div>
+          <div style="font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px;">弱信号捕捉</div>
+          <p style="font-size:13px; color:var(--text-dim); line-height:1.7;">
+            行业变革往往始于小众平台的冷门讨论。AI 通过轨迹分析识别"排名第 50 的技术贴"与"榜首热点"的潜在关联。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 技术架构卡片 -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(350px, 1fr)); gap:20px; margin-top:32px;">
+      <!-- Prompt 工程 -->
+      <div class="arch-card reveal" style="border-color:rgba(74,140,247,.3);">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+          <div style="width:40px; height:40px; border-radius:10px; background:linear-gradient(135deg, #4a8cf7, #6366f1); display:flex; align-items:center; justify-content:center; font-size:18px;">🧠</div>
+          <div>
+            <div style="font-size:15px; font-weight:700; color:var(--text);">Prompt 工程体系</div>
+            <div style="font-size:12px; color:var(--text-muted);">结构化提示词设计</div>
+          </div>
+        </div>
+        <ul style="list-style:none; font-size:13px; color:var(--text-dim); line-height:2;">
+          <li style="display:flex; align-items:flex-start; gap:8px;">
+            <span style="color:var(--accent-blue); min-width:20px;">01</span>
+            <span><strong style="color:var(--text);">System Prompt 分层</strong>：角色定义 → 思维模型 → 输出格式 → 绝对禁止，四层隔离确保输出稳定性</span>
+          </li>
+          <li style="display:flex; align-items:flex-start; gap:8px;">
+            <span style="color:var(--accent-blue); min-width:20px;">02</span>
+            <span><strong style="color:var(--text);">动态变量注入</strong>：{news_count} {keywords} {platforms} 等 12 个运行时变量自动替换</span>
+          </li>
+          <li style="display:flex; align-items:flex-start; gap:8px;">
+            <span style="color:var(--accent-blue); min-width:20px;">03</span>
+            <span><strong style="color:var(--text);">思维链设计</strong>：见微知著 → 交叉验证 → 反直觉思考 → 结构化输出，四步推理链</span>
+          </li>
+          <li style="display:flex; align-items:flex-start; gap:8px;">
+            <span style="color:var(--accent-blue); min-width:20px;">04</span>
+            <span><strong style="color:var(--text);">防幻觉机制</strong>：轨迹量化分析规范，明确定义"高位横盘≠急升"等易混淆概念</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 角色化分析 -->
+      <div class="arch-card reveal" style="border-color:rgba(52,211,153,.3);">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+          <div style="width:40px; height:40px; border-radius:10px; background:linear-gradient(135deg, #34d399, #10b981); display:flex; align-items:center; justify-content:center; font-size:18px;">🎭</div>
+          <div>
+            <div style="font-size:15px; font-weight:700; color:var(--text);">四角色维度分析</div>
+            <div style="font-size:12px; color:var(--text-muted);">CEO / CTO / CDO / QM</div>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+          <div style="padding:12px; background:rgba(239,68,68,.08); border-radius:8px; border:1px solid rgba(239,68,68,.15);">
+            <div style="font-size:13px; font-weight:700; color:#ef4444; margin-bottom:6px;">CEO · 战略决策</div>
+            <div style="font-size:12px; color:var(--text-dim); line-height:1.6;">品牌声誉、ESG合规、市场竞争、供应链风险</div>
+          </div>
+          <div style="padding:12px; background:rgba(59,130,246,.08); border-radius:8px; border:1px solid rgba(59,130,246,.15);">
+            <div style="font-size:13px; font-weight:700; color:#3b82f6; margin-bottom:6px;">CTO · 技术前沿</div>
+            <div style="font-size:12px; color:var(--text-dim); line-height:1.6;">协作机器人、具身智能、专利标准、技术人才</div>
+          </div>
+          <div style="padding:12px; background:rgba(168,85,247,.08); border-radius:8px; border:1px solid rgba(168,85,247,.15);">
+            <div style="font-size:13px; font-weight:700; color:#a855f7; margin-bottom:6px;">CDO · 数字化转型</div>
+            <div style="font-size:12px; color:var(--text-dim); line-height:1.6;">数字工厂、AI质检、MES升级、灯塔工厂</div>
+          </div>
+          <div style="padding:12px; background:rgba(245,158,11,.08); border-radius:8px; border:1px solid rgba(245,158,11,.15);">
+            <div style="font-size:13px; font-weight:700; color:#f59e0b; margin-bottom:6px;">QM · 质量管控</div>
+            <div style="font-size:12px; color:var(--text-dim); line-height:1.6;">产品质量、缺陷检测、标准认证、口碑风险</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 分析板块 -->
+      <div class="arch-card reveal" style="border-color:rgba(251,191,36,.3); grid-column:1 / -1;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:20px;">
+          <div style="width:40px; height:40px; border-radius:10px; background:linear-gradient(135deg, #fbbf24, #f59e0b); display:flex; align-items:center; justify-content:center; font-size:18px;">📊</div>
+          <div>
+            <div style="font-size:15px; font-weight:700; color:var(--text);">六大分析板块</div>
+            <div style="font-size:12px; color:var(--text-muted);">JSON 结构化输出 · 板块间零冗余</div>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:16px;">
+          <div style="padding:16px; background:var(--surface); border-radius:8px;">
+            <div style="font-size:13px; font-weight:700; color:var(--kuka-orange); margin-bottom:8px;">01 核心热点态势</div>
+            <p style="font-size:12px; color:var(--text-dim); line-height:1.6;">宏观主线+微观佐证，识别全网霸屏/破圈扩散/圈层热点三级热度</p>
+          </div>
+          <div style="padding:16px; background:var(--surface); border-radius:8px;">
+            <div style="font-size:13px; font-weight:700; color:var(--kuka-orange); margin-bottom:8px;">02 舆论风向争议</div>
+            <p style="font-size:12px; color:var(--text-dim); line-height:1.6;">绘制情绪光谱，识别主流声音与潜流暗涌的反差，定位利益之争vs认知之争</p>
+          </div>
+          <div style="padding:16px; background:var(--surface); border-radius:8px;">
+            <div style="font-size:13px; font-weight:700; color:var(--kuka-orange); margin-bottom:8px;">03 异动与弱信号</div>
+            <p style="font-size:12px; color:var(--text-dim); line-height:1.6;">轨迹突变分析：急升/爆发、衰退/僵尸、回榜/反转三种模式识别</p>
+          </div>
+          <div style="padding:16px; background:var(--surface); border-radius:8px;">
+            <div style="font-size:13px; font-weight:700; color:var(--kuka-orange); margin-bottom:8px;">04 RSS 深度洞察</div>
+            <p style="font-size:12px; color:var(--text-dim); line-height:1.6;">去重补盲：忽略热榜已覆盖内容，挖掘专业视角的硬核增量信息</p>
+          </div>
+          <div style="padding:16px; background:var(--surface); border-radius:8px;">
+            <div style="font-size:13px; font-weight:700; color:var(--kuka-orange); margin-bottom:8px;">05 研判策略建议</div>
+            <p style="font-size:12px; color:var(--text-dim); line-height:1.6;">分角色输出：投资者/品牌方/公众/技术团队的可执行行动指南</p>
+          </div>
+          <div style="padding:16px; background:var(--surface); border-radius:8px;">
+            <div style="font-size:13px; font-weight:700; color:var(--kuka-orange); margin-bottom:8px;">06 独立展示区概括</div>
+            <p style="font-size:12px; color:var(--text-dim); line-height:1.6;">按数据源分组概括，识别各平台独有话题与排名走势特征</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 技术实现细节 -->
+      <div class="arch-card reveal" style="border-color:rgba(99,102,241,.3);">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+          <div style="width:40px; height:40px; border-radius:10px; background:linear-gradient(135deg, #6366f1, #8b5cf6); display:flex; align-items:center; justify-content:center; font-size:18px;">⚙️</div>
+          <div>
+            <div style="font-size:15px; font-weight:700; color:var(--text);">技术实现栈</div>
+            <div style="font-size:12px; color:var(--text-muted);">Python + DeepSeek API</div>
+          </div>
+        </div>
+        <div style="font-family:var(--font-mono); font-size:12px; color:var(--text-dim); line-height:1.8;">
+          <div style="padding:12px; background:var(--industrial-bg); border-radius:8px; margin-bottom:12px;">
+            <span style="color:var(--accent-green);">#</span> <span style="color:var(--text);">AI 分析调用链</span><br>
+            <span style="color:var(--accent-blue);">trendradar/analyzer/</span><br>
+            ├─ ai_analyzer.py <span style="color:var(--text-muted);"># 主分析器</span><br>
+            ├─ deepseek_client.py <span style="color:var(--text-muted);"># API 客户端</span><br>
+            ├─ role_dispatcher.py <span style="color:var(--text-muted);"># 角色分发</span><br>
+            └─ prompt_builder.py <span style="color:var(--text-muted);"># 提示词构建</span>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px;">
+            <span style="padding:3px 10px; background:rgba(99,102,241,.1); color:var(--accent2); border-radius:4px; font-size:11px;">DeepSeek-V3</span>
+            <span style="padding:3px 10px; background:rgba(99,102,241,.1); color:var(--accent2); border-radius:4px; font-size:11px;">JSON Mode</span>
+            <span style="padding:3px 10px; background:rgba(99,102,241,.1); color:var(--accent2); border-radius:4px; font-size:11px;">Streaming</span>
+            <span style="padding:3px 10px; background:rgba(99,102,241,.1); color:var(--accent2); border-radius:4px; font-size:11px;">Retry+Fallback</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 业务价值 -->
+      <div class="arch-card reveal" style="border-color:rgba(239,68,68,.3);">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+          <div style="width:40px; height:40px; border-radius:10px; background:linear-gradient(135deg, #ef4444, #f97316); display:flex; align-items:center; justify-content:center; font-size:18px;">💰</div>
+          <div>
+            <div style="font-size:15px; font-weight:700; color:var(--text);">业务价值量化</div>
+            <div style="font-size:12px; color:var(--text-muted);">从成本中心到价值中心</div>
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:12px; background:var(--surface); border-radius:8px;">
+            <span style="font-size:13px; color:var(--text-dim);">信息筛选效率</span>
+            <span style="font-size:18px; font-weight:700; color:var(--accent-green);">30x ↑</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:12px; background:var(--surface); border-radius:8px;">
+            <span style="font-size:13px; color:var(--text-dim);">跨平台覆盖度</span>
+            <span style="font-size:18px; font-weight:700; color:var(--accent-green);">23 平台</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:12px; background:var(--surface); border-radius:8px;">
+            <span style="font-size:13px; color:var(--text-dim);">分析响应时间</span>
+            <span style="font-size:18px; font-weight:700; color:var(--accent-green);">< 30s</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:12px; background:var(--surface); border-radius:8px;">
+            <span style="font-size:13px; color:var(--text-dim);">角色维度覆盖</span>
+            <span style="font-size:18px; font-weight:700; color:var(--accent-green);">4 角色</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Prompt 示例展示 -->
+    <div style="margin-top:40px; padding:24px; background:var(--card); border:1px solid var(--border); border-radius:var(--radius);">
+      <h3 style="font-size:16px; color:var(--kuka-orange); margin-bottom:16px; font-weight:700;">📝 Prompt 工程示例（节选）</h3>
+      <p style="font-size:13px; color:var(--text-dim); margin-bottom:16px;">以下展示 ai_analysis_prompt.txt 中的核心设计思路，体现业务场景与 AI 技术的深度结合：</p>
+      <div style="font-family:var(--font-mono); font-size:12px; line-height:1.8; color:var(--text-dim); background:var(--industrial-bg); padding:20px; border-radius:8px; overflow-x:auto;">
+        <div style="color:var(--text-muted);"># 系统级角色定义 — 确保 AI 以情报分析师身份思考</div>
+        <div style="color:var(--accent-blue);">[system]</div>
+        <div style="color:var(--text);">你是一名高级情报分析师。核心能力是从海量、碎片化的</div>
+        <div style="color:var(--text);">公开来源情报（OSINT）中提炼核心逻辑，识别被大众忽略的弱信号。</div>
+        <div style="margin-top:12px; color:var(--text-muted);"># 四大思维模型 — 制造业情报分析方法论</div>
+        <div style="color:var(--accent-green);">1. 见微知著 (Signal Detection)</div>
+        <div style="color:var(--text-dim);">   从"排名第50的冷门技术贴"与"排名第1的热门事件"中找到因果联系</div>
+        <div style="color:var(--accent-green);">2. 交叉验证 (Triangulation)</div>
+        <div style="color:var(--text-dim);">   利用"热榜"（大众情绪）与"RSS"（专家视角）的差异识别认知套利</div>
+        <div style="color:var(--accent-green);">3. 反直觉思考 (Counter-Intuitive)</div>
+        <div style="color:var(--text-dim);">   全网叫好时寻找风险；全网恐慌时寻找机会</div>
+        <div style="color:var(--accent-green);">4. 结构化输出 (MECE)</div>
+        <div style="color:var(--text-dim);">   分析维度相互独立且完全穷尽，避免逻辑混乱</div>
+        <div style="margin-top:12px; color:var(--text-muted);"># 轨迹量化分析 — 防幻觉机制</div>
+        <div style="color:var(--kuka-orange);">⚠️ 高位横盘 ≠ 急升：2→2→2 是稳定，20→3 才是爆发</div>
+        <div style="color:var(--kuka-orange);">⚠️ 回榜/反转：5→0→2 暗示有新爆料或剧情反转</div>
+      </div>
+    </div>
+
+    <!-- 实际效果展示 -->
+    <div style="margin-top:40px; padding:24px; background:var(--card); border:1px solid var(--border); border-radius:var(--radius);">
+      <h3 style="font-size:16px; color:var(--kuka-orange); margin-bottom:16px; font-weight:700;">🎯 实际分析效果展示</h3>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px;">
+        <div style="padding:16px; background:var(--surface); border-radius:8px; border-left:3px solid #ef4444;">
+          <div style="font-size:13px; font-weight:700; color:#ef4444; margin-bottom:8px;">CEO 视角示例</div>
+          <p style="font-size:12px; color:var(--text-dim); line-height:1.7;">
+            「美的集团发布新一代工业机器人」在 5 个平台霸屏，属于<strong style="color:var(--text);">全网霸屏</strong>级热度。轨迹显示从知乎技术讨论（排名 12）扩散至微博热搜（排名 3），符合<strong style="color:var(--text);">破圈扩散</strong>特征。建议关注：① 竞品反应速度 ② 资本市场解读 ③ 供应链合作伙伴动态。
+          </p>
+        </div>
+        <div style="padding:16px; background:var(--surface); border-radius:8px; border-left:3px solid #3b82f6;">
+          <div style="font-size:13px; font-weight:700; color:#3b82f6; margin-bottom:8px;">CTO 视角示例</div>
+          <p style="font-size:12px; color:var(--text-dim); line-height:1.7;">
+            「协作机器人安全标准 ISO/TS 15066 修订」仅在 IT之家 和 Hacker News 出现，属于<strong style="color:var(--text);">弱信号</strong>。但轨迹显示 15→8→3 持续急升，且知乎出现相关技术解读（排名 28）。预判：3 个月内将有更多厂商宣布安全认证计划，建议提前布局技术文档。
+          </p>
+        </div>
+        <div style="padding:16px; background:var(--surface); border-radius:8px; border-left:3px solid #f59e0b;">
+          <div style="font-size:13px; font-weight:700; color:#f59e0b; margin-bottom:8px;">QM 视角示例</div>
+          <p style="font-size:12px; color:var(--text-dim); line-height:1.7;">
+            「某品牌机器人减速器批次质量问题」在微博引发讨论（排名 7），但官方未回应。轨迹 3→7→12 显示<strong style="color:var(--text);">衰退趋势</strong>，RSS 源显示行业媒体已关注但尚未发酵。建议：① 内部核查同类供应商 ② 准备客户沟通预案 ③ 监控是否回榜反转。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ AI 分析技术深度展示 ═══════════ -->
+<section class="section" id="ai-tech" style="background:linear-gradient(180deg, var(--industrial-bg) 0%, rgba(241,90,36,.03) 50%, var(--industrial-bg) 100%);">
+  <div class="container">
+    <div class="section-label">AI Technology</div>
+    <h2 class="section-title">AI 分析引擎技术架构</h2>
+    <p class="section-desc">
+      基于 DeepSeek 大模型的多维度情报分析系统，结合制造业业务场景定制的 Prompt 工程与角色化分析框架。
+    </p>
+
+    <!-- 核心设计思路 -->
+    <div style="margin:40px 0; padding:28px; background:var(--card); border:1px solid var(--border); border-radius:var(--radius); border-left:4px solid var(--kuka-orange);">
+      <h3 style="font-size:16px; color:var(--kuka-orange); margin-bottom:16px; font-weight:700;">💡 业务思考：为什么制造业需要 AI 舆情分析？</h3>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px;">
+        <div>
+          <div style="font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px;">信息过载困境</div>
+          <p style="font-size:13px; color:var(--text-dim); line-height:1.7;">
+            质量管理人员每天面对 23+ 平台的热榜信息，人工筛选效率极低。AI 可以在 30 秒内完成跨平台信息聚合与相关性判断。
+          </p>
+        </div>
+        <div>
+          <div style="font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px;">角色差异化需求</div>
+          <p style="font-size:13px; color:var(--text-dim); line-height:1.7;">
+            CEO 关注战略竞争，CTO 关注技术趋势，QM 关注质量风险。同一批新闻需要根据不同角色视角产出差异化分析。
+          </p>
+        </div>
+        <div>
+          <div style="font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px;">弱信号捕捉</div>
+          <p style="font-size:13px; color:var(--text-dim); line-height:1.7;">
+            行业变革往往始于小众平台的冷门讨论。AI 通过轨迹分析识别"排名第 50 的技术贴"与"榜首热点"的潜在关联。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 技术架构卡片 -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(350px, 1fr)); gap:20px; margin-top:32px;">
+      <!-- Prompt 工程 -->
+      <div class="arch-card reveal" style="border-color:rgba(74,140,247,.3);">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+          <div style="width:40px; height:40px; border-radius:10px; background:linear-gradient(135deg, #4a8cf7, #6366f1); display:flex; align-items:center; justify-content:center; font-size:18px;">🧠</div>
+          <div>
+            <div style="font-size:15px; font-weight:700; color:var(--text);">Prompt 工程体系</div>
+            <div style="font-size:12px; color:var(--text-muted);">结构化提示词设计</div>
+          </div>
+        </div>
+        <ul style="list-style:none; font-size:13px; color:var(--text-dim); line-height:2;">
+          <li style="display:flex; align-items:flex-start; gap:8px;">
+            <span style="color:var(--accent-blue); min-width:20px;">01</span>
+            <span><strong style="color:var(--text);">System Prompt 分层</strong>：角色定义 → 思维模型 → 输出格式 → 绝对禁止，四层隔离确保输出稳定性</span>
+          </li>
+          <li style="display:flex; align-items:flex-start; gap:8px;">
+            <span style="color:var(--accent-blue); min-width:20px;">02</span>
+            <span><strong style="color:var(--text);">动态变量注入</strong>：{news_count} {keywords} {platforms} 等 12 个运行时变量自动替换</span>
+          </li>
+          <li style="display:flex; align-items:flex-start; gap:8px;">
+            <span style="color:var(--accent-blue); min-width:20px;">03</span>
+            <span><strong style="color:var(--text);">思维链设计</strong>：见微知著 → 交叉验证 → 反直觉思考 → 结构化输出，四步推理链</span>
+          </li>
+          <li style="display:flex; align-items:flex-start; gap:8px;">
+            <span style="color:var(--accent-blue); min-width:20px;">04</span>
+            <span><strong style="color:var(--text);">防幻觉机制</strong>：轨迹量化分析规范，明确定义"高位横盘≠急升"等易混淆概念</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 角色化分析 -->
+      <div class="arch-card reveal" style="border-color:rgba(52,211,153,.3);">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+          <div style="width:40px; height:40px; border-radius:10px; background:linear-gradient(135deg, #34d399, #10b981); display:flex; align-items:center; justify-content:center; font-size:18px;">🎭</div>
+          <div>
+            <div style="font-size:15px; font-weight:700; color:var(--text);">四角色维度分析</div>
+            <div style="font-size:12px; color:var(--text-muted);">CEO / CTO / CDO / QM</div>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+          <div style="padding:12px; background:rgba(239,68,68,.08); border-radius:8px; border:1px solid rgba(239,68,68,.15);">
+            <div style="font-size:13px; font-weight:700; color:#ef4444; margin-bottom:6px;">CEO · 战略决策</div>
+            <div style="font-size:12px; color:var(--text-dim); line-height:1.6;">品牌声誉、ESG合规、市场竞争、供应链风险</div>
+          </div>
+          <div style="padding:12px; background:rgba(59,130,246,.08); border-radius:8px; border:1px solid rgba(59,130,246,.15);">
+            <div style="font-size:13px; font-weight:700; color:#3b82f6; margin-bottom:6px;">CTO · 技术前沿</div>
+            <div style="font-size:12px; color:var(--text-dim); line-height:1.6;">协作机器人、具身智能、专利标准、技术人才</div>
+          </div>
+          <div style="padding:12px; background:rgba(168,85,247,.08); border-radius:8px; border:1px solid rgba(168,85,247,.15);">
+            <div style="font-size:13px; font-weight:700; color:#a855f7; margin-bottom:6px;">CDO · 数字化转型</div>
+            <div style="font-size:12px; color:var(--text-dim); line-height:1.6;">数字工厂、AI质检、MES升级、灯塔工厂</div>
+          </div>
+          <div style="padding:12px; background:rgba(245,158,11,.08); border-radius:8px; border:1px solid rgba(245,158,11,.15);">
+            <div style="font-size:13px; font-weight:700; color:#f59e0b; margin-bottom:6px;">QM · 质量管控</div>
+            <div style="font-size:12px; color:var(--text-dim); line-height:1.6;">产品质量、缺陷检测、标准认证、口碑风险</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 分析板块 -->
+      <div class="arch-card reveal" style="border-color:rgba(251,191,36,.3); grid-column:1 / -1;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:20px;">
+          <div style="width:40px; height:40px; border-radius:10px; background:linear-gradient(135deg, #fbbf24, #f59e0b); display:flex; align-items:center; justify-content:center; font-size:18px;">📊</div>
+          <div>
+            <div style="font-size:15px; font-weight:700; color:var(--text);">六大分析板块</div>
+            <div style="font-size:12px; color:var(--text-muted);">JSON 结构化输出 · 板块间零冗余</div>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:16px;">
+          <div style="padding:16px; background:var(--surface); border-radius:8px;">
+            <div style="font-size:13px; font-weight:700; color:var(--kuka-orange); margin-bottom:8px;">01 核心热点态势</div>
+            <p style="font-size:12px; color:var(--text-dim); line-height:1.6;">宏观主线+微观佐证，识别全网霸屏/破圈扩散/圈层热点三级热度</p>
+          </div>
+          <div style="padding:16px; background:var(--surface); border-radius:8px;">
+            <div style="font-size:13px; font-weight:700; color:var(--kuka-orange); margin-bottom:8px;">02 舆论风向争议</div>
+            <p style="font-size:12px; color:var(--text-dim); line-height:1.6;">绘制情绪光谱，识别主流声音与潜流暗涌的反差，定位利益之争vs认知之争</p>
+          </div>
+          <div style="padding:16px; background:var(--surface); border-radius:8px;">
+            <div style="font-size:13px; font-weight:700; color:var(--kuka-orange); margin-bottom:8px;">03 异动与弱信号</div>
+            <p style="font-size:12px; color:var(--text-dim); line-height:1.6;">轨迹突变分析：急升/爆发、衰退/僵尸、回榜/反转三种模式识别</p>
+          </div>
+          <div style="padding:16px; background:var(--surface); border-radius:8px;">
+            <div style="font-size:13px; font-weight:700; color:var(--kuka-orange); margin-bottom:8px;">04 RSS 深度洞察</div>
+            <p style="font-size:12px; color:var(--text-dim); line-height:1.6;">去重补盲：忽略热榜已覆盖内容，挖掘专业视角的硬核增量信息</p>
+          </div>
+          <div style="padding:16px; background:var(--surface); border-radius:8px;">
+            <div style="font-size:13px; font-weight:700; color:var(--kuka-orange); margin-bottom:8px;">05 研判策略建议</div>
+            <p style="font-size:12px; color:var(--text-dim); line-height:1.6;">分角色输出：投资者/品牌方/公众/技术团队的可执行行动指南</p>
+          </div>
+          <div style="padding:16px; background:var(--surface); border-radius:8px;">
+            <div style="font-size:13px; font-weight:700; color:var(--kuka-orange); margin-bottom:8px;">06 独立展示区概括</div>
+            <p style="font-size:12px; color:var(--text-dim); line-height:1.6;">按数据源分组概括，识别各平台独有话题与排名走势特征</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 技术实现细节 -->
+      <div class="arch-card reveal" style="border-color:rgba(99,102,241,.3);">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+          <div style="width:40px; height:40px; border-radius:10px; background:linear-gradient(135deg, #6366f1, #8b5cf6); display:flex; align-items:center; justify-content:center; font-size:18px;">⚙️</div>
+          <div>
+            <div style="font-size:15px; font-weight:700; color:var(--text);">技术实现栈</div>
+            <div style="font-size:12px; color:var(--text-muted);">Python + DeepSeek API</div>
+          </div>
+        </div>
+        <div style="font-family:var(--font-mono); font-size:12px; color:var(--text-dim); line-height:1.8;">
+          <div style="padding:12px; background:var(--industrial-bg); border-radius:8px; margin-bottom:12px;">
+            <span style="color:var(--accent-green);">#</span> <span style="color:var(--text);">AI 分析调用链</span><br>
+            <span style="color:var(--accent-blue);">trendradar/analyzer/</span><br>
+            ├─ ai_analyzer.py <span style="color:var(--text-muted);"># 主分析器</span><br>
+            ├─ deepseek_client.py <span style="color:var(--text-muted);"># API 客户端</span><br>
+            ├─ role_dispatcher.py <span style="color:var(--text-muted);"># 角色分发</span><br>
+            └─ prompt_builder.py <span style="color:var(--text-muted);"># 提示词构建</span>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px;">
+            <span style="padding:3px 10px; background:rgba(99,102,241,.1); color:var(--accent2); border-radius:4px; font-size:11px;">DeepSeek-V3</span>
+            <span style="padding:3px 10px; background:rgba(99,102,241,.1); color:var(--accent2); border-radius:4px; font-size:11px;">JSON Mode</span>
+            <span style="padding:3px 10px; background:rgba(99,102,241,.1); color:var(--accent2); border-radius:4px; font-size:11px;">Streaming</span>
+            <span style="padding:3px 10px; background:rgba(99,102,241,.1); color:var(--accent2); border-radius:4px; font-size:11px;">Retry+Fallback</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 业务价值 -->
+      <div class="arch-card reveal" style="border-color:rgba(239,68,68,.3);">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+          <div style="width:40px; height:40px; border-radius:10px; background:linear-gradient(135deg, #ef4444, #f97316); display:flex; align-items:center; justify-content:center; font-size:18px;">💰</div>
+          <div>
+            <div style="font-size:15px; font-weight:700; color:var(--text);">业务价值量化</div>
+            <div style="font-size:12px; color:var(--text-muted);">从成本中心到价值中心</div>
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:12px; background:var(--surface); border-radius:8px;">
+            <span style="font-size:13px; color:var(--text-dim);">信息筛选效率</span>
+            <span style="font-size:18px; font-weight:700; color:var(--accent-green);">30x ↑</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:12px; background:var(--surface); border-radius:8px;">
+            <span style="font-size:13px; color:var(--text-dim);">跨平台覆盖度</span>
+            <span style="font-size:18px; font-weight:700; color:var(--accent-green);">23 平台</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:12px; background:var(--surface); border-radius:8px;">
+            <span style="font-size:13px; color:var(--text-dim);">分析响应时间</span>
+            <span style="font-size:18px; font-weight:700; color:var(--accent-green);">< 30s</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:12px; background:var(--surface); border-radius:8px;">
+            <span style="font-size:13px; color:var(--text-dim);">角色维度覆盖</span>
+            <span style="font-size:18px; font-weight:700; color:var(--accent-green);">4 角色</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Prompt 示例展示 -->
+    <div style="margin-top:40px; padding:24px; background:var(--card); border:1px solid var(--border); border-radius:var(--radius);">
+      <h3 style="font-size:16px; color:var(--kuka-orange); margin-bottom:16px; font-weight:700;">📝 Prompt 工程示例（节选）</h3>
+      <p style="font-size:13px; color:var(--text-dim); margin-bottom:16px;">以下展示 ai_analysis_prompt.txt 中的核心设计思路，体现业务场景与 AI 技术的深度结合：</p>
+      <div style="font-family:var(--font-mono); font-size:12px; line-height:1.8; color:var(--text-dim); background:var(--industrial-bg); padding:20px; border-radius:8px; overflow-x:auto;">
+        <div style="color:var(--text-muted);"># 系统级角色定义 — 确保 AI 以情报分析师身份思考</div>
+        <div style="color:var(--accent-blue);">[system]</div>
+        <div style="color:var(--text);">你是一名高级情报分析师。核心能力是从海量、碎片化的</div>
+        <div style="color:var(--text);">公开来源情报（OSINT）中提炼核心逻辑，识别被大众忽略的弱信号。</div>
+        <div style="margin-top:12px; color:var(--text-muted);"># 四大思维模型 — 制造业情报分析方法论</div>
+        <div style="color:var(--accent-green);">1. 见微知著 (Signal Detection)</div>
+        <div style="color:var(--text-dim);">   从"排名第50的冷门技术贴"与"排名第1的热门事件"中找到因果联系</div>
+        <div style="color:var(--accent-green);">2. 交叉验证 (Triangulation)</div>
+        <div style="color:var(--text-dim);">   利用"热榜"（大众情绪）与"RSS"（专家视角）的差异识别认知套利</div>
+        <div style="color:var(--accent-green);">3. 反直觉思考 (Counter-Intuitive)</div>
+        <div style="color:var(--text-dim);">   全网叫好时寻找风险；全网恐慌时寻找机会</div>
+        <div style="color:var(--accent-green);">4. 结构化输出 (MECE)</div>
+        <div style="color:var(--text-dim);">   分析维度相互独立且完全穷尽，避免逻辑混乱</div>
+        <div style="margin-top:12px; color:var(--text-muted);"># 轨迹量化分析 — 防幻觉机制</div>
+        <div style="color:var(--kuka-orange);">⚠️ 高位横盘 ≠ 急升：2→2→2 是稳定，20→3 才是爆发</div>
+        <div style="color:var(--kuka-orange);">⚠️ 回榜/反转：5→0→2 暗示有新爆料或剧情反转</div>
+      </div>
+    </div>
+
+    <!-- 实际效果展示 -->
+    <div style="margin-top:40px; padding:24px; background:var(--card); border:1px solid var(--border); border-radius:var(--radius);">
+      <h3 style="font-size:16px; color:var(--kuka-orange); margin-bottom:16px; font-weight:700;">🎯 实际分析效果展示</h3>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px;">
+        <div style="padding:16px; background:var(--surface); border-radius:8px; border-left:3px solid #ef4444;">
+          <div style="font-size:13px; font-weight:700; color:#ef4444; margin-bottom:8px;">CEO 视角示例</div>
+          <p style="font-size:12px; color:var(--text-dim); line-height:1.7;">
+            「美的集团发布新一代工业机器人」在 5 个平台霸屏，属于<strong style="color:var(--text);">全网霸屏</strong>级热度。轨迹显示从知乎技术讨论（排名 12）扩散至微博热搜（排名 3），符合<strong style="color:var(--text);">破圈扩散</strong>特征。建议关注：① 竞品反应速度 ② 资本市场解读 ③ 供应链合作伙伴动态。
+          </p>
+        </div>
+        <div style="padding:16px; background:var(--surface); border-radius:8px; border-left:3px solid #3b82f6;">
+          <div style="font-size:13px; font-weight:700; color:#3b82f6; margin-bottom:8px;">CTO 视角示例</div>
+          <p style="font-size:12px; color:var(--text-dim); line-height:1.7;">
+            「协作机器人安全标准 ISO/TS 15066 修订」仅在 IT之家 和 Hacker News 出现，属于<strong style="color:var(--text);">弱信号</strong>。但轨迹显示 15→8→3 持续急升，且知乎出现相关技术解读（排名 28）。预判：3 个月内将有更多厂商宣布安全认证计划，建议提前布局技术文档。
+          </p>
+        </div>
+        <div style="padding:16px; background:var(--surface); border-radius:8px; border-left:3px solid #f59e0b;">
+          <div style="font-size:13px; font-weight:700; color:#f59e0b; margin-bottom:8px;">QM 视角示例</div>
+          <p style="font-size:12px; color:var(--text-dim); line-height:1.7;">
+            「某品牌机器人减速器批次质量问题」在微博引发讨论（排名 7），但官方未回应。轨迹 3→7→12 显示<strong style="color:var(--text);">衰退趋势</strong>，RSS 源显示行业媒体已关注但尚未发酵。建议：① 内部核查同类供应商 ② 准备客户沟通预案 ③ 监控是否回榜反转。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ AI 分析技术深度展示 ═══════════ -->
+<section class="section" id="ai-tech" style="background:linear-gradient(180deg, var(--industrial-bg) 0%, rgba(241,90,36,.03) 50%, var(--industrial-bg) 100%);">
+  <div class="container">
+    <div class="section-label">AI Technology</div>
+    <h2 class="section-title">AI 分析引擎技术架构</h2>
+    <p class="section-desc">
+      基于 DeepSeek 大模型的多维度情报分析系统，结合制造业业务场景定制的 Prompt 工程与角色化分析框架。
+    </p>
+
+    <!-- 核心设计思路 -->
+    <div style="margin:40px 0; padding:28px; background:var(--card); border:1px solid var(--border); border-radius:var(--radius); border-left:4px solid var(--kuka-orange);">
+      <h3 style="font-size:16px; color:var(--kuka-orange); margin-bottom:16px; font-weight:700;">💡 业务思考：为什么制造业需要 AI 舆情分析？</h3>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px;">
+        <div>
+          <div style="font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px;">信息过载困境</div>
+          <p style="font-size:13px; color:var(--text-dim); line-height:1.7;">
+            质量管理人员每天面对 23+ 平台的热榜信息，人工筛选效率极低。AI 可以在 30 秒内完成跨平台信息聚合与相关性判断。
+          </p>
+        </div>
+        <div>
+          <div style="font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px;">角色差异化需求</div>
+          <p style="font-size:13px; color:var(--text-dim); line-height:1.7;">
+            CEO 关注战略竞争，CTO 关注技术趋势，QM 关注质量风险。同一批新闻需要根据不同角色视角产出差异化分析。
+          </p>
+        </div>
+        <div>
+          <div style="font-size:14px; font-weight:600; color:var(--text); margin-bottom:8px;">弱信号捕捉</div>
+          <p style="font-size:13px; color:var(--text-dim); line-height:1.7;">
+            行业变革往往始于小众平台的冷门讨论。AI 通过轨迹分析识别"排名第 50 的技术贴"与"榜首热点"的潜在关联。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 技术架构卡片 -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(350px, 1fr)); gap:20px; margin-top:32px;">
+      <!-- Prompt 工程 -->
+      <div class="arch-card reveal" style="border-color:rgba(74,140,247,.3);">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+          <div style="width:40px; height:40px; border-radius:10px; background:linear-gradient(135deg, #4a8cf7, #6366f1); display:flex; align-items:center; justify-content:center; font-size:18px;">🧠</div>
+          <div>
+            <div style="font-size:15px; font-weight:700; color:var(--text);">Prompt 工程体系</div>
+            <div style="font-size:12px; color:var(--text-muted);">结构化提示词设计</div>
+          </div>
+        </div>
+        <ul style="list-style:none; font-size:13px; color:var(--text-dim); line-height:2;">
+          <li style="display:flex; align-items:flex-start; gap:8px;">
+            <span style="color:var(--accent-blue); min-width:20px;">01</span>
+            <span><strong style="color:var(--text);">System Prompt 分层</strong>：角色定义 → 思维模型 → 输出格式 → 绝对禁止，四层隔离确保输出稳定性</span>
+          </li>
+          <li style="display:flex; align-items:flex-start; gap:8px;">
+            <span style="color:var(--accent-blue); min-width:20px;">02</span>
+            <span><strong style="color:var(--text);">动态变量注入</strong>：{news_count} {keywords} {platforms} 等 12 个运行时变量自动替换</span>
+          </li>
+          <li style="display:flex; align-items:flex-start; gap:8px;">
+            <span style="color:var(--accent-blue); min-width:20px;">03</span>
+            <span><strong style="color:var(--text);">思维链设计</strong>：见微知著 → 交叉验证 → 反直觉思考 → 结构化输出，四步推理链</span>
+          </li>
+          <li style="display:flex; align-items:flex-start; gap:8px;">
+            <span style="color:var(--accent-blue); min-width:20px;">04</span>
+            <span><strong style="color:var(--text);">防幻觉机制</strong>：轨迹量化分析规范，明确定义"高位横盘≠急升"等易混淆概念</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 角色化分析 -->
+      <div class="arch-card reveal" style="border-color:rgba(52,211,153,.3);">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+          <div style="width:40px; height:40px; border-radius:10px; background:linear-gradient(135deg, #34d399, #10b981); display:flex; align-items:center; justify-content:center; font-size:18px;">🎭</div>
+          <div>
+            <div style="font-size:15px; font-weight:700; color:var(--text);">四角色维度分析</div>
+            <div style="font-size:12px; color:var(--text-muted);">CEO / CTO / CDO / QM</div>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+          <div style="padding:12px; background:rgba(239,68,68,.08); border-radius:8px; border:1px solid rgba(239,68,68,.15);">
+            <div style="font-size:13px; font-weight:700; color:#ef4444; margin-bottom:6px;">CEO · 战略决策</div>
+            <div style="font-size:12px; color:var(--text-dim); line-height:1.6;">品牌声誉、ESG合规、市场竞争、供应链风险</div>
+          </div>
+          <div style="padding:12px; background:rgba(59,130,246,.08); border-radius:8px; border:1px solid rgba(59,130,246,.15);">
+            <div style="font-size:13px; font-weight:700; color:#3b82f6; margin-bottom:6px;">CTO · 技术前沿</div>
+            <div style="font-size:12px; color:var(--text-dim); line-height:1.6;">协作机器人、具身智能、专利标准、技术人才</div>
+          </div>
+          <div style="padding:12px; background:rgba(168,85,247,.08); border-radius:8px; border:1px solid rgba(168,85,247,.15);">
+            <div style="font-size:13px; font-weight:700; color:#a855f7; margin-bottom:6px;">CDO · 数字化转型</div>
+            <div style="font-size:12px; color:var(--text-dim); line-height:1.6;">数字工厂、AI质检、MES升级、灯塔工厂</div>
+          </div>
+          <div style="padding:12px; background:rgba(245,158,11,.08); border-radius:8px; border:1px solid rgba(245,158,11,.15);">
+            <div style="font-size:13px; font-weight:700; color:#f59e0b; margin-bottom:6px;">QM · 质量管控</div>
+            <div style="font-size:12px; color:var(--text-dim); line-height:1.6;">产品质量、缺陷检测、标准认证、口碑风险</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 分析板块 -->
+      <div class="arch-card reveal" style="border-color:rgba(251,191,36,.3); grid-column:1 / -1;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:20px;">
+          <div style="width:40px; height:40px; border-radius:10px; background:linear-gradient(135deg, #fbbf24, #f59e0b); display:flex; align-items:center; justify-content:center; font-size:18px;">📊</div>
+          <div>
+            <div style="font-size:15px; font-weight:700; color:var(--text);">六大分析板块</div>
+            <div style="font-size:12px; color:var(--text-muted);">JSON 结构化输出 · 板块间零冗余</div>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:16px;">
+          <div style="padding:16px; background:var(--surface); border-radius:8px;">
+            <div style="font-size:13px; font-weight:700; color:var(--kuka-orange); margin-bottom:8px;">01 核心热点态势</div>
+            <p style="font-size:12px; color:var(--text-dim); line-height:1.6;">宏观主线+微观佐证，识别全网霸屏/破圈扩散/圈层热点三级热度</p>
+          </div>
+          <div style="padding:16px; background:var(--surface); border-radius:8px;">
+            <div style="font-size:13px; font-weight:700; color:var(--kuka-orange); margin-bottom:8px;">02 舆论风向争议</div>
+            <p style="font-size:12px; color:var(--text-dim); line-height:1.6;">绘制情绪光谱，识别主流声音与潜流暗涌的反差，定位利益之争vs认知之争</p>
+          </div>
+          <div style="padding:16px; background:var(--surface); border-radius:8px;">
+            <div style="font-size:13px; font-weight:700; color:var(--kuka-orange); margin-bottom:8px;">03 异动与弱信号</div>
+            <p style="font-size:12px; color:var(--text-dim); line-height:1.6;">轨迹突变分析：急升/爆发、衰退/僵尸、回榜/反转三种模式识别</p>
+          </div>
+          <div style="padding:16px; background:var(--surface); border-radius:8px;">
+            <div style="font-size:13px; font-weight:700; color:var(--kuka-orange); margin-bottom:8px;">04 RSS 深度洞察</div>
+            <p style="font-size:12px; color:var(--text-dim); line-height:1.6;">去重补盲：忽略热榜已覆盖内容，挖掘专业视角的硬核增量信息</p>
+          </div>
+          <div style="padding:16px; background:var(--surface); border-radius:8px;">
+            <div style="font-size:13px; font-weight:700; color:var(--kuka-orange); margin-bottom:8px;">05 研判策略建议</div>
+            <p style="font-size:12px; color:var(--text-dim); line-height:1.6;">分角色输出：投资者/品牌方/公众/技术团队的可执行行动指南</p>
+          </div>
+          <div style="padding:16px; background:var(--surface); border-radius:8px;">
+            <div style="font-size:13px; font-weight:700; color:var(--kuka-orange); margin-bottom:8px;">06 独立展示区概括</div>
+            <p style="font-size:12px; color:var(--text-dim); line-height:1.6;">按数据源分组概括，识别各平台独有话题与排名走势特征</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 技术实现细节 -->
+      <div class="arch-card reveal" style="border-color:rgba(99,102,241,.3);">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+          <div style="width:40px; height:40px; border-radius:10px; background:linear-gradient(135deg, #6366f1, #8b5cf6); display:flex; align-items:center; justify-content:center; font-size:18px;">⚙️</div>
+          <div>
+            <div style="font-size:15px; font-weight:700; color:var(--text);">技术实现栈</div>
+            <div style="font-size:12px; color:var(--text-muted);">Python + DeepSeek API</div>
+          </div>
+        </div>
+        <div style="font-family:var(--font-mono); font-size:12px; color:var(--text-dim); line-height:1.8;">
+          <div style="padding:12px; background:var(--industrial-bg); border-radius:8px; margin-bottom:12px;">
+            <span style="color:var(--accent-green);">#</span> <span style="color:var(--text);">AI 分析调用链</span><br>
+            <span style="color:var(--accent-blue);">trendradar/analyzer/</span><br>
+            ├─ ai_analyzer.py <span style="color:var(--text-muted);"># 主分析器</span><br>
+            ├─ deepseek_client.py <span style="color:var(--text-muted);"># API 客户端</span><br>
+            ├─ role_dispatcher.py <span style="color:var(--text-muted);"># 角色分发</span><br>
+            └─ prompt_builder.py <span style="color:var(--text-muted);"># 提示词构建</span>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px;">
+            <span style="padding:3px 10px; background:rgba(99,102,241,.1); color:var(--accent2); border-radius:4px; font-size:11px;">DeepSeek-V3</span>
+            <span style="padding:3px 10px; background:rgba(99,102,241,.1); color:var(--accent2); border-radius:4px; font-size:11px;">JSON Mode</span>
+            <span style="padding:3px 10px; background:rgba(99,102,241,.1); color:var(--accent2); border-radius:4px; font-size:11px;">Streaming</span>
+            <span style="padding:3px 10px; background:rgba(99,102,241,.1); color:var(--accent2); border-radius:4px; font-size:11px;">Retry+Fallback</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 业务价值 -->
+      <div class="arch-card reveal" style="border-color:rgba(239,68,68,.3);">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+          <div style="width:40px; height:40px; border-radius:10px; background:linear-gradient(135deg, #ef4444, #f97316); display:flex; align-items:center; justify-content:center; font-size:18px;">💰</div>
+          <div>
+            <div style="font-size:15px; font-weight:700; color:var(--text);">业务价值量化</div>
+            <div style="font-size:12px; color:var(--text-muted);">从成本中心到价值中心</div>
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:12px; background:var(--surface); border-radius:8px;">
+            <span style="font-size:13px; color:var(--text-dim);">信息筛选效率</span>
+            <span style="font-size:18px; font-weight:700; color:var(--accent-green);">30x ↑</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:12px; background:var(--surface); border-radius:8px;">
+            <span style="font-size:13px; color:var(--text-dim);">跨平台覆盖度</span>
+            <span style="font-size:18px; font-weight:700; color:var(--accent-green);">23 平台</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:12px; background:var(--surface); border-radius:8px;">
+            <span style="font-size:13px; color:var(--text-dim);">分析响应时间</span>
+            <span style="font-size:18px; font-weight:700; color:var(--accent-green);">< 30s</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:12px; background:var(--surface); border-radius:8px;">
+            <span style="font-size:13px; color:var(--text-dim);">角色维度覆盖</span>
+            <span style="font-size:18px; font-weight:700; color:var(--accent-green);">4 角色</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Prompt 示例展示 -->
+    <div style="margin-top:40px; padding:24px; background:var(--card); border:1px solid var(--border); border-radius:var(--radius);">
+      <h3 style="font-size:16px; color:var(--kuka-orange); margin-bottom:16px; font-weight:700;">📝 Prompt 工程示例（节选）</h3>
+      <p style="font-size:13px; color:var(--text-dim); margin-bottom:16px;">以下展示 ai_analysis_prompt.txt 中的核心设计思路，体现业务场景与 AI 技术的深度结合：</p>
+      <div style="font-family:var(--font-mono); font-size:12px; line-height:1.8; color:var(--text-dim); background:var(--industrial-bg); padding:20px; border-radius:8px; overflow-x:auto;">
+        <div style="color:var(--text-muted);"># 系统级角色定义 — 确保 AI 以情报分析师身份思考</div>
+        <div style="color:var(--accent-blue);">[system]</div>
+        <div style="color:var(--text);">你是一名高级情报分析师。核心能力是从海量、碎片化的</div>
+        <div style="color:var(--text);">公开来源情报（OSINT）中提炼核心逻辑，识别被大众忽略的弱信号。</div>
+        <div style="margin-top:12px; color:var(--text-muted);"># 四大思维模型 — 制造业情报分析方法论</div>
+        <div style="color:var(--accent-green);">1. 见微知著 (Signal Detection)</div>
+        <div style="color:var(--text-dim);">   从"排名第50的冷门技术贴"与"排名第1的热门事件"中找到因果联系</div>
+        <div style="color:var(--accent-green);">2. 交叉验证 (Triangulation)</div>
+        <div style="color:var(--text-dim);">   利用"热榜"（大众情绪）与"RSS"（专家视角）的差异识别认知套利</div>
+        <div style="color:var(--accent-green);">3. 反直觉思考 (Counter-Intuitive)</div>
+        <div style="color:var(--text-dim);">   全网叫好时寻找风险；全网恐慌时寻找机会</div>
+        <div style="color:var(--accent-green);">4. 结构化输出 (MECE)</div>
+        <div style="color:var(--text-dim);">   分析维度相互独立且完全穷尽，避免逻辑混乱</div>
+        <div style="margin-top:12px; color:var(--text-muted);"># 轨迹量化分析 — 防幻觉机制</div>
+        <div style="color:var(--kuka-orange);">⚠️ 高位横盘 ≠ 急升：2→2→2 是稳定，20→3 才是爆发</div>
+        <div style="color:var(--kuka-orange);">⚠️ 回榜/反转：5→0→2 暗示有新爆料或剧情反转</div>
+      </div>
+    </div>
+
+    <!-- 实际效果展示 -->
+    <div style="margin-top:40px; padding:24px; background:var(--card); border:1px solid var(--border); border-radius:var(--radius);">
+      <h3 style="font-size:16px; color:var(--kuka-orange); margin-bottom:16px; font-weight:700;">🎯 实际分析效果展示</h3>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px;">
+        <div style="padding:16px; background:var(--surface); border-radius:8px; border-left:3px solid #ef4444;">
+          <div style="font-size:13px; font-weight:700; color:#ef4444; margin-bottom:8px;">CEO 视角示例</div>
+          <p style="font-size:12px; color:var(--text-dim); line-height:1.7;">
+            「美的集团发布新一代工业机器人」在 5 个平台霸屏，属于<strong style="color:var(--text);">全网霸屏</strong>级热度。轨迹显示从知乎技术讨论（排名 12）扩散至微博热搜（排名 3），符合<strong style="color:var(--text);">破圈扩散</strong>特征。建议关注：① 竞品反应速度 ② 资本市场解读 ③ 供应链合作伙伴动态。
+          </p>
+        </div>
+        <div style="padding:16px; background:var(--surface); border-radius:8px; border-left:3px solid #3b82f6;">
+          <div style="font-size:13px; font-weight:700; color:#3b82f6; margin-bottom:8px;">CTO 视角示例</div>
+          <p style="font-size:12px; color:var(--text-dim); line-height:1.7;">
+            「协作机器人安全标准 ISO/TS 15066 修订」仅在 IT之家 和 Hacker News 出现，属于<strong style="color:var(--text);">弱信号</strong>。但轨迹显示 15→8→3 持续急升，且知乎出现相关技术解读（排名 28）。预判：3 个月内将有更多厂商宣布安全认证计划，建议提前布局技术文档。
+          </p>
+        </div>
+        <div style="padding:16px; background:var(--surface); border-radius:8px; border-left:3px solid #f59e0b;">
+          <div style="font-size:13px; font-weight:700; color:#f59e0b; margin-bottom:8px;">QM 视角示例</div>
+          <p style="font-size:12px; color:var(--text-dim); line-height:1.7;">
+            「某品牌机器人减速器批次质量问题」在微博引发讨论（排名 7），但官方未回应。轨迹 3→7→12 显示<strong style="color:var(--text);">衰退趋势</strong>，RSS 源显示行业媒体已关注但尚未发酵。建议：① 内部核查同类供应商 ② 准备客户沟通预案 ③ 监控是否回榜反转。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════ 数据流 ═══════════ -->
 <section class="section" id="dataflow">
   <div class="container">
