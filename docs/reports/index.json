@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-06-19T02:32:31.898176",
-  "total": 49,
+  "generated_at": "2026-06-19T13:45:10.840492",
+  "total": 50,
   "reports": [
+    {
+      "id": "2026-06-19-13-45",
+      "filename": "13-45.html",
+      "date": "2026-06-19",
+      "time": "13:45",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "开源项目免费领 token",
+        "蔡崇信：阿里全面投入 AI，开源的主要推动力量来自中国企业",
+        "Epic Games 推出开源版本控制系统 Lore"
+      ],
+      "size": 125715,
+      "modified": "2026-06-19T13:45:08.509757",
+      "isNewest": true
+    },
     {
       "id": "2026-06-19-02-32",
       "filename": "02-32.html",
@@ -17,8 +35,7 @@
         "Microsoft new Outlook takes 10 seconds to do what Outlook Classic does instantly"
       ],
       "size": 126595,
-      "modified": "2026-06-19T02:32:29.223714",
-      "isNewest": true
+      "modified": "2026-06-19T02:32:29.223714"
     },
     {
       "id": "2026-06-18-06-44",
