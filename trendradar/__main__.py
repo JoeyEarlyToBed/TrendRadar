@@ -272,7 +272,7 @@ class NewsAnalyzer:
         return False
 
     def _push_to_github(self, html_file_path: str) -> None:
-        """将 HTML 报告自动推送到 GitHub 仓库（如果已启用）"""
+        """将 HTML 报告自动推送到 GitHub 仓库（如果已启用），推送后删除本地文件"""
         try:
             from trendradar.notification.github_pusher import create_github_pusher_from_config
             cfg = self.ctx.config
@@ -306,6 +306,12 @@ class NewsAnalyzer:
 
             if result.get("success"):
                 print(f"[GitHub 推送] ✓ {result.get('message', '成功')}")
+                # 推送成功后删除本地文件
+                try:
+                    p.unlink()
+                    print(f"[GitHub 推送] ✓ 已删除本地文件: {html_file_path}")
+                except Exception as e:
+                    print(f"[GitHub 推送] ⚠ 删除本地文件失败: {e}")
             else:
                 print(f"[GitHub 推送] ✗ {result.get('message', '失败')}")
 
