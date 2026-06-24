@@ -268,7 +268,8 @@ class NewsAnalyzer:
 
     def _should_open_browser(self) -> bool:
         """判断是否应该打开浏览器"""
-        return not self.is_github_actions and not self.is_docker_container
+        # 已禁用浏览器自动打开
+        return False
 
     def _push_to_github(self, html_file_path: str) -> None:
         """将 HTML 报告自动推送到 GitHub 仓库（如果已启用）"""
@@ -1810,13 +1811,13 @@ class NewsAnalyzer:
                 schedule=schedule,
             )
 
-        # 打开浏览器（仅在非容器环境）
+        # 打开浏览器（已禁用）
         if self._should_open_browser() and html_file:
             file_url = "file://" + str(Path(html_file).resolve())
             print(f"正在打开HTML报告: {file_url}")
             webbrowser.open(file_url)
-        elif self.is_docker_container and html_file:
-            print(f"HTML报告已生成（Docker环境）: {html_file}")
+        elif html_file:
+            print(f"HTML报告已生成: {html_file}")
 
         return html_file
 
