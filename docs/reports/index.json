@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-06-27T23:51:25.897244",
-  "total": 144,
+  "generated_at": "2026-06-28T00:41:17.912592",
+  "total": 145,
   "reports": [
+    {
+      "id": "2026-06-28-00-41",
+      "filename": "00-41.html",
+      "date": "2026-06-28",
+      "time": "00:41",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "DSpark: Speculative decoding accelerates LLM inference [pdf]",
+        "为什么没人会喜欢你用 LLM 写出来的东西？",
+        "The gap between open weights LLMs and closed source LLMs"
+      ],
+      "size": 127670,
+      "modified": "2026-06-28T00:41:15.409577",
+      "isNewest": true
+    },
     {
       "id": "2026-06-27-23-51",
       "filename": "23-51.html",
@@ -17,8 +35,7 @@
         "为什么没人会喜欢你用 LLM 写出来的东西？"
       ],
       "size": 121248,
-      "modified": "2026-06-27T23:51:23.221777",
-      "isNewest": true
+      "modified": "2026-06-27T23:51:23.221777"
     },
     {
       "id": "2026-06-27-22-00",
