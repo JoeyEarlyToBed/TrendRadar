@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-06-28T02:09:19.800768",
-  "total": 147,
+  "generated_at": "2026-06-28T03:30:33.469194",
+  "total": 148,
   "reports": [
+    {
+      "id": "2026-06-28-03-29",
+      "filename": "03-29.html",
+      "date": "2026-06-28",
+      "time": "03:29",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "LLMRelayService：比 NewAPI 更轻量的大模型网关",
+        "DSpark: Speculative decoding accelerates LLM inference [pdf]",
+        "为什么没人会喜欢你用 LLM 写出来的东西？"
+      ],
+      "size": 123230,
+      "modified": "2026-06-28T03:29:03.022004",
+      "isNewest": true
+    },
     {
       "id": "2026-06-28-02-09",
       "filename": "02-09.html",
@@ -17,8 +35,7 @@
         "为什么没人会喜欢你用 LLM 写出来的东西？"
       ],
       "size": 124573,
-      "modified": "2026-06-28T02:09:17.413942",
-      "isNewest": true
+      "modified": "2026-06-28T02:09:17.413942"
     },
     {
       "id": "2026-06-28-01-34",
