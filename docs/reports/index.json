@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-07-02T21:26:26.529965",
-  "total": 182,
+  "generated_at": "2026-07-02T22:10:45.455650",
+  "total": 183,
   "reports": [
+    {
+      "id": "2026-07-02-22-08",
+      "filename": "22-08.html",
+      "date": "2026-07-02",
+      "time": "22:08",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "26k Star 开源内网穿透神器 NetBird，一分钟实现全球设备互联！",
+        "SenseNova-U1-8B-MoT-Infographic-V2 发布了，在开源信息图生成模型领域基本接近 SOTA",
+        "告别人工调优！ ProofHound Cloud 正式发布，配套完整官方开源文档"
+      ],
+      "size": 125213,
+      "modified": "2026-07-02T22:08:41.869027",
+      "isNewest": true
+    },
     {
       "id": "2026-07-02-21-26",
       "filename": "21-26.html",
@@ -17,8 +35,7 @@
         "告别人工调优！ ProofHound Cloud 正式发布，配套完整官方开源文档"
       ],
       "size": 167548,
-      "modified": "2026-07-02T21:26:24.283832",
-      "isNewest": true
+      "modified": "2026-07-02T21:26:24.283832"
     },
     {
       "id": "2026-07-02-20-48",
