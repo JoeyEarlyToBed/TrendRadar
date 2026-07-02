@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-07-02T23:27:28.916324",
-  "total": 185,
+  "generated_at": "2026-07-03T03:18:29.469737",
+  "total": 186,
   "reports": [
+    {
+      "id": "2026-07-03-03-18",
+      "filename": "03-18.html",
+      "date": "2026-07-03",
+      "time": "03:18",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "[macOS/开源] 会话散在 ~/.claude 和 ~/.codex 里找不到？我写了个统一浏览搜索 + 一键 resume 的工具",
+        "vibe： HEIC 转 JPG 转换器 - 简单的开源 Android 小工具",
+        "26k Star 开源内网穿透神器 NetBird，一分钟实现全球设备互联！"
+      ],
+      "size": 133173,
+      "modified": "2026-07-03T03:18:24.838001",
+      "isNewest": true
+    },
     {
       "id": "2026-07-02-23-27",
       "filename": "23-27.html",
@@ -17,8 +35,7 @@
         "SenseNova-U1-8B-MoT-Infographic-V2 发布了，在开源信息图生成模型领域基本接近 SOTA"
       ],
       "size": 127719,
-      "modified": "2026-07-02T23:27:26.599771",
-      "isNewest": true
+      "modified": "2026-07-02T23:27:26.599771"
     },
     {
       "id": "2026-07-02-22-49",
