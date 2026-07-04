@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-07-04T06:01:43.925881",
-  "total": 190,
+  "generated_at": "2026-07-04T09:01:47.673143",
+  "total": 191,
   "reports": [
+    {
+      "id": "2026-07-04-08-47",
+      "filename": "08-47.html",
+      "date": "2026-07-04",
+      "time": "08:47",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "Valve 开源 Steam Machine 的电子墨水屏",
+        "Wordgard: In-browser rich-text editor from the creator of ProseMirror",
+        "我看到 Qclaw Workbuddy Trae Work 扣子编程 Codex Claude 很多 Agent，但是好像没有开源的？"
+      ],
+      "size": 128162,
+      "modified": "2026-07-04T08:47:01.550449",
+      "isNewest": true
+    },
     {
       "id": "2026-07-04-06-01",
       "filename": "06-01.html",
@@ -17,8 +35,7 @@
         "我看到 Qclaw Workbuddy Trae Work 扣子编程 Codex Claude 很多 Agent，但是好像没有开源的？"
       ],
       "size": 127694,
-      "modified": "2026-07-04T06:01:41.181860",
-      "isNewest": true
+      "modified": "2026-07-04T06:01:41.181860"
     },
     {
       "id": "2026-07-04-00-33",
