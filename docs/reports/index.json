@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-07-04T12:37:54.121966",
-  "total": 192,
+  "generated_at": "2026-07-04T17:31:21.297664",
+  "total": 193,
   "reports": [
+    {
+      "id": "2026-07-04-17-29",
+      "filename": "17-29.html",
+      "date": "2026-07-04",
+      "time": "17:29",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "eHubs: 开源的个人 / 团队 Agentic 资源管理工具 ~",
+        "Valve 开源 Steam Machine 的电子墨水屏",
+        "如何看待苹果手机信息泄露，程度堪比马圣开源？"
+      ],
+      "size": 132354,
+      "modified": "2026-07-04T17:29:50.686722",
+      "isNewest": true
+    },
     {
       "id": "2026-07-04-12-37",
       "filename": "12-37.html",
@@ -17,8 +35,7 @@
         "我看到 Qclaw Workbuddy Trae Work 扣子编程 Codex Claude 很多 Agent，但是好像没有开源的？"
       ],
       "size": 132038,
-      "modified": "2026-07-04T12:37:48.336919",
-      "isNewest": true
+      "modified": "2026-07-04T12:37:48.336919"
     },
     {
       "id": "2026-07-04-08-47",
