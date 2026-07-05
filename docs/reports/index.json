@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-07-05T06:49:43.679592",
-  "total": 200,
+  "generated_at": "2026-07-05T12:06:39.740463",
+  "total": 201,
   "reports": [
+    {
+      "id": "2026-07-05-12-06",
+      "filename": "12-06.html",
+      "date": "2026-07-05",
+      "time": "12:06",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "如何看待苹果手机信息泄露，程度堪比马圣开源？",
+        "分享自己写的多项目 AI 终端 Codux： Codex / Claude Code 等 8 个 CLI 按项目统一管理，开源",
+        "Valve 开源 Steam Machine 的电子墨水屏"
+      ],
+      "size": 136869,
+      "modified": "2026-07-05T12:06:05.181602",
+      "isNewest": true
+    },
     {
       "id": "2026-07-05-06-49",
       "filename": "06-49.html",
@@ -17,8 +35,7 @@
         "Valve 开源 Steam Machine 的电子墨水屏"
       ],
       "size": 124756,
-      "modified": "2026-07-05T06:49:41.003902",
-      "isNewest": true
+      "modified": "2026-07-05T06:49:41.003902"
     },
     {
       "id": "2026-07-05-02-07",
