@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-07-05T15:13:37.439540",
-  "total": 202,
+  "generated_at": "2026-07-05T15:47:24.896238",
+  "total": 203,
   "reports": [
+    {
+      "id": "2026-07-05-15-47",
+      "filename": "15-47.html",
+      "date": "2026-07-05",
+      "time": "15:47",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "Valve 开源 Steam Machine 的电子墨水屏",
+        "分享自己写的多项目 AI 终端 Codux： Codex / Claude Code 等 8 个 CLI 按项目统一管理，开源",
+        "嗨嗨嗨，最近我的插件升级了，所以我又来了分享我的开源插件了"
+      ],
+      "size": 126240,
+      "modified": "2026-07-05T15:47:22.447172",
+      "isNewest": true
+    },
     {
       "id": "2026-07-05-15-13",
       "filename": "15-13.html",
@@ -17,8 +35,7 @@
         "Valve 开源 Steam Machine 的电子墨水屏"
       ],
       "size": 133019,
-      "modified": "2026-07-05T15:13:34.846284",
-      "isNewest": true
+      "modified": "2026-07-05T15:13:34.846284"
     },
     {
       "id": "2026-07-05-12-06",
