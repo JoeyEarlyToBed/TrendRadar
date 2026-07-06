@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-07-06T15:35:40.609993",
-  "total": 206,
+  "generated_at": "2026-07-07T06:42:06.716443",
+  "total": 207,
   "reports": [
+    {
+      "id": "2026-07-07-06-21",
+      "filename": "06-21.html",
+      "date": "2026-07-07",
+      "time": "06:21",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "发现了一个面向 AI API 中转站的开源监控及专属网关管理系统： TokHub",
+        "OfficeCLI: Office suite for AI agents to read and edit Microsoft Office files",
+        "Pros and Cons of Solo Development"
+      ],
+      "size": 124267,
+      "modified": "2026-07-07T06:21:02.140687",
+      "isNewest": true
+    },
     {
       "id": "2026-07-06-15-14",
       "filename": "15-14.html",
@@ -17,8 +35,7 @@
         "7月6日投资避雷针：日盈电子、长盛轴承、福赛科技等机器人概念股密集提示风险"
       ],
       "size": 123937,
-      "modified": "2026-07-06T15:14:39.479379",
-      "isNewest": true
+      "modified": "2026-07-06T15:14:39.479379"
     },
     {
       "id": "2026-07-05-22-45",
