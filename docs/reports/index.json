@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-07-07T06:42:06.716443",
-  "total": 207,
+  "generated_at": "2026-07-07T20:16:42.516108",
+  "total": 208,
   "reports": [
+    {
+      "id": "2026-07-07-20-16",
+      "filename": "20-16.html",
+      "date": "2026-07-07",
+      "time": "20:16",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "发现了一个面向 AI API 中转站的开源监控及专属网关管理系统： TokHub",
+        "Microsoft Can Track Users via a Windows Device ID",
+        "OfficeCLI: Office suite for AI agents to read and edit Microsoft Office files"
+      ],
+      "size": 135967,
+      "modified": "2026-07-07T20:16:39.959830",
+      "isNewest": true
+    },
     {
       "id": "2026-07-07-06-21",
       "filename": "06-21.html",
@@ -17,8 +35,7 @@
         "Pros and Cons of Solo Development"
       ],
       "size": 124267,
-      "modified": "2026-07-07T06:21:02.140687",
-      "isNewest": true
+      "modified": "2026-07-07T06:21:02.140687"
     },
     {
       "id": "2026-07-06-15-14",
