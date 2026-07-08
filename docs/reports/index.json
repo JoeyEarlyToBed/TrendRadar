@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-07-07T20:16:42.516108",
-  "total": 208,
+  "generated_at": "2026-07-08T12:42:05.091460",
+  "total": 209,
   "reports": [
+    {
+      "id": "2026-07-08-09-37",
+      "filename": "09-37.html",
+      "date": "2026-07-08",
+      "time": "09:37",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "「开源自荐」Spexcode - Spec-driven 的 vibe-coding 真能征服复杂软件开发吗？这是我的尝试",
+        "Microsoft fire idTech team at Id software",
+        "几年前我开源的德扑 Solver 拿了 2.3k Star，现在我用 CUDA 将它重写，速度翻了 4 倍且完全免费"
+      ],
+      "size": 124042,
+      "modified": "2026-07-08T09:37:23.436977",
+      "isNewest": true
+    },
     {
       "id": "2026-07-07-20-16",
       "filename": "20-16.html",
@@ -17,8 +35,7 @@
         "OfficeCLI: Office suite for AI agents to read and edit Microsoft Office files"
       ],
       "size": 135967,
-      "modified": "2026-07-07T20:16:39.959830",
-      "isNewest": true
+      "modified": "2026-07-07T20:16:39.959830"
     },
     {
       "id": "2026-07-07-06-21",
