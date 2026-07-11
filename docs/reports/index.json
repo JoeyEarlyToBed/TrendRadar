@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-07-11T18:45:31.514844",
-  "total": 248,
+  "generated_at": "2026-07-11T19:20:00.151587",
+  "total": 249,
   "reports": [
+    {
+      "id": "2026-07-11-19-19",
+      "filename": "19-19.html",
+      "date": "2026-07-11",
+      "time": "19:19",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "图解 120 个大语言模型（LLM）核心概念（1-30）",
+        "图解 120 个大语言模型（LLM）核心概念（31-60）",
+        "[开源] Codeg V0.20.0：科研（science）模式上线｜多智能体协作工作台"
+      ],
+      "size": 120699,
+      "modified": "2026-07-11T19:19:52.808667",
+      "isNewest": true
+    },
     {
       "id": "2026-07-11-18-44",
       "filename": "18-44.html",
@@ -17,8 +35,7 @@
         "Snails&#x27; teeth beats spider silk as nature&#x27;s strongest material (2015)"
       ],
       "size": 121270,
-      "modified": "2026-07-11T18:44:00.973277",
-      "isNewest": true
+      "modified": "2026-07-11T18:44:00.973277"
     },
     {
       "id": "2026-07-11-18-10",
