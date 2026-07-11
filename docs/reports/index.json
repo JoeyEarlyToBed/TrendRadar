@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-07-11T17:01:20.293604",
+  "generated_at": "2026-07-11T17:36:33.192414",
   "total": 246,
   "reports": [
+    {
+      "id": "2026-07-11-17-36",
+      "filename": "17-36.html",
+      "date": "2026-07-11",
+      "time": "17:36",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "Snails&#x27; teeth beats spider silk as nature&#x27;s strongest material (2015)",
+        "Silent speech with ultrasound",
+        "SK海力士CEO：2027年将迎来史上最严重存储芯片短缺，供不应求或持续至2030年后"
+      ],
+      "size": 121377,
+      "modified": "2026-07-11T17:36:30.851918",
+      "isNewest": true
+    },
     {
       "id": "2026-07-11-17-00",
       "filename": "17-00.html",
@@ -17,8 +35,7 @@
         "Snails&#x27; teeth beats spider silk as nature&#x27;s strongest material (2015)"
       ],
       "size": 121217,
-      "modified": "2026-07-11T17:00:45.840490",
-      "isNewest": true
+      "modified": "2026-07-11T17:00:45.840490"
     },
     {
       "id": "2026-07-11-16-27",
@@ -2450,23 +2467,6 @@
       ],
       "size": 124153,
       "modified": "2026-06-26T18:13:43.768358"
-    },
-    {
-      "id": "2026-06-26-17-36",
-      "filename": "17-36.html",
-      "date": "2026-06-26",
-      "time": "17:36",
-      "title": "热点新闻分析",
-      "keywords": [],
-      "preview": [
-        "热点新闻分析",
-        "⚠️ 请求失败的平台",
-        "涨价约20%！苹果官宣涨价：iPad和Mac率先调价，存储成本压力“前所未有”",
-        "苹果产品正式涨价",
-        "半导体硅片新一轮涨价潮将至？多家供应商开始协商调价"
-      ],
-      "size": 130617,
-      "modified": "2026-06-26T17:36:11.835598"
     },
     {
       "id": "2026-06-26-16-58",
