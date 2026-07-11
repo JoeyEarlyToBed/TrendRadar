@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-07-11T15:54:31.536300",
+  "generated_at": "2026-07-11T16:05:27.934055",
   "total": 244,
   "reports": [
+    {
+      "id": "2026-07-11-16-05",
+      "filename": "16-05.html",
+      "date": "2026-07-11",
+      "time": "16:05",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "Snails&#x27; teeth beats spider silk as nature&#x27;s strongest material (2015)",
+        "Silent speech with ultrasound",
+        "人形机器人成功完成远超手术"
+      ],
+      "size": 118561,
+      "modified": "2026-07-11T16:05:25.245179",
+      "isNewest": true
+    },
     {
       "id": "2026-07-11-15-54",
       "filename": "15-54.html",
@@ -17,8 +35,7 @@
         "MLCC涨价潮下的华强北“众生相”：结构性紧缺下渠道躁动 商户喜忧分化"
       ],
       "size": 122685,
-      "modified": "2026-07-11T15:54:29.096370",
-      "isNewest": true
+      "modified": "2026-07-11T15:54:29.096370"
     },
     {
       "id": "2026-07-11-15-20",
@@ -784,23 +801,6 @@
       ],
       "size": 123701,
       "modified": "2026-07-05T16:21:56.408756"
-    },
-    {
-      "id": "2026-07-05-16-05",
-      "filename": "16-05.html",
-      "date": "2026-07-05",
-      "time": "16:05",
-      "title": "热点新闻分析",
-      "keywords": [],
-      "preview": [
-        "热点新闻分析",
-        "⚠️ 请求失败的平台",
-        "Valve 开源 Steam Machine 的电子墨水屏",
-        "分享自己写的多项目 AI 终端 Codux： Codex / Claude Code 等 8 个 CLI 按项目统一管理，开源",
-        "嗨嗨嗨，最近我的插件升级了，所以我又来了分享我的开源插件了"
-      ],
-      "size": 123911,
-      "modified": "2026-07-05T16:05:11.613650"
     },
     {
       "id": "2026-07-05-15-47",
