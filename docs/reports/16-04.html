@@ -971,6 +971,91 @@
             }
             .tab-btn.active .tab-count { background: rgba(255,255,255,0.3); }
 
+            /* ── 角色仪表盘 Tab ── */
+            .role-tab-bar {
+                display: flex;
+                gap: 8px;
+                padding: 0 0 12px 0;
+                margin-bottom: 12px;
+                border-bottom: 1px solid #e5e7eb;
+                overflow-x: auto;
+                white-space: nowrap;
+                scrollbar-width: none;
+            }
+            .role-tab-bar::-webkit-scrollbar { display: none; }
+            .role-tab-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                padding: 8px 14px;
+                border: none;
+                background: #f8f9fa;
+                border-radius: 8px;
+                cursor: pointer;
+                font-size: 12px;
+                font-weight: 500;
+                white-space: nowrap;
+                transition: all 0.2s ease;
+                flex-shrink: 0;
+                border-left: 3px solid transparent;
+                color: #6b7280;
+            }
+            .role-tab-btn:hover { background: #eef0f2; color: #374151; }
+            .role-tab-btn.active {
+                background: white;
+                color: #111827;
+                box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+            }
+            .role-tab-btn .rt-count {
+                font-size: 11px;
+                background: rgba(0,0,0,0.08);
+                padding: 1px 6px;
+                border-radius: 10px;
+            }
+            .role-tab-btn.active .rt-count { opacity: 0.85; }
+            .role-tab-btn .rt-label {
+                font-size: 10px;
+                color: #9ca3af;
+                display: none;
+            }
+            body.wide-mode .role-tab-btn .rt-label { display: inline; }
+
+            body.dark-mode .role-tab-bar { border-bottom-color: #334155; }
+            body.dark-mode .role-tab-btn {
+                background: #1e293b;
+                color: #94a3b8;
+            }
+            body.dark-mode .role-tab-btn:hover {
+                background: #334155;
+                color: #e2e8f0;
+            }
+            body.dark-mode .role-tab-btn.active {
+                background: #1e293b;
+                color: #f1f5f9;
+                box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+            }
+
+            /* 角色徽章 */
+            .role-badge {
+                display: inline-block;
+                font-size: 10px;
+                font-weight: 600;
+                padding: 2px 6px;
+                border-radius: 4px;
+                letter-spacing: 0.3px;
+                margin-right: 6px;
+                vertical-align: middle;
+            }
+            .role-badge.role-CEO { background: #fde8e8; color: #c0392b; }
+            .role-badge.role-CTO { background: #dbeafe; color: #1d4ed8; }
+            .role-badge.role-CDO { background: #d1fae5; color: #059669; }
+            .role-badge.role-QM  { background: #fef3c7; color: #d97706; }
+
+            body.dark-mode .role-badge.role-CEO { background: rgba(231,76,60,0.15); color: #e74c3c; }
+            body.dark-mode .role-badge.role-CTO { background: rgba(41,128,185,0.15); color: #5dade2; }
+            body.dark-mode .role-badge.role-CDO { background: rgba(39,174,96,0.15); color: #58d68d; }
+            body.dark-mode .role-badge.role-QM  { background: rgba(243,156,18,0.15); color: #f5b041; }
+
             /* 搜索栏 */
             .search-bar { display: none; padding: 0 0 16px 0; }
             .search-input {
@@ -1379,19 +1464,19 @@
                 <div class="header-info">
                     <div class="info-item">
                         <span class="info-label">报告类型</span>
-                        <span class="info-value">增量分析</span>
+                        <span class="info-value">当前榜单</span>
                     </div>
                     <div class="info-item">
                         <span class="info-label">生成时间</span>
-                        <span class="info-value">06-16 16:04</span>
+                        <span class="info-value">07-12 16:04</span>
                     </div>
                     <div class="info-item">
                         <span class="info-label">热榜命中</span>
-                        <span class="info-value">1 / 16</span>
+                        <span class="info-value">22 / 510</span>
                     </div>
                     <div class="info-item">
                         <span class="info-label">RSS 命中</span>
-                        <span class="info-value">2 / 103</span>
+                        <span class="info-value">0 / 0</span>
                     </div>
                     <div class="info-item">
                         <span class="info-label">热榜平台</span>
@@ -1407,7 +1492,7 @@
                     </div>
                     <div class="info-item">
                         <span class="info-label">AI 分析</span>
-                        <span class="info-value">1 + 0</span>
+                        <span class="info-value">未启用</span>
                     </div>
                 </div>
             </div>
@@ -1421,85 +1506,295 @@
                     <ul class="error-list"><li class="error-item">cankaoxiaoxi</li><li class="error-item">zaobao</li>
                     </ul>
                 </div>
-                <div class="hotlist-section"><div class="tab-bar-wrapper"><div class="tab-bar"><button class="tab-btn" data-tab-index="all">全部<span class="tab-count">1</span></button><button class="tab-btn" data-tab-index="0">机器人行业<span class="tab-count">1</span></button></div></div>
-                <div class="word-group" data-tab-index="0">
+                <div class="hotlist-section"><div class="role-tab-bar"><button class="role-tab-btn active" data-role="all">全部角色</button><button class="role-tab-btn" data-role="CEO" style="border-left-color:#e74c3c">CEO视角<span class="rt-count">22</span></button><button class="role-tab-btn" data-role="CTO" style="border-left-color:#2980b9">CTO视角<span class="rt-count">0</span></button><button class="role-tab-btn" data-role="CDO" style="border-left-color:#27ae60">CDO视角<span class="rt-count">0</span></button><button class="role-tab-btn" data-role="QM" style="border-left-color:#f39c12">质量总监视角<span class="rt-count">0</span></button></div><div class="tab-bar-wrapper"><div class="tab-bar"><button class="tab-btn" data-tab-index="all">全部<span class="tab-count">22</span></button><button class="tab-btn" data-tab-index="0">CTO:技术_机器人技术<span class="tab-count">4</span></button><button class="tab-btn" data-tab-index="1">CTO:技术_具身智能<span class="tab-count">3</span></button><button class="tab-btn" data-tab-index="2">CTO:人才_团队动态<span class="tab-count">3</span></button><button class="tab-btn" data-tab-index="3">通用:机器人行业<span class="tab-count">3</span></button><button class="tab-btn" data-tab-index="4">QM:供应链_核心零件<span class="tab-count">2</span></button><button class="tab-btn" data-tab-index="5">QM:供应链_断供风险<span class="tab-count">2</span></button><button class="tab-btn" data-tab-index="6">QM:标准与认证<span class="tab-count">2</span></button><button class="tab-btn" data-tab-index="7">通用:人形机器人<span class="tab-count">2</span></button><button class="tab-btn" data-tab-index="8">CTO:人才_技术人才<span class="tab-count">1</span></button></div></div>
+                <div class="word-group" data-tab-index="0" data-role="CEO">
+                        <span class="role-badge role-CEO">CEO</span>
                     <div class="word-header">
                         <div class="word-info">
-                            <div class="word-name">机器人行业</div>
-                            <div class="word-count ">1 条</div>
+                            <div class="word-name">CTO:技术_机器人技术</div>
+                            <div class="word-count ">4 条</div>
                         </div>
-                        <div class="word-index"><span class="collapse-icon">▼</span>1/1</div>
+                        <div class="word-index"><span class="collapse-icon">▼</span>1/9</div>
                     </div>
-                    <div class="news-item new">
+                    <div class="news-item ">
                         <div class="news-number">1</div>
                         <div class="news-content">
-                            <div class="news-header"><span class="source-name">格隆汇</span><span class="rank-num top">3</span><span class="time-info">16:03</span>
+                            <div class="news-header"><span class="source-name">V2EX</span><span class="rank-num top">1-17</span><span class="trend-down">📉</span><span class="time-info">10:23~16:03</span><span class="count-info">12次</span>
                             </div>
-                            <div class="news-title"><a href="https://www.gelonghui.com/news/5252541" target="_blank" class="news-link">泰鸿万立(603210.SH)：在低空经济、人形机器人等新兴产业领域尚无具体的业务或项目</a>
+                            <div class="news-title"><a href="https://www.v2ex.com/t/1226658" target="_blank" class="news-link">[开源分享] 把 Chatpt 当 codex 用，获得无限额度 5.6sol 能力</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-item ">
+                        <div class="news-number">2</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">V2EX</span><span class="rank-num top">1-16</span><span class="trend-down">📉</span><span class="time-info">10:56~16:03</span><span class="count-info">11次</span>
+                            </div>
+                            <div class="news-title"><a href="https://www.v2ex.com/t/1226660" target="_blank" class="news-link">[开源分享] 做了一个 CC Lights：菜单栏上的 CC 红绿灯 — 瞄一眼就知道每场会话是在工作、等你、还是报错，点一下直接跳过去。</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-item ">
+                        <div class="news-number">3</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">V2EX</span><span class="rank-num top">3-9</span><span class="trend-down">📉</span><span class="time-info">13:55~16:03</span><span class="count-info">5次</span>
+                            </div>
+                            <div class="news-title"><a href="https://www.v2ex.com/t/1226690" target="_blank" class="news-link">ZGI 开源两周了，拿到 200+ Stars，想和大家同步一下进展</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-item ">
+                        <div class="news-number">4</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">V2EX</span><span class="rank-num high">6-29</span><span class="trend-down">📉</span><span class="time-info">00:04~16:03</span><span class="count-info">30次</span>
+                            </div>
+                            <div class="news-title"><a href="https://www.v2ex.com/t/1226612" target="_blank" class="news-link">[开源] Balanced Portfolio 多资产风险平价全天候策略回测系统</a>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="word-group" data-tab-index="1" data-role="CEO">
+                        <span class="role-badge role-CEO">CEO</span>
+                    <div class="word-header">
+                        <div class="word-info">
+                            <div class="word-name">CTO:技术_具身智能</div>
+                            <div class="word-count ">3 条</div>
+                        </div>
+                        <div class="word-index"><span class="collapse-icon">▼</span>2/9</div>
+                    </div>
+                    <div class="news-item ">
+                        <div class="news-number">1</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">Hacker News</span><span class="rank-num top">1-4</span><span class="time-info">07:17~16:03</span><span class="count-info">18次</span>
+                            </div>
+                            <div class="news-title"><a href="https://news.ycombinator.com/item?id=48876505" target="_blank" class="news-link">Mesh LLM: distributed AI computing on iroh</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-item ">
+                        <div class="news-number">2</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">掘金</span><span class="rank-num high">9-19</span><span class="time-info">00:04~16:03</span><span class="count-info">30次</span>
+                            </div>
+                            <div class="news-title"><a href="https://juejin.cn/post/7660708287620808739" target="_blank" class="news-link">图解 120 个大语言模型（LLM）核心概念（1-30）</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-item ">
+                        <div class="news-number">3</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">掘金</span><span class="rank-num ">15-24</span><span class="time-info">00:04~16:03</span><span class="count-info">30次</span>
+                            </div>
+                            <div class="news-title"><a href="https://juejin.cn/post/7660697431320690723" target="_blank" class="news-link">图解 120 个大语言模型（LLM）核心概念（31-60）</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="section-divider rss-section">
-                    <div class="rss-section-header">
-                        <div class="rss-section-title">RSS 订阅更新</div>
-                        <div class="rss-section-count">2 条</div>
+                <div class="word-group" data-tab-index="2" data-role="CEO">
+                        <span class="role-badge role-CEO">CEO</span>
+                    <div class="word-header">
+                        <div class="word-info">
+                            <div class="word-name">CTO:人才_团队动态</div>
+                            <div class="word-count ">3 条</div>
+                        </div>
+                        <div class="word-index"><span class="collapse-icon">▼</span>3/9</div>
                     </div>
-                    <div class="rss-feeds-grid">
-                    <div class="feed-group">
-                        <div class="feed-header">
-                            <div class="feed-name">行业认证与标准</div>
-                            <div class="feed-count">1 条</div>
-                        </div>
-                        <div class="rss-item">
-                            <div class="rss-meta"><span class="rss-time">06-16 15:39</span><span class="rss-author">IT之家 RSS</span><span class="rss-author" style="color: #dc2626;">NEW</span>
+                    <div class="news-item ">
+                        <div class="news-number">1</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">财联社热门</span><span class="rank-num high">6-9</span><span class="time-info">00:04~16:03</span><span class="count-info">29次</span>
                             </div>
-                            <div class="rss-title"><a href="https://www.ithome.com/0/964/904.htm" target="_blank" class="rss-link">市场监管总局发布“618”合规提示：公开动态定价规则，严查虚假降价</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="feed-group">
-                        <div class="feed-header">
-                            <div class="feed-name">供应链 零部件</div>
-                            <div class="feed-count">1 条</div>
-                        </div>
-                        <div class="rss-item">
-                            <div class="rss-meta"><span class="rss-time">06-16 15:43</span><span class="rss-author">IT之家 RSS</span><span class="rss-author" style="color: #dc2626;">NEW</span>
-                            </div>
-                            <div class="rss-title"><a href="https://www.ithome.com/0/964/912.htm" target="_blank" class="rss-link">罗技推出G305 X Superlight鼠标：搭载HERO 44K传感器、44000 DPI，支持三模连接</a>
+                            <div class="news-title"><a href="https://www.cls.cn/detail/2423581" target="_blank" class="news-link">龙头20CM涨停 本周披露并购重组进展的A股名单一览</a>
                             </div>
                         </div>
                     </div>
+                    <div class="news-item ">
+                        <div class="news-number">2</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">财联社热门</span><span class="rank-num high">10-11</span><span class="time-info">09:15~16:03</span><span class="count-info">14次</span>
+                            </div>
+                            <div class="news-title"><a href="https://www.cls.cn/detail/2423679" target="_blank" class="news-link">【早报】中国石化完成对中国航油重组</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-item ">
+                        <div class="news-number">3</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">澎湃新闻</span><span class="rank-num ">13-19</span><span class="time-info">07:17~16:03</span><span class="count-info">17次</span>
+                            </div>
+                            <div class="news-title"><a href="https://m.thepaper.cn/newsDetail_forward_33566875" target="_blank" class="news-link">中国石化完成对中国航油重组</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="section-divider ai-section">
-                    <div class="ai-section-header">
-                        <div class="ai-section-title">✨ AI 热点分析</div>
-                        <span class="ai-section-badge">AI</span>
+                <div class="word-group" data-tab-index="3" data-role="CEO">
+                        <span class="role-badge role-CEO">CEO</span>
+                    <div class="word-header">
+                        <div class="word-info">
+                            <div class="word-name">通用:机器人行业</div>
+                            <div class="word-count ">3 条</div>
+                        </div>
+                        <div class="word-index"><span class="collapse-icon">▼</span>4/9</div>
                     </div>
-                    <div class="ai-blocks-grid">
-                    <div class="ai-block">
-                        <div class="ai-block-title">核心热点态势</div>
-                        <div class="ai-block-content">圈层热点：机器人行业热度集中于单一新闻，未形成跨平台霸屏。格隆汇报道泰鸿万立声明尚未涉足低空经济、人形机器人业务，排名第3但轨迹未记录波动，显示该话题在资本圈内短暂聚焦后趋于稳定。<br><br>【宏观主线】：<br>资本市场对新兴概念（低空经济、人形机器人）的预期与实际业务落地存在时差，企业自证澄清抑制过度炒作。<br><br>【微观领域】：<br>1. 泰鸿万立作为标的，其业务边界被市场质疑，反应投资者对概念股警惕性提高。</div>
+                    <div class="news-item ">
+                        <div class="news-number">1</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">澎湃新闻</span><span class="rank-num top">3-17</span><span class="time-info">08:42~16:03</span><span class="count-info">14次</span>
+                            </div>
+                            <div class="news-title"><a href="https://m.thepaper.cn/newsDetail_forward_33565908" target="_blank" class="news-link">特写｜当机器人来到古村落</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="ai-block">
-                        <div class="ai-block-title">舆论风向争议</div>
-                        <div class="ai-block-content">【情绪光谱】：<br>主流声音为市场对概念股的高预期与企业保守表态之间的博弈，投资者情绪从追捧转向理性审视。<br><br>【核心矛盾】：<br>1. 投资者对新风口（人形机器人）的乐观押注 vs 企业方强调尚无实质业务的谨慎姿态，体现短期投机与长期价值分歧。</div>
+                    <div class="news-item ">
+                        <div class="news-number">2</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">V2EX</span><span class="rank-num top">2-25</span><span class="trend-down">📉</span><span class="time-info">00:04~16:03</span><span class="count-info">30次</span>
+                            </div>
+                            <div class="news-title"><a href="https://www.v2ex.com/t/1226623" target="_blank" class="news-link">用 codex 浏览网页顺便截图来自动化生成图文文档</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="ai-block">
-                        <div class="ai-block-title">异动与弱信号</div>
-                        <div class="ai-block-content">【平台温差】：<br>格隆汇作为财经垂直平台报道此消息，但主流社交平台（微博、抖音）及技术社区（知乎）未见同步热议，显示该话题停留在资本圈层，未向公众扩散。<br><br>【轨迹突变】：<br>排名维持在3无波动，无急升或衰退迹象，暗示该新闻为孤立的声明性事件，缺乏后续驱动因素支撑热度持续。<br><br>【弱信号捕捉】：<br>泰鸿万立专门否认人形机器人业务，可能暗示市场此前存在非理性传闻，或为其他类似标的（如机器人概念股）被过度炒作的前兆。</div>
+                    <div class="news-item ">
+                        <div class="news-number">3</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">IT之家</span><span class="rank-num top">2-10</span><span class="trend-down">📉</span><span class="time-info">15:44~16:03</span><span class="count-info">2次</span>
+                            </div>
+                            <div class="news-title"><a href="https://www.ithome.com/0/975/728.htm" target="_blank" class="news-link">1X 发布 Neo 机器人机械手：25 个自由度，有触觉，可水洗</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="ai-block">
-                        <div class="ai-block-title">研判策略建议</div>
-                        <div class="ai-block-content">1. 投资者：警惕缺乏业绩支撑的概念股炒作，关注企业官方声明与业务进展对照，优先选择已明确落地场景的机器人公司。<br><br>2. 品牌方：在行业爆发初期，主动澄清业务边界可提前规避市场误读与监管风险，同时保持对低空经济、人形机器人等新兴领域的公开研发动态披露。<br><br>3. 公众：对机器人行业相关投资保持谨慎，关注政策与产业链实质突破而非短期热度。</div>
+                </div>
+                <div class="word-group" data-tab-index="4" data-role="CEO">
+                        <span class="role-badge role-CEO">CEO</span>
+                    <div class="word-header">
+                        <div class="word-info">
+                            <div class="word-name">QM:供应链_核心零件</div>
+                            <div class="word-count ">2 条</div>
+                        </div>
+                        <div class="word-index"><span class="collapse-icon">▼</span>5/9</div>
                     </div>
-                    <div class="ai-block">
-                        <div class="ai-block-title">独立源点速览</div>
-                        <div class="ai-block-content">[知乎]:<br>无机器人相关话题上榜。<br><br>[Hacker News]:<br>无机器人相关话题上榜。</div>
+                    <div class="news-item ">
+                        <div class="news-number">1</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">格隆汇</span><span class="rank-num high">4</span><span class="time-info">01:13~16:03</span><span class="count-info">28次</span>
+                            </div>
+                            <div class="news-title"><a href="https://www.gelonghui.com/news/5267213" target="_blank" class="news-link">百隆东方(601339)：期待下半年价增驱动成长</a>
+                            </div>
+                        </div>
                     </div>
+                    <div class="news-item ">
+                        <div class="news-number">2</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">少数派</span><span class="rank-num ">20-21</span><span class="time-info">00:04~16:03</span><span class="count-info">30次</span>
+                            </div>
+                            <div class="news-title"><a href="https://sspai.com/post/111223" target="_blank" class="news-link">DV/HDV 磁带拯救计划：用 AI 驱动十八年前的老设备</a>
+                            </div>
+                        </div>
                     </div>
+                </div>
+                <div class="word-group" data-tab-index="5" data-role="CEO">
+                        <span class="role-badge role-CEO">CEO</span>
+                    <div class="word-header">
+                        <div class="word-info">
+                            <div class="word-name">QM:供应链_断供风险</div>
+                            <div class="word-count ">2 条</div>
+                        </div>
+                        <div class="word-index"><span class="collapse-icon">▼</span>6/9</div>
+                    </div>
+                    <div class="news-item ">
+                        <div class="news-number">1</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">财联社热门</span><span class="rank-num top">1-3</span><span class="time-info">00:04~16:03</span><span class="count-info">29次</span>
+                            </div>
+                            <div class="news-title"><a href="https://www.cls.cn/detail/2423531" target="_blank" class="news-link">MLCC涨价潮下的华强北“众生相”：结构性紧缺下渠道躁动 商户喜忧分化</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-item ">
+                        <div class="news-number">2</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">知乎</span><span class="rank-num ">17-20</span><span class="trend-up">📈</span><span class="time-info">14:29~16:03</span><span class="count-info">3次</span>
+                            </div>
+                            <div class="news-title"><a href="https://www.zhihu.com/question/2058111600045678958" target="_blank" class="news-link">5000 元以下笔记本基本绝迹，购机门槛升至万元以上，为啥涨价幅度这么大？对行业和消费者有哪些影响？</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="word-group" data-tab-index="6" data-role="CEO">
+                        <span class="role-badge role-CEO">CEO</span>
+                    <div class="word-header">
+                        <div class="word-info">
+                            <div class="word-name">QM:标准与认证</div>
+                            <div class="word-count ">2 条</div>
+                        </div>
+                        <div class="word-index"><span class="collapse-icon">▼</span>7/9</div>
+                    </div>
+                    <div class="news-item ">
+                        <div class="news-number">1</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">Hacker News</span><span class="rank-num top">1-18</span><span class="time-info">00:04~16:03</span><span class="count-info">30次</span>
+                            </div>
+                            <div class="news-title"><a href="https://news.ycombinator.com/item?id=48872874" target="_blank" class="news-link">We scaled PgBouncer to 4x throughput</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-item new">
+                        <div class="news-number">2</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">IT之家</span><span class="rank-num high">6</span><span class="time-info">16:03</span>
+                            </div>
+                            <div class="news-title"><a href="https://www.ithome.com/0/975/735.htm" target="_blank" class="news-link">宏碁非凡 Go 一体机新配置开售：i5-14450HX+16GB 内存，4199 元</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="word-group" data-tab-index="7" data-role="CEO">
+                        <span class="role-badge role-CEO">CEO</span>
+                    <div class="word-header">
+                        <div class="word-info">
+                            <div class="word-name">通用:人形机器人</div>
+                            <div class="word-count ">2 条</div>
+                        </div>
+                        <div class="word-index"><span class="collapse-icon">▼</span>8/9</div>
+                    </div>
+                    <div class="news-item ">
+                        <div class="news-number">1</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">Solidot</span><span class="rank-num high">4-6</span><span class="time-info">00:04~16:03</span><span class="count-info">30次</span>
+                            </div>
+                            <div class="news-title"><a href="https://www.solidot.org/story?sid=84801" target="_blank" class="news-link">人形机器人成功完成远超手术</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-item ">
+                        <div class="news-number">2</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">格隆汇</span><span class="rank-num high">6-11</span><span class="time-info">00:04~16:03</span><span class="count-info">30次</span>
+                            </div>
+                            <div class="news-title"><a href="https://www.gelonghui.com/news/5267093" target="_blank" class="news-link">振芯科技(300101.SZ)：不涉及人形机器人业务</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="word-group" data-tab-index="8" data-role="CEO">
+                        <span class="role-badge role-CEO">CEO</span>
+                    <div class="word-header">
+                        <div class="word-info">
+                            <div class="word-name">CTO:人才_技术人才</div>
+                            <div class="word-count ">1 条</div>
+                        </div>
+                        <div class="word-index"><span class="collapse-icon">▼</span>9/9</div>
+                    </div>
+                    <div class="news-item ">
+                        <div class="news-number">1</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">Hacker News</span><span class="rank-num ">12-27</span><span class="time-info">08:02~16:03</span><span class="count-info">17次</span>
+                            </div>
+                            <div class="news-title"><a href="https://news.ycombinator.com/item?id=48876741" target="_blank" class="news-link">How Doctors die. It’s not like the rest of us (2016)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 </div>
             </div>
 
@@ -2521,6 +2816,47 @@
                     });
                 })();
             });
+
+            // ===== 角色仪表盘 Tab 切换 =====
+            (function() {
+                var roleBar = document.querySelector('.role-tab-bar');
+                if (!roleBar) return;
+                var roleBtns = roleBar.querySelectorAll('.role-tab-btn');
+                var allGroups = document.querySelectorAll('.word-group[data-tab-index]');
+
+                function filterByRole(role) {
+                    // 先高亮 keyword tab 的 "全部"
+                    var keywordBar = document.querySelector('.tab-bar');
+                    if (keywordBar) {
+                        var keywordAll = keywordBar.querySelector('[data-tab-index="all"]');
+                        if (keywordAll) {
+                            keywordBar.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+                            keywordAll.classList.add('active');
+                        }
+                    }
+                    // 触发 keyword tab 切换函数
+                    if (window.switchKeywordTab) {
+                        window.switchKeywordTab('all');
+                    }
+
+                    allGroups.forEach(function(g) {
+                        if (role === 'all') {
+                            g.style.display = '';
+                        } else {
+                            var groupRole = g.getAttribute('data-role') || '';
+                            g.style.display = (groupRole === role) ? '' : 'none';
+                        }
+                    });
+                }
+
+                roleBtns.forEach(function(btn) {
+                    btn.addEventListener('click', function() {
+                        roleBtns.forEach(function(b) { b.classList.remove('active'); });
+                        btn.classList.add('active');
+                        filterByRole(btn.getAttribute('data-role'));
+                    });
+                });
+            })();
         </script>
     </body>
     </html>
