@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-07-13T02:04:46.210193",
-  "total": 291,
+  "generated_at": "2026-07-13T02:41:14.790497",
+  "total": 292,
   "reports": [
+    {
+      "id": "2026-07-13-02-41",
+      "filename": "02-41.html",
+      "date": "2026-07-13",
+      "time": "02:41",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "『开源』自用 agent ally， golang 实现，界面友好，功能丰富（非 cli）",
+        "[开源分享] 为了不再切换中英文输入法，我用 Rust 做了一个前缀式拼音输入法",
+        "Show HN: Shirei, cross-platform GUI framework in native Go"
+      ],
+      "size": 119187,
+      "modified": "2026-07-13T02:41:12.402762",
+      "isNewest": true
+    },
     {
       "id": "2026-07-13-02-04",
       "filename": "02-04.html",
@@ -17,8 +35,7 @@
         "Show HN: Shirei, cross-platform GUI framework in native Go"
       ],
       "size": 119119,
-      "modified": "2026-07-13T02:04:43.460868",
-      "isNewest": true
+      "modified": "2026-07-13T02:04:43.460868"
     },
     {
       "id": "2026-07-13-01-29",
