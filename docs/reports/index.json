@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-07-13T13:41:25.967599",
-  "total": 306,
+  "generated_at": "2026-07-13T14:14:20.733253",
+  "total": 307,
   "reports": [
+    {
+      "id": "2026-07-13-14-14",
+      "filename": "14-14.html",
+      "date": "2026-07-13",
+      "time": "14:14",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "开源一个 Ghostty + Rust wgpu 做的移动端 Terminal 和 Codex 客户端",
+        "开源小工具 CXC v0.0.5：多 AI 编程工具的中转站切换器",
+        "商汤发布并开源 SenseNova-Vision 理解生成统一视觉大模型，能力超越 Vision Banana"
+      ],
+      "size": 125815,
+      "modified": "2026-07-13T14:14:18.220182",
+      "isNewest": true
+    },
     {
       "id": "2026-07-13-13-41",
       "filename": "13-41.html",
@@ -17,8 +35,7 @@
         "《反恐精英》风格开源游戏 OpenStrike 发布，可在初代索尼 PSP 掌机上流畅运行"
       ],
       "size": 123331,
-      "modified": "2026-07-13T13:41:22.938088",
-      "isNewest": true
+      "modified": "2026-07-13T13:41:22.938088"
     },
     {
       "id": "2026-07-13-13-08",
