@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-07-14T05:41:09.015135",
-  "total": 329,
+  "generated_at": "2026-07-14T06:14:27.993310",
+  "total": 330,
   "reports": [
+    {
+      "id": "2026-07-14-06-14",
+      "filename": "06-14.html",
+      "date": "2026-07-14",
+      "time": "06:14",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "[自用开源] QuotaBarWin，在 Windows 系统下也能通过托盘菜单查看 Agent 剩余额度了",
+        "开源了一个 Hugging Face 桌面客户端:断点续传下载、支持 hf-mirror、缓存可视化清理,全平台零遥测",
+        "做了个开源工具 Vibe Animation：对着 AI 说话就能做 GSAP 网页动画，能选中元素定向改"
+      ],
+      "size": 122591,
+      "modified": "2026-07-14T06:14:25.414122",
+      "isNewest": true
+    },
     {
       "id": "2026-07-14-05-41",
       "filename": "05-41.html",
@@ -17,8 +35,7 @@
         "做了个开源工具 Vibe Animation：对着 AI 说话就能做 GSAP 网页动画，能选中元素定向改"
       ],
       "size": 122621,
-      "modified": "2026-07-14T05:41:06.426392",
-      "isNewest": true
+      "modified": "2026-07-14T05:41:06.426392"
     },
     {
       "id": "2026-07-14-05-07",
