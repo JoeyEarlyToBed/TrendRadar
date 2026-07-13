@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-07-13T20:30:33.593475",
+  "generated_at": "2026-07-13T21:05:35.983932",
   "total": 316,
   "reports": [
+    {
+      "id": "2026-07-13-21-04",
+      "filename": "21-04.html",
+      "date": "2026-07-13",
+      "time": "21:04",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "[开源分享] 一个 CPA 插件拯救你的 GPT5.5 和 5.6 , 缓解 516 降智问题(已被 CPA 插件商店收录)",
+        "访谈 Mitchell Hashimoto：终端、Zig 与开源哲学",
+        "开源一个 Ghostty + Rust wgpu 做的移动端 Terminal 和 Codex 客户端"
+      ],
+      "size": 157523,
+      "modified": "2026-07-13T21:04:59.998861",
+      "isNewest": true
+    },
     {
       "id": "2026-07-13-20-28",
       "filename": "20-28.html",
@@ -17,8 +35,7 @@
         "开源一个 Ghostty + Rust wgpu 做的移动端 Terminal 和 Codex 客户端"
       ],
       "size": 156163,
-      "modified": "2026-07-13T20:28:43.696543",
-      "isNewest": true
+      "modified": "2026-07-13T20:28:43.696543"
     },
     {
       "id": "2026-07-13-19-55",
@@ -2518,23 +2535,6 @@
       ],
       "size": 133270,
       "modified": "2026-07-04T00:33:42.078905"
-    },
-    {
-      "id": "2026-07-03-21-04",
-      "filename": "21-04.html",
-      "date": "2026-07-03",
-      "time": "21:04",
-      "title": "热点新闻分析",
-      "keywords": [],
-      "preview": [
-        "热点新闻分析",
-        "⚠️ 请求失败的平台",
-        "Valve 开源 Steam Machine 的电子墨水屏",
-        "Wordgard: The new in-browser rich-text editor from the creator of ProseMirror",
-        "26k Star 开源内网穿透神器 NetBird，一分钟实现全球设备互联！"
-      ],
-      "size": 152784,
-      "modified": "2026-07-03T21:04:49.182544"
     },
     {
       "id": "2026-07-03-17-44",
