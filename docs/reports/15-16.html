@@ -971,6 +971,91 @@
             }
             .tab-btn.active .tab-count { background: rgba(255,255,255,0.3); }
 
+            /* ── 角色仪表盘 Tab ── */
+            .role-tab-bar {
+                display: flex;
+                gap: 8px;
+                padding: 0 0 12px 0;
+                margin-bottom: 12px;
+                border-bottom: 1px solid #e5e7eb;
+                overflow-x: auto;
+                white-space: nowrap;
+                scrollbar-width: none;
+            }
+            .role-tab-bar::-webkit-scrollbar { display: none; }
+            .role-tab-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                padding: 8px 14px;
+                border: none;
+                background: #f8f9fa;
+                border-radius: 8px;
+                cursor: pointer;
+                font-size: 12px;
+                font-weight: 500;
+                white-space: nowrap;
+                transition: all 0.2s ease;
+                flex-shrink: 0;
+                border-left: 3px solid transparent;
+                color: #6b7280;
+            }
+            .role-tab-btn:hover { background: #eef0f2; color: #374151; }
+            .role-tab-btn.active {
+                background: white;
+                color: #111827;
+                box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+            }
+            .role-tab-btn .rt-count {
+                font-size: 11px;
+                background: rgba(0,0,0,0.08);
+                padding: 1px 6px;
+                border-radius: 10px;
+            }
+            .role-tab-btn.active .rt-count { opacity: 0.85; }
+            .role-tab-btn .rt-label {
+                font-size: 10px;
+                color: #9ca3af;
+                display: none;
+            }
+            body.wide-mode .role-tab-btn .rt-label { display: inline; }
+
+            body.dark-mode .role-tab-bar { border-bottom-color: #334155; }
+            body.dark-mode .role-tab-btn {
+                background: #1e293b;
+                color: #94a3b8;
+            }
+            body.dark-mode .role-tab-btn:hover {
+                background: #334155;
+                color: #e2e8f0;
+            }
+            body.dark-mode .role-tab-btn.active {
+                background: #1e293b;
+                color: #f1f5f9;
+                box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+            }
+
+            /* 角色徽章 */
+            .role-badge {
+                display: inline-block;
+                font-size: 10px;
+                font-weight: 600;
+                padding: 2px 6px;
+                border-radius: 4px;
+                letter-spacing: 0.3px;
+                margin-right: 6px;
+                vertical-align: middle;
+            }
+            .role-badge.role-CEO { background: #fde8e8; color: #c0392b; }
+            .role-badge.role-CTO { background: #dbeafe; color: #1d4ed8; }
+            .role-badge.role-CDO { background: #d1fae5; color: #059669; }
+            .role-badge.role-QM  { background: #fef3c7; color: #d97706; }
+
+            body.dark-mode .role-badge.role-CEO { background: rgba(231,76,60,0.15); color: #e74c3c; }
+            body.dark-mode .role-badge.role-CTO { background: rgba(41,128,185,0.15); color: #5dade2; }
+            body.dark-mode .role-badge.role-CDO { background: rgba(39,174,96,0.15); color: #58d68d; }
+            body.dark-mode .role-badge.role-QM  { background: rgba(243,156,18,0.15); color: #f5b041; }
+
             /* 搜索栏 */
             .search-bar { display: none; padding: 0 0 16px 0; }
             .search-input {
@@ -1379,35 +1464,35 @@
                 <div class="header-info">
                     <div class="info-item">
                         <span class="info-label">报告类型</span>
-                        <span class="info-value">增量分析</span>
+                        <span class="info-value">当前榜单</span>
                     </div>
                     <div class="info-item">
                         <span class="info-label">生成时间</span>
-                        <span class="info-value">06-16 15:16</span>
+                        <span class="info-value">07-15 15:16</span>
                     </div>
                     <div class="info-item">
                         <span class="info-label">热榜命中</span>
-                        <span class="info-value">1 / 255</span>
+                        <span class="info-value">21 / 515</span>
                     </div>
                     <div class="info-item">
                         <span class="info-label">RSS 命中</span>
-                        <span class="info-value">0 / 0</span>
+                        <span class="info-value">2 / 22</span>
                     </div>
                     <div class="info-item">
                         <span class="info-label">热榜平台</span>
-                        <span class="info-value">11/11</span>
+                        <span class="info-value">21/23</span>
                     </div>
                     <div class="info-item">
                         <span class="info-label">RSS 源</span>
-                        <span class="info-value">3/7</span>
+                        <span class="info-value">5/9</span>
                     </div>
                     <div class="info-item">
                         <span class="info-label">新增热点</span>
-                        <span class="info-value">1 + 0</span>
+                        <span class="info-value">7 + 0</span>
                     </div>
                     <div class="info-item">
                         <span class="info-label">AI 分析</span>
-                        <span class="info-value">1 + 0</span>
+                        <span class="info-value">未启用</span>
                     </div>
                 </div>
             </div>
@@ -1416,51 +1501,301 @@
                 <div class="search-bar">
                     <input type="text" class="search-input" placeholder="搜索新闻标题..." oninput="handleSearch(this.value)">
                 </div>
-                <div class="hotlist-section"><div class="tab-bar-wrapper"><div class="tab-bar"><button class="tab-btn" data-tab-index="all">全部<span class="tab-count">1</span></button><button class="tab-btn" data-tab-index="0">机器人行业<span class="tab-count">1</span></button></div></div>
-                <div class="word-group" data-tab-index="0">
+                <div class="error-section">
+                    <div class="error-title">⚠️ 请求失败的平台</div>
+                    <ul class="error-list"><li class="error-item">cankaoxiaoxi</li><li class="error-item">zaobao</li>
+                    </ul>
+                </div>
+                <div class="hotlist-section"><div class="role-tab-bar"><button class="role-tab-btn active" data-role="all">全部角色</button><button class="role-tab-btn" data-role="CEO" style="border-left-color:#e74c3c">CEO视角<span class="rt-count">21</span></button><button class="role-tab-btn" data-role="CTO" style="border-left-color:#2980b9">CTO视角<span class="rt-count">0</span></button><button class="role-tab-btn" data-role="CDO" style="border-left-color:#27ae60">CDO视角<span class="rt-count">0</span></button><button class="role-tab-btn" data-role="QM" style="border-left-color:#f39c12">质量总监视角<span class="rt-count">0</span></button></div><div class="tab-bar-wrapper"><div class="tab-bar"><button class="tab-btn" data-tab-index="all">全部<span class="tab-count">21</span></button><button class="tab-btn" data-tab-index="0">CTO:技术_机器人技术<span class="tab-count">8</span></button><button class="tab-btn" data-tab-index="1">CTO:技术_具身智能<span class="tab-count">4</span></button><button class="tab-btn" data-tab-index="2">QM:供应链_核心零件<span class="tab-count">2</span></button><button class="tab-btn" data-tab-index="3">QM:供应链_供应商<span class="tab-count">2</span></button><button class="tab-btn" data-tab-index="4">QM:标准与认证<span class="tab-count">2</span></button><button class="tab-btn" data-tab-index="5">通用:机器人行业<span class="tab-count">2</span></button><button class="tab-btn" data-tab-index="6">通用:人形机器人<span class="tab-count">1</span></button></div></div>
+                <div class="word-group" data-tab-index="0" data-role="CEO">
+                        <span class="role-badge role-CEO">CEO</span>
                     <div class="word-header">
                         <div class="word-info">
-                            <div class="word-name">机器人行业</div>
-                            <div class="word-count ">1 条</div>
+                            <div class="word-name">CTO:技术_机器人技术</div>
+                            <div class="word-count warm">8 条</div>
                         </div>
-                        <div class="word-index"><span class="collapse-icon">▼</span>1/1</div>
+                        <div class="word-index"><span class="collapse-icon">▼</span>1/7</div>
+                    </div>
+                    <div class="news-item ">
+                        <div class="news-number">1</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">Solidot</span><span class="rank-num high">4-6</span><span class="time-info">00:21~15:14</span><span class="count-info">28次</span>
+                            </div>
+                            <div class="news-title"><a href="https://www.solidot.org/story?sid=84827" target="_blank" class="news-link">瑞士军方拥抱开源切断与微软的合作</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-item ">
+                        <div class="news-number">2</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">V2EX</span><span class="rank-num top">1-2</span><span class="trend-down">📉</span><span class="time-info">14:39~15:14</span><span class="count-info">2次</span>
+                            </div>
+                            <div class="news-title"><a href="https://www.v2ex.com/t/1227447" target="_blank" class="news-link">给自己写的开源下载器加了插件系统，顺手把 ffmpeg / yt-dlp 关进了沙箱</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-item ">
+                        <div class="news-number">3</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">V2EX</span><span class="rank-num top">2-5</span><span class="time-info">12:51~15:14</span><span class="count-info">5次</span>
+                            </div>
+                            <div class="news-title"><a href="https://www.v2ex.com/t/1227414" target="_blank" class="news-link">[分享开源项目] Glint：一个为 Claude Code / Codex 等 AI Agent 设计的 macOS 原生终端</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-item ">
+                        <div class="news-number">4</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">Hacker News</span><span class="rank-num high">9-24</span><span class="trend-up">📈</span><span class="time-info">07:26~15:14</span><span class="count-info">16次</span>
+                            </div>
+                            <div class="news-title"><a href="https://news.ycombinator.com/item?id=48913763" target="_blank" class="news-link">LeMario: Training a JEPA World Model on Super Mario Bros</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-item ">
+                        <div class="news-number">5</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">Hacker News</span><span class="rank-num ">12-24</span><span class="trend-down">📉</span><span class="time-info">08:36~15:14</span><span class="count-info">13次</span>
+                            </div>
+                            <div class="news-title"><a href="https://news.ycombinator.com/item?id=48913190" target="_blank" class="news-link">Microsoft Patches a Record 570 Security Flaws</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-item ">
+                        <div class="news-number">6</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">掘金</span><span class="rank-num ">17-19</span><span class="time-info">00:21~15:14</span><span class="count-info">28次</span>
+                            </div>
+                            <div class="news-title"><a href="https://juejin.cn/post/7661324464743858219" target="_blank" class="news-link">耗时 7 天，我们开源了腾讯 WorkBuddy 实战蓝皮书（建议收藏）</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-item ">
+                        <div class="news-number">7</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">IT之家</span><span class="rank-num high">4-22</span><span class="trend-down">📉</span><span class="time-info">14:39~15:14</span><span class="count-info">2次</span>
+                            </div>
+                            <div class="news-title"><a href="https://www.ithome.com/0/976/962.htm" target="_blank" class="news-link">Mozilla 发布 2026 开源 AI 报告：DeepSeek V4 Flash 全球月用量 18.4T Tokens 登顶</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-item new">
+                        <div class="news-number">8</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">IT之家</span><span class="rank-num high">8</span><span class="time-info">15:14</span>
+                            </div>
+                            <div class="news-title"><a href="https://www.ithome.com/0/977/012.htm" target="_blank" class="news-link">小米开源 Xiaomi-Robotics-U0：具身领域首个“通吃”四类任务的统一生成模型</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="word-group" data-tab-index="1" data-role="CEO">
+                        <span class="role-badge role-CEO">CEO</span>
+                    <div class="word-header">
+                        <div class="word-info">
+                            <div class="word-name">CTO:技术_具身智能</div>
+                            <div class="word-count ">4 条</div>
+                        </div>
+                        <div class="word-index"><span class="collapse-icon">▼</span>2/7</div>
+                    </div>
+                    <div class="news-item ">
+                        <div class="news-number">1</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">掘金</span><span class="rank-num top">3-4</span><span class="time-info">00:21~15:14</span><span class="count-info">28次</span>
+                            </div>
+                            <div class="news-title"><a href="https://juejin.cn/post/7661754132202766371" target="_blank" class="news-link">星云SDK + 油猴：给LLM塑造肉身，陪伴你在每个网页</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-item ">
+                        <div class="news-number">2</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">V2EX</span><span class="rank-num top">1-21</span><span class="time-info">00:21~15:14</span><span class="count-info">28次</span>
+                            </div>
+                            <div class="news-title"><a href="https://www.v2ex.com/t/1227323" target="_blank" class="news-link">做了个本地 LLM 网关，多渠道自动挑便宜又快的那个用，已开源</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-item ">
+                        <div class="news-number">3</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">掘金</span><span class="rank-num ">24-29</span><span class="trend-down">📉</span><span class="time-info">00:21~15:14</span><span class="count-info">28次</span>
+                            </div>
+                            <div class="news-title"><a href="https://juejin.cn/post/7660856923005485098" target="_blank" class="news-link">别让 LLM 再胡说了——RAG 检索增强生成完全指南</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-item ">
+                        <div class="news-number">4</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">掘金</span><span class="rank-num ">27-30</span><span class="trend-down">📉</span><span class="time-info">10:32~15:14</span><span class="count-info">9次</span>
+                            </div>
+                            <div class="news-title"><a href="https://juejin.cn/post/7661830907990442024" target="_blank" class="news-link">LangChain.js RAG 实战：爬取掘金文章，让 LLM 告别幻觉</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="word-group" data-tab-index="2" data-role="CEO">
+                        <span class="role-badge role-CEO">CEO</span>
+                    <div class="word-header">
+                        <div class="word-info">
+                            <div class="word-name">QM:供应链_核心零件</div>
+                            <div class="word-count ">2 条</div>
+                        </div>
+                        <div class="word-index"><span class="collapse-icon">▼</span>3/7</div>
+                    </div>
+                    <div class="news-item ">
+                        <div class="news-number">1</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">掘金</span><span class="rank-num high">10-12</span><span class="trend-down">📉</span><span class="time-info">00:21~15:14</span><span class="count-info">28次</span>
+                            </div>
+                            <div class="news-title"><a href="https://juejin.cn/post/7661439504083582976" target="_blank" class="news-link">AI 大模型写故事，魔珐星云驱动 3D 数字人实时播报</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-item ">
+                        <div class="news-number">2</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">少数派</span><span class="rank-num ">25</span><span class="time-info">00:21~15:14</span><span class="count-info">28次</span>
+                            </div>
+                            <div class="news-title"><a href="https://sspai.com/post/111223" target="_blank" class="news-link">DV/HDV 磁带拯救计划：用 AI 驱动十八年前的老设备</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="word-group" data-tab-index="3" data-role="CEO">
+                        <span class="role-badge role-CEO">CEO</span>
+                    <div class="word-header">
+                        <div class="word-info">
+                            <div class="word-name">QM:供应链_供应商</div>
+                            <div class="word-count ">2 条</div>
+                        </div>
+                        <div class="word-index"><span class="collapse-icon">▼</span>4/7</div>
                     </div>
                     <div class="news-item new">
                         <div class="news-number">1</div>
                         <div class="news-content">
-                            <div class="news-header"><span class="source-name">贴吧</span><span class="rank-num ">28</span><span class="time-info">15:16</span>
+                            <div class="news-header"><span class="source-name">格隆汇</span><span class="rank-num high">6</span><span class="time-info">15:14</span>
                             </div>
-                            <div class="news-title"><a href="https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28355151&amp;amp;topic_name=%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BC%B4%E4%BE%A3%E5%BC%80%E5%94%AE%2C%E4%BA%BA%E6%9C%BA%E6%81%8B%E6%88%90%E7%9C%9F" target="_blank" class="news-link">机器人伴侣开售,人机恋成真</a>
+                            <div class="news-title"><a href="https://www.gelonghui.com/news/5269387" target="_blank" class="news-link">奥克股份(300082.SZ)：公司部分子公司采购少量环氧丙烷用于生产消泡剂等产品</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-item new">
+                        <div class="news-number">2</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">今日头条</span><span class="rank-num ">24</span><span class="time-info">15:14</span>
+                            </div>
+                            <div class="news-title"><a href="https://www.toutiao.com/trending/7662593616145104932/" target="_blank" class="news-link">超市采购10万斤西瓜送顾客</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="word-group" data-tab-index="4" data-role="CEO">
+                        <span class="role-badge role-CEO">CEO</span>
+                    <div class="word-header">
+                        <div class="word-info">
+                            <div class="word-name">QM:标准与认证</div>
+                            <div class="word-count ">2 条</div>
+                        </div>
+                        <div class="word-index"><span class="collapse-icon">▼</span>5/7</div>
+                    </div>
+                    <div class="news-item ">
+                        <div class="news-number">1</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">IT之家</span><span class="rank-num top">3-21</span><span class="trend-down">📉</span><span class="time-info">14:39~15:14</span><span class="count-info">2次</span>
+                            </div>
+                            <div class="news-title"><a href="https://www.ithome.com/0/976/976.htm" target="_blank" class="news-link">CHERRY XTRFY MX 8.3 PRO RGB 机械键盘马卡龙配色上市，2149 元</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-item new">
+                        <div class="news-number">2</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">掘金</span><span class="rank-num ">28</span><span class="time-info">15:14</span>
+                            </div>
+                            <div class="news-title"><a href="https://juejin.cn/post/7662326941523345450" target="_blank" class="news-link">Fluter 共享内存多线程正在落地，IsolateGroupBound 来了</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="word-group" data-tab-index="5" data-role="CEO">
+                        <span class="role-badge role-CEO">CEO</span>
+                    <div class="word-header">
+                        <div class="word-info">
+                            <div class="word-name">通用:机器人行业</div>
+                            <div class="word-count ">2 条</div>
+                        </div>
+                        <div class="word-index"><span class="collapse-icon">▼</span>6/7</div>
+                    </div>
+                    <div class="news-item new">
+                        <div class="news-number">1</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">格隆汇</span><span class="rank-num top">3</span><span class="time-info">15:14</span>
+                            </div>
+                            <div class="news-title"><a href="https://www.gelonghui.com/news/5269390" target="_blank" class="news-link">研报掘金丨东莞证券：予拓斯达“买入”评级，机器人业务持续放量</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-item new">
+                        <div class="news-number">2</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">格隆汇</span><span class="rank-num ">14</span><span class="time-info">15:14</span>
+                            </div>
+                            <div class="news-title"><a href="https://www.gelonghui.com/news/5269379" target="_blank" class="news-link">理工光科(300557.SZ)：暂未涉及户外作业机器人相关业务</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="word-group" data-tab-index="6" data-role="CEO">
+                        <span class="role-badge role-CEO">CEO</span>
+                    <div class="word-header">
+                        <div class="word-info">
+                            <div class="word-name">通用:人形机器人</div>
+                            <div class="word-count ">1 条</div>
+                        </div>
+                        <div class="word-index"><span class="collapse-icon">▼</span>7/7</div>
+                    </div>
+                    <div class="news-item new">
+                        <div class="news-number">1</div>
+                        <div class="news-content">
+                            <div class="news-header"><span class="source-name">IT之家</span><span class="rank-num high">10</span><span class="time-info">15:14</span>
+                            </div>
+                            <div class="news-title"><a href="https://www.ithome.com/0/977/007.htm" target="_blank" class="news-link">人形机器人挑战骑马射箭，还能制作新疆拉条子</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 </div>
-                <div class="section-divider ai-section">
-                    <div class="ai-section-header">
-                        <div class="ai-section-title">✨ AI 热点分析</div>
-                        <span class="ai-section-badge">AI</span>
+                <div class="section-divider rss-section">
+                    <div class="rss-section-header">
+                        <div class="rss-section-title">RSS 订阅更新</div>
+                        <div class="rss-section-count">2 条</div>
                     </div>
-                    <div class="ai-blocks-grid">
-                    <div class="ai-block">
-                        <div class="ai-block-title">核心热点态势</div>
-                        <div class="ai-block-content">当前机器人行业热榜呈高度碎片化状态，仅<br><br>【贴吧】<br>1条「机器人伴侣开售,人机恋成真」以排名28的圈层热点出现，未形成全网霸屏或破圈扩散。<br><br>【宏观主线】：<br>公众对机器人的关注点从工业应用向情感陪伴领域偏移，「机器人伴侣」概念虽小众但反映底层需求——AI具身化正逐步渗透非结构化、高情绪价值场景。<br><br>【微观领域】：<br>1. 情感机器人（伴侣类）作为新兴细分市场，话题性高于实用讨论；<br><br>2. 「人机恋」伦理争议尚未引发大众舆论，需警惕未来监管介入。</div>
+                    <div class="rss-feeds-grid">
+                    <div class="feed-group">
+                        <div class="feed-header">
+                            <div class="feed-name">CTO:技术_机器人技术</div>
+                            <div class="feed-count">1 条</div>
+                        </div>
+                        <div class="rss-item">
+                            <div class="rss-meta"><span class="rss-time">07-15 14:52</span><span class="rss-author">IT之家 RSS</span><span class="rss-author" style="color: #dc2626;">NEW</span>
+                            </div>
+                            <div class="rss-title"><a href="https://www.ithome.com/0/977/012.htm" target="_blank" class="rss-link">小米开源 Xiaomi-Robotics-U0：具身领域首个“通吃”四类任务的统一生成模型</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="ai-block">
-                        <div class="ai-block-title">舆论风向争议</div>
-                        <div class="ai-block-content">【情绪光谱】：<br>主流声音集中在猎奇与科技乐观（期待伴侣机器人解放孤独），潜流暗涌包括伦理焦虑（隐私、情感依赖成瘾）与性别讨论（物化倾向）。<br><br>【核心矛盾】：<br>1. 利益之争——厂商推新需求与传统婚恋产业、心理咨询行业之间的市场份额挤压；<br><br>2. 认知之争——「科技浪漫化」vs「人性异化」的价值观对立。</div>
-                    </div>
-                    <div class="ai-block">
-                        <div class="ai-block-title">异动与弱信号</div>
-                        <div class="ai-block-content">【圈层温差】：<br>该话题仅在<br><br>【贴吧】<br>出现（排名28，单次），微博、知乎、B站等更广泛平台均无响应，说明尚未破圈，属于极垂直圈层的自嗨。<br><br>【弱信号捕捉】：<br>1. 贴吧作为泛兴趣社区，该话题出现本身暗示年轻男性群体对AI伴侣接受度正在提升；<br><br>2. 无任何工业/行业视角讨论（如库卡、AMR等），提示资本与产业界对该方向仍保持观望。<br><br>【轨迹突变】：<br>仅1次记录无轨迹变化，无急升或回榜迹象。</div>
-                    </div>
-                    <div class="ai-block">
-                        <div class="ai-block-title">研判策略建议</div>
-                        <div class="ai-block-content">1. 投资者：短期勿追情感机器人概念，热度低且商业化路径不明；可关注工业机器人（库卡）与人形机器人的落地进展。<br><br>2. 品牌方：若涉足伴侣机器人，需主动设置伦理框架（如隐私保护声明、成瘾限制功能），以规避未来监管风险。<br><br>3. 公众：理性看待「人机恋」市场宣传，区分技术Demo与成熟产品。</div>
-                    </div>
-                    <div class="ai-block">
-                        <div class="ai-block-title">独立源点速览</div>
-                        <div class="ai-block-content">[贴吧]:<br>该平台仅出现「机器人伴侣开售」单条弱信号，排名28（低位稳定），未呈现上升趋势。话题停留在泛兴趣讨论层，缺乏技术深度或行业背书，暂不构成主流关注。<br><br>[百度热搜]:<br>暂无机器人行业相关上榜话题，平台未出现增量热度。<br><br>[今日头条]:<br>暂无机器人行业相关上榜话题，平台未出现增量热度。<br><br>[微博]:<br>暂无机器人行业相关上榜话题，平台未出现增量热度。<br><br>[知乎]:<br>暂无机器人行业相关上榜话题，平台未出现增量热度。<br><br>[B站热搜]:<br>暂无机器人行业相关上榜话题，平台未出现增量热度。<br><br>[抖音]:<br>暂无机器人行业相关上榜话题，平台未出现增量热度。<br><br>[华尔街见闻]:<br>暂无机器人行业相关上榜话题，平台未出现增量热度。<br><br>[澎湃新闻]:<br>暂无机器人行业相关上榜话题，平台未出现增量热度。<br><br>[财联社热门]:<br>暂无机器人行业相关上榜话题，平台未出现增量热度。<br><br>[凤凰网]:<br>暂无机器人行业相关上榜话题，平台未出现增量热度。</div>
+                    <div class="feed-group">
+                        <div class="feed-header">
+                            <div class="feed-name">通用:人形机器人</div>
+                            <div class="feed-count">1 条</div>
+                        </div>
+                        <div class="rss-item">
+                            <div class="rss-meta"><span class="rss-time">07-15 14:51</span><span class="rss-author">IT之家 RSS</span><span class="rss-author" style="color: #dc2626;">NEW</span>
+                            </div>
+                            <div class="rss-title"><a href="https://www.ithome.com/0/977/007.htm" target="_blank" class="rss-link">人形机器人挑战骑马射箭，还能制作新疆拉条子</a>
+                            </div>
+                        </div>
                     </div>
                     </div>
                 </div>
@@ -2484,6 +2819,47 @@
                     });
                 })();
             });
+
+            // ===== 角色仪表盘 Tab 切换 =====
+            (function() {
+                var roleBar = document.querySelector('.role-tab-bar');
+                if (!roleBar) return;
+                var roleBtns = roleBar.querySelectorAll('.role-tab-btn');
+                var allGroups = document.querySelectorAll('.word-group[data-tab-index]');
+
+                function filterByRole(role) {
+                    // 先高亮 keyword tab 的 "全部"
+                    var keywordBar = document.querySelector('.tab-bar');
+                    if (keywordBar) {
+                        var keywordAll = keywordBar.querySelector('[data-tab-index="all"]');
+                        if (keywordAll) {
+                            keywordBar.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+                            keywordAll.classList.add('active');
+                        }
+                    }
+                    // 触发 keyword tab 切换函数
+                    if (window.switchKeywordTab) {
+                        window.switchKeywordTab('all');
+                    }
+
+                    allGroups.forEach(function(g) {
+                        if (role === 'all') {
+                            g.style.display = '';
+                        } else {
+                            var groupRole = g.getAttribute('data-role') || '';
+                            g.style.display = (groupRole === role) ? '' : 'none';
+                        }
+                    });
+                }
+
+                roleBtns.forEach(function(btn) {
+                    btn.addEventListener('click', function() {
+                        roleBtns.forEach(function(b) { b.classList.remove('active'); });
+                        btn.classList.add('active');
+                        filterByRole(btn.getAttribute('data-role'));
+                    });
+                });
+            })();
         </script>
     </body>
     </html>
