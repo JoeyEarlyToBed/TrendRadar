@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-07-15T16:59:13.774362",
-  "total": 374,
+  "generated_at": "2026-07-15T17:36:13.929346",
+  "total": 375,
   "reports": [
+    {
+      "id": "2026-07-15-17-34",
+      "filename": "17-34.html",
+      "date": "2026-07-15",
+      "time": "17:34",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "瑞士军方拥抱开源切断与微软的合作",
+        "[分享开源项目] Glint：一个为 Claude Code / Codex 等 AI Agent 设计的 macOS 原生终端",
+        "专升本前端毕业 1 年，从初创到大厂，我的开源项目上了 github trending，顺利聊聊做开源的收获"
+      ],
+      "size": 123543,
+      "modified": "2026-07-15T17:34:27.528987",
+      "isNewest": true
+    },
     {
       "id": "2026-07-15-16-59",
       "filename": "16-59.html",
@@ -17,8 +35,7 @@
         "[分享开源项目] Glint：一个为 Claude Code / Codex 等 AI Agent 设计的 macOS 原生终端"
       ],
       "size": 120088,
-      "modified": "2026-07-15T16:59:11.147026",
-      "isNewest": true
+      "modified": "2026-07-15T16:59:11.147026"
     },
     {
       "id": "2026-07-15-16-23",
