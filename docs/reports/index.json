@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-07-16T19:27:12.333714",
-  "total": 409,
+  "generated_at": "2026-07-16T20:00:49.402208",
+  "total": 410,
   "reports": [
+    {
+      "id": "2026-07-16-20-00",
+      "filename": "20-00.html",
+      "date": "2026-07-16",
+      "time": "20:00",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "MemoArk：提供 Windows / Android 完整本地包的开源 Memos 分支",
+        "J-space comparisons across open models",
+        "[开源] Nimclip：原生、本地保存的 macOS 剪贴板历史工具"
+      ],
+      "size": 187428,
+      "modified": "2026-07-16T20:00:46.764672",
+      "isNewest": true
+    },
     {
       "id": "2026-07-16-19-27",
       "filename": "19-27.html",
@@ -17,8 +35,7 @@
         "我自用了 3 个月的 Agent 编排器，开源啦！"
       ],
       "size": 122077,
-      "modified": "2026-07-16T19:27:09.756543",
-      "isNewest": true
+      "modified": "2026-07-16T19:27:09.756543"
     },
     {
       "id": "2026-07-16-18-51",
