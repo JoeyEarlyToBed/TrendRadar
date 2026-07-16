@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-07-16T15:23:09.067545",
-  "total": 404,
+  "generated_at": "2026-07-16T15:58:22.321319",
+  "total": 405,
   "reports": [
+    {
+      "id": "2026-07-16-15-58",
+      "filename": "15-58.html",
+      "date": "2026-07-16",
+      "time": "15:58",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "MemoArk：提供 Windows / Android 完整本地包的开源 Memos 分支",
+        "Grok-Build 开源了",
+        "美国最强开源 AI：多模态 Inkling 模型登场，前 OpenAI 首席技术官穆拉蒂打造"
+      ],
+      "size": 125947,
+      "modified": "2026-07-16T15:58:19.695078",
+      "isNewest": true
+    },
     {
       "id": "2026-07-16-15-23",
       "filename": "15-23.html",
@@ -17,8 +35,7 @@
         "Grok-Build 开源了"
       ],
       "size": 127454,
-      "modified": "2026-07-16T15:23:06.482687",
-      "isNewest": true
+      "modified": "2026-07-16T15:23:06.482687"
     },
     {
       "id": "2026-07-16-14-49",
