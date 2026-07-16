@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-07-16T14:49:56.509271",
-  "total": 403,
+  "generated_at": "2026-07-16T15:23:09.067545",
+  "total": 404,
   "reports": [
+    {
+      "id": "2026-07-16-15-23",
+      "filename": "15-23.html",
+      "date": "2026-07-16",
+      "time": "15:23",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "美国最强开源 AI：多模态 Inkling 模型登场，前 OpenAI 首席技术官穆拉蒂打造",
+        "MemoArk：提供 Windows / Android 完整本地包的开源 Memos 分支",
+        "Grok-Build 开源了"
+      ],
+      "size": 127454,
+      "modified": "2026-07-16T15:23:06.482687",
+      "isNewest": true
+    },
     {
       "id": "2026-07-16-14-49",
       "filename": "14-49.html",
@@ -17,8 +35,7 @@
         "大众海外最便宜纯电 SUV：ID.Cross 量产版发布，2.8 万欧元起"
       ],
       "size": 127234,
-      "modified": "2026-07-16T14:49:49.752277",
-      "isNewest": true
+      "modified": "2026-07-16T14:49:49.752277"
     },
     {
       "id": "2026-07-16-14-15",
