@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-07-16T09:07:30.664521",
+  "generated_at": "2026-07-16T09:43:22.068981",
   "total": 397,
   "reports": [
+    {
+      "id": "2026-07-16-09-41",
+      "filename": "09-41.html",
+      "date": "2026-07-16",
+      "time": "09:41",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "[开源] Nimclip：原生、本地保存的 macOS 剪贴板历史工具",
+        "Grok-Build 开源了",
+        "做了一个 markdown 查看器，开源免费使用，需要的自取"
+      ],
+      "size": 123205,
+      "modified": "2026-07-16T09:41:35.664369",
+      "isNewest": true
+    },
     {
       "id": "2026-07-16-09-07",
       "filename": "09-07.html",
@@ -17,8 +35,7 @@
         "做了一个 markdown 查看器，开源免费使用，需要的自取"
       ],
       "size": 124228,
-      "modified": "2026-07-16T09:07:27.376899",
-      "isNewest": true
+      "modified": "2026-07-16T09:07:27.376899"
     },
     {
       "id": "2026-07-16-08-28",
@@ -2144,23 +2161,6 @@
       ],
       "size": 119244,
       "modified": "2026-07-13T10:14:38.478804"
-    },
-    {
-      "id": "2026-07-13-09-41",
-      "filename": "09-41.html",
-      "date": "2026-07-13",
-      "time": "09:41",
-      "title": "热点新闻分析",
-      "keywords": [],
-      "preview": [
-        "热点新闻分析",
-        "⚠️ 请求失败的平台",
-        "图解 120 个大语言模型（LLM）核心概念（1-30）",
-        "I love LLMs, I hate hype",
-        "Mechanistic interpretability researchers applying causality theory to LLMs"
-      ],
-      "size": 117429,
-      "modified": "2026-07-13T09:41:26.359147"
     },
     {
       "id": "2026-07-13-09-03",
