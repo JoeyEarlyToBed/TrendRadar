@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-07-18T16:05:48.198543",
+  "generated_at": "2026-07-27T19:35:22.753326",
   "total": 439,
   "reports": [
+    {
+      "id": "2026-07-27-19-35",
+      "filename": "19-35.html",
+      "date": "2026-07-27",
+      "time": "19:35",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "[开源] Illustrator：让 Agent 用代码生成可编辑配图",
+        "开源了一套主题 token 系统 Claude-cream",
+        "蒸馏自己：长文转爆款社媒帖子 Agent SKill 开源"
+      ],
+      "size": 122566,
+      "modified": "2026-07-27T19:35:16.705040",
+      "isNewest": true
+    },
     {
       "id": "2026-07-18-16-05",
       "filename": "16-05.html",
@@ -17,8 +35,7 @@
         "Moonstone: Modern, cross-platform Lua runtime and package manager written in Zig"
       ],
       "size": 131680,
-      "modified": "2026-07-18T16:05:11.671781",
-      "isNewest": true
+      "modified": "2026-07-18T16:05:11.671781"
     },
     {
       "id": "2026-07-18-12-04",
@@ -5017,23 +5034,6 @@
       ],
       "size": 125213,
       "modified": "2026-07-02T22:08:41.869027"
-    },
-    {
-      "id": "2026-07-02-19-35",
-      "filename": "19-35.html",
-      "date": "2026-07-02",
-      "time": "19:35",
-      "title": "热点新闻分析",
-      "keywords": [],
-      "preview": [
-        "热点新闻分析",
-        "⚠️ 请求失败的平台",
-        "马斯克发布大合照：特斯拉弗里蒙特工厂Optimus产线或已就绪！",
-        "104天！宇树科技科创板IPO注册生效 A股“人形机器人第一股”诞生在即",
-        "宇树科技IPO注册获批"
-      ],
-      "size": 125565,
-      "modified": "2026-07-02T19:35:36.834772"
     },
     {
       "id": "2026-07-02-12-55",
