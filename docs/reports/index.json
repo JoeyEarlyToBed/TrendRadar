@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-07-27T19:35:22.753326",
-  "total": 439,
+  "generated_at": "2026-07-27T20:10:28.004967",
+  "total": 440,
   "reports": [
+    {
+      "id": "2026-07-27-20-10",
+      "filename": "20-10.html",
+      "date": "2026-07-27",
+      "time": "20:10",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "部署在 Cloudflare Pages 的开源网站统计工具 Iris Analytics",
+        "[开源] Illustrator：让 Agent 用代码生成可编辑配图",
+        "开源了一套主题 token 系统 Claude-cream"
+      ],
+      "size": 122424,
+      "modified": "2026-07-27T20:10:23.687557",
+      "isNewest": true
+    },
     {
       "id": "2026-07-27-19-35",
       "filename": "19-35.html",
@@ -17,8 +35,7 @@
         "蒸馏自己：长文转爆款社媒帖子 Agent SKill 开源"
       ],
       "size": 122566,
-      "modified": "2026-07-27T19:35:16.705040",
-      "isNewest": true
+      "modified": "2026-07-27T19:35:16.705040"
     },
     {
       "id": "2026-07-18-16-05",
