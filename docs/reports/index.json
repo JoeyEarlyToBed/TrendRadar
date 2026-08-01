@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-08-01T09:36:15.147350",
-  "total": 458,
+  "generated_at": "2026-08-01T16:42:17.779389",
+  "total": 459,
   "reports": [
+    {
+      "id": "2026-08-01-16-42",
+      "filename": "16-42.html",
+      "date": "2026-08-01",
+      "time": "16:42",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "Windows 游戏模拟器 CrossOver 宣布原生 Apple Silicon 支持",
+        "SenseNova U1.5-Lite-Preview 开源了： 4K 生成、复杂排版和原生图像编辑",
+        "做了一个 Neovim 里的 AI 编程 Agent 前端 pi2.nvim，开源求交流"
+      ],
+      "size": 122351,
+      "modified": "2026-08-01T16:42:15.076745",
+      "isNewest": true
+    },
     {
       "id": "2026-08-01-09-36",
       "filename": "09-36.html",
@@ -17,8 +35,7 @@
         "开源鸿蒙 OpenHarmony 6.1 LTS 发布：新增展锐 P7885 开发板"
       ],
       "size": 131833,
-      "modified": "2026-08-01T09:36:11.556576",
-      "isNewest": true
+      "modified": "2026-08-01T09:36:11.556576"
     },
     {
       "id": "2026-08-01-03-56",
