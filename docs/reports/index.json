@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-08-01T17:37:30.332243",
-  "total": 460,
+  "generated_at": "2026-08-01T18:13:40.070549",
+  "total": 461,
   "reports": [
+    {
+      "id": "2026-08-01-18-11",
+      "filename": "18-11.html",
+      "date": "2026-08-01",
+      "time": "18:11",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "Windows 游戏模拟器 CrossOver 宣布原生 Apple Silicon 支持",
+        "[开源] Mktero：在 Zotero 里把 PDF 转成可重排的 Markdown 阅读",
+        "3 月份 Vibe Coding 的一个小项目，画布模式的日记小软件，自用，开源"
+      ],
+      "size": 124018,
+      "modified": "2026-08-01T18:11:53.005327",
+      "isNewest": true
+    },
     {
       "id": "2026-08-01-17-37",
       "filename": "17-37.html",
@@ -17,8 +35,7 @@
         "SenseNova U1.5-Lite-Preview 开源了： 4K 生成、复杂排版和原生图像编辑"
       ],
       "size": 119305,
-      "modified": "2026-08-01T17:37:26.507981",
-      "isNewest": true
+      "modified": "2026-08-01T17:37:26.507981"
     },
     {
       "id": "2026-08-01-16-58",
