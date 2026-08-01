@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-08-01T18:51:08.376020",
-  "total": 461,
+  "generated_at": "2026-08-01T19:28:42.653875",
+  "total": 462,
   "reports": [
+    {
+      "id": "2026-08-01-19-25",
+      "filename": "19-25.html",
+      "date": "2026-08-01",
+      "time": "19:25",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "Windows 游戏模拟器 CrossOver 宣布原生 Apple Silicon 支持",
+        "[开源] Mktero：在 Zotero 里把 PDF 转成可重排的 Markdown 阅读",
+        "3 月份 Vibe Coding 的一个小项目，画布模式的日记小软件，自用，开源"
+      ],
+      "size": 122882,
+      "modified": "2026-08-01T19:25:32.419555",
+      "isNewest": true
+    },
     {
       "id": "2026-08-01-18-51",
       "filename": "18-51.html",
@@ -17,8 +35,7 @@
         "3 月份 Vibe Coding 的一个小项目，画布模式的日记小软件，自用，开源"
       ],
       "size": 121729,
-      "modified": "2026-08-01T18:51:05.452585",
-      "isNewest": true
+      "modified": "2026-08-01T18:51:05.452585"
     },
     {
       "id": "2026-08-01-18-11",
