@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-08-02T15:00:54.654495",
-  "total": 467,
+  "generated_at": "2026-08-02T22:31:55.842628",
+  "total": 468,
   "reports": [
+    {
+      "id": "2026-08-02-22-15",
+      "filename": "22-15.html",
+      "date": "2026-08-02",
+      "time": "22:15",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "我开源了一个多币种静态本地离线冷钱包生成器",
+        "Windows 游戏模拟器 CrossOver 宣布原生 Apple Silicon 支持",
+        "似乎开源项目作者不知道/不想利用 AI 来加速自己的开发？"
+      ],
+      "size": 123024,
+      "modified": "2026-08-02T22:15:55.976673",
+      "isNewest": true
+    },
     {
       "id": "2026-08-02-14-59",
       "filename": "14-59.html",
@@ -17,8 +35,7 @@
         "Windows 游戏模拟器 CrossOver 宣布原生 Apple Silicon 支持"
       ],
       "size": 125706,
-      "modified": "2026-08-02T14:59:06.183152",
-      "isNewest": true
+      "modified": "2026-08-02T14:59:06.183152"
     },
     {
       "id": "2026-08-02-07-28",
