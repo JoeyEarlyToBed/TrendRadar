@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-08-06T05:53:39.555418",
-  "total": 473,
+  "generated_at": "2026-08-06T10:37:22.545322",
+  "total": 474,
   "reports": [
+    {
+      "id": "2026-08-06-10-37",
+      "filename": "10-37.html",
+      "date": "2026-08-06",
+      "time": "10:37",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "Rosenblatt升AMD目标价至700美元",
+        "opencode 移动端（还没开源）",
+        "Cloudflare 宣布推出开源“Cloudflare OS”：面向 AI 智能体和企业工作的开放平台"
+      ],
+      "size": 127352,
+      "modified": "2026-08-06T10:37:18.949445",
+      "isNewest": true
+    },
     {
       "id": "2026-08-06-05-53",
       "filename": "05-53.html",
@@ -17,8 +35,7 @@
         "Cloudflare 宣布推出开源“Cloudflare OS”：面向 AI 智能体和企业工作的开放平台"
       ],
       "size": 131135,
-      "modified": "2026-08-06T05:53:36.192067",
-      "isNewest": true
+      "modified": "2026-08-06T05:53:36.192067"
     },
     {
       "id": "2026-08-05-21-03",
