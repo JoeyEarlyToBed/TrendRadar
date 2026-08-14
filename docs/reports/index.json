@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-08-14T04:01:13.258119",
-  "total": 491,
+  "generated_at": "2026-08-14T13:23:53.662571",
+  "total": 492,
   "reports": [
+    {
+      "id": "2026-08-14-13-23",
+      "filename": "13-23.html",
+      "date": "2026-08-14",
+      "time": "13:23",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "DeepSeek 昨晚刚开源了 Harness：附万少的2 万字保姆级教程",
+        "🔥 Network 里那坨 &quot;data:&quot; 我真看吐了，自制开源 Chrome 插件，AI 流式调试直接开挂",
+        "天天用 Claude Code/Codex，你知道它实际发给模型什么吗？被这开源工具扒光了..."
+      ],
+      "size": 131760,
+      "modified": "2026-08-14T13:23:49.925964",
+      "isNewest": true
+    },
     {
       "id": "2026-08-14-03-45",
       "filename": "03-45.html",
@@ -17,8 +35,7 @@
         "VLC 播放 MP3 卡顿 33 秒？微软 Microsoft Defender 背锅"
       ],
       "size": 132081,
-      "modified": "2026-08-14T03:45:04.255288",
-      "isNewest": true
+      "modified": "2026-08-14T03:45:04.255288"
     },
     {
       "id": "2026-08-13-16-59",
