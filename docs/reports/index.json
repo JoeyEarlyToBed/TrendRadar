@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-08-16T16:05:44.435100",
-  "total": 497,
+  "generated_at": "2026-08-16T16:16:36.173273",
+  "total": 498,
   "reports": [
+    {
+      "id": "2026-08-16-16-14",
+      "filename": "16-14.html",
+      "date": "2026-08-16",
+      "time": "16:14",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "DeepSeek 昨晚刚开源了 Harness：附万少的2 万字保姆级教程",
+        "开源了个 agent skills 管理/环境切换/聊天查询的桌面软件",
+        "DeepSeek Harness开源第一天我就上手了——和Claude Code的差距比想象中大"
+      ],
+      "size": 120098,
+      "modified": "2026-08-16T16:14:56.240541",
+      "isNewest": true
+    },
     {
       "id": "2026-08-16-16-05",
       "filename": "16-05.html",
@@ -17,8 +35,7 @@
         "DeepSeek Harness开源第一天我就上手了——和Claude Code的差距比想象中大"
       ],
       "size": 120139,
-      "modified": "2026-08-16T16:05:40.616356",
-      "isNewest": true
+      "modified": "2026-08-16T16:05:40.616356"
     },
     {
       "id": "2026-08-16-15-40",
