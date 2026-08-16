@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-08-15T23:36:03.199713",
+  "generated_at": "2026-08-16T13:56:29.048247",
   "total": 496,
   "reports": [
+    {
+      "id": "2026-08-16-13-56",
+      "filename": "13-56.html",
+      "date": "2026-08-16",
+      "time": "13:56",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "DeepSeek 昨晚刚开源了 Harness：附万少的2 万字保姆级教程",
+        "开源 音频串流 app，从局域网电脑收发音频；通过 AirPlay 连接你的音响。 macOS / Windows",
+        "DeepSeek Harness开源第一天我就上手了——和Claude Code的差距比想象中大"
+      ],
+      "size": 131461,
+      "modified": "2026-08-16T13:56:23.420644",
+      "isNewest": true
+    },
     {
       "id": "2026-08-15-23-35",
       "filename": "23-35.html",
@@ -17,8 +35,7 @@
         "开源项目 NextBand：探索融合健康传感、语音交互与 AI Agent 的下一代可穿戴设备"
       ],
       "size": 129896,
-      "modified": "2026-08-15T23:35:56.173947",
-      "isNewest": true
+      "modified": "2026-08-15T23:35:56.173947"
     },
     {
       "id": "2026-08-15-19-29",
@@ -546,23 +563,6 @@
       ],
       "size": 162281,
       "modified": "2026-08-06T21:48:19.988143"
-    },
-    {
-      "id": "2026-08-06-13-56",
-      "filename": "13-56.html",
-      "date": "2026-08-06",
-      "time": "13:56",
-      "title": "热点新闻分析",
-      "keywords": [],
-      "preview": [
-        "热点新闻分析",
-        "⚠️ 请求失败的平台",
-        "Do birds enjoy flying? Analysis of affect after flight in galah (E roseicapilla)",
-        "ColorOS Beta 测试活动开启招募，覆盖 OPPO、一加、realme 多款机型",
-        "Sycophantic AI Decreases Prosocial Intentions and Promotes Dependence (2025)"
-      ],
-      "size": 127923,
-      "modified": "2026-08-06T13:56:39.933125"
     },
     {
       "id": "2026-08-06-10-37",
