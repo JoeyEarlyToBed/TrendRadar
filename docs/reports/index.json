@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-08-16T20:28:20.194870",
-  "total": 502,
+  "generated_at": "2026-08-16T21:02:57.356778",
+  "total": 503,
   "reports": [
+    {
+      "id": "2026-08-16-21-02",
+      "filename": "21-02.html",
+      "date": "2026-08-16",
+      "time": "21:02",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "DeepSeek 昨晚刚开源了 Harness：附万少的2 万字保姆级教程",
+        "DeepSeek Harness开源第一天我就上手了——和Claude Code的差距比想象中大",
+        "我们把 DeepSeek Harness 装进了 macOS： OpenHarness 开源发布"
+      ],
+      "size": 140443,
+      "modified": "2026-08-16T21:02:54.176514",
+      "isNewest": true
+    },
     {
       "id": "2026-08-16-20-28",
       "filename": "20-28.html",
@@ -17,8 +35,7 @@
         "我开源了 deepseek-harness-acp 欢迎试用！"
       ],
       "size": 139005,
-      "modified": "2026-08-16T20:28:17.292810",
-      "isNewest": true
+      "modified": "2026-08-16T20:28:17.292810"
     },
     {
       "id": "2026-08-16-19-48",
