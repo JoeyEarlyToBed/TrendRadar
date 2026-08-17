@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-08-16T23:59:25.748704",
-  "total": 504,
+  "generated_at": "2026-08-17T11:37:32.992064",
+  "total": 505,
   "reports": [
+    {
+      "id": "2026-08-17-11-37",
+      "filename": "11-37.html",
+      "date": "2026-08-17",
+      "time": "11:37",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "DeepSeek Harness开源第一天我就上手了——和Claude Code的差距比想象中大",
+        "做了一个原生 macOS 视频客户端 OKVideoMac，今天第一次开源，分享一下 Native-first + Android Bridge 的实现",
+        "开源修图软件 GIMP 3.4 将默认采用新项目文件格式，并优化 PSD 支持"
+      ],
+      "size": 128468,
+      "modified": "2026-08-17T11:37:30.001796",
+      "isNewest": true
+    },
     {
       "id": "2026-08-16-23-59",
       "filename": "23-59.html",
@@ -17,8 +35,7 @@
         "我做了个 DeepSeek Harness 的 插件 DAG 编排引擎，已开源"
       ],
       "size": 126965,
-      "modified": "2026-08-16T23:59:22.108866",
-      "isNewest": true
+      "modified": "2026-08-16T23:59:22.108866"
     },
     {
       "id": "2026-08-16-21-36",
