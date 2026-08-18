@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-08-18T18:08:45.959087",
+  "generated_at": "2026-08-19T06:01:24.713202",
   "total": 506,
   "reports": [
+    {
+      "id": "2026-08-19-06-01",
+      "filename": "06-01.html",
+      "date": "2026-08-19",
+      "time": "06:01",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "免费开源一个独立 Git 管理工具 🐱",
+        "DeepSeek Harness 插件推荐：4 款开源神器让写代码直接起飞",
+        "开源两天 9.5 万 Star！DeepSeek Harness 到底是个啥？小白安装到实战一篇讲透"
+      ],
+      "size": 123311,
+      "modified": "2026-08-19T06:01:20.135795",
+      "isNewest": true
+    },
     {
       "id": "2026-08-18-18-08",
       "filename": "18-08.html",
@@ -17,8 +35,7 @@
         "从零给 DeepSeek Harness 写一个壁纸皮肤插件（已开源）"
       ],
       "size": 125499,
-      "modified": "2026-08-18T18:08:42.351209",
-      "isNewest": true
+      "modified": "2026-08-18T18:08:42.351209"
     },
     {
       "id": "2026-08-18-08-34",
@@ -6156,23 +6173,6 @@
       ],
       "size": 128162,
       "modified": "2026-07-04T08:47:01.550449"
-    },
-    {
-      "id": "2026-07-04-06-01",
-      "filename": "06-01.html",
-      "date": "2026-07-04",
-      "time": "06:01",
-      "title": "热点新闻分析",
-      "keywords": [],
-      "preview": [
-        "热点新闻分析",
-        "⚠️ 请求失败的平台",
-        "Valve 开源 Steam Machine 的电子墨水屏",
-        "Wordgard: In-browser rich-text editor from the creator of ProseMirror",
-        "我看到 Qclaw Workbuddy Trae Work 扣子编程 Codex Claude 很多 Agent，但是好像没有开源的？"
-      ],
-      "size": 127694,
-      "modified": "2026-07-04T06:01:41.181860"
     },
     {
       "id": "2026-07-04-00-33",
