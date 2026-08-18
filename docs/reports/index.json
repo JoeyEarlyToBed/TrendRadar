@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-08-18T08:49:29.002400",
-  "total": 505,
+  "generated_at": "2026-08-18T18:08:45.959087",
+  "total": 506,
   "reports": [
+    {
+      "id": "2026-08-18-18-08",
+      "filename": "18-08.html",
+      "date": "2026-08-18",
+      "time": "18:08",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "DeepSeek Harness开源第一天我就上手了——和Claude Code的差距比想象中大",
+        "Los Puesteros, solitary men who look after ranches and livestock in Patagonia",
+        "从零给 DeepSeek Harness 写一个壁纸皮肤插件（已开源）"
+      ],
+      "size": 125499,
+      "modified": "2026-08-18T18:08:42.351209",
+      "isNewest": true
+    },
     {
       "id": "2026-08-18-08-34",
       "filename": "08-34.html",
@@ -17,8 +35,7 @@
         "宇树科技发布新品机器人“超人”：超人类原地跳高和奔跑速度纪录"
       ],
       "size": 127169,
-      "modified": "2026-08-18T08:34:27.674224",
-      "isNewest": true
+      "modified": "2026-08-18T08:34:27.674224"
     },
     {
       "id": "2026-08-17-11-37",
