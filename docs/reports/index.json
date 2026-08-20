@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-08-20T22:50:39.831901",
-  "total": 508,
+  "generated_at": "2026-08-21T05:35:09.346833",
+  "total": 509,
   "reports": [
+    {
+      "id": "2026-08-21-05-35",
+      "filename": "05-35.html",
+      "date": "2026-08-21",
+      "time": "05:35",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "Show HN: We chased a weather balloon across Montana and never found it",
+        "社区版 Dart macros？一个可以解决 JSON 序列化的Fluter “宏编程”第三方包",
+        "[开源自荐] PicLite 图轻：开源跨平台本地图片动图压缩工具，智能择优压缩，本地文件夹监控，强大自定义悬浮窗"
+      ],
+      "size": 132049,
+      "modified": "2026-08-21T05:35:05.552857",
+      "isNewest": true
+    },
     {
       "id": "2026-08-20-22-50",
       "filename": "22-50.html",
@@ -17,8 +35,7 @@
         "宇树上市两日市值跌超1600亿"
       ],
       "size": 130181,
-      "modified": "2026-08-20T22:50:36.365629",
-      "isNewest": true
+      "modified": "2026-08-20T22:50:36.365629"
     },
     {
       "id": "2026-08-20-19-50",
