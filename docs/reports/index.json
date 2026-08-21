@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-08-21T11:37:16.501007",
-  "total": 509,
+  "generated_at": "2026-08-21T13:06:38.018451",
+  "total": 510,
   "reports": [
+    {
+      "id": "2026-08-21-13-06",
+      "filename": "13-06.html",
+      "date": "2026-08-21",
+      "time": "13:06",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "7 年经验程序员 AI 辅助开发并开源了一款虚拟试衣 App，想和各位大佬交流一下",
+        "想了二十天，还是把内核开源了",
+        "Aaron Swartz was prosecuted for scraping, while Meta does it without consequence"
+      ],
+      "size": 125331,
+      "modified": "2026-08-21T13:06:35.116292",
+      "isNewest": true
+    },
     {
       "id": "2026-08-21-09-19",
       "filename": "09-19.html",
@@ -17,8 +35,7 @@
         "[开源自荐] PicLite 图轻：开源跨平台本地图片动图压缩工具，智能择优压缩，本地文件夹监控，强大自定义悬浮窗"
       ],
       "size": 127471,
-      "modified": "2026-08-21T09:19:33.036730",
-      "isNewest": true
+      "modified": "2026-08-21T09:19:33.036730"
     },
     {
       "id": "2026-08-21-05-35",
