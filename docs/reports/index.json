@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-09-22T09:22:45.713993",
-  "total": 569,
+  "generated_at": "2026-09-23T12:53:01.532809",
+  "total": 570,
   "reports": [
+    {
+      "id": "2026-09-23-12-52",
+      "filename": "12-52.html",
+      "date": "2026-09-23",
+      "time": "12:52",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "Microsoft killed FoxPro in 2007. Anyway, here&#x27;s FoxPro revived",
+        "货拉拉开源Hadice：安卓 &amp; 鸿蒙桌面调试工具",
+        "ZCode 开源 24 小时：一份没有历史的账本，回答不了&quot;有没有偷代码&quot;"
+      ],
+      "size": 130466,
+      "modified": "2026-09-23T12:52:58.457040",
+      "isNewest": true
+    },
     {
       "id": "2026-09-22-09-22",
       "filename": "09-22.html",
@@ -17,8 +35,7 @@
         "互动式旅行路线规划器 - 开源"
       ],
       "size": 125583,
-      "modified": "2026-09-22T09:22:17.012847",
-      "isNewest": true
+      "modified": "2026-09-22T09:22:17.012847"
     },
     {
       "id": "2026-09-21-20-04",
