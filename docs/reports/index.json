@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-09-26T20:23:57.157956",
+  "generated_at": "2026-09-26T20:58:37.538395",
   "total": 575,
   "reports": [
+    {
+      "id": "2026-09-26-20-58",
+      "filename": "20-58.html",
+      "date": "2026-09-26",
+      "time": "20:58",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "微软放弃封禁 Microslop",
+        "开源微信流，微信聊天记录，可以直接给 Codex 和 Obsidan 了",
+        "X6 框选拖拽性能内幕：从 issue 4823 到开源内核（系列 3 篇）之三"
+      ],
+      "size": 134415,
+      "modified": "2026-09-26T20:58:34.554937",
+      "isNewest": true
+    },
     {
       "id": "2026-09-26-20-23",
       "filename": "20-23.html",
@@ -17,8 +35,7 @@
         "Microsoft abandons personal AI chatbot race with Copilot reboot"
       ],
       "size": 134445,
-      "modified": "2026-09-26T20:23:54.353030",
-      "isNewest": true
+      "modified": "2026-09-26T20:23:54.353030"
     },
     {
       "id": "2026-09-26-19-47",
@@ -2518,23 +2535,6 @@
       ],
       "size": 127014,
       "modified": "2026-08-09T14:43:32.409841"
-    },
-    {
-      "id": "2026-08-08-20-58",
-      "filename": "20-58.html",
-      "date": "2026-08-08",
-      "time": "20:58",
-      "title": "热点新闻分析",
-      "keywords": [],
-      "preview": [
-        "热点新闻分析",
-        "⚠️ 请求失败的平台",
-        "Microsoft Edge 即将屏蔽流行扩展 uBlock Origin",
-        "[开源 mcpp] 开发上线了个支持 import xxx; 方式使用 C++库的包索引网站 - 支持 一键引用库 / 代码示例 / 增长曲线",
-        "[分享创造] 给数据库客户端装上 AI： NL2SQL、报错诊断、EXPLAIN 解读、跨库工作流，一个不到 10MB 的开源工具"
-      ],
-      "size": 150045,
-      "modified": "2026-08-08T20:58:55.738658"
     },
     {
       "id": "2026-08-08-19-46",
