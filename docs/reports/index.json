@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-09-26T17:28:52.772181",
+  "generated_at": "2026-09-26T18:05:45.687236",
   "total": 572,
   "reports": [
+    {
+      "id": "2026-09-26-18-04",
+      "filename": "18-04.html",
+      "date": "2026-09-26",
+      "time": "18:04",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "微软放弃封禁 Microslop",
+        "开源微信流，微信聊天记录，可以直接给 Codex 和 Obsidan 了",
+        "Microsoft abandons personal AI chatbot race with Copilot reboot"
+      ],
+      "size": 132475,
+      "modified": "2026-09-26T18:04:40.373334",
+      "isNewest": true
+    },
     {
       "id": "2026-09-26-17-28",
       "filename": "17-28.html",
@@ -17,8 +35,7 @@
         "Microsoft abandons personal AI chatbot race with Copilot reboot"
       ],
       "size": 136101,
-      "modified": "2026-09-26T17:28:49.398049",
-      "isNewest": true
+      "modified": "2026-09-26T17:28:49.398049"
     },
     {
       "id": "2026-09-25-09-34",
@@ -7839,23 +7856,6 @@
       ],
       "size": 126485,
       "modified": "2026-06-29T02:52:53.127519"
-    },
-    {
-      "id": "2026-06-28-18-04",
-      "filename": "18-04.html",
-      "date": "2026-06-28",
-      "time": "18:04",
-      "title": "热点新闻分析",
-      "keywords": [],
-      "preview": [
-        "热点新闻分析",
-        "⚠️ 请求失败的平台",
-        "又一半导体气体或陷入短缺 存储巨头全力加紧采购",
-        "迫于硬盘涨价 Time Machine 备分盘满了，搞了一个 macos 自动排除备目录管理",
-        "苹果和美光关于存储涨价的口水战，你认为谁说的更有道理？"
-      ],
-      "size": 128130,
-      "modified": "2026-06-28T18:04:14.774329"
     },
     {
       "id": "2026-06-28-17-24",
