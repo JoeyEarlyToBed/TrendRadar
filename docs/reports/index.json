@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-09-26T18:05:45.687236",
-  "total": 572,
+  "generated_at": "2026-09-26T18:40:49.044630",
+  "total": 573,
   "reports": [
+    {
+      "id": "2026-09-26-18-40",
+      "filename": "18-40.html",
+      "date": "2026-09-26",
+      "time": "18:40",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "How to keep enjoying programming in a world of LLMs",
+        "A single function Jev-like wrapper for LLMs, including vision models",
+        "写了个给 X“脱水”的浏览器插件： Noiseless，尝试用 LLM 过滤信息噪声"
+      ],
+      "size": 124924,
+      "modified": "2026-09-26T18:40:45.668318",
+      "isNewest": true
+    },
     {
       "id": "2026-09-26-18-04",
       "filename": "18-04.html",
@@ -17,8 +35,7 @@
         "Microsoft abandons personal AI chatbot race with Copilot reboot"
       ],
       "size": 132475,
-      "modified": "2026-09-26T18:04:40.373334",
-      "isNewest": true
+      "modified": "2026-09-26T18:04:40.373334"
     },
     {
       "id": "2026-09-26-17-28",
