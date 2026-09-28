@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-09-27T21:32:14.951935",
-  "total": 576,
+  "generated_at": "2026-09-28T10:55:27.919609",
+  "total": 577,
   "reports": [
+    {
+      "id": "2026-09-28-10-55",
+      "filename": "10-55.html",
+      "date": "2026-09-28",
+      "time": "10:55",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "开发者推出 ProsperoEden 项目，为破解后的索尼 PS5 游戏机引入任天堂 Switch 游戏机模拟器",
+        "给 NIZ ATOM66 做了个开源网页改键工具：三层映射同屏，起因是 Mac 上开虚拟机太麻烦",
+        "一天一个开源项目（第 227 篇）：Strands Agents Harness SDK —— 从「手写 Agent 循环」到「一行代码拿到生产级 Agent」"
+      ],
+      "size": 121025,
+      "modified": "2026-09-28T10:55:24.708463",
+      "isNewest": true
+    },
     {
       "id": "2026-09-27-21-32",
       "filename": "21-32.html",
@@ -17,8 +35,7 @@
         "Finally, A True Blue Rose Exists"
       ],
       "size": 129450,
-      "modified": "2026-09-27T21:32:11.829182",
-      "isNewest": true
+      "modified": "2026-09-27T21:32:11.829182"
     },
     {
       "id": "2026-09-27-07-42",
