@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-10-01T17:03:24.956658",
+  "generated_at": "2026-10-01T17:36:23.424014",
   "total": 583,
   "reports": [
+    {
+      "id": "2026-10-01-17-36",
+      "filename": "17-36.html",
+      "date": "2026-10-01",
+      "time": "17:36",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "剑指英伟达CUDA！DeepSeek开源华为昇腾全套组件",
+        "ClipSeek 成功上架 Microsoft Store 啦 ｜ 送码",
+        "开源一个纯自研的开发工作流，欢迎探讨交流"
+      ],
+      "size": 115850,
+      "modified": "2026-10-01T17:36:19.924193",
+      "isNewest": true
+    },
     {
       "id": "2026-10-01-17-03",
       "filename": "17-03.html",
@@ -17,8 +35,7 @@
         "5x faster Edge Functions: V8 isolates to Firecracker MicroVMs"
       ],
       "size": 115926,
-      "modified": "2026-10-01T17:03:22.077999",
-      "isNewest": true
+      "modified": "2026-10-01T17:03:22.077999"
     },
     {
       "id": "2026-10-01-16-03",
@@ -7023,23 +7040,6 @@
       ],
       "size": 123288,
       "modified": "2026-07-11T18:10:11.755143"
-    },
-    {
-      "id": "2026-07-11-17-36",
-      "filename": "17-36.html",
-      "date": "2026-07-11",
-      "time": "17:36",
-      "title": "热点新闻分析",
-      "keywords": [],
-      "preview": [
-        "热点新闻分析",
-        "⚠️ 请求失败的平台",
-        "Snails&#x27; teeth beats spider silk as nature&#x27;s strongest material (2015)",
-        "Silent speech with ultrasound",
-        "SK海力士CEO：2027年将迎来史上最严重存储芯片短缺，供不应求或持续至2030年后"
-      ],
-      "size": 121377,
-      "modified": "2026-07-11T17:36:30.851918"
     },
     {
       "id": "2026-07-11-17-00",
