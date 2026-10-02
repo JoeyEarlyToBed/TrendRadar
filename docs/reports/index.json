@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-10-02T14:23:55.075086",
-  "total": 587,
+  "generated_at": "2026-10-02T18:51:43.911144",
+  "total": 588,
   "reports": [
+    {
+      "id": "2026-10-02-18-50",
+      "filename": "18-50.html",
+      "date": "2026-10-02",
+      "time": "18:50",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "Show HN: Audionaut – an open-source cross-platform multitrack audio editor",
+        "笔吧开源自制验机软件",
+        "从 WebView 到原生桌面：开源终端工具 NyaTerm 2.0"
+      ],
+      "size": 117611,
+      "modified": "2026-10-02T18:50:15.062066",
+      "isNewest": true
+    },
     {
       "id": "2026-10-02-14-07",
       "filename": "14-07.html",
@@ -17,8 +35,7 @@
         "机器人进店卖锅 3天业绩超200万元"
       ],
       "size": 121917,
-      "modified": "2026-10-02T14:07:05.634388",
-      "isNewest": true
+      "modified": "2026-10-02T14:07:05.634388"
     },
     {
       "id": "2026-10-02-08-34",
