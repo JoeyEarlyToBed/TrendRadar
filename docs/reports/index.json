@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-10-04T21:14:02.841497",
+  "generated_at": "2026-10-04T21:47:07.486235",
   "total": 595,
   "reports": [
+    {
+      "id": "2026-10-04-21-47",
+      "filename": "21-47.html",
+      "date": "2026-10-04",
+      "time": "21:47",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "开源 Bibo：带按需 Linux 沙箱的个人 AI 工作空间，日常操作不用常驻容器",
+        "开源 Bibo：成本极低，内置笔记、文件、任务和日历的 personal agent",
+        "[开源分享] QuotaView 0.7.5：全新的 Codex 多任务灵动岛"
+      ],
+      "size": 129942,
+      "modified": "2026-10-04T21:47:04.925210",
+      "isNewest": true
+    },
     {
       "id": "2026-10-04-21-14",
       "filename": "21-14.html",
@@ -17,8 +35,7 @@
         "开源的 Cloudflare Workers 兼容平台： open-compute"
       ],
       "size": 128335,
-      "modified": "2026-10-04T21:14:00.239964",
-      "isNewest": true
+      "modified": "2026-10-04T21:14:00.239964"
     },
     {
       "id": "2026-10-04-20-39",
@@ -4371,23 +4388,6 @@
       ],
       "size": 118555,
       "modified": "2026-07-16T22:21:47.278984"
-    },
-    {
-      "id": "2026-07-16-21-47",
-      "filename": "21-47.html",
-      "date": "2026-07-16",
-      "time": "21:47",
-      "title": "热点新闻分析",
-      "keywords": [],
-      "preview": [
-        "热点新闻分析",
-        "⚠️ 请求失败的平台",
-        "Grok Build 开源，在这之前它被发现会上传用户的完整库",
-        "J-space comparisons across open models",
-        "MemoArk：提供 Windows / Android 完整本地包的开源 Memos 分支"
-      ],
-      "size": 192842,
-      "modified": "2026-07-16T21:47:36.494701"
     },
     {
       "id": "2026-07-16-21-09",
