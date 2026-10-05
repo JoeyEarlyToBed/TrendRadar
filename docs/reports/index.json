@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-10-05T11:57:24.480497",
-  "total": 597,
+  "generated_at": "2026-10-05T13:58:35.621646",
+  "total": 598,
   "reports": [
+    {
+      "id": "2026-10-05-13-58",
+      "filename": "13-58.html",
+      "date": "2026-10-05",
+      "time": "13:58",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "[开源] Precedent Loop：让 Agnet 换个会话也记得项目里踩过的坑",
+        "[开源推广] Oh-My-CPA: 更现代的 CPA 管理面板,原生移动端 / MCP Agent / 完整 CPAMC 体验",
+        "一键本地安装 jev 决策模型开源版 laya"
+      ],
+      "size": 123972,
+      "modified": "2026-10-05T13:58:32.283425",
+      "isNewest": true
+    },
     {
       "id": "2026-10-05-10-40",
       "filename": "10-40.html",
@@ -17,8 +35,7 @@
         "[开源推广] Oh-My-CPA: 更现代的 CPA 管理面板,原生移动端 / MCP Agent / 完整 CPAMC 体验"
       ],
       "size": 125240,
-      "modified": "2026-10-05T10:40:35.509969",
-      "isNewest": true
+      "modified": "2026-10-05T10:40:35.509969"
     },
     {
       "id": "2026-10-05-08-01",
