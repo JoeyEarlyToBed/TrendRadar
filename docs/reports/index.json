@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-10-05T20:56:50.319515",
-  "total": 599,
+  "generated_at": "2026-10-06T05:03:16.717535",
+  "total": 600,
   "reports": [
+    {
+      "id": "2026-10-06-05-03",
+      "filename": "05-03.html",
+      "date": "2026-10-06",
+      "time": "05:03",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "Muse 登顶 App Store 第一，SDK 直接开源：AI Agent 开始进入下一个阶段",
+        "[开源] ALTRun: 不到 1 MB 的 Windows 启动器, 操作方式参照 Alfred, 支持拼音首字母和 Everything",
+        "卡普空开源 RE:Dox 结构化数据引擎，JSON 反序列化最高提速 2.84 倍"
+      ],
+      "size": 122875,
+      "modified": "2026-10-06T05:03:13.202620",
+      "isNewest": true
+    },
     {
       "id": "2026-10-05-20-56",
       "filename": "20-56.html",
@@ -17,8 +35,7 @@
         "做了个开源的 plist 在线编辑器，不装 Xcode 也能打开二进制 plist"
       ],
       "size": 140627,
-      "modified": "2026-10-05T20:56:45.937058",
-      "isNewest": true
+      "modified": "2026-10-05T20:56:45.937058"
     },
     {
       "id": "2026-10-05-19-34",
