@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-10-06T23:18:50.558540",
-  "total": 602,
+  "generated_at": "2026-10-07T05:13:34.792509",
+  "total": 603,
   "reports": [
+    {
+      "id": "2026-10-07-05-13",
+      "filename": "05-13.html",
+      "date": "2026-10-07",
+      "time": "05:13",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "Muse 登顶 App Store 第一，SDK 直接开源：AI Agent 开始进入下一个阶段",
+        "开源了 12 个电商短视频 Agent Skills：一张商品图 → 带配音字幕的 15 秒竖屏视频，本地 ffmpeg 出片",
+        "宣称“欧美最强开源模型”：Mistral AI 发布 Mistral Large 4 公开预览版，月底开放权重"
+      ],
+      "size": 120860,
+      "modified": "2026-10-07T05:13:30.839764",
+      "isNewest": true
+    },
     {
       "id": "2026-10-06-23-05",
       "filename": "23-05.html",
@@ -17,8 +35,7 @@
         "宣称“欧美最强开源模型”：Mistral AI 发布 Mistral Large 4 公开预览版，月底开放权重"
       ],
       "size": 121881,
-      "modified": "2026-10-06T23:05:50.515343",
-      "isNewest": true
+      "modified": "2026-10-06T23:05:50.515343"
     },
     {
       "id": "2026-10-06-19-45",
