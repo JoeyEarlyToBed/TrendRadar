@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-10-06T11:04:56.506892",
-  "total": 601,
+  "generated_at": "2026-10-06T19:45:13.647093",
+  "total": 602,
   "reports": [
+    {
+      "id": "2026-10-06-19-45",
+      "filename": "19-45.html",
+      "date": "2026-10-06",
+      "time": "19:45",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "Muse 登顶 App Store 第一，SDK 直接开源：AI Agent 开始进入下一个阶段",
+        "[开源]基于 LAYA 本地开源决策模型的视觉应用水果采摘、杂草灭除、害虫监测、钢管质检、纺织物质检等领域",
+        "[开源] ALTRun: 不到 1 MB 的 Windows 启动器, 操作方式参照 Alfred, 支持拼音首字母和 Everything"
+      ],
+      "size": 121471,
+      "modified": "2026-10-06T19:45:10.360283",
+      "isNewest": true
+    },
     {
       "id": "2026-10-06-11-04",
       "filename": "11-04.html",
@@ -17,8 +35,7 @@
         "[开源] ALTRun: 不到 1 MB 的 Windows 启动器, 操作方式参照 Alfred, 支持拼音首字母和 Everything"
       ],
       "size": 124293,
-      "modified": "2026-10-06T11:04:52.062762",
-      "isNewest": true
+      "modified": "2026-10-06T11:04:52.062762"
     },
     {
       "id": "2026-10-06-05-03",
