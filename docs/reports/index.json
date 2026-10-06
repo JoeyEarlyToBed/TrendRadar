@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-10-06T19:45:13.647093",
+  "generated_at": "2026-10-06T23:18:50.558540",
   "total": 602,
   "reports": [
+    {
+      "id": "2026-10-06-23-05",
+      "filename": "23-05.html",
+      "date": "2026-10-06",
+      "time": "23:05",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "开源了 12 个电商短视频 Agent Skills：一张商品图 → 带配音字幕的 15 秒竖屏视频，本地 ffmpeg 出片",
+        "Muse 登顶 App Store 第一，SDK 直接开源：AI Agent 开始进入下一个阶段",
+        "宣称“欧美最强开源模型”：Mistral AI 发布 Mistral Large 4 公开预览版，月底开放权重"
+      ],
+      "size": 121881,
+      "modified": "2026-10-06T23:05:50.515343",
+      "isNewest": true
+    },
     {
       "id": "2026-10-06-19-45",
       "filename": "19-45.html",
@@ -17,8 +35,7 @@
         "[开源] ALTRun: 不到 1 MB 的 Windows 启动器, 操作方式参照 Alfred, 支持拼音首字母和 Everything"
       ],
       "size": 121471,
-      "modified": "2026-10-06T19:45:10.360283",
-      "isNewest": true
+      "modified": "2026-10-06T19:45:10.360283"
     },
     {
       "id": "2026-10-06-11-04",
@@ -1447,23 +1464,6 @@
       ],
       "size": 118889,
       "modified": "2026-09-07T07:41:06.178219"
-    },
-    {
-      "id": "2026-09-06-23-05",
-      "filename": "23-05.html",
-      "date": "2026-09-06",
-      "time": "23:05",
-      "title": "热点新闻分析",
-      "keywords": [],
-      "preview": [
-        "热点新闻分析",
-        "⚠️ 请求失败的平台",
-        "Isar Aerospace reaches orbit and deploys payloads on second flight",
-        "日常修改，3秒生效：腾讯音乐 Android 秒编方案 Jugg 开源",
-        "英伟达发布开源工具将闲置算力连成个人数据中心"
-      ],
-      "size": 118814,
-      "modified": "2026-09-06T23:05:02.279643"
     },
     {
       "id": "2026-09-06-20-50",
