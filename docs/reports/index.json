@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-10-07T20:19:30.209484",
+  "generated_at": "2026-10-07T20:54:07.421359",
   "total": 605,
   "reports": [
+    {
+      "id": "2026-10-07-20-54",
+      "filename": "20-54.html",
+      "date": "2026-10-07",
+      "time": "20:54",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "Muse 登顶 App Store 第一，SDK 直接开源：AI Agent 开始进入下一个阶段",
+        "[分享创造] [开源] 用 Cloudflare Workers + R2 做了个轻量 WebDAV，支持个人自部署",
+        "Paramount Skydance has completed its $111B merger with Warner Bros. Discovery"
+      ],
+      "size": 137604,
+      "modified": "2026-10-07T20:54:04.551392",
+      "isNewest": true
+    },
     {
       "id": "2026-10-07-20-19",
       "filename": "20-19.html",
@@ -17,8 +35,7 @@
         "Paramount Skydance has completed its $111B merger with Warner Bros. Discovery"
       ],
       "size": 135697,
-      "modified": "2026-10-07T20:19:27.244321",
-      "isNewest": true
+      "modified": "2026-10-07T20:19:27.244321"
     },
     {
       "id": "2026-10-07-19-45",
@@ -6870,23 +6887,6 @@
       ],
       "size": 154573,
       "modified": "2026-07-12T21:27:13.891988"
-    },
-    {
-      "id": "2026-07-12-20-54",
-      "filename": "20-54.html",
-      "date": "2026-07-12",
-      "time": "20:54",
-      "title": "热点新闻分析",
-      "keywords": [],
-      "preview": [
-        "热点新闻分析",
-        "⚠️ 请求失败的平台",
-        "中国石化完成对中国航油重组",
-        "新疆新鑫矿业(03833.HK)：新疆有色拟与新疆地矿进行战略重组",
-        "龙头20CM涨停 本周披露并购重组进展的A股名单一览"
-      ],
-      "size": 152531,
-      "modified": "2026-07-12T20:54:07.642150"
     },
     {
       "id": "2026-07-12-20-20",
