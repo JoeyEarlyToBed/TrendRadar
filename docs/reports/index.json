@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-10-07T05:13:34.792509",
+  "generated_at": "2026-10-07T12:06:20.479250",
   "total": 603,
   "reports": [
+    {
+      "id": "2026-10-07-12-06",
+      "filename": "12-06.html",
+      "date": "2026-10-07",
+      "time": "12:06",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "Muse 登顶 App Store 第一，SDK 直接开源：AI Agent 开始进入下一个阶段",
+        "[开源] catbus：用一套命令操作小红书、抖音、B 站、X 等 10 个平台的 CLI",
+        "Paramount Skydance has completed its $111B merger with Warner Bros. Discovery"
+      ],
+      "size": 130245,
+      "modified": "2026-10-07T12:06:17.246923",
+      "isNewest": true
+    },
     {
       "id": "2026-10-07-05-13",
       "filename": "05-13.html",
@@ -17,8 +35,7 @@
         "宣称“欧美最强开源模型”：Mistral AI 发布 Mistral Large 4 公开预览版，月底开放权重"
       ],
       "size": 120860,
-      "modified": "2026-10-07T05:13:30.839764",
-      "isNewest": true
+      "modified": "2026-10-07T05:13:30.839764"
     },
     {
       "id": "2026-10-06-23-05",
@@ -7941,23 +7958,6 @@
       ],
       "size": 133019,
       "modified": "2026-07-05T15:13:34.846284"
-    },
-    {
-      "id": "2026-07-05-12-06",
-      "filename": "12-06.html",
-      "date": "2026-07-05",
-      "time": "12:06",
-      "title": "热点新闻分析",
-      "keywords": [],
-      "preview": [
-        "热点新闻分析",
-        "⚠️ 请求失败的平台",
-        "如何看待苹果手机信息泄露，程度堪比马圣开源？",
-        "分享自己写的多项目 AI 终端 Codux： Codex / Claude Code 等 8 个 CLI 按项目统一管理，开源",
-        "Valve 开源 Steam Machine 的电子墨水屏"
-      ],
-      "size": 136869,
-      "modified": "2026-07-05T12:06:05.181602"
     },
     {
       "id": "2026-07-05-02-07",
