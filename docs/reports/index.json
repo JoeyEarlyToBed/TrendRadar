@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-10-07T19:45:28.470331",
-  "total": 604,
+  "generated_at": "2026-10-07T20:19:30.209484",
+  "total": 605,
   "reports": [
+    {
+      "id": "2026-10-07-20-19",
+      "filename": "20-19.html",
+      "date": "2026-10-07",
+      "time": "20:19",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "Muse 登顶 App Store 第一，SDK 直接开源：AI Agent 开始进入下一个阶段",
+        "[分享创造] [开源] 用 Cloudflare Workers + R2 做了个轻量 WebDAV，支持个人自部署",
+        "Paramount Skydance has completed its $111B merger with Warner Bros. Discovery"
+      ],
+      "size": 135697,
+      "modified": "2026-10-07T20:19:27.244321",
+      "isNewest": true
+    },
     {
       "id": "2026-10-07-19-45",
       "filename": "19-45.html",
@@ -17,8 +35,7 @@
         "[开源] Find in Page 一个无缝增强你浏览器文字搜索的扩展，预览结果上下文，检索阅读更方便。"
       ],
       "size": 117156,
-      "modified": "2026-10-07T19:45:25.536494",
-      "isNewest": true
+      "modified": "2026-10-07T19:45:25.536494"
     },
     {
       "id": "2026-10-07-19-11",
