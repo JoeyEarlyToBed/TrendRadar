@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-10-07T20:54:07.421359",
+  "generated_at": "2026-10-08T00:19:18.189116",
   "total": 605,
   "reports": [
+    {
+      "id": "2026-10-08-00-19",
+      "filename": "00-19.html",
+      "date": "2026-10-08",
+      "time": "00:19",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "Across the Globe, People Increasingly Say Social Media Is Harming Democracy",
+        "Agent 开发框架深度对比——LangGraph、AutoGen、CrewAI 与 Microsoft Agent Framework 该选谁",
+        "[分享创造] [开源] 用 Cloudflare Workers + R2 做了个轻量 WebDAV，支持个人自部署"
+      ],
+      "size": 126035,
+      "modified": "2026-10-08T00:19:14.063543",
+      "isNewest": true
+    },
     {
       "id": "2026-10-07-20-54",
       "filename": "20-54.html",
@@ -17,8 +35,7 @@
         "Paramount Skydance has completed its $111B merger with Warner Bros. Discovery"
       ],
       "size": 137604,
-      "modified": "2026-10-07T20:54:04.551392",
-      "isNewest": true
+      "modified": "2026-10-07T20:54:04.551392"
     },
     {
       "id": "2026-10-07-20-19",
@@ -8961,23 +8978,6 @@
       ],
       "size": 120792,
       "modified": "2026-06-27T00:57:02.408807"
-    },
-    {
-      "id": "2026-06-27-00-19",
-      "filename": "00-19.html",
-      "date": "2026-06-27",
-      "time": "00:19",
-      "title": "热点新闻分析",
-      "keywords": [],
-      "preview": [
-        "热点新闻分析",
-        "⚠️ 请求失败的平台",
-        "亚股遭遇“黑色星期五”！华尔街热议背后推手 苹果涨价是多重利空之一",
-        "苹果涨价——压垮AI存储泡沫的最后一根稻草？",
-        "苹果、微软被迫涨价，库克承认“40年来前所未见”，AI正在推升新一轮通胀？"
-      ],
-      "size": 123951,
-      "modified": "2026-06-27T00:19:54.201140"
     },
     {
       "id": "2026-06-26-23-39",
