@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-10-08T00:19:18.189116",
-  "total": 605,
+  "generated_at": "2026-10-08T08:18:22.680118",
+  "total": 606,
   "reports": [
+    {
+      "id": "2026-10-08-08-18",
+      "filename": "08-18.html",
+      "date": "2026-10-08",
+      "time": "08:18",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "Photograph 49 is the key to understanding Rosalind Franklin’s DNA Photograph 51",
+        "Meta and Microsoft take steps to reduce employee usage of Claude AI",
+        "Agent 开发框架深度对比——LangGraph、AutoGen、CrewAI 与 Microsoft Agent Framework 该选谁"
+      ],
+      "size": 125784,
+      "modified": "2026-10-08T08:18:18.992291",
+      "isNewest": true
+    },
     {
       "id": "2026-10-08-00-19",
       "filename": "00-19.html",
@@ -17,8 +35,7 @@
         "[分享创造] [开源] 用 Cloudflare Workers + R2 做了个轻量 WebDAV，支持个人自部署"
       ],
       "size": 126035,
-      "modified": "2026-10-08T00:19:14.063543",
-      "isNewest": true
+      "modified": "2026-10-08T00:19:14.063543"
     },
     {
       "id": "2026-10-07-20-54",
