@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-10-09T22:00:45.990943",
-  "total": 607,
+  "generated_at": "2026-10-10T05:39:14.733711",
+  "total": 608,
   "reports": [
+    {
+      "id": "2026-10-10-05-39",
+      "filename": "05-39.html",
+      "date": "2026-10-10",
+      "time": "05:39",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "Microsoft-Decision-1, our model for fast decision-making",
+        "🚀 nacos-web-config：运营半夜改条配置，网页秒更新 —— 不用发版、不用轮询，我把它开源了",
+        "做了个开源 Mac App：用 adb 在 Mac 上看清、管好家里的安卓电视、盒子和手机"
+      ],
+      "size": 126754,
+      "modified": "2026-10-10T05:39:10.727902",
+      "isNewest": true
+    },
     {
       "id": "2026-10-09-22-00",
       "filename": "22-00.html",
@@ -17,8 +35,7 @@
         "新的开源项目 Cloud Agent，每做一个业务 Agent，不必重新造一遍基础设施。"
       ],
       "size": 131985,
-      "modified": "2026-10-09T22:00:43.394783",
-      "isNewest": true
+      "modified": "2026-10-09T22:00:43.394783"
     },
     {
       "id": "2026-10-09-18-33",
