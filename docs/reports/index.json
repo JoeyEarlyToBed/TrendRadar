@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-10-10T08:05:10.575225",
+  "generated_at": "2026-10-10T12:55:33.559807",
   "total": 608,
   "reports": [
+    {
+      "id": "2026-10-10-12-55",
+      "filename": "12-55.html",
+      "date": "2026-10-10",
+      "time": "12:55",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "[开源自部署] 芯语伴 SprechMate，和 AI 练口语纠音（23 种语言），填 API 接近免费用",
+        "刚刷到个黑客松，给开源 CLI 修 bug 就能拿钱",
+        "🚀 nacos-web-config：运营半夜改条配置，网页秒更新 —— 不用发版、不用轮询，我把它开源了"
+      ],
+      "size": 127151,
+      "modified": "2026-10-10T12:55:30.161612",
+      "isNewest": true
+    },
     {
       "id": "2026-10-10-08-05",
       "filename": "08-05.html",
@@ -17,8 +35,7 @@
         "Microsoft-Decision-1, our model for fast decision-making"
       ],
       "size": 127086,
-      "modified": "2026-10-10T08:05:07.435807",
-      "isNewest": true
+      "modified": "2026-10-10T08:05:07.435807"
     },
     {
       "id": "2026-10-10-05-39",
@@ -3640,23 +3657,6 @@
       ],
       "size": 129663,
       "modified": "2026-08-04T00:22:48.183374"
-    },
-    {
-      "id": "2026-08-03-12-55",
-      "filename": "12-55.html",
-      "date": "2026-08-03",
-      "time": "12:55",
-      "title": "热点新闻分析",
-      "keywords": [],
-      "preview": [
-        "热点新闻分析",
-        "⚠️ 请求失败的平台",
-        "自变量机器人发布 HOST 框架并开源，让机器人看视频学会新技能",
-        "Windows 游戏模拟器 CrossOver 宣布原生 Apple Silicon 支持",
-        "做了一个 macOS 环形应用切换器，现在支持 Microsoft Surface Dial"
-      ],
-      "size": 126989,
-      "modified": "2026-08-03T12:55:37.211880"
     },
     {
       "id": "2026-08-03-05-01",
