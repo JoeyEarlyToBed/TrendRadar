@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-10-11T19:44:27.317296",
+  "generated_at": "2026-10-11T20:20:56.351826",
   "total": 613,
   "reports": [
+    {
+      "id": "2026-10-11-20-19",
+      "filename": "20-19.html",
+      "date": "2026-10-11",
+      "time": "20:19",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "一个开源 love2d 风格 C++ 游戏引擎，但是功能更强大",
+        "做了个小游戏《AI 封号模拟器》，求朋友帮忙内测，满 100 人就开源",
+        "[开源] 好看，更好用的音乐播放器 NonsPlayer"
+      ],
+      "size": 147244,
+      "modified": "2026-10-11T20:19:25.233943",
+      "isNewest": true
+    },
     {
       "id": "2026-10-11-19-44",
       "filename": "19-44.html",
@@ -17,8 +35,7 @@
         "[开源] 好看，更好用的音乐播放器 NonsPlayer"
       ],
       "size": 122906,
-      "modified": "2026-10-11T19:44:24.556696",
-      "isNewest": true
+      "modified": "2026-10-11T19:44:24.556696"
     },
     {
       "id": "2026-10-11-19-10",
@@ -393,23 +410,6 @@
       ],
       "size": 137604,
       "modified": "2026-10-07T20:54:04.551392"
-    },
-    {
-      "id": "2026-10-07-20-19",
-      "filename": "20-19.html",
-      "date": "2026-10-07",
-      "time": "20:19",
-      "title": "热点新闻分析",
-      "keywords": [],
-      "preview": [
-        "热点新闻分析",
-        "⚠️ 请求失败的平台",
-        "Muse 登顶 App Store 第一，SDK 直接开源：AI Agent 开始进入下一个阶段",
-        "[分享创造] [开源] 用 Cloudflare Workers + R2 做了个轻量 WebDAV，支持个人自部署",
-        "Paramount Skydance has completed its $111B merger with Warner Bros. Discovery"
-      ],
-      "size": 135697,
-      "modified": "2026-10-07T20:19:27.244321"
     },
     {
       "id": "2026-10-07-19-45",
