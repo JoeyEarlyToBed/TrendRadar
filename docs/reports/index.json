@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-10-11T21:30:15.765091",
-  "total": 613,
+  "generated_at": "2026-10-12T05:23:54.926652",
+  "total": 614,
   "reports": [
+    {
+      "id": "2026-10-12-05-23",
+      "filename": "05-23.html",
+      "date": "2026-10-12",
+      "time": "05:23",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "从开源清理工具到付费 Mac 应用，用户教会了我如何做产品：Mole",
+        "[开源自荐] 小喷 1.1.0： Mac 菜单栏语音伙伴，支持 ChatGPT 订阅和本机 Ollama",
+        "[开源]刷了三天 AI 短剧，我一怒之下做了个全网最癫的不烧心 skill"
+      ],
+      "size": 127357,
+      "modified": "2026-10-12T05:23:52.104453",
+      "isNewest": true
+    },
     {
       "id": "2026-10-11-21-29",
       "filename": "21-29.html",
@@ -17,8 +35,7 @@
         "What driving across Europe costs in tolls, vignettes, bridges and fuel"
       ],
       "size": 150504,
-      "modified": "2026-10-11T21:29:41.283484",
-      "isNewest": true
+      "modified": "2026-10-11T21:29:41.283484"
     },
     {
       "id": "2026-10-11-20-56",
