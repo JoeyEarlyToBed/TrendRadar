@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-10-11T20:20:56.351826",
+  "generated_at": "2026-10-11T20:56:28.882228",
   "total": 613,
   "reports": [
+    {
+      "id": "2026-10-11-20-56",
+      "filename": "20-56.html",
+      "date": "2026-10-11",
+      "time": "20:56",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "我的开源项目收到了一个 AI 机器人提的 CVE 修复 PR，我给它立了套规矩",
+        "一个开源 love2d 风格 C++ 游戏引擎，但是功能更强大",
+        "What driving across Europe costs in tolls, vignettes, bridges and fuel"
+      ],
+      "size": 151764,
+      "modified": "2026-10-11T20:56:26.322995",
+      "isNewest": true
+    },
     {
       "id": "2026-10-11-20-19",
       "filename": "20-19.html",
@@ -17,8 +35,7 @@
         "[开源] 好看，更好用的音乐播放器 NonsPlayer"
       ],
       "size": 147244,
-      "modified": "2026-10-11T20:19:25.233943",
-      "isNewest": true
+      "modified": "2026-10-11T20:19:25.233943"
     },
     {
       "id": "2026-10-11-19-44",
@@ -563,23 +580,6 @@
       ],
       "size": 122875,
       "modified": "2026-10-06T05:03:13.202620"
-    },
-    {
-      "id": "2026-10-05-20-56",
-      "filename": "20-56.html",
-      "date": "2026-10-05",
-      "time": "20:56",
-      "title": "热点新闻分析",
-      "keywords": [],
-      "preview": [
-        "热点新闻分析",
-        "⚠️ 请求失败的平台",
-        "[开源] ALTRun: 不到 1 MB 的 Windows 启动器, 操作方式参照 Alfred, 支持拼音首字母和 Everything",
-        "人人都能有自己的智能体设备：Meta 开源 Muse Gadgets，用 ESP32 和树莓派打造自定义 AI 硬件",
-        "做了个开源的 plist 在线编辑器，不装 Xcode 也能打开二进制 plist"
-      ],
-      "size": 140627,
-      "modified": "2026-10-05T20:56:45.937058"
     },
     {
       "id": "2026-10-05-19-34",
