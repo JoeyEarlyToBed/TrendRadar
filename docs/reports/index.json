@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-10-12T21:45:14.363750",
+  "generated_at": "2026-10-12T22:21:47.104091",
   "total": 617,
   "reports": [
+    {
+      "id": "2026-10-12-22-21",
+      "filename": "22-21.html",
+      "date": "2026-10-12",
+      "time": "22:21",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "从开源清理工具到付费 Mac 应用，用户教会了我如何做产品：Mole",
+        "腾讯又来一王炸，开源版 WorkBuddy 太夯了！",
+        "微软在 Qwen 模型基础上推出决策模型 Microsoft-Decision-1"
+      ],
+      "size": 127072,
+      "modified": "2026-10-12T22:21:44.316432",
+      "isNewest": true
+    },
     {
       "id": "2026-10-12-21-45",
       "filename": "21-45.html",
@@ -17,8 +35,7 @@
         "Hackers activate automatic defrosting accross European supermarket fridges"
       ],
       "size": 165075,
-      "modified": "2026-10-12T21:45:11.304839",
-      "isNewest": true
+      "modified": "2026-10-12T21:45:11.304839"
     },
     {
       "id": "2026-10-12-21-04",
@@ -4915,23 +4932,6 @@
       ],
       "size": 122424,
       "modified": "2026-07-16T22:55:57.008590"
-    },
-    {
-      "id": "2026-07-16-22-21",
-      "filename": "22-21.html",
-      "date": "2026-07-16",
-      "time": "22:21",
-      "title": "热点新闻分析",
-      "keywords": [],
-      "preview": [
-        "热点新闻分析",
-        "⚠️ 请求失败的平台",
-        "Grok Build 开源，在这之前它被发现会上传用户的完整库",
-        "我自用了 3 个月的 Agent 编排器，开源啦！",
-        "开源送的 GitHub Copilot Pro 没了"
-      ],
-      "size": 118555,
-      "modified": "2026-07-16T22:21:47.278984"
     },
     {
       "id": "2026-07-16-21-09",
