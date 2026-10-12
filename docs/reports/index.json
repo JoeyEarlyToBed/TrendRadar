@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-10-13T00:19:39.177722",
-  "total": 619,
+  "generated_at": "2026-10-13T00:56:42.415962",
+  "total": 620,
   "reports": [
+    {
+      "id": "2026-10-13-00-56",
+      "filename": "00-56.html",
+      "date": "2026-10-13",
+      "time": "00:56",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "从开源清理工具到付费 Mac 应用，用户教会了我如何做产品：Mole",
+        "腾讯又来一王炸，开源版 WorkBuddy 太夯了！",
+        "做了个网站：浏览器里直接打开 PSD / XLSX / DXF，基于 ArtCraft 开源编辑器，文件不上传"
+      ],
+      "size": 125030,
+      "modified": "2026-10-13T00:56:39.663418",
+      "isNewest": true
+    },
     {
       "id": "2026-10-13-00-19",
       "filename": "00-19.html",
@@ -17,8 +35,7 @@
         "AI less regulated than milk, Microsoft president says in warning over safety"
       ],
       "size": 128528,
-      "modified": "2026-10-13T00:19:36.468197",
-      "isNewest": true
+      "modified": "2026-10-13T00:19:36.468197"
     },
     {
       "id": "2026-10-12-23-37",
