@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-10-12T23:40:58.452140",
+  "generated_at": "2026-10-13T00:19:39.177722",
   "total": 619,
   "reports": [
+    {
+      "id": "2026-10-13-00-19",
+      "filename": "00-19.html",
+      "date": "2026-10-13",
+      "time": "00:19",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "从开源清理工具到付费 Mac 应用，用户教会了我如何做产品：Mole",
+        "腾讯又来一王炸，开源版 WorkBuddy 太夯了！",
+        "AI less regulated than milk, Microsoft president says in warning over safety"
+      ],
+      "size": 128528,
+      "modified": "2026-10-13T00:19:36.468197",
+      "isNewest": true
+    },
     {
       "id": "2026-10-12-23-37",
       "filename": "23-37.html",
@@ -17,8 +35,7 @@
         "微软在 Qwen 模型基础上推出决策模型 Microsoft-Decision-1"
       ],
       "size": 121990,
-      "modified": "2026-10-12T23:37:36.807879",
-      "isNewest": true
+      "modified": "2026-10-12T23:37:36.807879"
     },
     {
       "id": "2026-10-12-22-59",
@@ -614,23 +631,6 @@
       ],
       "size": 125784,
       "modified": "2026-10-08T08:18:18.992291"
-    },
-    {
-      "id": "2026-10-08-00-19",
-      "filename": "00-19.html",
-      "date": "2026-10-08",
-      "time": "00:19",
-      "title": "热点新闻分析",
-      "keywords": [],
-      "preview": [
-        "热点新闻分析",
-        "⚠️ 请求失败的平台",
-        "Across the Globe, People Increasingly Say Social Media Is Harming Democracy",
-        "Agent 开发框架深度对比——LangGraph、AutoGen、CrewAI 与 Microsoft Agent Framework 该选谁",
-        "[分享创造] [开源] 用 Cloudflare Workers + R2 做了个轻量 WebDAV，支持个人自部署"
-      ],
-      "size": 126035,
-      "modified": "2026-10-08T00:19:14.063543"
     },
     {
       "id": "2026-10-07-20-54",
