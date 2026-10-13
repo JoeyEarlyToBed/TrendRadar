@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-10-13T20:31:43.529626",
-  "total": 631,
+  "generated_at": "2026-10-14T03:02:33.011000",
+  "total": 632,
   "reports": [
+    {
+      "id": "2026-10-14-03-02",
+      "filename": "03-02.html",
+      "date": "2026-10-14",
+      "time": "03:02",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "从开源清理工具到付费 Mac 应用，用户教会了我如何做产品：Mole",
+        "三天11万星的逆天开源REA，逆向分析一切，软件开发的门槛被打到了零，最该慌的为什么不是大厂？",
+        "[开源] PicMake：纯前端的 GPT Image 2.5 生图工作台， Key 和图片只存在你的浏览器里"
+      ],
+      "size": 134861,
+      "modified": "2026-10-14T03:02:29.354973",
+      "isNewest": true
+    },
     {
       "id": "2026-10-13-20-31",
       "filename": "20-31.html",
@@ -17,8 +35,7 @@
         "NAZA: Netanyahu orders identification and prosecution of film&#x27;s interviewees"
       ],
       "size": 177177,
-      "modified": "2026-10-13T20:31:39.274340",
-      "isNewest": true
+      "modified": "2026-10-13T20:31:39.274340"
     },
     {
       "id": "2026-10-13-17-06",
