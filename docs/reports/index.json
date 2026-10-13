@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-10-13T11:40:44.918309",
+  "generated_at": "2026-10-13T12:04:34.465661",
   "total": 625,
   "reports": [
+    {
+      "id": "2026-10-13-12-04",
+      "filename": "12-04.html",
+      "date": "2026-10-13",
+      "time": "12:04",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "从开源清理工具到付费 Mac 应用，用户教会了我如何做产品：Mole",
+        "腾讯又来一王炸，开源版 WorkBuddy 太夯了！",
+        "NAZA: Netanyahu orders identification and prosecution of film&#x27;s interviewees"
+      ],
+      "size": 124196,
+      "modified": "2026-10-13T12:04:31.437272",
+      "isNewest": true
+    },
     {
       "id": "2026-10-13-11-40",
       "filename": "11-40.html",
@@ -17,8 +35,7 @@
         "[分享创造] 做了几年数字人 OEM，开源了一套可私有化部署的实时数字人系统"
       ],
       "size": 124926,
-      "modified": "2026-10-13T11:40:42.322360",
-      "isNewest": true
+      "modified": "2026-10-13T11:40:42.322360"
     },
     {
       "id": "2026-10-13-10-57",
@@ -4694,23 +4711,6 @@
       ],
       "size": 122566,
       "modified": "2026-07-27T19:35:16.705040"
-    },
-    {
-      "id": "2026-07-18-12-04",
-      "filename": "12-04.html",
-      "date": "2026-07-18",
-      "time": "12:04",
-      "title": "热点新闻分析",
-      "keywords": [],
-      "preview": [
-        "热点新闻分析",
-        "⚠️ 请求失败的平台",
-        "微软开源 Comic Chat",
-        "Moonstone: Modern, cross-platform Lua runtime and package manager written in Zig",
-        "Grok Build 开源，在这之前它被发现会上传用户的完整库"
-      ],
-      "size": 131071,
-      "modified": "2026-07-18T12:04:39.061857"
     },
     {
       "id": "2026-07-18-08-04",
