@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-10-14T11:37:44.698494",
-  "total": 632,
+  "generated_at": "2026-10-14T19:03:16.572580",
+  "total": 633,
   "reports": [
+    {
+      "id": "2026-10-14-19-03",
+      "filename": "19-03.html",
+      "date": "2026-10-14",
+      "time": "19:03",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "[开源] Agent HUD：把 Claude Code / Codex 等 17 个 agent 的额度和批准请求放在 Mac 刘海或屏幕边上",
+        "从开源清理工具到付费 Mac 应用，用户教会了我如何做产品：Mole",
+        "做了一个开源的多 AI Agent 任务管理工具 StateDock，支持 MCP、Docker 自部署"
+      ],
+      "size": 131211,
+      "modified": "2026-10-14T19:03:12.600474",
+      "isNewest": true
+    },
     {
       "id": "2026-10-14-11-22",
       "filename": "11-22.html",
@@ -17,8 +35,7 @@
         "做了个开源的纯本地的 AI 图表工具， CSV 不上传，浏览器里跑 Gemma"
       ],
       "size": 125304,
-      "modified": "2026-10-14T11:22:05.962675",
-      "isNewest": true
+      "modified": "2026-10-14T11:22:05.962675"
     },
     {
       "id": "2026-10-14-09-36",
