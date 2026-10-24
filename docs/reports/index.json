@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-10-24T08:05:23.936840",
-  "total": 653,
+  "generated_at": "2026-10-24T14:58:08.392253",
+  "total": 654,
   "reports": [
+    {
+      "id": "2026-10-24-14-58",
+      "filename": "14-58.html",
+      "date": "2026-10-24",
+      "time": "14:58",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "开源 AI 错题本：支持拍照识别、国内大模型直连（DeepSeek/MiniMax）、组卷打印与安卓单机版",
+        "从开源清理工具到付费 Mac 应用，用户教会了我如何做产品：Mole",
+        "A Bicycle Journey Across Brazil to Find a Vanishing Savanna"
+      ],
+      "size": 124868,
+      "modified": "2026-10-24T14:58:04.455446",
+      "isNewest": true
+    },
     {
       "id": "2026-10-24-08-05",
       "filename": "08-05.html",
@@ -17,8 +35,7 @@
         "【焦点复盘】双创指数全天现超7%巨震，两市成交额逼近2万亿，宇树科技收获上市以来首个涨停"
       ],
       "size": 119130,
-      "modified": "2026-10-24T08:05:20.814298",
-      "isNewest": true
+      "modified": "2026-10-24T08:05:20.814298"
     },
     {
       "id": "2026-10-24-03-03",
