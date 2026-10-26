@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-10-26T06:58:21.086475",
+  "generated_at": "2026-10-26T20:48:57.633727",
   "total": 660,
   "reports": [
+    {
+      "id": "2026-10-26-20-48",
+      "filename": "20-48.html",
+      "date": "2026-10-26",
+      "time": "20:48",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "[开源]Deepseek Harness 备份同步插件的插件",
+        "被 Lightsail 收了 $500 超额费后，我做了个可能是史上最强的 Lightsail 省钱利器（免费开源，还能丢给 AI 算）",
+        "介绍一个开源项目 —— 烂笔头"
+      ],
+      "size": 138782,
+      "modified": "2026-10-26T20:48:54.882448",
+      "isNewest": true
+    },
     {
       "id": "2026-10-26-06-17",
       "filename": "06-17.html",
@@ -17,8 +35,7 @@
         "从开源清理工具到付费 Mac 应用，用户教会了我如何做产品：Mole"
       ],
       "size": 128779,
-      "modified": "2026-10-26T06:17:47.391917",
-      "isNewest": true
+      "modified": "2026-10-26T06:17:47.391917"
     },
     {
       "id": "2026-10-25-23-55",
@@ -869,23 +886,6 @@
       ],
       "size": 134945,
       "modified": "2026-10-18T21:24:14.791247"
-    },
-    {
-      "id": "2026-10-18-20-48",
-      "filename": "20-48.html",
-      "date": "2026-10-18",
-      "time": "20:48",
-      "title": "热点新闻分析",
-      "keywords": [],
-      "preview": [
-        "热点新闻分析",
-        "⚠️ 请求失败的平台",
-        "[开源] SciForge：本地优先的深度学习科研 Agent Harness",
-        "Microsoft and CMU team up to train early career software engineers",
-        "腾讯又交作业了，开源版 WorkBuddy 太夯了！这回是只粉色小章鱼Octop!"
-      ],
-      "size": 134743,
-      "modified": "2026-10-18T20:48:54.814176"
     },
     {
       "id": "2026-10-18-20-14",
