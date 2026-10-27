@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-10-26T20:48:57.633727",
+  "generated_at": "2026-10-27T08:02:04.170570",
   "total": 660,
   "reports": [
+    {
+      "id": "2026-10-27-08-02",
+      "filename": "08-02.html",
+      "date": "2026-10-27",
+      "time": "08:02",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "Cross-request KV cache exposure in the GLM-5.3 Workers AI model (155 responses)",
+        "做了个免费开源的小工具：一个 App Store 链接，各国用户都能打开",
+        "介绍一个开源项目 —— 烂笔头"
+      ],
+      "size": 133432,
+      "modified": "2026-10-27T08:02:00.818310",
+      "isNewest": true
+    },
     {
       "id": "2026-10-26-20-48",
       "filename": "20-48.html",
@@ -17,8 +35,7 @@
         "介绍一个开源项目 —— 烂笔头"
       ],
       "size": 138782,
-      "modified": "2026-10-26T20:48:54.882448",
-      "isNewest": true
+      "modified": "2026-10-26T20:48:54.882448"
     },
     {
       "id": "2026-10-26-06-17",
@@ -5238,23 +5255,6 @@
       ],
       "size": 129917,
       "modified": "2026-08-04T16:27:50.889773"
-    },
-    {
-      "id": "2026-08-04-08-02",
-      "filename": "08-02.html",
-      "date": "2026-08-04",
-      "time": "08:02",
-      "title": "热点新闻分析",
-      "keywords": [],
-      "preview": [
-        "热点新闻分析",
-        "⚠️ 请求失败的平台",
-        "LLMs reward expertise",
-        "AirLLM 70B inference with single 4GB GPU",
-        "Prevent cognitive debt by manually retyping LLM-generated code"
-      ],
-      "size": 124486,
-      "modified": "2026-08-04T08:02:25.863738"
     },
     {
       "id": "2026-08-04-00-22",
