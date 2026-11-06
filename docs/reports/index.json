@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-11-06T18:59:43.851580",
-  "total": 663,
+  "generated_at": "2026-11-06T19:33:52.741522",
+  "total": 664,
   "reports": [
+    {
+      "id": "2026-11-06-19-33",
+      "filename": "19-33.html",
+      "date": "2026-11-06",
+      "time": "19:33",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "⛏️我的世界个人网站开源一周，就涌现了平行宇宙",
+        "我用 AI 给自己写了一个 Markdown 编辑器，然后把它开源了",
+        "[开源] iPhone -control: 基于 Rust 构建，在 Linux 上让 AI 操作真机 iPhone"
+      ],
+      "size": 128055,
+      "modified": "2026-11-06T19:33:48.792029",
+      "isNewest": true
+    },
     {
       "id": "2026-11-06-18-59",
       "filename": "18-59.html",
@@ -17,8 +35,7 @@
         "[开源] iPhone -control: 基于 Rust 构建，在 Linux 上让 AI 操作真机 iPhone"
       ],
       "size": 124696,
-      "modified": "2026-11-06T18:59:40.949757",
-      "isNewest": true
+      "modified": "2026-11-06T18:59:40.949757"
     },
     {
       "id": "2026-11-06-18-25",
