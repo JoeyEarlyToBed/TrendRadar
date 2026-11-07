@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-11-08T00:31:25.150969",
-  "total": 668,
+  "generated_at": "2026-11-08T07:49:07.460512",
+  "total": 669,
   "reports": [
+    {
+      "id": "2026-11-08-07-49",
+      "filename": "07-49.html",
+      "date": "2026-11-08",
+      "time": "07:49",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "我把 slimppt 开源了，支持 skill 生成，并计划做整套 office，目前文档和表格还在规划中",
+        "The end of Microsoft Research&#x27;s AI Frontiers group",
+        "GeoWorks, Microsoft Windows&#x27; Upstart &#x27;90s Competitor (2016)"
+      ],
+      "size": 125119,
+      "modified": "2026-11-08T07:49:03.645291",
+      "isNewest": true
+    },
     {
       "id": "2026-11-08-00-31",
       "filename": "00-31.html",
@@ -17,8 +35,7 @@
         "[开源自荐] PinPage：把网页或本地 HTML 变成 Windows 桌面小工具"
       ],
       "size": 123486,
-      "modified": "2026-11-08T00:31:22.255891",
-      "isNewest": true
+      "modified": "2026-11-08T00:31:22.255891"
     },
     {
       "id": "2026-11-07-21-02",
