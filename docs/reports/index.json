@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-11-08T17:45:02.376832",
+  "generated_at": "2026-11-08T18:19:28.705484",
   "total": 671,
   "reports": [
+    {
+      "id": "2026-11-08-18-19",
+      "filename": "18-19.html",
+      "date": "2026-11-08",
+      "time": "18:19",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "[开源] 我的第一个全栈项目：给小餐馆用的扫码点餐系统",
+        "物理智能开源平台 Hitch Open 在进博会发布，142 拍刷新 AI 机器人乒乓对打世界纪录",
+        "The end of Microsoft Research&#x27;s AI Frontiers group"
+      ],
+      "size": 124410,
+      "modified": "2026-11-08T18:19:25.768270",
+      "isNewest": true
+    },
     {
       "id": "2026-11-08-17-41",
       "filename": "17-41.html",
@@ -17,8 +35,7 @@
         "The end of Microsoft Research&#x27;s AI Frontiers group"
       ],
       "size": 123643,
-      "modified": "2026-11-08T17:41:47.746063",
-      "isNewest": true
+      "modified": "2026-11-08T17:41:47.746063"
     },
     {
       "id": "2026-11-08-17-07",
@@ -3062,23 +3079,6 @@
       ],
       "size": 119549,
       "modified": "2026-10-04T18:53:53.004750"
-    },
-    {
-      "id": "2026-10-04-18-19",
-      "filename": "18-19.html",
-      "date": "2026-10-04",
-      "time": "18:19",
-      "title": "热点新闻分析",
-      "keywords": [],
-      "preview": [
-        "热点新闻分析",
-        "⚠️ 请求失败的平台",
-        "[开源分享] QuotaView 0.7.5：全新的 Codex 多任务灵动岛",
-        "开源的 Cloudflare Workers 兼容平台： open-compute",
-        "[开源] 我把《杀戮尖塔 2》移植到了网页端"
-      ],
-      "size": 125178,
-      "modified": "2026-10-04T18:19:21.202082"
     },
     {
       "id": "2026-10-04-06-42",
