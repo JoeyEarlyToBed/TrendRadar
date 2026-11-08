@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-11-08T07:49:07.460512",
-  "total": 669,
+  "generated_at": "2026-11-08T13:27:49.178851",
+  "total": 670,
   "reports": [
+    {
+      "id": "2026-11-08-13-11",
+      "filename": "13-11.html",
+      "date": "2026-11-08",
+      "time": "13:11",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "我把 slimppt 开源了，支持 skill 生成，并计划做整套 office，目前文档和表格还在规划中",
+        "The end of Microsoft Research&#x27;s AI Frontiers group",
+        "GeoWorks, Microsoft Windows&#x27; Upstart &#x27;90s Competitor (2016)"
+      ],
+      "size": 124941,
+      "modified": "2026-11-08T13:11:52.622768",
+      "isNewest": true
+    },
     {
       "id": "2026-11-08-07-49",
       "filename": "07-49.html",
@@ -17,8 +35,7 @@
         "GeoWorks, Microsoft Windows&#x27; Upstart &#x27;90s Competitor (2016)"
       ],
       "size": 125119,
-      "modified": "2026-11-08T07:49:03.645291",
-      "isNewest": true
+      "modified": "2026-11-08T07:49:03.645291"
     },
     {
       "id": "2026-11-08-00-31",
