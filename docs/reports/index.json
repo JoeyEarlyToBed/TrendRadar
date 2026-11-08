@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-11-08T20:35:55.677213",
+  "generated_at": "2026-11-08T21:12:18.095623",
   "total": 671,
   "reports": [
+    {
+      "id": "2026-11-08-21-09",
+      "filename": "21-09.html",
+      "date": "2026-11-08",
+      "time": "21:09",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "[开源] 我的第一个全栈项目：给小餐馆用的扫码点餐系统",
+        "The end of Microsoft Research&#x27;s AI Frontiers group",
+        "物理智能开源平台 Hitch Open 在进博会发布，142 拍刷新 AI 机器人乒乓对打世界纪录"
+      ],
+      "size": 154337,
+      "modified": "2026-11-08T21:09:57.197478",
+      "isNewest": true
+    },
     {
       "id": "2026-11-08-20-35",
       "filename": "20-35.html",
@@ -17,8 +35,7 @@
         "物理智能开源平台 Hitch Open 在进博会发布，142 拍刷新 AI 机器人乒乓对打世界纪录"
       ],
       "size": 150850,
-      "modified": "2026-11-08T20:35:52.788810",
-      "isNewest": true
+      "modified": "2026-11-08T20:35:52.788810"
     },
     {
       "id": "2026-11-08-20-01",
@@ -6462,23 +6479,6 @@
       ],
       "size": 122424,
       "modified": "2026-07-16T22:55:57.008590"
-    },
-    {
-      "id": "2026-07-16-21-09",
-      "filename": "21-09.html",
-      "date": "2026-07-16",
-      "time": "21:09",
-      "title": "热点新闻分析",
-      "keywords": [],
-      "preview": [
-        "热点新闻分析",
-        "⚠️ 请求失败的平台",
-        "Grok Build 开源，在这之前它被发现会上传用户的完整库",
-        "J-space comparisons across open models",
-        "MemoArk：提供 Windows / Android 完整本地包的开源 Memos 分支"
-      ],
-      "size": 192155,
-      "modified": "2026-07-16T21:09:18.073306"
     },
     {
       "id": "2026-07-16-20-00",
