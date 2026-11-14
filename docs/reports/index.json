@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-11-14T19:46:28.924233",
+  "generated_at": "2026-11-14T20:25:31.830417",
   "total": 674,
   "reports": [
+    {
+      "id": "2026-11-14-20-23",
+      "filename": "20-23.html",
+      "date": "2026-11-14",
+      "time": "20:23",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "开源分屏插件 Panelize v2.2 更新：把 ChatGPT/Claude 网页、Perplexity/秘塔与 Magpie/Ollama 放进同一窗口对比",
+        "Cloudflare 开源为 AI 智能体打造的浏览器 Kitesurf，消耗资源低于 Chromium",
+        "我做了个站，收集用 Fable 5.x 生成的网页游戏，站点开源，方便大家集中游玩"
+      ],
+      "size": 123095,
+      "modified": "2026-11-14T20:23:43.842822",
+      "isNewest": true
+    },
     {
       "id": "2026-11-14-19-45",
       "filename": "19-45.html",
@@ -17,8 +35,7 @@
         "我做了个站，收集用 Fable 5.x 生成的网页游戏，站点开源，方便大家集中游玩"
       ],
       "size": 120317,
-      "modified": "2026-11-14T19:45:53.964753",
-      "isNewest": true
+      "modified": "2026-11-14T19:45:53.964753"
     },
     {
       "id": "2026-11-14-19-11",
@@ -3793,23 +3810,6 @@
       ],
       "size": 134415,
       "modified": "2026-09-26T20:58:34.554937"
-    },
-    {
-      "id": "2026-09-26-20-23",
-      "filename": "20-23.html",
-      "date": "2026-09-26",
-      "time": "20:23",
-      "title": "热点新闻分析",
-      "keywords": [],
-      "preview": [
-        "热点新闻分析",
-        "⚠️ 请求失败的平台",
-        "微软放弃封禁 Microslop",
-        "开源微信流，微信聊天记录，可以直接给 Codex 和 Obsidan 了",
-        "Microsoft abandons personal AI chatbot race with Copilot reboot"
-      ],
-      "size": 134445,
-      "modified": "2026-09-26T20:23:54.353030"
     },
     {
       "id": "2026-09-26-19-14",
