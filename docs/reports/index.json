@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-11-18T13:43:07.408191",
+  "generated_at": "2026-11-19T03:51:43.775327",
   "total": 680,
   "reports": [
+    {
+      "id": "2026-11-19-03-51",
+      "filename": "03-51.html",
+      "date": "2026-11-19",
+      "time": "03:51",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "CrossPoint Reader",
+        "[开源] 给 Sub2API 做了个降智巡检工具，支持自动剔除、冷却复测、通过恢复",
+        "Show HN: ExitPath – Open-source ways out of Slack, Notion and Microsoft 365"
+      ],
+      "size": 125986,
+      "modified": "2026-11-19T03:51:14.431590",
+      "isNewest": true
+    },
     {
       "id": "2026-11-18-05-54",
       "filename": "05-54.html",
@@ -17,8 +35,7 @@
         "MachinePulse 开源多模态决策模型 Karpo Decision 31B：登顶 Decision Index #1，单次前向中位延迟 94ms（0.8B-31B 全家桶）"
       ],
       "size": 130546,
-      "modified": "2026-11-18T05:54:02.581351",
-      "isNewest": true
+      "modified": "2026-11-18T05:54:02.581351"
     },
     {
       "id": "2026-11-17-16-01",
@@ -7057,23 +7074,6 @@
       ],
       "size": 124528,
       "modified": "2026-07-16T04:25:18.019005"
-    },
-    {
-      "id": "2026-07-16-03-51",
-      "filename": "03-51.html",
-      "date": "2026-07-16",
-      "time": "03:51",
-      "title": "热点新闻分析",
-      "keywords": [],
-      "preview": [
-        "热点新闻分析",
-        "⚠️ 请求失败的平台",
-        "[开源] Nimclip：原生、本地保存的 macOS 剪贴板历史工具",
-        "Claude Code 源码泄露后 OpenCode 却没有一波大更新？是开源社区躺平了，还是另有隐情？",
-        "做了一个 markdown 查看器，开源免费使用，需要的自取"
-      ],
-      "size": 124595,
-      "modified": "2026-07-16T03:51:51.354876"
     },
     {
       "id": "2026-07-16-03-18",
