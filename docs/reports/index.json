@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-11-19T03:51:43.775327",
+  "generated_at": "2026-11-21T01:10:03.315734",
   "total": 680,
   "reports": [
+    {
+      "id": "2026-11-20-05-41",
+      "filename": "05-41.html",
+      "date": "2026-11-20",
+      "time": "05:41",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "Rosetta 2 即将退役，Mac 老应用何去何从？",
+        "Show HN: Cornhole News – A Hacker News inspired site for news across the Midwest",
+        "[开源推广] Antigravity 实时遥测仪表盘"
+      ],
+      "size": 125441,
+      "modified": "2026-11-20T05:41:19.143526",
+      "isNewest": true
+    },
     {
       "id": "2026-11-19-03-51",
       "filename": "03-51.html",
@@ -17,8 +35,7 @@
         "Show HN: ExitPath – Open-source ways out of Slack, Notion and Microsoft 365"
       ],
       "size": 125986,
-      "modified": "2026-11-19T03:51:14.431590",
-      "isNewest": true
+      "modified": "2026-11-19T03:51:14.431590"
     },
     {
       "id": "2026-11-18-05-54",
@@ -7907,23 +7924,6 @@
       ],
       "size": 123234,
       "modified": "2026-07-14T06:48:35.009518"
-    },
-    {
-      "id": "2026-07-14-05-41",
-      "filename": "05-41.html",
-      "date": "2026-07-14",
-      "time": "05:41",
-      "title": "热点新闻分析",
-      "keywords": [],
-      "preview": [
-        "热点新闻分析",
-        "⚠️ 请求失败的平台",
-        "[自用开源] QuotaBarWin，在 Windows 系统下也能通过托盘菜单查看 Agent 剩余额度了",
-        "开源了一个 Hugging Face 桌面客户端:断点续传下载、支持 hf-mirror、缓存可视化清理,全平台零遥测",
-        "做了个开源工具 Vibe Animation：对着 AI 说话就能做 GSAP 网页动画，能选中元素定向改"
-      ],
-      "size": 122621,
-      "modified": "2026-07-14T05:41:06.426392"
     },
     {
       "id": "2026-07-14-05-07",
