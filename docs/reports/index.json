@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-11-22T23:07:42.730832",
-  "total": 685,
+  "generated_at": "2026-11-22T23:44:42.643365",
+  "total": 686,
   "reports": [
+    {
+      "id": "2026-11-22-23-44",
+      "filename": "23-44.html",
+      "date": "2026-11-22",
+      "time": "23:44",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "美国初创企业公布 AI 自研 CPU 架构 Frostbite，能效是传统处理器的 4.59 倍",
+        "Rosetta 2 即将退役，Mac 老应用何去何从？",
+        "[开源] 给 Antigravity 写了个零依赖本地 Token 透视插件：上下文水位、Compact 预警、订阅 ROI 与本地 Lite DLP"
+      ],
+      "size": 125523,
+      "modified": "2026-11-22T23:44:39.695319",
+      "isNewest": true
+    },
     {
       "id": "2026-11-22-23-07",
       "filename": "23-07.html",
@@ -17,8 +35,7 @@
         "RetroSweeper Go：复古外观、更有手感的扫雷游戏"
       ],
       "size": 120069,
-      "modified": "2026-11-22T23:07:39.859189",
-      "isNewest": true
+      "modified": "2026-11-22T23:07:39.859189"
     },
     {
       "id": "2026-11-22-22-29",
