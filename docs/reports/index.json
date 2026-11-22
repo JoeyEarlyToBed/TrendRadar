@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-11-22T21:52:51.935880",
-  "total": 684,
+  "generated_at": "2026-11-22T22:29:37.229194",
+  "total": 685,
   "reports": [
+    {
+      "id": "2026-11-22-22-29",
+      "filename": "22-29.html",
+      "date": "2026-11-22",
+      "time": "22:29",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "Rosetta 2 即将退役，Mac 老应用何去何从？",
+        "[开源] 给 Antigravity 写了个零依赖本地 Token 透视插件：上下文水位、Compact 预警、订阅 ROI 与本地 Lite DLP",
+        "RetroSweeper Go：复古外观、更有手感的扫雷游戏"
+      ],
+      "size": 124560,
+      "modified": "2026-11-22T22:29:34.603409",
+      "isNewest": true
+    },
     {
       "id": "2026-11-22-21-51",
       "filename": "21-51.html",
@@ -17,8 +35,7 @@
         "RetroSweeper Go：复古外观、更有手感的扫雷游戏"
       ],
       "size": 146648,
-      "modified": "2026-11-22T21:51:03.560916",
-      "isNewest": true
+      "modified": "2026-11-22T21:51:03.560916"
     },
     {
       "id": "2026-11-22-21-13",
