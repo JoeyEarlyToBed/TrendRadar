@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-11-22T06:38:00.538674",
-  "total": 682,
+  "generated_at": "2026-11-22T17:03:10.240699",
+  "total": 683,
   "reports": [
+    {
+      "id": "2026-11-22-17-01",
+      "filename": "17-01.html",
+      "date": "2026-11-22",
+      "time": "17:01",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "Inkling-2-Mini in 5.4 GB Memory",
+        "GnuPG Security Advisory for GPGME",
+        "内存价格暴涨下，华硕考虑将中低端 PC 内存由 16GB 降至 8GB"
+      ],
+      "size": 122692,
+      "modified": "2026-11-22T17:01:22.054885",
+      "isNewest": true
+    },
     {
       "id": "2026-11-22-06-37",
       "filename": "06-37.html",
@@ -17,8 +35,7 @@
         "受够了托盘常驻五六个工具：开源一个轻量原生 Windows 工具箱 Tools3000（文件/全文秒搜、截图贴图、离线 OCR、鼠标手势、自动运镜录屏）"
       ],
       "size": 129111,
-      "modified": "2026-11-22T06:37:57.216617",
-      "isNewest": true
+      "modified": "2026-11-22T06:37:57.216617"
     },
     {
       "id": "2026-11-21-22-06",
