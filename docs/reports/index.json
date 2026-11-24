@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-11-24T13:05:28.295627",
+  "generated_at": "2026-11-24T19:27:39.974809",
   "total": 691,
   "reports": [
+    {
+      "id": "2026-11-24-19-27",
+      "filename": "19-27.html",
+      "date": "2026-11-24",
+      "time": "19:27",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "我们开源了公司的内部组件库，然后被各业务线骂成了筛子",
+        "Stalwart is now a drop-in replacement for Microsoft Exchange",
+        "Rosetta 2 即将退役，Mac 老应用何去何从？"
+      ],
+      "size": 122468,
+      "modified": "2026-11-24T19:27:36.435190",
+      "isNewest": true
+    },
     {
       "id": "2026-11-24-13-05",
       "filename": "13-05.html",
@@ -17,8 +35,7 @@
         "[开源自荐] Peek：纯 Swift 原生 macOS 菜单栏工具，硬件监控 / 磁盘与 AI Agent 空间分析 / 应用卸载"
       ],
       "size": 122086,
-      "modified": "2026-11-24T13:05:23.910498",
-      "isNewest": true
+      "modified": "2026-11-24T13:05:23.910498"
     },
     {
       "id": "2026-11-24-11-03",
@@ -937,23 +954,6 @@
       ],
       "size": 150850,
       "modified": "2026-11-08T20:35:52.788810"
-    },
-    {
-      "id": "2026-11-08-19-27",
-      "filename": "19-27.html",
-      "date": "2026-11-08",
-      "time": "19:27",
-      "title": "热点新闻分析",
-      "keywords": [],
-      "preview": [
-        "热点新闻分析",
-        "⚠️ 请求失败的平台",
-        "[开源] 我的第一个全栈项目：给小餐馆用的扫码点餐系统",
-        "The end of Microsoft Research&#x27;s AI Frontiers group",
-        "物理智能开源平台 Hitch Open 在进博会发布，142 拍刷新 AI 机器人乒乓对打世界纪录"
-      ],
-      "size": 120079,
-      "modified": "2026-11-08T19:27:10.313251"
     },
     {
       "id": "2026-11-08-18-53",
