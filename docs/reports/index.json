@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-11-25T21:31:09.975133",
-  "total": 692,
+  "generated_at": "2026-11-26T02:55:08.653773",
+  "total": 693,
   "reports": [
+    {
+      "id": "2026-11-26-02-22",
+      "filename": "02-22.html",
+      "date": "2026-11-26",
+      "time": "02:22",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "我们开源了公司的内部组件库，然后被各业务线骂成了筛子",
+        "Investigating degraded experiences across GitHub products",
+        "我也开源个自己的博客主题"
+      ],
+      "size": 124811,
+      "modified": "2026-11-26T02:22:49.675782",
+      "isNewest": true
+    },
     {
       "id": "2026-11-25-21-31",
       "filename": "21-31.html",
@@ -17,8 +35,7 @@
         "大肥鱼把开源变成超能力"
       ],
       "size": 138983,
-      "modified": "2026-11-25T21:31:05.644523",
-      "isNewest": true
+      "modified": "2026-11-25T21:31:05.644523"
     },
     {
       "id": "2026-11-25-13-38",
