@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-11-26T21:14:35.331229",
+  "generated_at": "2026-11-27T01:34:40.966693",
   "total": 694,
   "reports": [
+    {
+      "id": "2026-11-27-01-34",
+      "filename": "01-34.html",
+      "date": "2026-11-27",
+      "time": "01:34",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "阿里开源的AI代码审查工具，GitHub 52.1K+ star，阿里内部用了两年",
+        "Rosetta 2 即将退役，Mac 老应用何去何从？",
+        "开源了一个 macOS 截图录屏工具 OhMyShot：本地 OCR、自动缩放录屏，官网可以直接在线试"
+      ],
+      "size": 121240,
+      "modified": "2026-11-27T01:34:37.892785",
+      "isNewest": true
+    },
     {
       "id": "2026-11-26-21-14",
       "filename": "21-14.html",
@@ -17,8 +35,7 @@
         "Investigating degraded experiences across GitHub products"
       ],
       "size": 150110,
-      "modified": "2026-11-26T21:14:32.205059",
-      "isNewest": true
+      "modified": "2026-11-26T21:14:32.205059"
     },
     {
       "id": "2026-11-26-15-25",
@@ -393,23 +410,6 @@
       ],
       "size": 124199,
       "modified": "2026-11-23T02:07:53.147258"
-    },
-    {
-      "id": "2026-11-23-01-34",
-      "filename": "01-34.html",
-      "date": "2026-11-23",
-      "time": "01:34",
-      "title": "热点新闻分析",
-      "keywords": [],
-      "preview": [
-        "热点新闻分析",
-        "⚠️ 请求失败的平台",
-        "美国初创企业公布 AI 自研 CPU 架构 Frostbite，能效是传统处理器的 4.59 倍",
-        "Rosetta 2 即将退役，Mac 老应用何去何从？",
-        "[开源] 给 Antigravity 写了个零依赖本地 Token 透视插件：上下文水位、Compact 预警、订阅 ROI 与本地 Lite DLP"
-      ],
-      "size": 125484,
-      "modified": "2026-11-23T01:34:44.885101"
     },
     {
       "id": "2026-11-23-01-00",
