@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-11-28T00:50:01.210878",
-  "total": 696,
+  "generated_at": "2026-11-28T06:51:24.171336",
+  "total": 697,
   "reports": [
+    {
+      "id": "2026-11-28-06-51",
+      "filename": "06-51.html",
+      "date": "2026-11-28",
+      "time": "06:51",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "Prospero: Bloat-free, native AI coding harness with ImGui",
+        "实测 10 个前端 UI 生成开源 Skill｜AI 输出直达上线标准",
+        "Gemini 4 很顺手，但 agy CLI 看不见上下文和额度，我做了个开源状态栏"
+      ],
+      "size": 122193,
+      "modified": "2026-11-28T06:51:19.944977",
+      "isNewest": true
+    },
     {
       "id": "2026-11-27-23-04",
       "filename": "23-04.html",
@@ -17,8 +35,7 @@
         "实测 10 个前端 UI 生成开源 Skill｜AI 输出直达上线标准"
       ],
       "size": 120581,
-      "modified": "2026-11-27T23:04:30.184630",
-      "isNewest": true
+      "modified": "2026-11-27T23:04:30.184630"
     },
     {
       "id": "2026-11-27-15-26",
