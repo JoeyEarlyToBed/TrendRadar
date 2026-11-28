@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-11-28T08:52:19.335610",
+  "generated_at": "2026-11-28T13:58:49.794224",
   "total": 697,
   "reports": [
+    {
+      "id": "2026-11-28-13-58",
+      "filename": "13-58.html",
+      "date": "2026-11-28",
+      "time": "13:58",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "[开源] 受 Hermes 启发，做了个会记经验的 AI 浏览器插件",
+        "Google&#x27;s DeepCrossAttention achieves comparable model quality up to 3x faster",
+        "因为忍受不了免费的机器翻译，开源了一款纯大模型浏览器双语对照插件"
+      ],
+      "size": 121815,
+      "modified": "2026-11-28T13:58:13.925772",
+      "isNewest": true
+    },
     {
       "id": "2026-11-28-08-52",
       "filename": "08-52.html",
@@ -17,8 +35,7 @@
         "Prospero: Bloat-free, native AI coding harness with ImGui"
       ],
       "size": 124258,
-      "modified": "2026-11-28T08:52:15.761810",
-      "isNewest": true
+      "modified": "2026-11-28T08:52:15.761810"
     },
     {
       "id": "2026-11-28-06-51",
@@ -3997,23 +4014,6 @@
       ],
       "size": 124839,
       "modified": "2026-10-05T19:34:08.400473"
-    },
-    {
-      "id": "2026-10-05-13-58",
-      "filename": "13-58.html",
-      "date": "2026-10-05",
-      "time": "13:58",
-      "title": "热点新闻分析",
-      "keywords": [],
-      "preview": [
-        "热点新闻分析",
-        "⚠️ 请求失败的平台",
-        "[开源] Precedent Loop：让 Agnet 换个会话也记得项目里踩过的坑",
-        "[开源推广] Oh-My-CPA: 更现代的 CPA 管理面板,原生移动端 / MCP Agent / 完整 CPAMC 体验",
-        "一键本地安装 jev 决策模型开源版 laya"
-      ],
-      "size": 123972,
-      "modified": "2026-10-05T13:58:32.283425"
     },
     {
       "id": "2026-10-05-10-40",
