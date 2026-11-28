@@ -1,7 +1,25 @@
 {
-  "generated_at": "2026-11-28T18:46:52.344195",
+  "generated_at": "2026-11-28T20:05:08.603147",
   "total": 698,
   "reports": [
+    {
+      "id": "2026-11-28-20-05",
+      "filename": "20-05.html",
+      "date": "2026-11-28",
+      "time": "20:05",
+      "title": "热点新闻分析",
+      "keywords": [],
+      "preview": [
+        "热点新闻分析",
+        "⚠️ 请求失败的平台",
+        "Google&#x27;s DeepCrossAttention achieves comparable model quality up to 3x faster",
+        "开源 3D 引擎 O3DE 升级 26.10：编辑器换上 Qt 6 新界面，启动器首次原生支持 Wayland",
+        "首个开源鸿蒙社区打造的具身智能操作系统 RoboOH 2.0 正式发布"
+      ],
+      "size": 139122,
+      "modified": "2026-11-28T20:05:05.886442",
+      "isNewest": true
+    },
     {
       "id": "2026-11-28-18-29",
       "filename": "18-29.html",
@@ -17,8 +35,7 @@
         "分享一个开源磁盘清理、文件搜索工具"
       ],
       "size": 123897,
-      "modified": "2026-11-28T18:29:01.593286",
-      "isNewest": true
+      "modified": "2026-11-28T18:29:01.593286"
     },
     {
       "id": "2026-11-28-13-58",
@@ -6496,23 +6513,6 @@
       ],
       "size": 146374,
       "modified": "2026-08-01T20:40:24.656912"
-    },
-    {
-      "id": "2026-08-01-20-05",
-      "filename": "20-05.html",
-      "date": "2026-08-01",
-      "time": "20:05",
-      "title": "热点新闻分析",
-      "keywords": [],
-      "preview": [
-        "热点新闻分析",
-        "⚠️ 请求失败的平台",
-        "Windows 游戏模拟器 CrossOver 宣布原生 Apple Silicon 支持",
-        "[开源] Mktero：在 Zotero 里把 PDF 转成可重排的 Markdown 阅读",
-        "3 月份 Vibe Coding 的一个小项目，画布模式的日记小软件，自用，开源"
-      ],
-      "size": 146877,
-      "modified": "2026-08-01T20:05:41.764768"
     },
     {
       "id": "2026-08-01-18-11",
